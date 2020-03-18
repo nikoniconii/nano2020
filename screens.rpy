@@ -421,11 +421,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
-
     frame:
         style "game_menu_outer_frame"
 
@@ -532,6 +527,7 @@ style game_menu_label_text:
 
 style return_button:
     xpos gui.navigation_xpos
+    ypos 650
     yalign 1.0
     yoffset -30
 
@@ -547,10 +543,12 @@ screen about():
 
     tag menu
 
+    add gui.about_background
+
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_(" "), scroll=""):
 
         style_prefix "about"
 
@@ -591,14 +589,18 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    add gui.save_background
+
+    use file_slots(_(" "))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    add gui.load_background
+
+    use file_slots(_(" "))
 
 
 screen file_slots(title):
@@ -618,7 +620,7 @@ screen file_slots(title):
                 style "page_label"
 
                 key_events True
-                xalign 0.5
+                xalign 0.4
                 action page_name_value.Toggle()
 
                 input:
@@ -629,8 +631,8 @@ screen file_slots(title):
             grid gui.file_slot_cols gui.file_slot_rows:
                 style_prefix "slot"
 
-                xalign 0.5
-                yalign 0.5
+                xalign -0.4
+                yalign 0.3
 
                 spacing gui.slot_spacing
 
@@ -657,8 +659,8 @@ screen file_slots(title):
             hbox:
                 style_prefix "page"
 
-                xalign 0.5
-                yalign 1.0
+                xalign 0.35
+                yalign 0.9
 
                 spacing gui.page_spacing
 
@@ -720,7 +722,10 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    add gui.preferences_background
+
+    use game_menu(_(""), scroll="viewport"):
+
 
         vbox:
 
@@ -730,19 +735,23 @@ screen preferences():
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
+                        xpos 60
+                        ypos 30
                         style_prefix "radio"
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+                #vbox:
+                    #style_prefix "radio"
+                    #label _("Rollback Side")
+                    #textbutton _("Disable") action Preference("rollback side", "disable")
+                    #textbutton _("Left") action Preference("rollback side", "left")
+                    #textbutton _("Right") action Preference("rollback side", "right")
 
                 vbox:
+                    xpos 230
+                    ypos 30
                     style_prefix "check"
                     label _("Skip")
                     textbutton _("Unseen Text") action Preference("skip", "toggle")
@@ -759,42 +768,45 @@ screen preferences():
                 box_wrap True
 
                 vbox:
+                    xpos 70
+                    ypos 80
 
                     label _("Text Speed")
 
-                    bar value Preference("text speed")
+                    bar value Preference("text speed") left_bar "gui/slider/horizontal_idle_bar.png" right_bar "gui/slider/horizontal_hover_bar.png"
 
                     label _("Auto-Forward Time")
 
-                    bar value Preference("auto-forward time")
+                    bar value Preference("auto-forward time") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
 
                 vbox:
+                    ypos 80
 
                     if config.has_music:
                         label _("Music Volume")
 
                         hbox:
-                            bar value Preference("music volume")
+                            bar value Preference("music volume") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
 
                     if config.has_sound:
 
                         label _("Sound Volume")
 
                         hbox:
-                            bar value Preference("sound volume")
+                            bar value Preference("sound volume") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
 
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Voice Volume")
+                    #if config.has_voice:
+                        #label _("Voice Volume")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                        #hbox:
+                            #bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                            #if config.sample_voice:
+                                #textbutton _("Test") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
@@ -861,12 +873,10 @@ style check_button_text:
     properties gui.button_text_properties("check_button")
 
 style slider_slider:
-    xsize 350
+    xsize 276
 
 style slider_button:
     properties gui.button_properties("slider_button")
-    yalign 0.5
-    left_margin 10
 
 style slider_button_text:
     properties gui.button_text_properties("slider_button")
@@ -887,10 +897,12 @@ screen history():
 
     tag menu
 
+    add gui.history_background
+
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use game_menu(_(" "), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
@@ -977,9 +989,11 @@ screen help():
 
     tag menu
 
+    add gui.help_background
+
     default device = "keyboard"
 
-    use game_menu(_("Help"), scroll="viewport"):
+    use game_menu(_(" "), scroll="viewport"):
 
         style_prefix "help"
 
