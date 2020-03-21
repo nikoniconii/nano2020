@@ -531,6 +531,120 @@ style return_button:
     yalign 1.0
     yoffset -30
 
+screen about_game_menu(title, scroll=None, yinitial=0.0):
+
+    style_prefix "game_menu"
+
+    frame:
+        style "about_game_menu_outer_frame"
+
+        hbox:
+
+            ## Reserve space for the navigation section.
+            frame:
+                style "about_game_menu_navigation_frame"
+
+            frame:
+                style "about_game_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    use navigation
+
+    textbutton _("Return"):
+        style "return_button"
+
+        action Return()
+
+    label title
+
+    if main_menu:
+        key "game_menu" action ShowMenu("main_menu")
+
+
+style about_game_menu_outer_frame is empty
+style about_game_menu_navigation_frame is empty
+style about_game_menu_content_frame is empty
+style about_game_menu_viewport is gui_viewport
+style about_game_menu_side is gui_side
+style about_game_menu_scrollbar is gui_vscrollbar
+
+style about_game_menu_label is gui_label
+style about_game_menu_label_text is gui_label_text
+
+style about_return_button is navigation_button
+style about_return_button_text is navigation_button_text
+
+style about_game_menu_outer_frame:
+    bottom_padding 30
+    top_padding 120
+    right_padding 200
+
+    background "gui/overlay/game_menu.png"
+
+style about_game_menu_navigation_frame:
+    xsize 280
+    yfill True
+
+style about_game_menu_content_frame:
+    left_margin 40
+    right_margin 20
+    top_margin 10
+
+style about_game_menu_viewport:
+    xsize 920
+
+style about_game_menu_vscrollbar:
+    unscrollable gui.unscrollable
+
+style about_game_menu_side:
+    spacing 10
+
+style about_game_menu_label:
+    xpos 50
+    ysize 120
+
+style about_game_menu_label_text:
+    size gui.title_text_size
+    color gui.accent_color
+    yalign 0.5
+
+style about_return_button:
+    xpos gui.navigation_xpos
+    ypos 650
+    yalign 1.0
+    yoffset -30
 
 ## About screen ################################################################
 ##
@@ -548,7 +662,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_(" "), scroll=""):
+    use about_game_menu(_(" "), scroll=""):
 
         style_prefix "about"
 
