@@ -97,6 +97,7 @@ style frame:
 
 screen say(who, what):
     style_prefix "say"
+    imagebutton idle "gui/x.png" hover "gui/x-Hover.png" action HideInterface() xpos 1020 ypos 580 xysize(33,29)
 
     window:
         id "window"
@@ -250,7 +251,7 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
+            xalign 0.65
             yalign 1.0
 
             textbutton _("Back") action Rollback()
@@ -278,6 +279,8 @@ style quick_button:
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
+    outlines [ (absolute(5), "#000", absolute(0), absolute(0)) ]
+
 
 
 ################################################################################
@@ -299,19 +302,15 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
-        if main_menu:
-
-            textbutton _("Start") action Start()
-
-        else:
+        if not main_menu:
 
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+            textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+            textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -321,14 +320,10 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+            textbutton _("About") action ShowMenu("about")
 
             ## Help isn't necessary or relevant to mobile devices.
             textbutton _("Help") action ShowMenu("help")
-
-        if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
@@ -360,23 +355,29 @@ screen main_menu():
     style_prefix "main_menu"
 
     add gui.main_menu_background
-
+    imagebutton idle "gui/Start.png" hover "gui/Start-Hover.png" action Start() xpos 78 ypos 640 xysize(129,28)
+    imagebutton idle "gui/Load.png" hover "gui/Load-Hover.png" action ShowMenu("load") xpos 335 ypos 640 xysize(104,28)
+    imagebutton idle "gui/Prefs.png" hover "gui/Prefs-Hover.png" action ShowMenu("preferences") xpos 577 ypos 640 xysize(127,28)
+    imagebutton idle "gui/Extra.png" hover "gui/Extra-Hover.png" action NullAction() xpos 849 ypos 641 xysize(135,26)
+    imagebutton idle "gui/Quit.png" hover "gui/Quit-Hover.png" action Quit(confirm=not main_menu) xpos 1107 ypos 640 xysize(98,30)
+    #key "K_UP" action MainMenu()
     ## This empty frame darkens the main menu.
-    frame:
-        pass
+    #frame:
+        #pass
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
+    #textbutton _("Return") action Return()
 
-    if gui.show_name:
+    #if gui.show_name:
 
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
+        #vbox:
+            #text "[config.name!t]":
+                #style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            #text "[config.version]":
+                #style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -468,10 +469,10 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("Return"):
-        style "return_button"
+    #textbutton _("Return"):
+        #style "return_button"
 
-        action Return()
+        #action Return()
 
     label title
 
@@ -582,10 +583,10 @@ screen about_game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("Return"):
-        style "return_button"
+    #textbutton _("Return"):
+        #style "return_button"
 
-        action Return()
+        #action Return()
 
     label title
 
@@ -608,7 +609,7 @@ style about_return_button_text is navigation_button_text
 
 style about_game_menu_outer_frame:
     bottom_padding 30
-    top_padding 120
+    top_padding 150
     right_padding 200
 
     background "gui/overlay/game_menu.png"
@@ -656,8 +657,19 @@ style about_return_button:
 screen about():
 
     tag menu
+    if main_menu:
+        add gui.main_menu_background
 
     add gui.about_background
+    if main_menu:
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
+        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
 
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
@@ -668,7 +680,7 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
+            label "Enamored Risks"
             text _("Version [config.version!t]\n")
 
             ## gui.about is usually set in options.rpy.
@@ -702,8 +714,19 @@ style about_label_text:
 screen save():
 
     tag menu
+    if main_menu:
+        add gui.main_menu_background
 
     add gui.save_background
+    if main_menu:
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
+        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
 
     use file_slots(_(" "))
 
@@ -711,11 +734,20 @@ screen save():
 screen load():
 
     tag menu
-
+    if main_menu:
+        add gui.main_menu_background
     add gui.load_background
+    if main_menu:
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
+        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
 
     use file_slots(_(" "))
-
 
 screen file_slots(title):
 
@@ -734,7 +766,7 @@ screen file_slots(title):
                 style "page_label"
 
                 key_events True
-                xalign 0.4
+                xalign 0.40
                 action page_name_value.Toggle()
 
                 input:
@@ -823,6 +855,7 @@ style slot_button:
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
+    xalign 0.40
 
 
 ## Preferences screen ##########################################################
@@ -835,8 +868,28 @@ style slot_button_text:
 screen preferences():
 
     tag menu
+    if main_menu:
+        add gui.main_menu_background
+        #textbutton _("History") action ShowMenu("history") xpos 200 ypos 200
+        #textbutton _("Save") action ShowMenu("save")
+        #textbutton _("Load") action ShowMenu("load")
+        #textbutton _("Preferences") action ShowMenu("preferences")
+        #textbutton _("Main Menu") action MainMenu()
+        #textbutton _("About") action ShowMenu("about")
+        #textbutton _("Help") action ShowMenu("help")
+        #textbutton _("Quit") action Quit(confirm=not main_menu)
+
 
     add gui.preferences_background
+    if main_menu:
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
+        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
 
     use game_menu(_(""), scroll="viewport"):
 
@@ -1010,8 +1063,19 @@ style slider_vbox:
 screen history():
 
     tag menu
+    if main_menu:
+        add gui.main_menu_background
 
     add gui.history_background
+    if main_menu:
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
+        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
 
     ## Avoid predicting this screen, as it can be very large.
     predict False
@@ -1102,8 +1166,19 @@ style history_label_text:
 screen help():
 
     tag menu
+    if main_menu:
+        add gui.main_menu_background
 
     add gui.help_background
+    if main_menu:
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
+        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
 
     default device = "keyboard"
 
@@ -1320,6 +1395,8 @@ style confirm_button:
 
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
+    idle_color "#ffffff"
+    hover_color "#ff0078"
 
 
 ## Skip indicator screen #######################################################
