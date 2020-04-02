@@ -198,5 +198,162 @@ label finnroute:
     an "It's just... a little hard when I keep thinking about him in the middle of my classes."
 
     ## scene 2
+    scene bg finn_apartment
+    with fadee
+
+    an "Jeez, it’s quiet even in the dorms now because of midterms. I hope Finn isn’t {i}too{/i} stressed."
+
+    ##A ‘knocking’ sound effect and/or screen shake could be cool here
+
+    show finn up smile at leftt
+    with dissolve
+
+    f talk "Alex!"
+
+    show finn smile
+
+    a "Whoa—hi."
+
+    f talk "Come in, come in."
+
+    hide finn with dissolve
+
+    an "He ushers me in and sits me down before I even have a chance to really greet him."
+
+    an "What’s he being so friendly for? He was stressed just this morning!"
+
+    show alex up at closeright
+    show finn smile at closeleft
+    with dissolve
+
+    a unsure talk "Oh, what’s that smell?"
+
+    show alex neutral smile
+
+    an "Something distractingly delicious gifts the air around his apartment...the oven-kissed scent of rich chocolate and vanilla."
+
+    f talk "Huh? Oh. I made cookies. They’re vegan, so it should be fine if you have diet restrictions or anything."
+
+    show finn smile
+
+    an "That’s so cute!"
+
+
+    ##choice
+    menu:
+        "They smell amazing.":
+            f unsure frowntalk "Mhmm. That’s strange though, you didn’t smell them from outside?"
+            show finn frown
+            a frowntalk "I didn’t. I only smelled them after I came in."
+            show alex frown
+            f down frowntalk "I see..."
+            show finn frown
+            a unsure frowntalk "Why? Was I supposed to?"
+            show alex frown
+            f up frowntalk "No. It’s just there’s a neighbor who always seems to know when I’m baking. I figured he could smell it."
+            show finn frown
+            a neutral talk "Maybe he has a really strong sense of smell?"
+            show alex frown
+            f frowntalk "I hope so."
+            show finn frown
+            a unsure talk "Haha, ‘hope so’?"
+            show alex frown
+            f frowntalk "I swear he knows before I even put it in the oven. Maybe I’m being watched."
+            show finn frown
+            a down frowntalk "That’d be creepy."
+            show alex frown
+            f talk "Yeah. Guess that means I shouldn’t do anything incriminating with you."
+            show finn smile
+            a up blush shock "H-huh?"
+            show alex shock
+            ##end choice
+
+        "What kind of cookies are they?.":
+            f "Dark chocolate-and-vanilla pinwheel."
+            a "Nice! You didn’t use box mix, did you?"
+            f "Oh, I made them from scratch."
+            a "Seriously?! From scratch?"
+            f "Yeah. It’s cheaper than the ready-made and refrigerated stuff."
+            a "Wow, I didn’t know you had a bunch of flour and stuff sitting around."
+            f "Well, it’s ‘cause I have to keep them hidden away, can’t have food out here."
+            a "Ah, yeah, the bugs would get to it."
+            f "Heh, something like that."
+            ##end choice
+
+        "Do you have diet restrictions?":
+            f "Not really... I prefer to eat vegan when I can though. It’s just too expensive."
+            a "Understandable. Even vegetarian stuff gets marked up a lot around here."
+            f "No kidding. What about you?"
+            a "Hm, me?"
+            f "Yeah, are there things you can’t eat or whatever?"
+            a "Why, are you planning to make me food?"
+            f "Tch. Not anymore."
+            a "Aww, that’s mean. You really wouldn’t?"
+            f "Guess we’ll find out in the future."
+            ##end choice
+
+    f "Anyway, you can have as many cookies as you like, doesn’t matter to me."
+
+    a "Really? Thanks!"
+
+    an "Hm, this study session isn’t starting quite what I expected, but it’s nice to just talk like this."
+
+    an "I eat a cat-shaped cookie as I lay out my textbooks and notes. There’s so much to do, I wonder how long it’ll take to review everything."
+
+    an "My focus goes in and out when Finn sits beside me. I tell myself I’m checking up on him, but I’m really just looking at his concentrated face."
+
+    an "We don’t really talk at all. It’s completely different from our usual sessions. Oh well, it’s still nice to study together like this, even though my phone remains the ominous threat that it is."
+
+    an "Hours pass before I know it when Finn suddenly groans and stretches."
+
+    a "Finn?"
+
+    f "I think we’ve done enough for today. We’ve done all we could."
+
+    a "Oh! I didn’t realize it was so late already. Sorry."
+
+    f "No... it’s fine, I’m glad."
+
+    a "Glad?"
+
+    f "Oh. Uh. I just meant..."
+
+    a "... Yesssssss?"
+
+    f "It went well, right? The study session, I mean."
+
+    an "What’s gotten into him?"
+
+    a "It did. Why?"
+
+    f "I kind of wanted a re-do from before. When I yelled at you."
+
+    an "Oh, when he snapped at me for using my phone when I was getting bombarded by my parents... Has he felt guilty about it this whole time?"
+
+    a "Thanks, Finn. It went great. Is that what the cookies were for?"
+
+    ##Blushing/flustered Finn
+    f "What? No. No!"
+
+    a "Aww but they were so cute. I was honored you baked me cookies."
+
+    f "I just {i}happened{/i} to make them and you just {i}happened{/i} to be here."
+
+    a "Hehe, so you just like baking cookies? Cause I didn’t see you eat a single one."
+
+    f "Baking is... good for stress... and stuff."
+
+    a "Haha. Is that so? Does that mean I can join you for baking next time?"
+
+    an "He says something so quietly I can’t catch it."
+
+    ##Alex genuinely didn’t hear, sprite should be confused/shocked/etc.
+    a "Huh? What was that?"
+
+    f "I said ‘Don’t taunt!’"
+
+    a "Haha, sorry."
+
+    an "It’s strange that I’m laughing even though midterms are tomorrow. I cling to this feeling, hoping to bring it with me when I go to bed so that I can still have it in the morning."
 
     return
