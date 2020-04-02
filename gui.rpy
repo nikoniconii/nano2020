@@ -64,7 +64,7 @@ define gui.name_text_font = "UbuntuCondensed-Regular.ttf"
 define gui.interface_text_font = "FjallaOne-Regular.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 22
+define gui.text_size = 26
 
 ## The size of character names.
 define gui.name_text_size = 30
@@ -103,13 +103,13 @@ define gui.help_background = "gui/HelpBG.png"
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 160
+define gui.textbox_height = 190
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
 define gui.textbox_yalign = 1.0
 
-define gui.dialogue_text_outlines = [(1, "#fff", 0, 0)]
+define gui.dialogue_text_outlines = [(2, "#fff", 0, 0)]
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
@@ -137,11 +137,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 268
+define gui.dialogue_xpos = 250
 define gui.dialogue_ypos = 50
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 744
+define gui.dialogue_width = 755
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -218,6 +218,7 @@ define gui.choice_button_borders = Borders(100, 5, 100, 5)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
+define gui.choice_button_ypos = 0
 define gui.choice_button_text_idle_color = "#cccccc"
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = "#444444"

@@ -6,7 +6,10 @@
 layeredimage alex:
 
     always:
-        "sprites/alex base.png"
+        "sprites/a base.png"
+
+    attribute backpack:
+        "sprites/a backpack.png"
     
     group eyebrows:
 
@@ -16,7 +19,7 @@ layeredimage alex:
             "sprites/alex brows2.png"
         attribute unsure:
             "sprites/alex brows3.png"
-        attribute angry:
+        attribute down:
             "sprites/alex brows4.png"
 
     group mouth:
@@ -32,11 +35,10 @@ layeredimage alex:
         attribute shock:
             "sprites/alex expression5.png"
 
-    group extras:
-        attribute blush:
-            "sprites/alex extra1.png"
-        attribute sweat:
-            "sprites/alex extra2.png"
+    attribute blush:
+        "sprites/alex extra1.png"
+    attribute sweat:
+        "sprites/alex extra2.png"
 
 
 ##################################################################################################################
@@ -52,7 +54,7 @@ layeredimage finn:
             "sprites/finn brows1.png"
         attribute unsure:
             "sprites/finn brows2.png"
-        attribute angry:
+        attribute down:
             "sprites/finn brows3.png"
 
     group mouth:
@@ -87,7 +89,7 @@ layeredimage paxton:
             "sprites/paxton brows1.png"
         attribute unsure:
             "sprites/paxton brows2.png"
-        attribute angry:
+        attribute down:
             "sprites/paxton brows3.png"
 
     group mouth:
@@ -129,7 +131,7 @@ layeredimage zaina:
             "sprites/zaina brows1.png"
         attribute unsure:
             "sprites/zaina brows2.png"
-        attribute angry:
+        attribute down:
             "sprites/zaina brows3.png"
 
     group mouth:

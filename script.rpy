@@ -4,6 +4,7 @@
 # name of the character.
 
 define a = Character("ALEX", color="#ffff66", image="alex")
+define an = Character(" ", color="#ffff66", image="alex")
 define f = Character("FINN", color="#bd8be7", image="finn")
 define z = Character("ZAINA", color="#62baf0", image="zaina")
 define p = Character("PAXTON", color="#cca3a3", image="paxton")
@@ -24,22 +25,23 @@ transform leftt:
 transform closeright:
     xalign 0.95
     zoom 1.3
-    yalign 0.4
+    yalign 0.1
     
 transform closeleft:
     xalign 0.05
     zoom 1.3
-    yalign 0.4
+    yalign 0.1
 
 ## an already defined zoomed-in left/right
 
-
-label start:
+label examplescene:     ## examples~
 
     scene bg amusementpark at center
     with fadee
 
-    ## longer fade- please use this to show the passage of time, such as Alex falling asleep!
+    ## longer fade- please use this to show the passage of time, such as a frowntalk falling asleep!
+
+    show alex frown
 
     "The night breeze is cool but feels perfect. It's hard to imagine kids running around this place in its heyday."
 
@@ -85,3 +87,9 @@ label start:
     show finn frown
 
     return
+
+
+label start:    ## start of the game!
+
+    jump finnroute
+
