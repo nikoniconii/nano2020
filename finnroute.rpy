@@ -13,7 +13,9 @@ label finnroute:
     ##TODO A slow or solemn tune should play here to set a 'down' mood
 
     an "The days pass as they normally do. Some slow, some way too fast..."
+
     an "So when this day comes, I should have expected it."
+
     an "But who can ever truly predict the end of the world?"
 
     ##TODO More upbeat or normal music starts playing for the joke
@@ -22,172 +24,170 @@ label finnroute:
         yalign -0.25                    ## alex and zaina's sprites need to be set to a lower height than the boys!
     show finn up frown at closeleft
     with dissolve
+
     a down frowntalk "Oh no! It's happening?"
-
     show alex frown
+
     f frowntalk "It's over for me, I just know it."
-
     show finn frown
+
     a unsure frowntalk "Finn, you have to hold on!"
-
     show alex frown
+
     f frowntalk "Bury me with my sunscreen so that I can rest in peace."
-
     show finn frown
-    a frowntalk "You can't give up before we even {i}start{/i} midterms."
 
+    a frowntalk "You can't give up before we even {i}start{/i} midterms."
     show alex frown
+
     ##Finn is smiling/teasing here
     f talk "Oh please, you're just as anxious as I am."
-
     show finn smile
+
     an smile "He's got me there."
 
     a up talk "That's not the point. We'll be fine in the end because...!"
-
     show alex smile
 
     menu:
         "We've been studying so much.":
             a talk "Because we've been studying so much!"
-
             show alex smile
+
             f frowntalk "We've been surprisingly diligent..."
-
             show finn frown
+
             a frowntalk "Huh? Why is that a surprise?"
-
             show alex frown
+
             f frowntalk "Because I distinctly remember spending many nights out at-"
-
             show finn frown
+
             a unsure frowntalk "H-hey! Not so loud."
-
             show alex frown
+
             f talk "Hah."
-
             show finn smile
-            a up talk "Anyway, we'll be fine. We're going to do great."
 
+            a up talk "Anyway, we'll be fine. We're going to do great."
             show alex smile
             ##end choice
 
         "Failure is not an option.":
             a frowntalk "Failure is not an option."
+            show alex frown
 
-            show alex frown
             f frowntalk "Strong words from the woman who used to look like she was going to cry when she got a new text."
-            
             show finn frown
+
             a unsure frowntalk "H-hey, I never cried! I'm just stressed!"
-            
             show alex frown
+
             f frowntalk "I said {i}looked like.{/i}"
-            
             show finn frown
+
             a frowntalk "Yeah, well so did you a couple minutes ago... anyway, I have faith in us. I really think we'll be fine."
-            
             show alex up smile
             ##end choice
 
         "I'll definitely lose it otherwise.":
             a unsure frowntalk "I'll definitely lose it otherwise."
-            
             show alex frown
+
             f frowntalk "Mhmm... well, if we both fail, we can have one last hurrah and explore a nuclear plant or something."
-            
             show finn frown
+
             a frowntalk "What?! Absolutely not!"
-            
             show alex frown
+
             f frowntalk "Just kidding... mostly."
-            
             show finn frown
+
             a frowntalk "Put that energy into midterms instead."
-            
             show alex frown
+
             f frowntalk "Did you just make a power plant joke?"
-            
             show finn frown
+
             a frowntalk "I don't know, did I?"
-            
             show alex frown
             ##end choice
 
 
     ##Finn is back to sad now
-
     f frowntalk "Anxious and still trying to comfort me. Like a living tryptophan amino acid..."
-    
     show finn frown
+
     an frown "I'm losing him. Quick, a distraction!"
 
     a up talk "Hey, Finn. Wasn't there something you wanted to ask me before class?"
-
     show alex smile
+
     f unsure frowntalk "Huh...?"
 
     f up "Oh! Alex!"
-
     show finn frown
+
     a unsure frowntalk "Uh, yes?"
+    show alex frown
 
-    show alex frown
     f frowntalk "Come home with me tonight."
-    
     show finn frown
+
     a down frowntalk "{i}W-what?{/i}"
-    
     show alex frown
+
     f frowntalk "We can study together. You'll come, right?"
-    
     show finn frown
+
     a up frowntalk "Oh. Of course, that's what you meant."
-    
     show alex frown
+
     f frowntalk "What?"
-    
     show finn frown
+
     a frowntalk "Yes. I'll come, sure."
-    
     show alex frown
+
     f frowntalk "Great. I like it when you come hang out with me you know."
-    
     show finn frown
+
     an sweat "W-where is this coming from...?"
 
     an "Why am I being weird? Of course he's just talking about studying... right?"
-    
+
     show alex blush frown with Dissolve(0.1)
+
     an "What if he didn't? What if it's kissing?"
     
     an "Wait—do I {i}want{/i} to kiss Finn? Since when do I have a crush on him?!"
     
     show finn smile
+
     an "Finn chuckles and softly flicks my forehead, distracting me from whatever nonsense I was just thinking."
 
     f frowntalk "Are you having a stroke or are you practicing for a mime routine?"
-
     show finn frown
+
     a frowntalk "Neither!"
-
     show alex frown
+
     f talk "Or maybe it's a bad thing you make me happy?"
-
     show finn smile
-    a frowntalk "No... of course not."
 
+    a frowntalk "No... of course not."
     show alex frown
+
     an "Definitely just want to study."
 
     an "Mostly anyway."
 
     f talk "Uh huh. Well, see ya later then."
-
     show finn smile
-    a talk "See you."
 
+    a talk "See you."
     show alex smile
+
     hide finn with easeoutleft
     hide alex with dissolve
 
@@ -205,14 +205,15 @@ label finnroute:
 
     show finn up smile at leftt
     with dissolve
-    f talk "Alex!"
 
+    f talk "Alex!"
     show finn smile
+
     a "Whoa—hi."
 
     f talk "Come in, come in."
-
     hide finn with dissolve
+
     an "He ushers me in and sits me down before I even have a chance to really greet him."
 
     an "What's he being so friendly for? He was stressed just this morning!"
@@ -221,122 +222,120 @@ label finnroute:
         yalign -0.25
     show finn smile at closeleft
     with dissolve
-    a up talk "Oh, what's that smell?"
 
+    a up talk "Oh, what's that smell?"
     show alex smile
+
     an "Something distractingly delicious gifts the air around his apartment...the oven-kissed scent of rich chocolate and vanilla."
 
     f talk "Huh? Oh. I made cookies. They're vegan, so it should be fine if you have diet restrictions or anything."
-    
     show finn smile
+
     an "That's so cute!"
 
     ##choice
     menu:
         "They smell amazing.":
             f unsure frowntalk "Mhmm. That's strange though, you didn't smell them from outside?"
-            
             show finn smile
+
             a neutral frowntalk "I didn't. I only smelled them after I came in."
-            
             show alex frown
+
             f down frowntalk "I see..."
-            
             show finn smile
+
             a unsure frowntalk "Why? Was I supposed to?"
-            
             show alex frown
+
             f up frowntalk "No. It's just there's a neighbor who always seems to know when I'm baking. I figured he could smell it."
-            
             show finn smile
+
             a neutral talk "Maybe he has a really strong sense of smell?"
-            
             show alex smile
+
             f frowntalk "I hope so."
-            
             show finn smile
+
             a unsure talk "Haha, 'hope so'?"
-            
             show alex smile
+
             f frowntalk "I swear he knows before I even put it in the oven. Maybe I'm being watched."
-            
             show finn smile
+
             a down frowntalk "That'd be creepy."
-            
             show alex frown
+
             f talk "Yeah. Guess that means I shouldn't do anything incriminating with you."
-            
             show finn smile
+
             show alex blush with Dissolve(0.1)
             a up shock "H-huh?"
-            
             show alex smile
             ##end choice
 
         "What kind of cookies are they?.":
             f up talk "Dark chocolate-and-vanilla pinwheel."
-            
             show finn smile
+
             a neutral talk "Nice! You didn't use box mix, did you?"
-            
             show alex smile
+
             f talk "Oh, I made them from scratch."
-            
             show finn smile
+
             a up shock "Seriously?! From scratch?"
-            
             show alex smile
+
             f talk "Yeah. It's cheaper than the ready-made and refrigerated stuff."
-            
             show finn smile
+
             a neutral talk "Wow, I didn't know you had a bunch of flour and stuff sitting around."
-            
             show alex smile
+
             f talk "Well, it's 'cause I have to keep them hidden away, can't have food out here."
-            
             show finn smile
+
             a unsure sweat talk "Ah, yeah, the bugs would get to it."
-            
             show alex smile
+
             f talk "Heh, something like that."
-            
             show finn smile
             ##end choice
 
         "Do you have diet restrictions?":
             f unsure frowntalk "Not really... I prefer to eat vegan when I can though. It's just too expensive."
-            
             show finn frown
+
             a unsure sweat talk "Understandable. Even vegetarian stuff gets marked up a lot around here."
-            
             show alex smile
+
             f talk "No kidding. What about you?"
-            
             show finn smile
+
             show alex -sweat
             a unsure talk "Hm, me?"
-            
             show alex smile
+
             f talk "Yeah, are there things you can't eat or whatever?"
-            
             show finn smile
+
             a up shock "Why, are you planning to make me food?"
-            
             show alex smile
+
             f down talk "Tch. Not anymore."
-            
             show finn frown
+
             a down frowntalk "Aww, that's mean. You really wouldn't?"
-            
             show alex frown
+
             f unsure talk "Guess we'll find out in the future."
-            
             show finn smile
             ##end choice
 
     f up talk "Anyway, you can have as many cookies as you like, doesn't matter to me."
-    
     show finn smile
+
     show alex -sweat
     a up talk "Really? Thanks!"
 
@@ -357,79 +356,80 @@ label finnroute:
         yalign -0.25
     show finn up smile at closeleft
     with dissolve
+
     a unsure frowntalk "Finn?"
-
     show alex frown
+
     f up frowntalk "I think we've done enough for today. We've done all we could."
-    
     show finn smile
+
     a up shock "Oh! I didn't realize it was so late already. Sorry."
-    
     show alex frown
+
     f up talk "No... it's fine, I'm glad."
-    
     show finn smile
+
     a unsure talk "Glad?"
-
     show alex smile
+
     f unsure talk sweat "Oh. Uh. I just meant..."
-
     show finn smile
+
     a up talk "... Yesssssss?"
-
     show alex smile
-    f talk "It went well, right? The study session, I mean."
 
+    f talk "It went well, right? The study session, I mean."
     show finn smile
+
     an unsure frown "What's gotten into him?"
 
     a frowntalk "It did. Why?"
-
     show alex frown
+
     show finn -sweat
     f down frowntalk "I kind of wanted a re-do from before. When I yelled at you."
-    
     show finn smile
+
     an neutral "Oh, when he snapped at me for using my phone when I was getting bombarded by my parents... Has he felt guilty about it this whole time?"
 
     a unsure talk "Thanks, Finn. It went great. Is that what the cookies were for?"
-    
     show alex smile
+
     ##Blushing/flustered Finn
     show finn blush with Dissolve(0.1)
     f unsure talk "What? No. No!"
-    
     show finn frown
-    a up talk "Aww but they were so cute. I was honored you baked me cookies."
-    
-    show alex smile
-    f down talk "I just {i}happened{/i} to make them and you just {i}happened{/i} to be here."
-    
-    show finn frown
-    a unsure talk "Hehe, so you just like baking cookies? Cause I didn't see you eat a single one."
-    
-    show alex smile
-    f unsure talk "Baking is... good for stress... and stuff."
-    
-    show finn smile
-    a up talk "Haha. Is that so? Does that mean I can join you for baking next time?"
-    
-    show alex smile
-    f down frowntalk "{size=12}Don't taunt!{/size}"
 
+    a up talk "Aww but they were so cute. I was honored you baked me cookies."
+    show alex smile
+
+    f down talk "I just {i}happened{/i} to make them and you just {i}happened{/i} to be here."
+    show finn frown
+
+    a unsure talk "Hehe, so you just like baking cookies? Cause I didn't see you eat a single one."
+    show alex smile
+
+    f unsure talk "Baking is... good for stress... and stuff."
     show finn smile
+
+    a up talk "Haha. Is that so? Does that mean I can join you for baking next time?"
+    show alex smile
+
+    f down frowntalk "{size=12}Don't taunt!{/size}"
+    show finn smile
+
     an unsure "He says something so quietly I can't catch it."
 
     ##Alex genuinely didn't hear, sprite should be confused/shocked/etc.
     a unsure frowntalk "Huh? What was that?"
-    
     show alex frown
+
     f up talk "I said 'Don't taunt!'"
-    
     show finn smile
+
     a up talk "Haha, sorry."
-    
     show alex smile
+
     an "It's strange that I'm laughing even though midterms are tomorrow. I cling to this feeling, hoping to bring it with me when I go to bed so that I can still have it in the morning."
 
     hide finn with dissolve
@@ -444,47 +444,48 @@ label finnroute:
         yalign -0.25
     show finn down frown at closeleft
     with dissolve
+
     f frowntalk "Ugh..."
-
     show finn frown
+
     a down frowntalk "You said it. I feel like I just ran a marathon."
-
     show alex frown
-    f up talk "I feel like I just got attacked by otherworldly forces without my trusty vampire steed."
 
+    f up talk "I feel like I just got attacked by otherworldly forces without my trusty vampire steed."
     show finn smile
+
     an unsure"That's certainly one way to describe it!"
 
     a up talk "At least it's done. We crossed the finish line."
-
     show alex smile
+
     f down sweat talk "{i}You{/i} crossed it."
-
     show finn smile
-    a talk "Haha, I'm sure you 'defeated' your enemy, too."
 
+    a talk "Haha, I'm sure you 'defeated' your enemy, too."
     show alex smile
+
     show finn -sweat
     f talk "Maybe. We'll have to see our test scores."
-
     show finn smile
+
     a neutral talk "I'm just so glad it's over."
-
     show alex smile
+
     f down frowntalk "Which means it's time to get back to business."
-
     show finn smile
+
     a unsure frowntalk "Are you talking about... you know?"
-
     show alex smile
-    f up talk "You're coming, right?"
 
+    f up talk "You're coming, right?"
     show finn smile
+
     an "Finn's lighthearted smile brightens my own. He seems geared up to go on our next trespassing adventure, it's kind of cute."
 
     a up talk "Of course. Where to next?"
-
     show alex smile
+
     f down frowntalk "Not so loud, come here."
 
     hide finn with dissolve
@@ -494,41 +495,43 @@ label finnroute:
 
     ##Move the sprites closer
     show alex unsure sweat backpack at closeright:
-        yalign -0.25
+        yalign -0.15
         zoom 1.2
     show finn down frowntalk at closeleft:
         zoom 1.2
     with dissolve
+
     a unsure sweat frowntalk "You're making me nervous. Is it super dangerous or something?"
-
     show alex smile
-    f up talk "An amusement park."
 
+    f up talk "An amusement park."
     show finn smile
+
     show alex -sweat
     a up shock "An actual abandoned {i}amusement{/i} park? The kind with rides and cotton candy?"
-
     show alex shock
+
     f down frowntalk "Even better—rusty tracks and funnel cake mold."
-
     show finn smile
+
     a down sweat frowntalk "Gross..."
-
     show alex frown
+
     f down talk "I'm just kidding. The most you could find is probably toxic waste."
-
     show finn smile
+
     a unsure talk "... You're still joking, aren't you?"
-
     show alex smile
-    f up frowntalk "Definitely. See you tonight?"
 
+    f up frowntalk "Definitely. See you tonight?"
     show finn smile
+
     show alex -sweat
     a neutral talk "I'm coming."
+    show alex smile
 
     ##Finn smiling/soft here
-    show alex smile
+    
     an "Finn's smile looks overly soft when he looks down at me. His hand pats my head affectionately and I can't help but feel like some kind of puppy."
 
     f up talk "... Cool."
@@ -537,11 +540,12 @@ label finnroute:
     show finn smile
     show alex blush with Dissolve(0.1)
     a up talk "C-Cool."
-
     show alex up smile
-    hide finn with easeoutleft
-    an "He leaves first, leaving me way too flustered for someone who was just talking with a friend. I go home and make sure to grab shoes I wouldn't mind stepping in funnel cake mold with."
 
+    hide finn with easeoutleft
+
+    an "He leaves first, leaving me way too flustered for someone who was just talking with a friend. I go home and make sure to grab shoes I wouldn't mind stepping in funnel cake mold with."
+    
     hide alex with dissolve
 
     ## Scene 4
@@ -550,23 +554,47 @@ label finnroute:
     with fadee
 
     ##All 4 sprites are here
+    show finn up smile:
+        xalign 0.05
+        yalign 1.0
+    show paxton unsure smile:
+        xalign 0.35
+        yalign 1.0
+    show zaina up smile:
+        xalign 0.65
+        yalign -1.5
+    with dissolve
+    #show alex up smile:
+    #    xalign 1.15
+    #    yalign 1.0
+    #with dissolve
 
-    p talk "Not that one, the third latte—er, picture down. With the red cup. Do you think it'd look nice?"
+    p up talk "Not that one, the third latte—er, picture down. With the red cup. Do you think it'd look nice?"
+    show paxton smile
 
-    z talk "Is that supposed to be a dog?"
+    z unsure talk "Is that supposed to be a dog?"
+    show zaina neutral
 
-    p talk "It's an elephant."
+    p unsure talk "It's an elephant."
+    show paxton smile
 
-    f talk "I thought it was a rabbit."
+    f unsure sweat frowntalk "I thought it was a rabbit."
+    show finn smile
 
-    z talk "Oh, yes I can see that."
+    z up talk "Oh, yes I can see that."
+    show zaina smile
 
-    f talk "It's the ears."
+    show finn -sweat
+    f up talk "It's the ears."
+    show finn smile
 
-    p talk "You guys...{i}Just when the world needed Alex the most, she vanished.{/i}"
+    p down frowntalk "You guys...{i}Just when the world needed Alex the most, she vanished.{/i}"
+    show paxton frown
 
     ## Finn and Zaina are speaking at the same time. This is the only instance of this, format as needed!
-    f talk "?"
+    show finn unsure frowntalk
+    show zaina unsure frowntalk
+    "{color=#bd8be7}Finn{/color} {color=#FFF}&{/color} {color=#62baf0}Zaina{/color}" "?"
 
     a talk "Err—no, I'm right here!"
 
