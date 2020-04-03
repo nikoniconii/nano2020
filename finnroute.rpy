@@ -440,67 +440,109 @@ label finnroute:
     scene bg classroom
     with fadee
 
-    f talk "Ugh..."
+    show alex neutral frown backpack at closeright:
+        yalign -0.25
+    show finn down frown at closeleft
+    with dissolve
+    f frowntalk "Ugh..."
 
-    a talk "You said it. I feel like I just ran a marathon."
+    show finn frown
+    a down frowntalk "You said it. I feel like I just ran a marathon."
 
-    f talk "I feel like I just got attacked by otherworldly forces without my trusty vampire steed."
+    show alex frown
+    f up talk "I feel like I just got attacked by otherworldly forces without my trusty vampire steed."
 
-    an "That's certainly one way to describe it!"
+    show finn smile
+    an unsure"That's certainly one way to describe it!"
 
-    a talk "At least it's done. We crossed the finish line."
+    a up talk "At least it's done. We crossed the finish line."
 
-    f talk "{i}You{/i} crossed it."
+    show alex smile
+    f down sweat talk "{i}You{/i} crossed it."
 
-    a talk "Haha, I'm sure you ‘defeated' your enemy, too."
+    show finn smile
+    a talk "Haha, I'm sure you 'defeated' your enemy, too."
 
+    show alex smile
+    show finn -sweat
     f talk "Maybe. We'll have to see our test scores."
 
-    a talk "I'm just so glad it's over."
+    show finn smile
+    a neutral talk "I'm just so glad it's over."
 
-    f talk "Which means it's time to get back to business."
+    show alex smile
+    f down frowntalk "Which means it's time to get back to business."
 
-    a talk "Are you talking about... you know?"
+    show finn smile
+    a unsure frowntalk "Are you talking about... you know?"
 
-    f talk "You're coming, right?"
+    show alex smile
+    f up talk "You're coming, right?"
 
+    show finn smile
     an "Finn's lighthearted smile brightens my own. He seems geared up to go on our next trespassing adventure, it's kind of cute."
 
-    a talk "Of course. Where to next?"
+    a up talk "Of course. Where to next?"
 
-    f talk "Not so loud, come here."
+    show alex smile
+    f down frowntalk "Not so loud, come here."
 
-    ##Move the sprites closer
+    hide finn with dissolve
+    hide alex with dissolve
+
     an "He leads me to the corner of the classroom and leans in. He's... really close!"
 
-    a talk "You're making me nervous. Is it super dangerous or something?"
+    ##Move the sprites closer
+    show alex unsure sweat backpack at closeright:
+        yalign -0.25
+        zoom 1.2
+    show finn down frowntalk at closeleft:
+        zoom 1.2
+    with dissolve
+    a unsure sweat frowntalk "You're making me nervous. Is it super dangerous or something?"
 
-    f talk "An amusement park."
+    show alex smile
+    f up talk "An amusement park."
 
-    a talk "An actual abandoned {i}amusement{/i} park? The kind with rides and cotton candy?"
+    show finn smile
+    show alex -sweat
+    a up shock "An actual abandoned {i}amusement{/i} park? The kind with rides and cotton candy?"
 
-    f talk "Even better—rusty tracks and funnel cake mold."
+    show alex shock
+    f down frowntalk "Even better—rusty tracks and funnel cake mold."
 
-    a talk "Gross..."
+    show finn smile
+    a down sweat frowntalk "Gross..."
 
-    f talk "I'm just kidding. The most you could find is probably toxic waste."
+    show alex frown
+    f down talk "I'm just kidding. The most you could find is probably toxic waste."
 
-    a talk "... You're still joking, aren't you?"
+    show finn smile
+    a unsure talk "... You're still joking, aren't you?"
 
-    f talk "Definitely. See you tonight?"
+    show alex smile
+    f up frowntalk "Definitely. See you tonight?"
 
-    a talk "I'm coming."
+    show finn smile
+    show alex -sweat
+    a neutral talk "I'm coming."
 
     ##Finn smiling/soft here
+    show alex smile
     an "Finn's smile looks overly soft when he looks down at me. His hand pats my head affectionately and I can't help but feel like some kind of puppy."
 
-    f talk "... Cool."
+    f up talk "... Cool."
 
     ##Alex flustered/blushing here
-    a talk blush "C-Cool."
+    show finn smile
+    show alex blush with Dissolve(0.1)
+    a up talk "C-Cool."
 
+    show alex up smile
+    hide finn with easeoutleft
     an "He leaves first, leaving me way too flustered for someone who was just talking with a friend. I go home and make sure to grab shoes I wouldn't mind stepping in funnel cake mold with."
 
+    hide alex with dissolve
 
     ## Scene 4
     ##Amusement park bg
@@ -549,7 +591,7 @@ label finnroute:
             an "Finn just bursts out laughing before quickly covering it with a disinterested cough, surprising everyone including me."
             z talk "What did you say to her, Finn?"
             f talk "Nothin'."
-            a talk "Just a joke...but Paxton, what do you mean ‘used to?'"
+            a talk "Just a joke...but Paxton, what do you mean 'used to?'"
             p talk "Oh, I actually used to go to this park as a child."
             z talk "Whoa—really?"
             an "He shrugs with a small smile, not elaborating on the topic. I wonder what he thinks of coming back here, I'm sure it looks completely different than before."
@@ -1471,7 +1513,7 @@ label finnroute:
 
     f talk "Hey."
 
-    an "Huh? Just a ‘hey'?"
+    an "Huh? Just a 'hey'?"
 
     a talk "It's great to see you again."
 
@@ -1642,7 +1684,7 @@ label finnroute:
             f talk "Sure, if you want."
             a talk "And I bet Zaina and Paxton would love to know, too."
             f talk "Maybe."
-            a talk "You say ‘maybe' but you never even mentioned it to them...?"
+            a talk "You say 'maybe' but you never even mentioned it to them...?"
             f talk "I think I tried, once."
             a talk "Really? Did something happen?"
             f talk "Yeah, it never sent. Think my connection went out."
@@ -1654,7 +1696,7 @@ label finnroute:
         "You're a history buff?":
             f talk "Nah. I just like to know what I'm getting into."
             a talk "I'm not sure half of the stuff you told me tonight was relevant for exploring."
-            f talk "Sure it was. You thought of the wine cellar ‘cause of my research and I know how not to anger the ghosts now."
+            f talk "Sure it was. You thought of the wine cellar 'cause of my research and I know how not to anger the ghosts now."
             a talk "What...? Ghosts?"
             f talk "Mhmm. Just don't touch the wine and we'll be fine."
             a talk "... We {i}did{/i} touch the wine!"
@@ -2052,7 +2094,7 @@ label finnroute:
             a talk "... No way."
             f talk "Yep."
             a talk "Nuh uh, I have to put effort into my outfits to look good."
-            f talk "And I'm saying it's unfair ‘cause you'll look good no matter what."
+            f talk "And I'm saying it's unfair 'cause you'll look good no matter what."
             a talk "Y-you're being ridiculous."
             f talk "Not as ridiculous as you implying I'm scrawny."
             a talk "I'm telling you I didn't!"
@@ -2398,7 +2440,7 @@ label finnroute:
 
     an "Finn gives a wry smile and reaches up to tuck a piece of hair back behind my ear, fingers lingering there long enough to lend me their heat."
 
-    f talk "Honestly, the best part of the night was knowing you were leaving with me. I kept thinking ‘Wow, how lucky am I?'"
+    f talk "Honestly, the best part of the night was knowing you were leaving with me. I kept thinking 'Wow, how lucky am I?'"
 
     ##Alex blushing sprite
     a talk "What...?"
