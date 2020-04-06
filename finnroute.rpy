@@ -432,8 +432,9 @@ label finnroute:
 
     an "It's strange that I'm laughing even though midterms are tomorrow. I cling to this feeling, hoping to bring it with me when I go to bed so that I can still have it in the morning."
 
-    hide finn with dissolve
-    hide alex with dissolve
+    hide finn
+    hide alex
+    with dissolve
 
     ## Scene 3
     ##Classroom bg
@@ -564,7 +565,6 @@ label finnroute:
         xalign 0.65
         yalign -1.5
     with dissolve
-    
 
     p up talk "Not that one, the third latte—er, picture down. With the red cup. Do you think it'd look nice?"
     show paxton smile
@@ -699,7 +699,6 @@ label finnroute:
     with dissolve
     an "Finn grabs my hand and starts running off before I have a chance to ask his plan. I don't expect it but neither do Paxton nor Zaina based on their shocked faces."
     #Zaina and Paxton sprites disappear
-    
 
     show finn up smile at closeleft
     show alex up smile at closeright:
@@ -885,13 +884,14 @@ label finnroute:
 
     an "Finn's hands cover both of mine. They're not much warmer but it's a start. But then he leans in-"
     
+    hide alex
+    hide finn
+    with dissolve    
 
     ##EVENT IMAGE: FIRST KISS
     ##note to programmers, this didn't get made into an event image but leave the placeholder in case it gets added later?
-    show cg first_kiss onlayer screens
-    with dissolve
-
-    show alex -sweat
+    scene cg first kiss
+    with fadee
 
     an "-and kisses me."
 
@@ -903,11 +903,13 @@ label finnroute:
 
     an "He pulls away and I don't know what to think or feel."
     
-    hide cg first_kiss onlayer screens
-    with dissolve
+    scene bg amusementpark
+    with fadee
 
-    show alex unsure smile blush
-    show finn up smile
+    show alex unsure smile blush at closeright:
+        yalign -0.25
+    show finn up smile at closeleft
+    with dissolve
 
     f up talk "Haha..."
     show finn smile
@@ -1212,7 +1214,7 @@ label finnroute:
     an "He waves me over without explanation, pointing at the sturdiest-looking stairs I've seen thus far. We go up..."
 
     hide alex
-    hide bg mansion
+    scene black
     with dissolve
 
     ##Black screen/sprites disappear with shakes to indicate stepping
@@ -1295,7 +1297,8 @@ label finnroute:
             an "Jeez..."
             ##end choice
 
-    hide bg finn rooftop with dissolve
+    scene black
+    with dissolve
 
     an "An excited shout from Paxton draws our attention."
 
@@ -1517,7 +1520,7 @@ label finnroute:
 
     hide alex
     hide finn
-    hide bg outside_campus
+    scene black
     with dissolve
 
     an "I know I should say something about his confession but my heart is pounding so much that I can't think clearly."
@@ -1529,49 +1532,68 @@ label finnroute:
     scene bg finn_room
     with fadee
 
+    show alex up smile at closeright:
+        yalign -0.25
+    show finn up smile at closeleft
+    with dissolve
+
     ##Both surprised
-    a talk "Wha-?"
+    a up frowntalk "Wha-?"
+    show alex frown
 
-    f talk "... Shit!"
+    f down frowntalk "... Shit!"
+    show finn frown
 
-    a talk "Eek!"
+    a up shock "Eek!"
 
     an "When we enter, there's some sort of animal darting around Finn's room."
 
-    a talk "What {i}is{/i} that?!"
+    a unsure "What {i}is{/i} that?!"
 
-    f talk "Ah, close the door will you? It's alright."
+    f unsure frowntalk "Ah, close the door will you? It's alright."
+    show finn frown
 
-    an "I do as he says but why is he so calm? He runs to the kitchen and returns with a carrot, which doesn't make the situation any less bizarre."
+    hide finn with dissolve
 
-    f talk "Come here, Cerberus... Ah, you made a mess."
+    an unsure frown "I do as he says but why is he so calm? He runs to the kitchen and returns with a carrot, which doesn't make the situation any less bizarre."
+
+    show finn at closeleft
+    with dissolve
+
+    f down talk "Come here, Cerberus... Ah, you made a mess."
+    show finn frown
 
     an "The running animal leaps into Finn's outstretched arms..."
 
+    hide alex
+    hide finn
+    with dissolve
 
-    ##EVENT IMAGE: FINN HOLDING THE RABBIT 
+    ##EVENT IMAGE: FINN HOLDING THE RABBIT
+    scene cg finn rabbit
+    with fadee
 
     an "... and it's the most adorable rabbit I've ever seen."
 
     an "I stare in awe at the purring bunny that so clearly knows Finn... and looks like him too. I can't believe it has built-in eyeliner!"
 
-    a talk "You have a pet bunny...?"
+    a "You have a pet bunny...?"
 
-    f talk "Huh? No. Er—I mean, Cerberus von Fluffykins must have escaped. He's not really a pet."
+    f "Huh? No. Er—I mean, Cerberus von Fluffykins must have escaped. He's not really a pet."
 
     "Cerberus" "{i}Churrr.{/i}"
 
     an "Cerberus von... Fluffykins? Finn definitely named it and it's definitely his!"
 
-    f talk "I'm just—he's just—I saved him, nursing him back to health."
+    f "I'm just—he's just—I saved him, nursing him back to health."
 
-    a talk "He looks pretty healthy to me..."
+    a "He looks pretty healthy to me..."
 
-    f talk "Well, I'm just making sure. It's not a big deal, he's not... anyway, Alex, you'll keep this a secret, right?"
+    f "Well, I'm just making sure. It's not a big deal, he's not... anyway, Alex, you'll keep this a secret, right?"
 
-    a talk "Right, animals are against dorm rules. Of course I will."
+    a "Right, animals are against dorm rules. Of course I will."
 
-    f talk "Thank you..."
+    f "Thank you..."
 
     an "Finn continues feeding Cerberus, the softest expression I've seen on him in a long time. Cerberus looks so comfortable in his arms."
 
@@ -1581,64 +1603,119 @@ label finnroute:
 
     ##Back to sprites by now so they can b l u s h
     ##Blushing Alex
-    a talk "Finn—I like you too."
+
+    scene bg finn_room
+    with fadee
+
+    show alex unsure smile blush at closeright:
+        yalign -0.25
+    show finn unsure smile at closeleft
+    with dissolve
+
+    a up talk "Finn—I like you too."
+    show alex smile
 
     ##Surprised Finn
+    show finn up sweat with Dissolve(1.0)
+
     an "I guess we didn't know how the other felt after all. Finn looks at me in shock and it only makes me regret not saying anything. Cerberus jumps out of his arms, the movement seeming to bring him back to his senses."
 
-    f talk "You... do?"
+    f unsure talk "You... do?"
+    show finn smile
 
-    a talk "I'm sorry I didn't say so earlier. I think I've liked you for awhile and I, uh, honestly, would really like to learn more about you."
+    a down talk "I'm sorry I didn't say so earlier. I think I've liked you for awhile and I, uh, honestly, would really like to learn more about you."
+    show alex smile
+    show finn -sweat
 
     ##Blushing Finn
-    f talk "Oh..."
+    show finn blush with Dissolve(1.0)
 
-    a talk "..."
+    f up talk "Oh..."
+    show finn smile
 
-    f talk "..."
+    a "..."
 
-    a talk "Uh, so what now?"
+    f "..."
 
-    f talk "Mm..."
+    show alex -blush with Dissolve(1.0)
 
-    f talk "How about you stay the night?"
+    a unsure talk "Uh, so what now?"
+    show alex smile
 
-    a talk "Wha-?"
+    show finn -blush with Dissolve(1.0)
 
-    f talk "I-I mean just... to talk."
+    f down frown "Mm..."
+    show finn frown
 
-    a talk "You're going to give me a heart attack."
+    f unsure talk "How about you stay the night?"
+    show finn smile
 
-    f talk "Ha ha... why, disappointed?"
+    a up shock sweat "Wha-?"
 
-    a talk "You're teasing me when I'm being serious!"
+    f down frowntalk "I-I mean just... to talk."
+    show finn smile
+
+    show alex -sweat
+    a unsure talk "You're going to give me a heart attack."
+    show alex smile
+
+    f up talk "Ha ha... why, disappointed?"
+    show finn smile
+
+    a down frowntalk "You're teasing me when I'm being serious!"
+    show alex frown
 
     f talk "What, I can't tease my future girlfriend?"
 
-    a talk "Girlfriend?"
+    show alex blush with Dissolve(1.0)
+    a up shock "Girlfriend?"
 
-    an "Finn's teasing smirk disappears as he leans closer, looking at me with a completely earnest expression."
+    show finn down frown
+    an unsure frown "Finn's teasing smirk disappears as he leans closer, looking at me with a completely earnest expression."
 
-    f talk "Alex..."
+    f unsure frowntalk "Alex..."
+    show finn frown
 
     an "He gently takes my hands in his and lifts them to his cheeks."
 
-    a talk "You're burning up, Finn!"
+    show alex -blush with Dissolve(1.0)
+    a up shock "You're burning up, Finn!"
 
-    f talk "I just wanted you to know how serious I am right now. Even though I'm always teasing you and messing with you..."
+    f up talk "I just wanted you to know how serious I am right now. Even though I'm always teasing you and messing with you..."
+    show finn smile
 
-    f talk "Will you go out with me? You can say no of course but..."
+    f unsure talk "Will you go out with me? You can say no of course but..."
+    show finn frown
 
     ##Move sprite closer
-    f talk "I'd prefer if you didn't. I know I'm far from perfect but I'd really like to... try. With you."
+    show alex unsure frown at closeright:
+        yalign -0.15
+        zoom 1.2
+    show finn unsure frowntalk at closeleft:
+        zoom 1.2
+    with dissolve
 
-    an "When I look back into Finn's blue eyes, I can see that I'm smiling. It's like they're the ocean waters themselves and reflecting a calm back into my heart."
+    f unsure talk "I'd prefer if you didn't. I know I'm far from perfect but I'd really like to... try. With you."
+    show finn smile 
+
+    an smile "When I look back into Finn's blue eyes, I can see that I'm smiling. It's like they're the ocean waters themselves and reflecting a calm back into my heart."
 
     an "It's a calm that makes it as easy as breathing to respond, all my troubles bobbing away on those ocean waves."
 
-    a talk "How can I possibly say no?"
+    a up talk "How can I possibly say no?"
+    show alex smile
+
+    hide alex
+    hide finn
+    scene black
+    with Dissolve(2.0)
 
     ##Maybe a screen fade to show a passage of time
+    #show bg finn_room
+    #show alex up smile at closeright:
+    #    yalign -0.25
+    #show finn up smile at closeleft
+    #with Dissolve(4.0)
 
     an "After playing with Cerberus for a while, we ended up in his bed without talking about anything specific. The weather, classes, our adventures... all of those things that seemed so ordinary now feel so precious."
 
