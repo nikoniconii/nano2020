@@ -1063,156 +1063,239 @@ label finnroute:
     with fadee
 
     ##COMMON EVENT: The fifth site they go to is another old mansion near the university. 
+    show zaina unsure frown:
+        xalign 0.85
+        yalign -1.5
+    show paxton unsure frown:
+        xalign 0.55
+        yalign 1.0
+    show alex down smile:
+        xalign 0.33
+        yalign 1.0
+    with dissolve
 
+    z unsure frown "..."
 
-    z talk "..."
+    p unsure frown "..."
 
-    p talk "..."
+    z down frowntalk "No way. I think I'd remember something so awkward."
+    show zaina frown
 
-    z talk "No way. I think I'd remember something so awkward."
+    p up talk "Go through the logs, I swear you uploaded a weird Halloween selfie. It looked like a goose face or whatever it's called."
+    show paxton smile
 
-    p talk "Go through the logs, I swear you uploaded a weird Halloween selfie. It looked like a goose face or whatever it's called."
+    z unsure talk "Why would I do something like that?!"
+    show zaina frown
 
-    z talk "Why would I do something like that?!"
+    z up talk "Alex! Tell Paxton he's imagining things."
+    show zaina frown
 
-    z talk "Alex! Tell Paxton he's imagining things."
+    a unsure talk sweat "Oops, sorry, I zoned out. What's going on?"
+    show alex smile -sweat
 
-    a talk "Oops, sorry, I zoned out. What's going on?"
+    p unsure talk "Zaina doesn't remember when she uploaded some blurry Halloween selfie to the group chat."
+    show paxton smile
 
-    p talk "Zaina doesn't remember when she uploaded some blurry Halloween selfie to the group chat."
+    z down frowntalk "Yeah, cause it {i}didn't happen.{/i}"
+    show zaina frown
 
-    z talk "Yeah, cause it {i}didn't happen.{/i}"
+    p up talk "Pics or it didn't happen, huh? I bet I can find it."
+    show paxton smile
 
-    p talk "Pics or it didn't happen, huh? I bet I can find it."
+    a unsure talk "Halloween selfie? Zaina, you like to dress up?"
+    show alex smile
 
-    a talk "Halloween selfie? Zaina, you like to dress up?"
+    z unsure frowntalk sweat "What? N-no, of course not. I used to get bored, that's all."
+    show zaina frown
 
-    z talk "What? N-no, of course not. I used to get bored, that's all."
+    an up "Cute...!"
 
-    an "Cute...!"
+    a up talk "Haha, I'd love to see it some day. Honestly, I'd follow any picture account you had!"
+    show alex smile
 
-    a talk "Haha, I'd love to see it some day. Honestly, I'd follow any picture account you had!"
-
-    z talk "Right. T-thanks. Uh, anyway, where in the world is Finn?"
+    show zaina -sweat
+    z up talk "Right. T-thanks. Uh, anyway, where in the world is Finn?"
+    show zaina smile
 
     ##Screen shake
     an "The main doors to the mansion bang before slowly opening up. Once again, the devil somehow knows my thoughts."
 
     ##Finn sprite appears
+    show finn up smile:
+        xalign 0.05
+        yalign 1.0
+    with dissolve
+
     an "Finn's there, brushing dust off his hands and ... incredibly late."
 
-    z talk "You were supposed to be here almost 30 minutes ago, Finn. Jeez."
+    z down frowntalk "You were supposed to be here almost 30 minutes ago, Finn. Jeez."
+    show zaina frown
 
-    f talk "Sorry."
+    f unsure talk "Sorry."
+    show finn frown
 
-    p talk "Did you get lost?"
+    p unsure talk "Did you get lost?"
+    show paxton smile
 
-    f talk "Nah."
+    f unsure talk "Nah."
+    show finn smile
 
-    a talk "Well, what happened?"
+    a unsure talk "Well, what happened?"
+    show alex smile
 
-    f talk "The oven took much longer than I thought to clean. Had to wait."
+    f up talk "The oven took much longer than I thought to clean. Had to wait."
+    show finn smile
 
-    z talk "..."
+    show zaina unsure frown
+    show paxton unsure frown
+    show alex unsure frown
 
-    p talk "..."
+    z "..."
 
-    a talk "..."
+    p "..."
 
-    f talk "Thanks for waiting. Let's go."
+    a "..."
 
-    a talk "Good idea."
+    f up talk "Thanks for waiting. Let's go."
+    show finn smile
+
+    a up talk "Good idea."
+    show alex smile
+
+    hide alex
+    hide paxton
+    hide finn
+    hide zaina
+    with dissolve
 
     an "He shoots me a smile, completely oblivious to the death glare Zaina is shooting him."
 
     an "The place is so old that there's no avoiding the draft. It's like a chill is purposely wired through, ugh."
 
-    p talk "Looks like we weren't the first ones here, look at this graffiti."
+    show finn up smile:
+        xalign 0.05
+        yalign 1.0
+    show zaina unsure smile:
+        xalign 0.85
+        yalign -1.5
+    show paxton unsure smile:
+        xalign 0.55
+        yalign 1.0
+    show alex unsure smile:
+        xalign 0.33
+        yalign 1.0
+    with dissolve
 
-    f talk "Well, this {i}is{/i} near the university."
+    p unsure talk "Looks like we weren't the first ones here, look at this graffiti."
+    show paxton smile
 
-    z talk "It's so dusty, you'd think this place was really remote."
+    f unsure talk "Well, this {i}is{/i} near the university."
+    show finn smile
+
+    z unsure talk "It's so dusty, you'd think this place was really remote."
+    show zaina smile
+
+    hide paxton
+    hide zaina
+    with dissolve
 
     an "I'm trying to look around, but it's hard to concentrate."
 
-    f talk "Alex. Psst."
+    f down talk "Alex. Psst."
+    show finn smile
 
-    a talk "Huh? Why are we whispering?"
+    a up frowntalk "Huh? Why are we whispering?"
+    show alex smile
+
+    hide finn with dissolve
 
     an "He waves me over without explanation, pointing at the sturdiest-looking stairs I've seen thus far. We go up..."
 
+    hide alex
+    hide bg mansion
+    with dissolve
+
     ##Black screen/sprites disappear with shakes to indicate stepping
-    a talk "Finn?"
+    a "Finn?"
 
-    f talk "Don't worry, it's sturdy."
+    f "Don't worry, it's sturdy."
 
-    a talk "How can you even tell?!"
+    a "How can you even tell?!"
 
-    f talk "There was no sagging on the wood and there are support beams under the stairs."
+    f "There was no sagging on the wood and there are support beams under the stairs."
 
-    a talk "Oh, really?"
+    a "Oh, really?"
 
-    f talk "We're here."
+    f "We're here."
 
     ##Sprites reappear
-    a talk "Oh, wow, it's the roof..."
+    scene cg finn rooftop
+    with fadee
+
+    #show bg mansion
+    #show alex up at closeright:
+    #    yalign -0.25
+    #show finn smile at closeleft
+    #with dissolve
+
+    a "Oh, wow, it's the roof..."
 
     an "We look out over the roof, still beautiful even though it has holes."
 
-    f talk "Gotta be careful with roofs, they're usually some of the first parts to go. You look and feel for cracks and holes. Leaks are a dead giveaway of damage."
+    f "Gotta be careful with roofs, they're usually some of the first parts to go. You look and feel for cracks and holes. Leaks are a dead giveaway of damage."
 
-    a talk "Huh... noted. You're always giving me good advice, Finn."
+    a "Huh... noted. You're always giving me good advice, Finn."
 
-    f talk "Mhm... Hey, are you cold?"
+    f "Mhm... Hey, are you cold?"
 
+    a "Oh—it's fine."
 
-    a talk "Oh—it's fine."
-
-    f talk "It's not."
-
+    f "It's not."
 
     ##I rewrote this cause I forgot the Finn rooftop CG was promo art and not part of the game but it'd be a cute concept here ajdsosia
 
-    a talk "Finn? I'm okay, really."
+    a "Finn? I'm okay, really."
 
-    f talk "Just take it."
+    f "Just take it."
 
     an "He drapes his jacket gently over my shoulders and I exhale once I feel how much warmer it is. It even smells like Finn, which shouldn't be a surprise but it still makes me feel... strange."
 
     ##choice
     menu:
         "But what about you?":
-            f talk "What about me?"
-            a talk "I mean, aren't you cold?"
-            f talk "Nah, I'm fine. Doesn't matter."
+            f "What about me?"
+            a "I mean, aren't you cold?"
+            f "Nah, I'm fine. Doesn't matter."
             an "Why wouldn't that matter, Finn...?"
             an "I can't bring myself to argue with him when he looks at me like that. Instead, my head focuses on disagreeing with the butterflies in my chest."
             ##end choice
 
         "(Put hands in pockets)":
-            a talk "Huh...? What's a carrot doing in here?"
-            f talk "Hm. That's a good question."
-            a talk "Do you like eating raw carrots as a snack?"
-            f talk "Not particularly."
+            a "Huh...? What's a carrot doing in here?"
+            f "Hm. That's a good question."
+            a "Do you like eating raw carrots as a snack?"
+            f "Not particularly."
             an "What kind of answer is that?!"
-            f talk "Do you want it?"
-            a talk "I don't!"
-            f talk "If you want it, you can."
-            a talk "I'm telling you I don't!"
+            f "Do you want it?"
+            a "I don't!"
+            f "If you want it, you can."
+            a "I'm telling you I don't!"
             an "Finn chuckles and moves to pat my head but I gently swat him away, which seems to only amuse him more."
             ##end choice
 
         "Your jacket smells nice.":
-            f talk "Yeah? And what does it smell like?"
-            a talk "Um, I guess like you? It's hard to describe."
-            f talk "You saying I smell good?"
-            a talk "U-um..."
+            f "Yeah? And what does it smell like?"
+            a "Um, I guess like you? It's hard to describe."
+            f "You saying I smell good?"
+            a "U-um..."
             an "I wish he'd stop teasing me before I say something I'll regret!"
-            f talk "Stop getting so nervous around me or I'll start thinking you like me."
-            a talk "I'm not nervous."
-            f talk "Good."
+            f "Stop getting so nervous around me or I'll start thinking you like me."
+            a "I'm not nervous."
+            f "Good."
             an "Jeez..."
             ##end choice
+
+    hide bg finn rooftop with dissolve
 
     an "An excited shout from Paxton draws our attention."
 
@@ -1222,42 +1305,84 @@ label finnroute:
     scene bg mansion
     with fadee
 
-    p talk "Wow, there's a bunch of books hidden here in the sofa!"
+    show finn up smile:
+        xalign 0.05
+        yalign 1.0
+    show zaina up smile:
+        xalign 0.85
+        yalign -1.5
+    show paxton up smile:
+        xalign 0.55
+        yalign 1.0
+    show alex up smile:
+        xalign 0.33
+        yalign 1.0
+    with dissolve
 
-    f talk "Hah. Gross."
+    p up talk "Wow, there's a bunch of books hidden here in the sofa!"
+    show paxton smile
 
-    z talk "Hold on, I'll take some pictures."
+    f unsure talk "Hah. Gross."
+    show finn smile
 
-    a talk "Oh—uh, that plank you put your tripod on looks like it's sagging...?"
+    z down talk "Hold on, I'll take some pictures."
+    show zaina smile
 
-    z talk "Whoa! Thanks, that could've been bad."
+    a down talk "Oh—uh, that plank you put your tripod on looks like it's sagging...?"
+    show alex smile
+
+    z up talk "Whoa! Thanks, that could've been bad."
+    show zaina smile
+
+    show alex up smile
+    show finn up smile
+    show paxton up smile
 
     ##Finn smiling
-    f talk "..."
+    f "..."
 
-    z talk "There we go. Perfect."
+    z up talk "There we go. Perfect."
+    show zaina smile
 
-    p talk "At least we found something."
+    p unsure talk "At least we found something."
+    show paxton smile
 
-    a talk "Why did you look in the sofa anyway?"
+    a unsure talk "Why did you look in the sofa anyway?"
+    show alex smile
 
-    p talk "Uh... I ran out of options. I would love some soap and a sink now, though."
+    p down talk "Uh... I ran out of options. I would love some soap and a sink now, though."
+    show paxton smile
 
-    f talk "Yeah, I think we're done here. Let's go."
+    f unsure talk "Yeah, I think we're done here. Let's go."
+    show finn smile
 
     ##Zaina and Paxton should be smiling
-    z talk "Yup, let's pack it up."
+    z up talk "Yup, let's pack it up."
+    show zaina smile
 
-    p talk "Right behind you."
+    p up talk "Right behind you."
+    show paxton smile
 
     ##Zaina and Paxton sprite exit, Finn expression serious
-    f talk "... Alex."
+    hide zaina
+    hide paxton
+    with dissolve
 
-    a talk "Yes?"
+    f down talk "... Alex."
+    show finn frown
 
-    f talk "Can you go on a walk with me? Please?"
+    a unsure talk "Yes?"
+    show alex smile
 
-    a talk "Oh, sure."
+    f unsure talk "Can you go on a walk with me? Please?"
+    show finn frown
+
+    a up talk "Oh, sure."
+    show alex smile
+
+    hide finn
+    hide alex
+    with dissolve
 
     ## Scene 7
     ##Outside campus bg ?
@@ -1268,34 +1393,52 @@ label finnroute:
 
     an "This crush is getting out of control..."
 
-    a talk "Finn? Are you alright?"
+    show alex up at closeright:
+        yalign -0.25
+    show finn smile at closeleft
+    with dissolve
 
-    f talk "... Not really."
+    a unsure talk "Finn? Are you alright?"
+    show alex smile
 
-    a talk "What's wrong?"
+    f down frowntalk "... Not really."
+    show finn frown
 
-    f talk "Eh, this is awkward, but..."
+    a down frowntalk "What's wrong?"
+    show alex frown
 
-    f talk "You know I care about you, right?"
+    f unsure talk "Eh, this is awkward, but..."
+    show finn frown
 
-    a talk "And I care about you but what's this about?"
+    f up talk "You know I care about you, right?"
+    show finn frown
 
-    f talk "I, uh, I feel like if we're going to keep doing all this dangerous stuff together that I should be upfront about something. Paxton and Zaina already know, but..."
+    a up frowntalk "And I care about you but what's this about?"
+    show alex frown
 
-    a talk "A-are you sick?"
+    f down frowntalk "I, uh, I feel like if we're going to keep doing all this dangerous stuff together that I should be upfront about something. Paxton and Zaina already know, but..."
+    show finn frown
+
+    a unsure frowntalk "A-are you sick?"
+    show alex frown
 
     an "My stomach flips. I wasn't expecting this at all, but if Finn wants to open up to me I would never complain about it."
 
-    f talk "A bit. Is it okay if I tell you something... heavy?"
+    f unsure frowntalk "A bit. Is it okay if I tell you something... heavy?"
+    show finn frown
 
     ##choice
     menu:
         "Yes, that's fine.":
+            show finn unsure smile
             an "He gives a faint smile at my response and gently lifts a side of my lips with a teasing finger."
-            f talk "Don't frown too much, it makes it harder."
-            a talk "I'm just trying to take you seriously."
+            f down talk "Don't frown too much, it makes it harder."
+            show finn smile
+            a up talk "I'm just trying to take you seriously."
+            show alex frown
             an "He chuckles at that."
             f talk "I know... thank you."
+            show finn down frown
             an "Finn finally gets serious again and takes a deep breath before starting."
             ##end choice
 
@@ -1303,56 +1446,79 @@ label finnroute:
             an "Finn hesitates after my response and sighs."
             f talk "I feel like I do. I guess I feel close enough to you to talk about it."
             f talk "Um... anyway..."
+            show finn smile
             an "Finn takes a deep breath before starting."
             ##end choice
 
         "I'm freaking out a bit.":
             an "I didn't mean to, but I know my words wound him when he seems to flinch."
-            f talk "That's the last thing I want to do... I promise I'll keep it short."
-            a talk "Alright."
+            f down frowntalk "That's the last thing I want to do... I promise I'll keep it short."
+            show finn frown
+            a unsure frowntalk "Alright."
+            show alex frown
             an "Finn nods, then takes a deep breath before starting."
             ##end choice
 
-    f talk "Before I came here, I wasn't in a good place mentally."
+    f unsure frowntalk "Before I came here, I wasn't in a good place mentally."
 
-    f talk "I was lost, depressed, and... suicidal. My boyfriend of many years and I broke up right before I moved here on top of it."
+    f down frowntalk "I was lost, depressed, and... suicidal. My boyfriend of many years and I broke up right before I moved here on top of it."
+    show finn frown
 
-    a talk "I'm so sorry, Finn..."
+    a down frowntalk "I'm so sorry, Finn..."
+    show alex frown
 
-    f talk "And the thing is—I still am all of those things. I manage a lot better these days but that's all it is... managing."
+    f unsure frowntalk "And the thing is—I still am all of those things. I manage a lot better these days but that's all it is... managing."
+    show finn down frown
 
     an "He pauses after his confession. I can see in his eyes that his thoughts on the matter are bittersweet. They see something that I can't."
 
     an "But he doesn't linger. Finn looks directly at me—maybe even through me—and I know that he sees everything as it is now in the present."
 
-    a talk "I'm here for you, Finn."
+    a unsure talk "I'm here for you, Finn."
+    show alex frown
 
-    f talk "I know you are. And that means the world to me because... I like you."
+    f up talk "I know you are. And that means the world to me because... I like you."
+    show finn smile
 
     ##Finn smiling, Alex shocked
-    a talk "W-what? I mean, I like you too..."
+    show alex blush with Dissolve(1.0)
+    a up shock "W-what? I mean, I like you too..."
 
     an "Where is this coming from? For a moment there I thought he was saying something else."
 
-    f talk "As more than a friend. And I'm happy that I {i}can{/i} like you, because I was so sure that part of me was broken, Alex."
+    f up talk "As more than a friend. And I'm happy that I {i}can{/i} like you, because I was so sure that part of me was broken, Alex."
+    show finn smile
 
+    show alex -blush
     an "My brain feels like it's short-circuiting. I'm so thrown off that the first thing out of my mouth is a diversion from admitting that a confession even happened."
 
-    a talk "W-wow, was your ex... not a good person?"
+    a unsure frowntalk "W-wow, was your ex... not a good person?"
+    show alex smile
 
+    show finn unsure
     an "He shakes his head at that and gives a self-deprecating laugh that breaks my heart."
 
-    f talk "No, it wasn't like that. I was in a very bad place at that time and my ex couldn't deal with it. It wasn't his fault and I'd never want to drag someone down with me." 
+    f unsure talk "No, it wasn't like that. I was in a very bad place at that time and my ex couldn't deal with it. It wasn't his fault and I'd never want to drag someone down with me." 
+    show finn frown
 
-    f talk "Especially someone I cared so much about."
+    f down frowntalk "Especially someone I cared so much about."
+    show finn frown
 
-    a talk "But..."
+    a unsure frowntalk "But..."
+    show alex frown
 
-    f talk "He left for his own sanity, which was for the best. I'd never blame him for leaving no matter how much it hurt me."
+    f up talk "He left for his own sanity, which was for the best. I'd never blame him for leaving no matter how much it hurt me."
 
-    f talk "Um—will you come in?"
+    f unsure talk "Um—will you come in?"
+    show finn smile
 
-    a talk "Oh, y-yes."
+    a up talk "Oh, y-yes."
+    show alex smile
+
+    hide alex
+    hide finn
+    hide bg outside_campus
+    with dissolve
 
     an "I know I should say something about his confession but my heart is pounding so much that I can't think clearly."
 
