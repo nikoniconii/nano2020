@@ -156,9 +156,8 @@ label finnroute:
 
     an "Why am I being weird? Of course he's just talking about studying... right?"
 
-    show alex blush frown with Dissolve(0.1)
-
-    an "What if he didn't? What if it's kissing?"
+    show alex frown
+    an blush "What if he didn't? What if it's kissing?" with Dissolve(0.1)
     
     an "Wait—do I {i}want{/i} to kiss Finn? Since when do I have a crush on him?!"
     
@@ -270,8 +269,8 @@ label finnroute:
             f talk "Yeah. Guess that means I shouldn't do anything incriminating with you."
             show finn smile
 
-            show alex blush with Dissolve(0.1)
-            a up shock "H-huh?"
+            show alex up shock
+            a blush "H-huh?" with Dissolve(0.1)
             show alex smile
             ##end choice
 
@@ -397,8 +396,8 @@ label finnroute:
     show alex smile
 
     ##Blushing/flustered Finn
-    show finn blush with Dissolve(0.1)
-    f unsure talk "What? No. No!"
+    show finn unsure talk
+    f blush "What? No. No!" with Dissolve(0.1)
     show finn frown
 
     a up talk "Aww but they were so cute. I was honored you baked me cookies."
@@ -540,8 +539,8 @@ label finnroute:
 
     ##Alex flustered/blushing here
     show finn smile
-    show alex blush with Dissolve(0.1)
-    a up talk "C-Cool."
+    show alex up talk
+    a blush "C-Cool." with Dissolve(0.1)
     show alex up smile
 
     hide finn with easeoutleft
@@ -826,8 +825,8 @@ label finnroute:
     f up talk "Here, take my hand. Let's climb this part together."
     show finn smile
 
-    show alex blush with Dissolve(1.0)
-    a up talk "Oh. Okay..."
+    show alex up talk
+    a blush "Oh. Okay..." with Dissolve(1.0)
     
     hide alex
     hide finn
@@ -902,7 +901,7 @@ label finnroute:
     
     scene bg amusementpark
     with fadee
-
+    
     show alex unsure smile blush at closeright:
         yalign -0.25
     show finn up smile at closeleft
@@ -923,7 +922,8 @@ label finnroute:
     f unsure talk "Yeah. But at least you're not shaking anymore."
     show finn smile
 
-    an unsure smile -blush "What? Oh, he's right, I'm not."
+    show alex unsure smile
+    an -blush "What? Oh, he's right, I'm not." with Dissolve(1.0)
 
     f up talk "Come on, we're almost done with our climb."
     show finn smile
@@ -995,7 +995,8 @@ label finnroute:
     f unsure frowntalk "Alex..."
     show finn frown
 
-    a unsure talk -blush "H-hello, Finn."
+    show alex unsure talk
+    a -blush "H-hello, Finn." with Dissolve(1.0)
     show alex smile
 
     f down frowntalk "I got my test scores back. I got... a C."
@@ -1477,15 +1478,15 @@ label finnroute:
     show finn smile
 
     ##Finn smiling, Alex shocked
-    show alex blush with Dissolve(1.0)
-    a up shock "W-what? I mean, I like you too..."
+    show alex up shock
+    a blush "W-what? I mean, I like you too..." with Dissolve(1.0)
 
     an "Where is this coming from? For a moment there I thought he was saying something else."
 
     f up talk "As more than a friend. And I'm happy that I {i}can{/i} like you, because I was so sure that part of me was broken, Alex."
     show finn smile
 
-    an -blush "My brain feels like it's short-circuiting. I'm so thrown off that the first thing out of my mouth is a diversion from admitting that a confession even happened."
+    an -blush "My brain feels like it's short-circuiting. I'm so thrown off that the first thing out of my mouth is a diversion from admitting that a confession even happened." with Dissolve(1.0)
 
     a unsure frowntalk "W-wow, was your ex... not a good person?"
     show alex smile
@@ -1619,19 +1620,20 @@ label finnroute:
     show finn -sweat
 
     ##Blushing Finn
-    show finn blush with Dissolve(1.0)
-
-    f up talk "Oh..."
+    show finn up talk
+    f blush "Oh..." with Dissolve(1.0)
     show finn smile
 
     a "..."
 
     f "..."
 
-    a unsure talk -blush "Uh, so what now?"
+    show alex unsure talk
+    a -blush "Uh, so what now?" with Dissolve(1.0)
     show alex smile
 
-    f down frown -blush "Mm..."
+    show finn down frown
+    f -blush "Mm..." with Dissolve(1.0)
 
     f unsure talk "How about you stay the night?"
     show finn smile
@@ -1653,8 +1655,8 @@ label finnroute:
 
     f talk "What, I can't tease my future girlfriend?"
 
-    show alex blush with Dissolve(1.0)
-    a up shock "Girlfriend?"
+    show alex up shock
+    a blush "Girlfriend?" with Dissolve(1.0)
 
     show finn down frown
     an unsure frown "Finn's teasing smirk disappears as he leans closer, looking at me with a completely earnest expression."
@@ -1664,7 +1666,8 @@ label finnroute:
 
     an "He gently takes my hands in his and lifts them to his cheeks."
 
-    a up shock -blush "You're burning up, Finn!"
+    show alex up shock
+    a -blush "You're burning up, Finn!" with Dissolve(1.0)
 
     f up talk "I just wanted you to know how serious I am right now. Even though I'm always teasing you and messing with you..."
 
@@ -1830,8 +1833,8 @@ label finnroute:
     z unsure talk "Alex... Ugh, fine, if you insist. If you two lovebirds die I'm going to kill you."
     show zaina smile
 
-    show alex blush with Dissolve(1.0)
-    a up talk "L-lovebirds?"
+    show alex up talk
+    a blush "L-lovebirds?" with Dissolve(1.0)
     show alex smile
 
     hide zaina
@@ -2130,12 +2133,12 @@ label finnroute:
     show finn smile
 
     ##Alex blushing and her sprite moves away
-    show alex blush unsure:
+    show alex unsure shock:
         xalign 0.98
         zoom 1.3
         yalign -0.25
     with dissolve
-    a unsure shock "W-what?"
+    a blush "W-what?" with Dissolve(1.0)
 
     ##Finn's sprite moves close to her again
     show finn:
@@ -2244,7 +2247,8 @@ label finnroute:
     an "He smirks down at me but I give into it, leaning up and planting a soft kiss to his lips."
 
     ##Finn blushing
-    f smile blush "..."
+    show finn smile
+    f blush "..."
 
     a unsure talk "You're blushing after all that smack talk?"
     show alex smile
@@ -2255,7 +2259,8 @@ label finnroute:
     a up talk "Hehe yeah... do you think there's a wine cellar here?"
     show alex smile
 
-    f down talk -blush "Good point. Let's start with the basement."
+    show finn down talk
+    f -blush "Good point. Let's start with the basement." with Dissolve(1.0)
     show finn smile
 
     an "Finn takes me to the basement, testing out the stairs and staying ahead of me. When we make it down, it's hard to see anything at all in the darkness. I'm glad for flashlights."
@@ -2899,8 +2904,8 @@ label finnroute:
             show alex smile
             f up talk "And I'm saying it's unfair 'cause you'll look good no matter what."
             show finn smile
-            show alex blush with Dissolve(1.0)
-            a unsure talk "Y-you're being ridiculous."
+            show alex unsure talk
+            a blush "Y-you're being ridiculous." with Dissolve(1.0)
             show alex smile
             f unsure talk "Not as ridiculous as you implying I'm scrawny."
             show finn smile
@@ -2908,7 +2913,8 @@ label finnroute:
             show alex frown
             f up talk "Well... I should make sure to prove it."
             show finn smile
-            a unsure talk -blush "What are you-?!"
+            show alex unsure talk
+            a -blush "What are you-?!" with Dissolve(1.0)
             show alex smile
             ##end choice
 
@@ -3047,8 +3053,7 @@ label finnroute:
 
     an "He comes back into view, one gentle hand under my chin to tilt my face up as the other slowly brushes foundation across my skin."
 
-    show alex blush with Dissolve(1.0)
-    an "This is... not what I expected. Finn's face is so close to mine now. And his lips look really inviting... and his fingers feel like they're brushing teasingly against me!"
+    an blush "This is... not what I expected. Finn's face is so close to mine now. And his lips look really inviting... and his fingers feel like they're brushing teasingly against me!" with Dissolve(1.0)
 
     f unsure talk "Haha... why are you blushing?"
     show finn smile
@@ -3356,7 +3361,8 @@ label finnroute:
     show alex smile
 
     ##Finn blushing sprite
-    f unsure talk blush "I-I, uh... what was the question?"
+    show finn unsure talk
+    f blush "I-I, uh... what was the question?"
     show finn smile
 
     a unsure talk "I was just asking if you had fun, silly."
@@ -3370,11 +3376,13 @@ label finnroute:
 
     an "Finn gives a wry smile and reaches up to tuck a piece of hair back behind my ear, fingers lingering there long enough to lend me their heat."
 
-    f unsure talk -blush "Honestly, the best part of the night was knowing you were leaving with me. I kept thinking 'Wow, how lucky am I?'"
+    show finn unsure talk
+    f -blush "Honestly, the best part of the night was knowing you were leaving with me. I kept thinking 'Wow, how lucky am I?'" with Dissolve(1.0)
     show finn smile
 
     ##Alex blushing sprite
-    a unsure frowntalk blush "What...?"
+    show alex unsure frowntalk
+    a blush "What...?" with Dissolve(1.0)
     show alex smile
 
     f up talk "I love you, Alex."
