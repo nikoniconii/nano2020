@@ -887,7 +887,7 @@ label finnroute:
     ##EVENT IMAGE: FIRST KISS
     ##note to programmers, this didn't get made into an event image but leave the placeholder in case it gets added later?
     scene cg first kiss
-    with fadee
+    with dissolve
 
     an "-and kisses me."
 
@@ -1225,7 +1225,7 @@ label finnroute:
 
     ##Sprites reappear
     scene cg finn rooftop
-    with fadee
+    with dissolve
 
     #show bg mansion
     #show alex up at closeright:
@@ -1561,7 +1561,7 @@ label finnroute:
 
     ##EVENT IMAGE: FINN HOLDING THE RABBIT
     scene cg finn rabbit
-    with fadee
+    with dissolve
 
     an "... and it's the most adorable rabbit I've ever seen."
 
@@ -2579,7 +2579,7 @@ label finnroute:
     ##EVENT IMAGE: A bruised/bleeding Finn staring and smiling lovingly at Alex while she is still worried/angry at him
     ##programmer note: leave the placeholder but we do NOT have an event image for this
     scene cg finn hurt
-    with fadee
+    with dissolve
 
     a "Finn. As absolutely exhilarating as that was, I never ever {i}ever{/i} want to do it again!"
 
@@ -3101,46 +3101,68 @@ label finnroute:
 
     ##Scene 15
     ##Not sure about bg, possibly classroom/dorm or whatever else we have?
-    scene bg classroom
+    scene bg amusementpark
     with fadee
+
+    show alex up smile at closeright:
+        yalign -0.25
+    show finn up smile at closeleft
+    with dissolve
 
     an "When we arrive to the party, I'm still shocked by the elaborate goth outfits despite knowing the theme."
 
-    a talk "Wow... everyone looks amazing!"
+    a up talk "Wow... everyone looks amazing!"
+    show alex smile
 
-    f talk "All the closet goths are out and about, I see."
+    f down talk "All the closet goths are out and about, I see."
+    show finn smile
 
-    a talk "I recognize classmates here."
+    a down talk "I recognize classmates here."
+    show alex smile
 
-    f talk "Really?"
+    f unsure talk "Really?"
+    show finn smile
 
-    a talk "Yeah! Do you see that girl with the tall boots over there?"
+    a unsure talk "Yeah! Do you see that girl with the tall boots over there?"
+    show alex smile
 
-    f talk "Yeah?"
+    f up talk "Yeah?"
+    show finn smile
 
-    a talk "She's one of the people from lab."
+    a up talk "She's one of the people from lab."
+    show alex smile
 
-    f talk "... Whoa, you're right. I didn't recognize her at all."
+    f down talk "... Whoa, you're right. I didn't recognize her at all."
+    show finn smile
 
-    f talk "Oh, look at that guy over there. Sweet plugs. Think I've seen him around."
+    f unsure talk "Oh, look at that guy over there. Sweet plugs. Think I've seen him around."
+    show finn smile
 
-    a talk "Those are {i}enormous.{/i} Are his ears safe?"
+    a unsure talk "Those are {i}enormous.{/i} Are his ears safe?"
+    show alex smile
 
-    f talk "They are. Haha..."
+    f up talk "They are. Haha..."
+    show finn smile
 
-    a talk "Already laughing at me?"
+    a down talk "Already laughing at me?"
+    show alex smile
 
-    f talk "Nah. I'm... having fun already."
+    f down talk "Nah. I'm... having fun already."
+    show finn smile
 
-    a talk "Heh... me too. Oh, let me turn off my phone alerts."
+    a unsure talk "Heh... me too. Oh, let me turn off my phone alerts."
+    show alex smile
 
-    f talk "Are you sure?"
+    f unsure talk "Are you sure?"
+    show finn smile
 
     an "I'm glad I've gotten to the point where I don't feel the need to check every few minutes, but the notifications still make me nervous."
 
-    a talk "... I am. I want to give you my full attention."
+    a up talk "... I am. I want to give you my full attention."
+    show alex smile
 
-    f talk "Enticing."
+    f up talk "Enticing."
+    show finn smile
 
     "Classmate1" "Oh—hey Finn!"
 
@@ -3150,21 +3172,25 @@ label finnroute:
 
     "Classmate1" "Yeah, we were just talking about you."
 
-    f talk "Oh, hey guys. Nice outfits."
+    f unsure talk "Oh, hey guys. Nice outfits."
+    show finn smile
 
     "Classmate2" "Haha, thanks... who's this?"
 
     an "They notice me at his side and I awkwardly give them a wave."
 
-    a talk "Hello, I'm Alex. Nice to meet you."
+    a unsure talk "Hello, I'm Alex. Nice to meet you."
+    show alex smile
 
     "Classmate1" "Oh, hi! Are you a biology major, too?"
 
-    a talk "No, I'm actually in nursing."
+    a down talk "No, I'm actually in nursing."
+    show alex smile
 
     "Classmate2" "Oh wow, that's hard, too. Good luck!"
 
-    a talk "I'm managing, thanks."
+    a unsure talk "I'm managing, thanks."
+    show alex smile
 
     "Classmate1" "So anyway, Finn, do you remember what the professor said about curving our grades?"
 
@@ -3172,9 +3198,15 @@ label finnroute:
 
     an "My getup is awkward enough, but I'm definitely third-wheeling it right now. I have no idea what they're talking about. I guess I should let them catch up?"
 
-    a talk "Uh, I'll go get us drinks."
+    a down talk "Uh, I'll go get us drinks."
+    show alex smile
 
-    f talk "Oh, alright..."
+    f up talk "Oh, alright..."
+    show finn smile
+
+    hide alex
+    hide finn
+    with dissolve
 
     an "I leave quickly to the snack bar and am pleasantly surprised by the selection. Hah, they even dyed the soda black, that's cute."
 
@@ -3182,72 +3214,90 @@ label finnroute:
 
     an "With a smile I find myself watching a little longer, a bit nostalgic and not wanting to interrupt. I'm really glad I met Finn and his friends... our friends. I bet Zaina and Paxton would look great in goth outfits."
 
-    f talk "... ex."
+    f "... ex."
 
-    a talk "Huh?"
+    a "Huh?"
 
-    f talk "Alex."
+    f "Alex."
 
     ##Finn sprite close up
+    show alex up smile at closeright:
+        yalign -0.15
+        zoom 1.2
+    show finn up smile at closeleft:
+        zoom 1.2
+    with dissolve
 
-    a talk "Gah, Finn? What are you doing?"
+    a unsure frowntalk "Gah, Finn? What are you doing?"
+    show alex smile
 
-    f talk "You promised."
+    f down talk "You promised."
+    show finn smile
 
-    a talk "Promised?"
+    a unsure talk "Promised?"
+    show alex smile
 
-    f talk "You promised to stay by my side the whole time, remember?"
+    f unsure talk "You promised to stay by my side the whole time, remember?"
+    show finn smile
+
+    hide alex
+    hide finn
+    with dissolve
 
     ##EVENT IMAGE: Finn pulling Alex into his arms, one hand tilting her chin up for a kiss in the middle of the goth party
     ##programming note again: leave this bit but we don't have an event image for it
+    scene cg finn party
+    with dissolve
 
-    f talk "So keep your end of the bargain."
+    f "So keep your end of the bargain."
 
     an "Finn sweeps me forward and I go tumbling into his arms. He laughs at my confusion, wrapping one arm around my waist and the other once again tilting my chin up toward him."
 
-    a talk "What are you doing in the middle of the party? Do I need more lipstick or something?"
+    a "What are you doing in the middle of the party? Do I need more lipstick or something?"
 
-    f talk "Good question."
+    f "Good question."
 
     an "He kisses my lips abruptly in front of everyone and I can feel my face burning."
 
-    f talk "Is that answer good enough?"
+    f "Is that answer good enough?"
 
     ##choice
     menu:
         "(Yes)":
-            a talk "Yes... uh, no!"
+            a "Yes... uh, no!"
             an "He laughs again and starts tugging me back toward his friends."
-            f talk "At least now everyone knows who my girlfriend is."
-            a talk "Was that your goal with that?"
-            f talk "Sure."
+            f "At least now everyone knows who my girlfriend is."
+            a "Was that your goal with that?"
+            f "Sure."
             an "Of course he gives me a non-answer... what a tease."
-            a talk "I was just trying to give you space to catch up with your friends, you know."
-            f talk "Don't care about that."
-            a talk "What?"
-            f talk "Just stay with me or I'll kiss you again in front of everyone."
+            a "I was just trying to give you space to catch up with your friends, you know."
+            f "Don't care about that."
+            a "What?"
+            f "Just stay with me or I'll kiss you again in front of everyone."
             an "I'm not sure if that's supposed to be a threat or not...!"
             ##Alex smiling
-            a talk "Yeah, alright."
+            a "Yeah, alright."
             ##end choice
 
         "(No)":
-            a talk "No it was not!"
-            f talk "Aw, really...? Okay."
+            a "No it was not!"
+            f "Aw, really...? Okay."
             an "I halfway expect it, but even if I did I know it wouldn't have changed anything... He laughs again before planting yet another kiss to my lips."
-            f talk "How about now?"
-            a talk "Mm...!"
-            f talk "No? How about one more?"
-            a talk "D-don't you dare!"
-            f talk "Haha... that's disappointing."
-            a talk "I-I think people are staring."
-            f talk "Let them. I'm here for you, remember?"
-            a talk "I was only trying to let your friends catch up with you..."
-            f talk "Don't care about that. So stay with me this time."
+            f "How about now?"
+            a "Mm...!"
+            f "No? How about one more?"
+            a "D-don't you dare!"
+            f "Haha... that's disappointing."
+            a "I-I think people are staring."
+            f "Let them. I'm here for you, remember?"
+            a "I was only trying to let your friends catch up with you..."
+            f "Don't care about that. So stay with me this time."
             ##Alex smiling
-            a talk "Yeah, alright."
+            a "Yeah, alright."
             ##end choice
 
+    scene black
+    with dissolve
 
     an "We end up staying for hours at the party, just laughing and talking. His classmates and acquaintances aren't as intimidating as I thought, I even get along with many of them."
 
