@@ -2756,238 +2756,348 @@ label finnroute:
     scene bg finn_room
     with fadee
 
-    a talk "Finn? I brought... you-know-who."
+    show alex up smile at closeright:
+        yalign -0.25
+    show finn up smile at closeleft
+    with dissolve
 
-    f talk "So you did. Were you followed?"
+    a unsure talk "Finn? I brought... you-know-who."
+    show alex smile
 
-    a talk "No, I wasn't."
+    f unsure frowntalk "So you did. Were you followed?"
+    show finn frown
 
-    f talk "Are you sure?"
+    a down talk "No, I wasn't."
+    show alex smile
 
-    a talk "Absolutely."
+    f down frowntalk "Are you sure?"
+    show finn frown
 
-    f talk "Then who's that behind you?"
+    a up talk "Absolutely."
+    show alex smile
+
+    f unsure frowntalk "Then who's that behind you?"
+    show finn frown
 
     ##Surprise/shock sprite
-    a talk "What?!"
+    a unsure shock sweat "What?!"
 
-    f talk "Haha, you actually looked..."
+    f up talk "Haha, you actually looked..."
+    show finn smile
 
-    a talk "H-hey!"
+    a down frowntalk -sweat "H-hey!"
+    show alex frown
 
-    f talk "Heh. I'll take Cerberus now, thanks."
+    f unsure talk "Heh. I'll take Cerberus now, thanks."
+    show finn smile
 
-    an "I can't help but smile through my defeated sigh as I close the door to give us privacy."
+    an smile "I can't help but smile through my defeated sigh as I close the door to give us privacy."
 
-    a talk "Alright, Mr. Vampire, what is this secret event you couldn't tell me about in class?"
+    a unsure talk "Alright, Mr. Vampire, what is this secret event you couldn't tell me about in class?"
+    show alex smile
 
-    f talk "Right. I wanted to invite you to... a party."
+    f up talk "Right. I wanted to invite you to... a party."
+    show finn smile
 
-    a talk "Oh, a party?"
+    a up talk "Oh, a party?"
+    show alex smile
 
-    f talk "They're not my scene, but... I'm making an exception if you promise to go with me and stick with me the whole time."
+    f unsure talk "They're not my scene, but... I'm making an exception if you promise to go with me and stick with me the whole time."
+    show finn smile
 
-    a talk "That sounds fun. But what's the catch? Why were you being so shady about it?"
+    a unsure talk "That sounds fun. But what's the catch? Why were you being so shady about it?"
+    show alex smile
 
-    f talk "Well, it's a... goth party."
+    f up talk "Well, it's a... goth party."
+    show finn smile
 
-    a talk "G-goth? It's a dress-up party?"
+    a unsure talk "G-goth? It's a dress-up party?"
+    show alex smile
 
-    f talk "Sort of... half of the people there will be actual goths. But anyone can come."
+    f unsure talk "Sort of... half of the people there will be actual goths. But anyone can come."
+    show finn smile
 
     an "I did say I wanted to get to know him better..."
 
-    a talk "Sure, but I-I don't know if I have the right clothes for this."
+    a down talk "Sure, but I-I don't know if I have the right clothes for this."
+    show alex smile
 
-    f talk "I know. I have stuff for you to try on here."
+    f up talk "I know. I have stuff for you to try on here."
+    show finn smile
 
-    a talk "Letting me into your infamous closet cave, huh?"
+    a unsure talk "Letting me into your infamous closet cave, huh?"
+    show alex smile
 
-    f talk "Anything for you."
+    f down talk "Anything for you."
+    show finn smile
 
-    a talk "Haha... let's see what we have here then! I'm sure something will fit."
+    a up talk "Haha... let's see what we have here then! I'm sure something will fit."
+    show alex smile
 
-    f talk "Mm... Doubtful. Just cause I'm not as built as Paxton doesn't mean I'm scrawny."
+    f unsure talk "Mm... Doubtful. Just cause I'm not as built as Paxton doesn't mean I'm scrawny."
+    show finn smile
 
     ##choice
     menu:
         "I don't know...":
+            show finn frown
             an "Finn frowns at me and I can't help but giggle. Something I said got to him...!"
-            f talk "Are you calling me scrawny?"
-            a talk "Well..."
-            f talk "Do I need to take my shirt off for you?"
-            a talk "No need, I think I have an idea."
-            f talk "And here I thought you couldn't pass up the chance..."
-            an "Very tempting...!"
-            a talk "Are you trying to impress me?"
-            f talk "Maybe. The important thing is that you don't forget I can climb around abandoned buildings with ease. Just like I can do... this!"
+            f down frowntalk "Are you calling me scrawny?"
+            show finn frown
+            a unsure talk "Well..."
+            show alex smile
+            f up talk "Do I need to take my shirt off for you?"
+            show finn smile
+            a down talk sweat "No need, I think I have an idea."
+            show alex smile
+            f unsure talk "And here I thought you couldn't pass up the chance..."
+            show finn smile
+            an unsure -sweat "Very tempting...!"
+            a up talk "Are you trying to impress me?"
+            show alex smile
+            f up talk "Maybe. The important thing is that you don't forget I can climb around abandoned buildings with ease. Just like I can do... this!"
+            show finn smile
             ##end choice
 
         "Paxton's a high bar.":
-            f talk "... Yeah, yeah, I know that. But how do {i}you{/i} know that?"
-            a talk "I have eyes."
-            f talk "I'm not sure I like that."
-            a talk "You don't like that I have {i}eyes{/i}?"
-            f talk "No. Take them off."
-            a talk "I can't take them off!"
-            f talk "Sure you can, come here."
-            a talk "Eek!"
+            f down talk "... Yeah, yeah, I know that. But how do {i}you{/i} know that?"
+            show finn smile
+            a down talk "I have eyes."
+            show alex smile
+            f unsure talk "I'm not sure I like that."
+            show finn smile
+            a unsure talk "You don't like that I have {i}eyes{/i}?"
+            show alex smile
+            f down talk "No. Take them off."
+            show finn smile
+            a down frowntalk "I can't take them off!"
+            show alex smile
+            f up talk "Sure you can, come here."
+            show finn smile
+            a up shock "Eek!"
+            show alex smile
             ##end choice
 
         "That's not what I meant.":
-            f talk "Yeah? Then what did you mean?"
-            a talk "That surely I can make something look acceptable."
-            f talk "Mm. I think you'd look acceptable in anything."
-            a talk "... No way."
-            f talk "Yep."
-            a talk "Nuh uh, I have to put effort into my outfits to look good."
-            f talk "And I'm saying it's unfair 'cause you'll look good no matter what."
-            a talk "Y-you're being ridiculous."
-            f talk "Not as ridiculous as you implying I'm scrawny."
-            a talk "I'm telling you I didn't!"
-            f talk "Well... I should make sure to prove it."
-            a talk "What are you-?!"
+            f down talk "Yeah? Then what did you mean?"
+            show finn smile
+            a down talk "That surely I can make something look acceptable."
+            show alex smile
+            f down  talk "Mm. I think you'd look acceptable in anything."
+            show finn smile
+            a unsure talk "... No way."
+            show alex smile
+            f up talk "Yep."
+            show finn smile
+            a down talk "Nuh uh, I have to put effort into my outfits to look good."
+            show alex smile
+            f up talk "And I'm saying it's unfair 'cause you'll look good no matter what."
+            show finn smile
+            show alex blush with Dissolve(1.0)
+            a unsure talk "Y-you're being ridiculous."
+            show alex smile
+            f unsure talk "Not as ridiculous as you implying I'm scrawny."
+            show finn smile
+            a up shock "I'm telling you I didn't!"
+            show alex frown
+            f up talk "Well... I should make sure to prove it."
+            show finn smile
+            a unsure talk -blush "What are you-?!"
+            show alex smile
             ##end choice
 
     #Screen shake
     an "Finn flashes me a grin, my only warning before he lifts me easily off the ground."
 
-    a talk "Gah! Okay, I get it, I get it, not scrawny!"
+    a down shock "Gah! Okay, I get it, I get it, not scrawny!"
+    show alex frown
 
-    f talk "Do you?"
+    f unsure talk "Do you?"
+    show finn smile
 
-    a talk "Yes, now kindly put me down."
+    a down frowntalk "Yes, now kindly put me down."
+    show alex smile
 
-    f talk "Hm... nah. You can still see my closet, right? Keep looking. We're gonna go for a one-size look, maybe use a shirt as a dress."
+    f down talk "Hm... nah. You can still see my closet, right? Keep looking. We're gonna go for a one-size look, maybe use a shirt as a dress."
+    show finn smile
 
-    a talk "What...? Ugh, fine."
+    a unsure frowntalk "What...? Ugh, fine."
+    show alex smile
 
     an "Awkwardly, I let Finn keep lifting me while I shuffle through his closet. Everything is black, even his socks. He has way more tank tops than I thought he did—which was none. Exactly when does he wear these?"
 
-    a talk "Oh!"
+    a up talk "Oh!"
+    show alex smile
 
     an "I find exactly what I'm going to wear. It's not a flashy top, but it'd look cute as a dress or tucked into pants. I pull it out and show Finn."
 
-    f talk "... Nice choice. Okay, you're heavy, putting you down now."
+    f up talk "... Nice choice. Okay, you're heavy, putting you down now."
+    show finn smile
+
     ##Screen shake
+    a unsure talk "What happened to comparing yourself to Paxton?"
+    show alex smile
 
-    a talk "What happened to comparing yourself to Paxton?"
+    f down talk "Won't happen again, I can assure you. Alright... hm..."
+    show finn smile
 
-    f talk "Won't happen again, I can assure you. Alright... hm..."
+    f unsure talk "Is it okay if I pick out your jewelry for you?"
+    show finn smile
 
-    f talk "Is it okay if I pick out your jewelry for you?"
-
-    a talk "Oh, sure."
+    a unsure talk "Oh, sure."
+    show alex smile
 
     an "Finn nods and opens up a small case of jewelry, far more than the selection he usually wears."
 
-    a talk "Wow, I didn't know you had so much...!"
+    a up talk "Wow, I didn't know you had so much...!"
+    show alex smile
 
-    f talk "It's a longtime collection. I don't like looking at a lot of them anymore."
+    f down talk "It's a longtime collection. I don't like looking at a lot of them anymore."
+    show finn smile
 
-    a talk "Why's that?"
+    a unsure talk "Why's that?"
+    show alex smile
 
-    f talk "Well... honestly, a lot of them were gifts and a bit painful to look at. But..."
+    f up talk "Well... honestly, a lot of them were gifts and a bit painful to look at. But..."
+    show finn smile
 
     an "Finn smiles and pulls out a sparkling pair of earrings, holding them next to my face."
 
-    f talk "I guess I don't mind anymore. Will you wear these?"
+    f unsure talk "I guess I don't mind anymore. Will you wear these?"
+    show finn smile
 
-    a talk "Oh! These are so gorgeous!"
+    a up talk "Oh! These are so gorgeous!"
+    show alex smile
 
-    f talk "Yeah. I want you to have them, actually."
+    f up talk "Yeah. I want you to have them, actually."
+    show finn smile
 
-    a talk "What... are you sure?"
+    a unsure frowntalk "What... are you sure?"
+    show alex frown
 
-    f talk "I am. They suit you. It'd make me a lot happier to see you enjoying them than stuffing them away to rot."
+    f unsure talk "I am. They suit you. It'd make me a lot happier to see you enjoying them than stuffing them away to rot."
+    show finn smile
 
-    a talk "Well... if you say so. Thank you."
+    a up talk "Well... if you say so. Thank you."
+    show alex smile
 
     an "I take them gingerly. I just know I'll treasure these for a long time."
 
-    a talk "Hehe... is this everything then? Or are you going to do my makeup too?"
+    a down talk "Hehe... is this everything then? Or are you going to do my makeup too?"
+    show alex smile
 
-    f talk "I am."
+    f up talk "I am."
+    show finn smile
 
-    a talk "Just ki—what?"
+    a unsure talk "Just ki—what?"
+    show alex smile
 
-    f talk "Come sit on my bed, I already have my makeup bag out."
+    f unsure talk "Come sit on my bed, I already have my makeup bag out."
+    show finn smile
 
-    a talk "R-really?"
+    a up talk "R-really?"
+    show alex smile
 
-    f talk "Of course."
+    f up talk "Of course."
+    show finn smile
 
-    a talk "What about your chair?"
+    a unsure talk "What about your chair?"
+    show alex smile
 
-    f talk "Nah. This is comfier."
+    f down talk "Nah. This is comfier."
+    show finn smile
 
-    a talk "Er—alright!"
+    a up talk sweat "Er—alright!"
+    show alex smile -sweat
 
     an "I sit on the bed and sure enough, his makeup supplies are ready and waiting for me. I've never seen him put on his makeup before, I wonder what he looks like without it..."
 
-    f talk "See that bottle on your left? It's moisturizer and primer, you can go ahead and put it on."
+    f unsure talk "See that bottle on your left? It's moisturizer and primer, you can go ahead and put it on."
+    show finn smile
 
-    a talk "This is an expensive brand...!"
+    a up shock "This is an expensive brand...!"
+    show alex smile
 
-    f talk "Mhm. The power of off-season clearance sales."
+    f up talk "Mhm. The power of off-season clearance sales."
+    show finn smile
 
     an "Jeez, I feel like this party's going to be a big deal already. I put the moisturizer on and watch Finn as he checks over his extremely brand name possessions."
 
     an "Oh... this feels great, actually!"
 
-    f talk "Now look up a bit and just relax, okay? It won't take long."
+    f unsure talk "Now look up a bit and just relax, okay? It won't take long."
+    show finn smile
 
-    a talk "If you say so."
+    a unsure talk "If you say so."
+    show alex smile
 
     an "I do as he says, stealing peeks at him pulling out black brushes—of course, they're black—and dabbing them across different shades of foundation."
 
-    a talk "I didn't know you did a full routine every day..."
+    a down talk "I didn't know you did a full routine every day..."
+    show alex smile
 
-    f talk "Nah. Special occasions. I haven't even used this set yet, it's brand new."
+    f up talk "Nah. Special occasions. I haven't even used this set yet, it's brand new."
+    show finn smile
 
     an "He comes back into view, one gentle hand under my chin to tilt my face up as the other slowly brushes foundation across my skin."
 
+    show alex blush with Dissolve(1.0)
     an "This is... not what I expected. Finn's face is so close to mine now. And his lips look really inviting... and his fingers feel like they're brushing teasingly against me!"
 
-    f talk "Haha... why are you blushing?"
+    f unsure talk "Haha... why are you blushing?"
+    show finn smile
 
-    a talk "A-am not..."
+    a up frowntalk sweat "A-am not..."
+    show alex smile
 
-    an "He swaps to the concealer, ever so feather-light, and before I know it he's already moving away, finished with whatever he was doing before I was... distracted."
+    an -sweat "He swaps to the concealer, ever so feather-light, and before I know it he's already moving away, finished with whatever he was doing before I was... distracted."
 
-    f talk "There we go. Now all that's left is some black lipstick if you want some."
+    f up talk "There we go. Now all that's left is some black lipstick if you want some."
+    show finn smile
 
-    a talk "Ah... sure..."
+    a up talk "Ah... sure..."
+    show alex smile
 
     an "I don't even know if I want some or not, all I know is that I didn't want him to stop touching me..."
 
-    f talk "Cool."
+    f down talk "Cool."
+    show finn smile
 
     an "Finn dips his forefinger in a small jar before he's back in my space—even more than before."
 
-    f talk "Be still..."
+    f unsure talk "Be still..."
+    show finn smile
 
     an "I want to tell him I have been but I absolutely freeze up as Finn's knees push more and more over the edge of the bed... until he's straddling me."
 
-    a talk "?!"
+    a unsure frown "?!"
 
     an "I stare at his own lips as his finger delicately swipes lipstick across mine."
 
-    an "I think I'm going to explode!"
+    an up "I think I'm going to explode!"
 
-    f talk "There we go. Perfect."
+    f up talk "There we go. Perfect."
+    show finn smile
 
-    a talk "Ah..."
+    a unsure talk "Ah..."
+    show alex smile
 
-    f talk "Hm? What was that?"
+    f unsure frowntalk "Hm? What was that?"
+    show finn smile
 
-    a talk "Y-you're doing this on purpose...!"
+    a up shock "Y-you're doing this on purpose...!"
+    show alex frown
 
-    f talk "Am I?"
+    f up talk "Am I?"
+    show finn smile
 
-    an "Definitely. Finn's knowing smirk is insufferable. He doesn't move even after he's done and instead..."
+    an smile "Definitely. Finn's knowing smirk is insufferable. He doesn't move even after he's done and instead..."
 
     an "... He pulls me into an effortless kiss that makes us have to start the lipstick process all over again."
+
+    hide alex
+    hide finn
+    with dissolve
 
     ##Scene 15
     ##Not sure about bg, possibly classroom/dorm or whatever else we have?
