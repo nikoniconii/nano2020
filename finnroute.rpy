@@ -196,12 +196,13 @@ label finnroute:
     an "It's just... a little hard when I keep thinking about him in the middle of my classes."
 
     ## scene 2
-    scene bg finn_apartment
+    scene bg finn_room
     with fadee
 
     an "Jeez, it's quiet even in the dorms now because of midterms. I hope Finn isn't {i}too{/i} stressed."
 
     ##A 'knocking' sound effect and/or screen shake could be cool here
+    "Knock, knock..." with vpunch
 
     show finn up smile at leftt
     with dissolve
@@ -802,7 +803,7 @@ label finnroute:
     with dissolve
 
     ##Phone buzz/screen shake
-    a up shock "Ah!"
+    a up shock "Ah!" with vpunch
     show alex shock
 
     an "Ugh, my phone surprised me. I'm getting distracted. I need to be careful, what if I miss a step?"
@@ -1113,7 +1114,7 @@ label finnroute:
     show zaina smile
 
     ##Screen shake
-    an "The main doors to the mansion bang before slowly opening up. Once again, the devil somehow knows my thoughts."
+    an "The main doors to the mansion bang before slowly opening up. Once again, the devil somehow knows my thoughts." with vpunch
 
     ##Finn sprite appears
     show finn up smile:
@@ -1851,7 +1852,7 @@ label finnroute:
     an "I'm trying to copy Finn's steps as much as I can. Skip that plank, careful and gentle steps on-!"
 
     #Screen shake?
-    a talk "Ah!"
+    a talk "Ah!" with vpunch
 
     f talk "Alex!"
 
@@ -2043,6 +2044,7 @@ label finnroute:
     with fadee
 
     ##Vibration/screen shake for phone
+    "Bzz..." with vpunch
 
     a "Ugh... what time is it? Why is my phone vibrating?"
 
@@ -2059,6 +2061,9 @@ label finnroute:
     a "How... safe... is... it?"
 
     ##Phone vibration
+    show bg alex_room_night
+    with vpunch
+
     a "Not too old of a building, huh? Hmm..."
 
     an "I haven't seen him much outside of class after last time. I miss him."
@@ -2066,6 +2071,9 @@ label finnroute:
     a "Alright... I'll get... ready and... meet you... there."
 
     ##Phone vibration
+    show bg alex_room_night
+    with vpunch
+
     a "Hehe... I... miss you... too."
 
     ##Scene 11
@@ -2236,8 +2244,7 @@ label finnroute:
     an "He smirks down at me but I give into it, leaning up and planting a soft kiss to his lips."
 
     ##Finn blushing
-    show finn blush with Dissolve(1.0)
-    f smile "..."
+    f smile blush "..."
 
     a unsure talk "You're blushing after all that smack talk?"
     show alex smile
@@ -2483,7 +2490,7 @@ label finnroute:
     an "I scream before he does."
 
     ##Screen shake
-    a down shock "Finn!"
+    a down shock "Finn!" with vpunch
     show alex frown
 
     f down frowntalk "Ah!"
@@ -2510,8 +2517,7 @@ label finnroute:
     an "I open up my phone to call 911 but..."
 
     ##Screen shake
-
-    an "I hear the beam crack a little more just as more tiles of the roof fall through. They'll never get here in time. I have to at least try to help him."
+    an "I hear the beam crack a little more just as more tiles of the roof fall through. They'll never get here in time. I have to at least try to help him." with vpunch
 
     a down frowntalk "Finn, I'm coming to get you."
     show alex frown
@@ -2548,8 +2554,7 @@ label finnroute:
     an "Finn takes a deep breath before jumping for me and letting go of the beam."
 
     ##Screen shake
-
-    an "The movement is enough to send the support beam screeching down in a cloudy abyss of dust."
+    an "The movement is enough to send the support beam screeching down in a cloudy abyss of dust." with vpunch
 
     a up frowntalk "Ah! I've got you...!"
     show alex frown
@@ -2703,10 +2708,9 @@ label finnroute:
     a down frown "..."
 
     ##Alex sprite moves closer to Finn, screen shake
-    show alex at closeright:
+    show alex at closeright with hpunch:
         yalign -0.25
         xalign 0.80
-    with dissolve
 
     f unsure frowntalk "O-ow? What?"
     show finn frown
@@ -2718,7 +2722,7 @@ label finnroute:
     show finn smile
 
     ##Screen shake
-    f down talk "Ow! Okay, okay! Sorry!"
+    f down talk "Ow! Okay, okay! Sorry!" with vpunch
     show finn smile
 
     a up talk "Haha..."
@@ -2909,7 +2913,7 @@ label finnroute:
             ##end choice
 
     #Screen shake
-    an "Finn flashes me a grin, my only warning before he lifts me easily off the ground."
+    an "Finn flashes me a grin, my only warning before he lifts me easily off the ground." with vpunch
 
     a down shock "Gah! Okay, I get it, I get it, not scrawny!"
     show alex frown
@@ -2937,7 +2941,7 @@ label finnroute:
     show finn smile
 
     ##Screen shake
-    a unsure talk "What happened to comparing yourself to Paxton?"
+    a unsure talk "What happened to comparing yourself to Paxton?" with vpunch
     show alex smile
 
     f down talk "Won't happen again, I can assure you. Alright... hm..."
@@ -3317,10 +3321,10 @@ label finnroute:
     show finn up frown at closeleft
     with dissolve
 
-    f down frowntalk "I'm exhausted..."
+    f down talk "I'm exhausted..."
     show finn frown
 
-    a down frowntalk "Me, too. Thanks for lending me your clothes."
+    a down talk "Me, too. Thanks for lending me your clothes."
     show alex smile
 
     f up talk "Anytime."
@@ -3352,8 +3356,7 @@ label finnroute:
     show alex smile
 
     ##Finn blushing sprite
-    show finn blush with Dissolve(1.0)
-    f unsure talk "I-I, uh... what was the question?"
+    f unsure talk blush "I-I, uh... what was the question?"
     show finn smile
 
     a unsure talk "I was just asking if you had fun, silly."
@@ -3371,8 +3374,7 @@ label finnroute:
     show finn smile
 
     ##Alex blushing sprite
-    show alex blush with Dissolve(1.0)
-    a unsure frowntalk "What...?"
+    a unsure frowntalk blush "What...?"
     show alex smile
 
     f up talk "I love you, Alex."
@@ -3388,13 +3390,17 @@ label finnroute:
     show alex smile
 
     show finn smile
-    an -blush "Finn doesn't need to pull me into his arms. I readily join him, snuggling against his warm chest and feeling more relaxed than I have in a while."
+
+    hide finn
+    hide alex
+    with dissolve
+
+    scene black
+    with dissolve
+
+    an "Finn doesn't need to pull me into his arms. I readily join him, snuggling against his warm chest and feeling more relaxed than I have in a while."
 
     an "It's not until the next afternoon that I realize—for the first time—not only did I forget to check my phone but... that I also don't care."
-
-    hide alex
-    hide finn
-    with dissolve
 
     ##END.
     return
