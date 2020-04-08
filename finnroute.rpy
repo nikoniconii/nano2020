@@ -3310,61 +3310,89 @@ label finnroute:
     scene bg finn_room
     with fadee
 
-    f talk "I'm exhausted..."
+    show alex up smile at closeright:
+        yalign -0.25
+    show finn up frown at closeleft
+    with dissolve
 
-    a talk "Me, too. Thanks for lending me your clothes."
+    f down frowntalk "I'm exhausted..."
+    show finn frown
 
-    f talk "Anytime."
+    a down frowntalk "Me, too. Thanks for lending me your clothes."
+    show alex smile
+
+    f up talk "Anytime."
+    show finn smile
 
     an "Finn checks on Cerberus, yawning, before flopping down on his bed with closed eyes. He's still smiling..."
 
-    a talk "Hehe..."
+    a up smile "Hehe..."
 
-    f talk "Hm?"
+    f unsure frown "Hm?"
 
-    a talk "You're still smiling. Did you have a good time?"
+    a unsure talk "You're still smiling. Did you have a good time?"
+    show alex smile
 
-    f talk "Mm... I spent a long time there, I guess."
+    f up talk "Mm... I spent a long time there, I guess."
+    show finn smile
 
-    a talk "Yeah but you had a lot of fun, right?"
+    a up talk "Yeah but you had a lot of fun, right?"
+    show alex smile
 
-    f talk "... Wasn't terrible."
+    f down talk "... Wasn't terrible."
+    show finn smile
 
-    a talk "Hmph..."
+    a down frown "Hmph..."
 
-    an "I join him on the bed and see how much of an easy target he is. Payback time... I kiss his cheek. Startled, he opens his eyes again and stares up at me."
+    an smile "I join him on the bed and see how much of an easy target he is. Payback time... I kiss his cheek. Startled, he opens his eyes again and stares up at me."
 
-    a talk "Answer the question."
+    a up talk "Answer the question."
+    show alex smile
 
     ##Finn blushing sprite
-    f talk "I-I, uh... what was the question?"
+    show finn blush with Dissolve(1.0)
+    f unsure talk "I-I, uh... what was the question?"
+    show finn smile
 
-    a talk "I was just asking if you had fun, silly."
+    a unsure talk "I was just asking if you had fun, silly."
+    show alex smile
 
-    f talk "Well, yeah kind of..."
+    f down talk "Well, yeah kind of..."
+    show finn smile
 
-    a talk "Kind of?"
+    a up talk "Kind of?"
+    show alex smile
 
     an "Finn gives a wry smile and reaches up to tuck a piece of hair back behind my ear, fingers lingering there long enough to lend me their heat."
 
-    f talk "Honestly, the best part of the night was knowing you were leaving with me. I kept thinking 'Wow, how lucky am I?'"
+    f unsure talk -blush "Honestly, the best part of the night was knowing you were leaving with me. I kept thinking 'Wow, how lucky am I?'"
+    show finn smile
 
     ##Alex blushing sprite
-    a talk "What...?"
+    show alex blush with Dissolve(1.0)
+    a unsure frowntalk "What...?"
+    show alex smile
 
-    f talk "I love you, Alex."
+    f up talk "I love you, Alex."
+    show finn smile
 
-    a talk "Finn..."
+    a down talk "Finn..."
+    show alex smile
 
-    f talk "Do you want to... stay the night again?"
+    f unsure talk "Do you want to... stay the night again?"
+    show finn smile
 
-    a talk "I'd love to."
+    a up talk "I'd love to."
+    show alex smile
 
-    an "Finn doesn't need to pull me into his arms. I readily join him, snuggling against his warm chest and feeling more relaxed than I have in a while."
+    show finn smile
+    an -blush "Finn doesn't need to pull me into his arms. I readily join him, snuggling against his warm chest and feeling more relaxed than I have in a while."
 
     an "It's not until the next afternoon that I realize—for the first time—not only did I forget to check my phone but... that I also don't care."
 
+    hide alex
+    hide finn
+    with dissolve
+
     ##END.
-
-
     return
