@@ -1799,7 +1799,7 @@ label finnroute:
         xalign 0.85
         yalign -1.5
     show alex up smile:
-        xalign 0.55
+        xalign 0.40
         yalign 1.0
     with dissolve
 
@@ -2115,22 +2115,23 @@ label finnroute:
     an "The lock snaps and Finn finally turns to face me, a damning smile on his face."
 
     ##Finn's sprite moves closer
-    show finn up at closeleft:
-        xalign 0.10
+    show finn up:
+        xalign 0.20
     with dissolve
     f up talk "Alex."
     show finn smile
 
     ##Alex blushing and her sprite moves away
-    show alex blush with Dissolve(1.0)
-    show alex unsure at closeright:
-        xalign 0.97
+    show alex blush unsure:
+        xalign 0.98
+        zoom 1.3
+        yalign -0.25
     with dissolve
     a unsure shock "W-what?"
 
     ##Finn's sprite moves close to her again
-    show finn at closeleft:
-        xalign 0.15
+    show finn:
+        xalign 0.30
     with dissolve
     f down talk "I'm really glad you came."
     show finn smile
@@ -2679,7 +2680,7 @@ label finnroute:
     scene bg classroom
     with fadee
 
-    show alex up smile at closeright:
+    show alex up smile backpack at closeright:
         yalign -0.25
     show finn up smile at closeleft
     with dissolve
@@ -2703,7 +2704,8 @@ label finnroute:
 
     ##Alex sprite moves closer to Finn, screen shake
     show alex at closeright:
-        xalign 0.90
+        yalign -0.25
+        xalign 0.80
     with dissolve
 
     f unsure frowntalk "O-ow? What?"
