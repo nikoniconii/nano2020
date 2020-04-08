@@ -2327,116 +2327,166 @@ label finnroute:
     ##choice
     menu:
         "How much is usual?":
-            f talk "Uh, well, I usually read up on the history of wherever we're going and the surrounding places."
-            a talk "What? But you've never said this much before when we've been out!"
-            f talk "Yeah... cause no one asked."
-            a talk "Well, I didn't ask cause I didn't know."
-            f talk "Fair enough."
-            a talk "You'll have to tell me everything from now on, okay?"
-            f talk "Sure, if you want."
-            a talk "And I bet Zaina and Paxton would love to know, too."
-            f talk "Maybe."
-            a talk "You say 'maybe' but you never even mentioned it to them...?"
-            f talk "I think I tried, once."
-            a talk "Really? Did something happen?"
-            f talk "Yeah, it never sent. Think my connection went out."
-            a talk "..."
+            f down talk "Uh, well, I usually read up on the history of wherever we're going and the surrounding places."
+            show finn smile
+            a up shock "What? But you've never said this much before when we've been out!"
+            f unsure talk "Yeah... cause no one asked."
+            show finn smile
+            a down talk "Well, I didn't ask cause I didn't know."
+            show alex smile
+            f up talk "Fair enough."
+            show finn smile
+            a unsure talk "You'll have to tell me everything from now on, okay?"
+            show alex smile
+            f unsure talk "Sure, if you want."
+            show finn smile
+            a up talk "And I bet Zaina and Paxton would love to know, too."
+            show alex smile
+            f down talk "Maybe."
+            show finn smile
+            a down frowntalk "You say 'maybe' but you never even mentioned it to them...?"
+            show alex frown
+            f unsure talk "I think I tried, once."
+            show finn smile
+            a unsure frowntalk "Really? Did something happen?"
+            show alex frown
+            f down talk "Yeah, it never sent. Think my connection went out."
+            show finn smile
+            a down smile "..."
             #Screen buzz/shake
-            f talk "Haha! Ow, ow, don't pinch me! I'm kidding!"
+            f up talk "Haha! Ow, ow, don't pinch me! I'm kidding!"
+            show finn smile
             ##end choice
-
         "You're a history buff?":
-            f talk "Nah. I just like to know what I'm getting into."
-            a talk "I'm not sure half of the stuff you told me tonight was relevant for exploring."
-            f talk "Sure it was. You thought of the wine cellar 'cause of my research and I know how not to anger the ghosts now."
-            a talk "What...? Ghosts?"
-            f talk "Mhmm. Just don't touch the wine and we'll be fine."
-            a talk "... We {i}did{/i} touch the wine!"
-            f talk "Oh, really? Guess we're cursed now."
-            a talk "Just you, goofball."
+            f down talk "Nah. I just like to know what I'm getting into."
+            show finn smile
+            a down talk "I'm not sure half of the stuff you told me tonight was relevant for exploring."
+            show alex smile
+            f up talk "Sure it was. You thought of the wine cellar 'cause of my research and I know how not to anger the ghosts now."
+            show finn smile
+            a up shock sweat "What...? Ghosts?"
+            f unsure talk "Mhmm. Just don't touch the wine and we'll be fine."
+            show finn smile
+            a unsure froiwntalk "... We {i}did{/i} touch the wine!"
+            show alex smile
+            f up talk "Oh, really? Guess we're cursed now."
+            show finn smile
+            a down talk -sweat "Just you, goofball."
+            show alex smile
             an "I can't keep a straight face around him..."
-                ##end choice
-
+            ##end choice
         "The wine tycoons are common knowledge?":
-            f talk "I don't know? The local history books mentioned them often, though."
-            a talk "You seriously go to the library for this?"
-            f talk "What about it?"
-            a talk "Nothing, it's cool. Although it does sound like it leaves an incriminating trail."
-            f talk "That's assuming I check the books out."
-            a talk "A-are you stealing library books?!"
+            f down talk "I don't know? The local history books mentioned them often, though."
+            show finn smile
+            a up talk "You seriously go to the library for this?"
+            show alex smile
+            f unsure talk "What about it?"
+            show finn smile
+            a down talk "Nothing, it's cool. Although it does sound like it leaves an incriminating trail."
+            show alex smile
+            f up talk "That's assuming I check the books out."
+            show finn smile
+            a unsure talk "A-are you stealing library books?!"
+            show alex smile
             an "Finn laughs and messes with my hair."
-            f talk "I'm a criminal but I have standards, I'd never steal from a library."
-            a talk "Right."
-            f talk "Just my neighbor. He doesn't use his card anyway."
-            a talk "Dastardly!"
+            f down talk "I'm a criminal but I have standards, I'd never steal from a library."
+            show finn smile
+            a up talk "Right."
+            show alex smile
+            f up talk "Just my neighbor. He doesn't use his card anyway."
+            show finn smile
+            a down talk "Dastardly!"
+            show alex smile
             an "We both laugh and I can't help but wonder what his neighbor is like."
             ##end choice
 
     an "Finn eagerly leads me up the stairs. It's not as stable-looking as the first floor but there's not much to see either."
 
-    f talk "Seems they didn't use the bedrooms much."
+    f unsure frowntalk "Seems they didn't use the bedrooms much."
+    show finn smile
 
-    a talk "Hmm... do you say that because of the doors?"
+    a unsure frowntalk "Hmm... do you say that because of the doors?"
+    show alex smile
 
-    f talk "So you noticed them, too. Yeah, the doorknobs aren't as worn as the first floor's. I guess the kids didn't really stay here."
+    f up talk "So you noticed them, too. Yeah, the doorknobs aren't as worn as the first floor's. I guess the kids didn't really stay here."
+    show finn smile
 
-    a talk "I wonder why..."
+    a down frowntalk "I wonder why..."
+    show alex smile
 
     an "We go to the third floor, but it's even worse than the second. Noticeably so. I hesitate when we arrive and Finn lets go of my hand so easily that it kind of hurts."
 
-    f talk "Take your time and be careful. I'll go first."
+    f up frowntalk "Take your time and be careful. I'll go first."
+    show finn frown
 
-    a talk "Alright... you too."
+    a unsure frowntalk "Alright... you too."
+    show alex frown
 
     an "Finn doesn't agree to my request but I slowly walk along the edges of the floor behind him. Maybe it's my fear, but we sure feel far up now."
 
     an "A small drop calls my attention and I freeze, looking up to the roof. It's not leaking in one spot, but several."
 
-    a talk "Finn...?"
+    a unsure frowntalk "Finn...?"
+    show alex frown
 
-    f talk "Want to go up to the roof as our last stop?"
+    f unsure talk "Want to go up to the roof as our last stop?"
+    show finn smile
 
-    a talk "The r-roof? Finn, look up, it has a bunch of leaks."
+    a down frowntalk sweat "The r-roof? Finn, look up, it has a bunch of leaks."
+    show alex smile
 
     an "Finn peers around the roof for a moment, but my stomach flips when he doesn't look deterred in the least."
 
-    f talk "We can just go to the widow's walk. It's leaking but otherwise it looks like it's held up pretty well."
+    f up frowntalk "We can just go to the widow's walk. It's leaking but otherwise it looks like it's held up pretty well."
+    show finn smile
 
-    a talk "I really don't feel safe."
+    a unsure frowntalk -sweat "I really don't feel safe."
+    show alex frown
 
     an "As if on cue, I feel a distant sting in my leg reminiscent of another time I was unsure."
 
-    f talk "Are you sure? It's probably fine. The view is going to be amazing, I really wanted to see it with you."
+    f unsure talk "Are you sure? It's probably fine. The view is going to be amazing, I really wanted to see it with you."
+    show finn smile
 
-    a talk "... I'm sorry, I can't. I have a really bad feeling about this."
+    a down frowntalk "... I'm sorry, I can't. I have a really bad feeling about this."
+    show alex frown
 
-    f talk "Mm... alright. Well, I'll go first and make sure it's safe. Okay?"
+    f down frowntalk "Mm... alright. Well, I'll go first and make sure it's safe. Okay?"
+    show finn frown
 
-    a talk "That doesn't sound like a good idea either!"
+    a unsure shock "That doesn't sound like a good idea either!"
+    show alex frown
 
-    f talk "Just stay here, will you? I'll go check for us."
+    f unsure frowntalk "Just stay here, will you? I'll go check for us."
+    show finn frown
 
-    a talk "Finn...?"
+    a down frowntalk "Finn...?"
+    show alex frown
 
     an "It's pointless trying to talk him out of it. My protests become white noise to Finn's curiosity, as forgotten as the spiderwebs that do nothing to deter him."
 
     an "Cautiously, I follow and watch him go up to the widow's walk, praying nothing happens. From the bottom of the steps, I can see his legs carefully shifting around."
 
-    f talk "It's beautiful up here..."
+    f up talk "It's beautiful up here..."
+    show finn smile
 
-    a talk "I'm sure it is."
+    a up talk "I'm sure it is."
+    show alex smile
 
-    f talk "I'm going to get a bit closer, hold on."
+    f unsure talk "I'm going to get a bit closer, hold on."
+    show finn smile
 
-    a talk "What? Finn, wait-!"
+    a unsure shock "What? Finn, wait-!"
+    show alex frown
 
     an "I scream before he does."
 
     ##Screen shake
+    a down shock "Finn!"
+    show alex frown
 
-    a talk "Finn!"
-
-    f talk "Ah!"
+    f down frowntalk "Ah!"
+    show finn frown
 
     an "Finn's shoe falls with a deafening thud nearby, sending up dust before the floorboard it fell on cracks."
 
@@ -2444,13 +2494,17 @@ label finnroute:
 
     an "Finn is going to fall and it won't just be through the third floor."
 
-    a talk "Hold on, Finn! Oh my God, please don't let go."
+    a unsure shock "Hold on, Finn! Oh my God, please don't let go."
+    show alex frown
 
-    f talk "I-I don't think I can for much longer."
+    f unsure frowntalk "I-I don't think I can for much longer."
+    show finn frown
 
-    a talk "I-I'll call for help!"
+    a up frowntalk "I-I'll call for help!"
+    show alex frown
 
-    f talk "Alright..."
+    f down frowntalk "Alright..."
+    show finn frown
 
     an "I open up my phone to call 911 but..."
 
@@ -2458,27 +2512,33 @@ label finnroute:
 
     an "I hear the beam crack a little more just as more tiles of the roof fall through. They'll never get here in time. I have to at least try to help him."
 
-    a talk "Finn, I'm coming to get you."
+    a down frowntalk "Finn, I'm coming to get you."
+    show alex frown
 
-    f talk "It's too dangerous. Ah!"
+    f unsure frowntalk "It's too dangerous. Ah!"
+    show finn frown
 
-    a talk "I don't care!"
+    a up frowntalk "I don't care!"
+    show alex frown
 
     an "A panicked voice that doesn't feel like my own shouts at him. I hurry up the short stairs to the widow's walk, watching every step I take like Finn's life depends on it..."
 
     an "... because it does."
 
-    a talk "Don't move, Finn."
+    a down frowntalk "Don't move, Finn."
+    show alex frown
 
-    f talk "..."
+    f down frown "..."
 
     an "Finn's teachings come to me in a blur. That step doesn't look safe, my feet shuffle and distribute my weight evenly, look for and avoid everything damaged..."
 
     an "I don't have time to tremble but my hands shake anyway when I finally reach him."
 
-    a talk "I want you to... t-take my hand, Finn."
+    a unsure frowntalk "I want you to... t-take my hand, Finn."
+    show alex frown
 
-    f talk "... Thank you."
+    f up frowntalk "... Thank you."
+    show finn frown
 
     an "I reach for him, crawling on my knees and reaching both my hands out to his."
 
@@ -2490,7 +2550,8 @@ label finnroute:
 
     an "The movement is enough to send the support beam screeching down in a cloudy abyss of dust."
 
-    a talk "Ah! I've got you...!"
+    a up frowntalk "Ah! I've got you...!"
+    show alex frown
 
     an "As the new support beam, I fear I can't help him either. Finn is heavy—too heavy, and I desperately tug him toward me until me and my limbs are screaming from the pain."
 
@@ -2498,89 +2559,97 @@ label finnroute:
 
     an "I don't have time to panic. Finally—miraculously, after one last tug—I pull him onto the stairs and into the safety of my arms that I definitely can't feel anymore."
 
-    a talk "Let's get out of here!"
+    a down shock "Let's get out of here!"
+    show alex frown
 
     an "I loop his arm around my shoulder for support as we leave the rooftop. Not too far behind us, I can hear more cracks as if they're chasing us. Will any of these steps be our last?"
 
     an "It's only two mostly-solid steps onto the third floor until we collapse, both out of breath and in shock."
 
-    a talk "I-I should... take up... weight lifting..."
+    a unsure frowntalk "I-I should... take up... weight lifting..."
+    show alex frown
 
-    f talk "I can't... tell if I'm... alive yet..."
+    f unsure frowntalk "I can't... tell if I'm... alive yet..."
+    show finn frown
+
+    hide alex
+    hide finn
+    with dissolve
 
     ##EVENT IMAGE: A bruised/bleeding Finn staring and smiling lovingly at Alex while she is still worried/angry at him
     ##programmer note: leave the placeholder but we do NOT have an event image for this
+    scene cg finn hurt
+    with fadee
 
-    a talk "Finn. As absolutely exhilarating as that was, I never ever {i}ever{/i} want to do it again!"
+    a "Finn. As absolutely exhilarating as that was, I never ever {i}ever{/i} want to do it again!"
 
     an "It's the first time I've ever been so angry at Finn but it's also the first time I've ever been so scared."
 
-    f talk "I know."
+    f "I know."
 
     an "Finn's voice cracks and I look over to see his bruised and shivering hand reaching to brush away a tear I didn't know I had. I see them roll down his cheeks as if he's taken them from me."
 
-    f talk "Alex, I'm so so sorry. I'm an idiot, I was being stupid and I almost got you hurt because I didn't listen to you."
+    f "Alex, I'm so so sorry. I'm an idiot, I was being stupid and I almost got you hurt because I didn't listen to you."
 
-    f talk "I drag you out here in the middle of the night like an asshole and almost get you hurt and that's the worst thing I can imagine."
+    f "I drag you out here in the middle of the night like an asshole and almost get you hurt and that's the worst thing I can imagine."
 
-    f talk "I don't even care if I die but I'd never forgive myself if you did. Alex... I'm so sorry. I'm so sorry."
+    f "I don't even care if I die but I'd never forgive myself if you did. Alex... I'm so sorry. I'm so sorry."
 
-    a talk "Finn... stop."
+    a "Finn... stop."
 
-    f talk "No, no, I can't. I'm so... sorry... If I died it'd be fine, but you? You're so beautiful and amazing and I—"
+    f "No, no, I can't. I'm so... sorry... If I died it'd be fine, but you? You're so beautiful and amazing and I—"
 
-    a talk "No! No, stop. How dare you!"
+    a "No! No, stop. How dare you!"
 
-    f talk "I... I'm sorry, you're right. I don't even deserve to praise you after tonight."
+    f "I... I'm sorry, you're right. I don't even deserve to praise you after tonight."
 
-    a talk "Not that Finn... how dare you talk about the person I love like this!"
+    a "Not that Finn... how dare you talk about the person I love like this!"
 
-    f talk "What...? How can you still want to be with me after tonight?"
+    f "What...? How can you still want to be with me after tonight?"
 
     an "I know he's heard it all before, but...I have to tell him."
 
-    a talk "The thing I want the most is for you to value your life as I do."
+    a "The thing I want the most is for you to value your life as I do."
 
-    f talk "... I don't know if I can do that, Alex."
+    f "... I don't know if I can do that, Alex."
 
     an "I squeeze his hands in mine and he squeezes back as if I'm a lifeline. He's hurting so much and I can't fix that but at the very least..."
 
-    a talk "I know, Finn. But it doesn't matter. I'm not going anywhere, okay? I'm going to be here the whole time even when you're being stupid."
+    a "I know, Finn. But it doesn't matter. I'm not going anywhere, okay? I'm going to be here the whole time even when you're being stupid."
 
-    f talk "Alex..."
+    f "Alex..."
 
-    a talk "And I don't—I can't—if you died, I... I feel like I'd die with you. I was so worried, Finn."
+    a "And I don't—I can't—if you died, I... I feel like I'd die with you. I was so worried, Finn."
 
     an "I can't hold my tears back anymore. Finn almost died right in front of me and..."
 
     an "... I still feel like he could fall away at any moment. I'm desperately holding onto his hands as if he's still on that support beam. I can feel every painful breath in my chest."
 
-    f talk "... Alex. You have to know I'm still going to want to go to dangerous places and be a pain in the ass."
+    f "... Alex. You have to know I'm still going to want to go to dangerous places and be a pain in the ass."
 
-    a talk "Sure. That's who you {i}are{/i}, but—"
+    a "Sure. That's who you {i}are{/i}, but—"
 
-    f talk "But..."
+    f "But..."
 
     an "He pulls my aching body closer, despite his own obvious exhaustion. His arms hug me against his chest and he buries his face in my shoulder."
 
-    f talk "But I really like you, too. And I appreciate you. I'm sorry if that's not obvious. You saved my life..."
+    f "But I really like you, too. And I appreciate you. I'm sorry if that's not obvious. You saved my life..."
 
-    f talk "And maybe I should care about that more, but..."
+    f "And maybe I should care about that more, but..."
 
-    f talk "You save my life every day in a way, you know? You were brilliant today. And I'll never forget what you did for me."
+    f "You save my life every day in a way, you know? You were brilliant today. And I'll never forget what you did for me."
 
-    a talk "Just please be careful from now on."
+    a "Just please be careful from now on."
 
-    f talk "I will... You've become an amazing partner-in-crime."
+    f "I will... You've become an amazing partner-in-crime."
 
     an "He pulls away and pats my head with a small smile. His hand is... heavy."
 
-    a talk "As your partner-in-crime, I demand you to listen to me when I say something is too risky."
+    a "As your partner-in-crime, I demand you to listen to me when I say something is too risky."
 
-    f talk "Yeah."
+    f "Yeah."
 
     an "I don't know what else to say to his soft affirmation. Instead, I lean in and kiss my idiot boyfriend, feeling closer to him than I ever have before even though in an instant he was almost just taken away."
-
 
     ##Scene 12
     ##Alex room bg
