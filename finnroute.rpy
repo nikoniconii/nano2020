@@ -581,8 +581,7 @@ label finnroute:
     z up talk "Oh, yes I can see that."
     show zaina smile
 
-    show finn -sweat
-    f up talk "It's the ears."
+    f up talk -sweat "It's the ears."
     show finn smile
 
     p down frowntalk "You guys...{i}Just when the world needed Alex the most, she vanished.{/i}"
@@ -762,8 +761,7 @@ label finnroute:
     an "Finn looks directly at me, determination in his gaze. I shouldn't leave him to go alone."
 
     ##Determined/smiling Alex
-    show alex -sweat
-    a up talk "I'll go with you, Finn."
+    a up talk -sweat "I'll go with you, Finn."
     show alex smile
 
     f up talk "Knew I could count on you."
@@ -773,10 +771,8 @@ label finnroute:
     show zaina smile
 
     p up talk "Yes. We're going to keep exploring here."
-    show paxton smile
 
     p unsure talk "On the ground."
-    show paxton smile
 
     p unsure talk "Away from the tracks."
     show paxton smile
@@ -926,8 +922,7 @@ label finnroute:
     f unsure talk "Yeah. But at least you're not shaking anymore."
     show finn smile
 
-    show alex -blush
-    an unsure smile "What? Oh, he's right, I'm not."
+    an unsure smile -blush "What? Oh, he's right, I'm not."
 
     f up talk "Come on, we're almost done with our climb."
     show finn smile
@@ -998,9 +993,8 @@ label finnroute:
 
     f unsure frowntalk "Alex..."
     show finn frown
-    show alex smile -blush
 
-    a unsure talk "H-hello, Finn."
+    a unsure talk -blush "H-hello, Finn."
     show alex smile
 
     f down frowntalk "I got my test scores back. I got... a C."
@@ -1087,7 +1081,6 @@ label finnroute:
     show paxton smile
 
     z unsure talk "Why would I do something like that?!"
-    show zaina frown
 
     z up talk "Alex! Tell Paxton he's imagining things."
     show zaina frown
@@ -1411,7 +1404,6 @@ label finnroute:
     show alex frown
 
     f unsure talk "Eh, this is awkward, but..."
-    show finn frown
 
     f up talk "You know I care about you, right?"
     show finn frown
@@ -1492,8 +1484,7 @@ label finnroute:
     f up talk "As more than a friend. And I'm happy that I {i}can{/i} like you, because I was so sure that part of me was broken, Alex."
     show finn smile
 
-    show alex -blush
-    an "My brain feels like it's short-circuiting. I'm so thrown off that the first thing out of my mouth is a diversion from admitting that a confession even happened."
+    an -blush "My brain feels like it's short-circuiting. I'm so thrown off that the first thing out of my mouth is a diversion from admitting that a confession even happened."
 
     a unsure frowntalk "W-wow, was your ex... not a good person?"
     show alex smile
@@ -1502,7 +1493,6 @@ label finnroute:
     an "He shakes his head at that and gives a self-deprecating laugh that breaks my heart."
 
     f unsure talk "No, it wasn't like that. I was in a very bad place at that time and my ex couldn't deal with it. It wasn't his fault and I'd never want to drag someone down with me." 
-    show finn frown
 
     f down frowntalk "Especially someone I cared so much about."
     show finn frown
@@ -1637,15 +1627,10 @@ label finnroute:
 
     f "..."
 
-    show alex -blush with Dissolve(1.0)
-
-    a unsure talk "Uh, so what now?"
+    a unsure talk -blush "Uh, so what now?"
     show alex smile
 
-    show finn -blush with Dissolve(1.0)
-
-    f down frown "Mm..."
-    show finn frown
+    f down frown -blush "Mm..."
 
     f unsure talk "How about you stay the night?"
     show finn smile
@@ -1678,11 +1663,9 @@ label finnroute:
 
     an "He gently takes my hands in his and lifts them to his cheeks."
 
-    show alex -blush with Dissolve(1.0)
-    a up shock "You're burning up, Finn!"
+    a up shock -blush "You're burning up, Finn!"
 
     f up talk "I just wanted you to know how serious I am right now. Even though I'm always teasing you and messing with you..."
-    show finn smile
 
     f unsure talk "Will you go out with me? You can say no of course but..."
     show finn frown
@@ -1757,51 +1740,113 @@ label finnroute:
 
     an "The next place we go to is a bit more dangerous. The abandoned sanitorium looks like it'll collapse at any time and we're walking slowly up the stairs but..."
 
-    p talk "Alright. I'm done, I can't."
+    show finn up smile:
+        xalign 0.05
+        yalign 1.0
+    show zaina up smile:
+        xalign 0.85
+        yalign -1.5
+    show paxton up frown:
+        xalign 0.55
+        yalign 1.0
+    show alex up smile:
+        xalign 0.33
+        yalign 1.0
+    with dissolve
 
-    a talk "Paxton?"
+    p unsure frowntalk "Alright. I'm done, I can't."
+    show paxton frown
 
-    p talk "I mean, y-you all can keep going if you want. If anything happens, it'll be good to have someone standby, right? You can count on me!"
+    a unsure frowntalk "Paxton?"
+    show alex frown
 
-    f talk "If you say so."
+    p up talk "I mean, y-you all can keep going if you want. If anything happens, it'll be good to have someone standby, right? You can count on me!"
+    show paxton smile
 
-    z talk "If something looks dangerous, you can definitely give your opinion, you know."
+    f unsure talk "If you say so."
+    show finn smile
 
-    p talk "Y-yeah, sorry."
+    z unsure frowntalk "If something looks dangerous, you can definitely give your opinion, you know."
+    show zaina frown
 
-    a talk "It's alright, we'll see you soon Paxton. Stay safe."
+    p unsure frowntalk "Y-yeah, sorry."
+    show paxton smile
 
-    z talk "Yell if you need us. Or maybe not, I'm scared it'll collapse the whole place."
+    a up talk "It's alright, we'll see you soon Paxton. Stay safe."
+    show alex smile
 
-    p talk "Not helping."
+    z up talk "Yell if you need us. Or maybe not, I'm scared it'll collapse the whole place."
+    show zaina smile
 
-    f talk "Let's keep moving."
+    p down frowntalk "Not helping."
+    show paxton frown
+
+    f up talk "Let's keep moving."
+    show finn smile
+
+    hide finn
+    hide paxton
+    hide zaina
+    hide alex
+    with dissolve
 
     an "The next flight of stairs is worse than the last. Every plank looks unstable, like the air itself weighs too much and creaks before we even walk."
 
-    z talk "I think this is where I stop, too. I can't risk me {i}or{/i} my camera."
+    show finn up smile:
+        xalign 0.05
+        yalign 1.0
+    show zaina down frown:
+        xalign 0.85
+        yalign -1.5
+    show alex up smile:
+        xalign 0.55
+        yalign 1.0
+    with dissolve
 
-    f talk "Are you sure? There's not much left, Zaina. The top looks so promising!"
+    z unsure frowntalk "I think this is where I stop, too. I can't risk me {i}or{/i} my camera."
+    show zaina frown
 
-    a talk "You're awfully excited about this."
+    f unsure talk "Are you sure? There's not much left, Zaina. The top looks so promising!"
+    show finn smile
+
+    a unsure talk "You're awfully excited about this."
+    show alex smile
 
     an "He never looks worried about the danger. After knowing his history, it's a bit more concerning."
 
-    f talk "Of course I am."
+    f up talk "Of course I am."
+    show finn smile
 
-    z talk "Don't drag Alex into your nonsense. Come on guys, let's stop here."
+    z down frowntalk "Don't drag Alex into your nonsense. Come on guys, let's stop here."
+    show zaina frown
 
-    f talk "No way."
+    f down talk "No way."
+    show finn smile
 
-    a talk "It's okay, I'll look out for him."
+    a up talk "It's okay, I'll look out for him."
+    show alex smile
 
-    z talk "Alex... Ugh, fine, if you insist. If you two lovebirds die I'm going to kill you."
+    z unsure talk "Alex... Ugh, fine, if you insist. If you two lovebirds die I'm going to kill you."
+    show zaina smile
 
-    a talk "L-lovebirds?"
+    show alex blush with Dissolve(1.0)
+    a up talk "L-lovebirds?"
+    show alex smile
+
+    hide zaina
+    with dissolve
 
     an "She doesn't respond, simply rolls her eyes and waves us off. Are we really that obvious?"
 
     f talk "See ya."
+    show finn smile
+
+    hide alex
+    hide finn
+    with dissolve
+
+    scene black
+    with dissolve
 
     an "I'm trying to copy Finn's steps as much as I can. Skip that plank, careful and gentle steps on-!"
 
@@ -1810,109 +1855,181 @@ label finnroute:
 
     f talk "Alex!"
 
+    scene bg sanitorium
+    with fadee
+
+    show alex unsure frown at closeright:
+        yalign -0.25
+    show finn unsure frown at closeleft
+    with dissolve
+
     an "Finn rushes to catch me right after a step gives under."
 
-    a talk "Owww..."
+    a down frowntalk "Owww..."
+    show alex frown
 
-    f talk "Alex! Alex, are you okay?"
+    f down frowntalk "Alex! Alex, are you okay?"
+    show finn frown
 
     an "He sits me down part way up the stairs and I realize I can't breathe, I can't even speak!"
 
-    f talk "It's okay, just relax. I'm here."
+    f unsure talk "It's okay, just relax. I'm here."
+    show finn smile
 
-    a talk "..."
+    a down smile "..."
 
     an "Finn pats my head affectionately, letting his fingers thread through my hair until I finally feel my lungs working again."
 
-    a talk "That—{i}scared{/i} me."
+    a unsure talk "That—{i}scared{/i} me."
+    show alex smile
 
-    f talk "I know..."
+    f up frowntalk "I know..."
+    show finn frown
 
     an "He gently pulls my leg on top of his, inspecting it."
 
-    a talk "Oh, ow..."
+    a down frowntalk "Oh, ow..."
+    show alex frown
 
-    f talk "You scraped your leg."
+    f unsure frowntalk "You scraped your leg."
+    show finn frown
 
-    a talk "I don't feel so good. Did I almost die?"
+    a unsure talk "I don't feel so good. Did I almost die?"
+    show alex frown
 
-    f talk "Nah, of course not. I've already broken fingers doing this stuff. A scrape is nothing, you're lucky."
+    f up talk "Nah, of course not. I've already broken fingers doing this stuff. A scrape is nothing, you're lucky."
+    show finn smile
 
-    a talk "Broken {i}fingers{/i}?!"
+    a up shock "Broken {i}fingers{/i}?!"
 
-    f talk "Sure, but I've broken more than that outside of adventuring."
+    f unsure talk "Sure, but I've broken more than that outside of adventuring."
 
-    f talk "When I was at the height of my depression, I'm sure I broke my arm, my leg...I failed a lot, so nothing {i}quite{/i} was enough to kill me."
+    f down talk "When I was at the height of my depression, I'm sure I broke my arm, my leg...I failed a lot, so nothing {i}quite{/i} was enough to kill me."
+    show finn smile
 
-    an "What—what is he saying to me right now? And so casually? It's like he doesn't even care about his suicide attempts!"
+    an frown "What—what is he saying to me right now? And so casually? It's like he doesn't even care about his suicide attempts!"
 
-    a talk "Is that... supposed to make me feel better?"
+    a unsure frowntalk "Is that... supposed to make me feel better?"
+    show alex frown
 
-    f talk "Yes. Is it working?"
+    f unsure talk "Yes. Is it working?"
+    show finn smile
 
-    a talk "No, Finn! It's not working! You're doing an awful job!"
+    a down shock "No, Finn! It's not working! You're doing an awful job!"
 
-    f talk "Haha... I'm sorry."
+    f down talk "Haha... I'm sorry."
+    show finn frown
 
-    an "And he's just laughing it off..."
+    an frown "And he's just laughing it off..."
 
-    f talk "Let's go back down, I think that's enough for tonight."
+    f unsure frowntalk "Let's go back down, I think that's enough for tonight."
+    show finn frown
 
-    a talk "Yeah... I think so."
+    a unsure frowntalk "Yeah... I think so."
+    show alex frown
+
+    scene black
+    with dissolve
 
     an "We retrace our steps and meet up with Zaina and Paxton back on the first floor. No one is very enthused when they see me limping."
 
-    z talk "Alex! What happened?!"
+    scene bg sanitorium
+    with fadee
 
-    p talk "You're bleeding!"
+    show finn down frown:
+        xalign 0.05
+        yalign 1.0
+    show zaina down frown:
+        xalign 0.85
+        yalign -1.5
+    show paxton down frown:
+        xalign 0.55
+        yalign 1.0
+    show alex down frown:
+        xalign 0.33
+        yalign 1.0
+    with dissolve
 
-    z talk "Finnnnn..."
+    z unsure frowntalk "Alex! What happened?!"
+    show zaina frown
 
-    an "Uh oh, Zaina looks pretty mad...!"
+    p down frowntalk "You're bleeding!"
+    show paxton frown
 
-    f talk "She's alright, it's just a scrape."
+    z down frowntalk "Finnnnn..."
+    show zaina frown
 
-    a talk "Yeah, I'm alright, it just stings a bit."
+    an unsure "Uh oh, Zaina looks pretty mad...!"
 
-    p talk "That's not the point..."
+    f up frowntalk "She's alright, it's just a scrape."
+    show finn frown
 
-    z talk "Exactly. Finn, you're the one with experience, this is {i}your{/i} fault. I told you not to keep going and look what happened!"
+    a down frowntalk "Yeah, I'm alright, it just stings a bit."
+    show alex frown
 
-    f talk "..."
+    p unsure frowntalk "That's not the point..."
+    show paxton frown
 
-    p talk "We really need to treat that to make sure you don't get infected, Alex."
+    z down frowntalk "Exactly. Finn, you're the one with experience, this is {i}your{/i} fault. I told you not to keep going and look what happened!"
+    show zaina frown
 
-    a talk "Oh—yes, we should."
+    f unsure frown "..."
 
-    z talk "Right. Let's go, we don't have time to talk about this."
+    p down frowntalk "We really need to treat that to make sure you don't get infected, Alex."
+    show paxton frown
+
+    a unsure frowntalk "Oh—yes, we should."
+    show alex frown
+
+    z unsure frowntalk "Right. Let's go, we don't have time to talk about this."
+    show zaina frown
 
     ##Paxton and Zaina sprites disappear
+    hide paxton
+    hide zaina
+    with dissolve
 
     ##choice
     menu:
         "They were pretty harsh.":
-            f talk "... Nah."
-            a talk "They were! Zaina didn't need to talk to you like that."
-            f talk "Maybe..."
-            a talk "Should I talk to them about it?"
+            f down frowntalk "... Nah."
+            show finn frown
+            a up frowntalk "They were! Zaina didn't need to talk to you like that."
+            show alex frown
+            f unsure frowntalk "Maybe..."
+            show finn frown
+            a unsure frowntalk "Should I talk to them about it?"
+            show alex frown
             ##end choice
-
         "They're right, you know.":
-            f talk "... I know."
-            a talk "We should both be careful, not just you."
-            f talk "Maybe."
-            a talk "...Finn?"
+            f down frowntalk "... I know."
+            show finn frown
+            a frowntalk "We should both be careful, not just you."
+            f unsure frowntalk "Maybe."
+            show finn frown
+            a frowntalk "...Finn?"
             ##end choice
-
         "It's not your fault.":
-            a talk "Sorry that you got most of the blame, Finn... it really wasn't your fault."
-            f talk "... t'was."
-            a talk "No, I decided to go with you, remember? You didn't force me."
-            f talk "..."
-            a talk "Finn?"
+            a frowntalk "Sorry that you got most of the blame, Finn... it really wasn't your fault."
+            show alex frown
+            f down frowntalk "... t'was."
+            show finn frown
+            a frowntalk "No, I decided to go with you, remember? You didn't force me."
+            show alex frown
+            f unsure frown "..."
+            a frowntalk "Finn?"
+            show alex frown
             ##end choice
 
-    f talk "Let's just go..."
+    f down frowntalk "Let's just go..."
+    show finn frown
+
+    hide finn
+    hide alex
+    with dissolve
+
+    scene black
+    with dissolve
 
     an "It's an awkward time back. I get patched up by Zaina and offer to walk Finn back to his dorm, but he denies me."
 
@@ -1927,29 +2044,29 @@ label finnroute:
 
     ##Vibration/screen shake for phone
 
-    a talk "Ugh... what time is it? Why is my phone vibrating?"
+    a "Ugh... what time is it? Why is my phone vibrating?"
 
-    a talk "..."
+    a "..."
 
-    a talk "Finn?"
+    a "Finn?"
 
-    an "Why is he vaguetexting me at midnight?"
+    an "Why is he vague-texting me at midnight?"
 
-    a talk "Do I want to meet him for another trespass? Just the two of us? {i}Now?{/i}"
+    a "Do I want to meet him for another trespass? Just the two of us? {i}Now?{/i}"
 
     an "It's kind of like... an illegal date. Can't say I've ever done that before. Well, my leg is better but..."
 
-    a talk "How... safe... is... it?"
+    a "How... safe... is... it?"
 
     ##Phone vibration
-    a talk "Not too old of a building, huh? Hmm..."
+    a "Not too old of a building, huh? Hmm..."
 
     an "I haven't seen him much outside of class after last time. I miss him."
 
-    a talk "Alright... I'll get... ready and... meet you... there."
+    a "Alright... I'll get... ready and... meet you... there."
 
     ##Phone vibration
-    a talk "Hehe... I... miss you... too."
+    a "Hehe... I... miss you... too."
 
     ##Scene 11
     ##Mansion bg
@@ -1960,171 +2077,252 @@ label finnroute:
 
     an "There he is! Finn!"
 
-
     an "He's already picking the lock to get us in. I didn't know he could do that! I shouldn't be as impressed as I am, I'm pretty sure that's super illegal. Oh well... I'm too happy to see him again to really care right now."
+
+    show alex up smile at closeright:
+        yalign -0.25
+    with dissolve
 
     a talk "Finn!"
 
-    f talk "Hey."
+    show finn up frown at closeleft
+    with dissolve
 
-    an "Huh? Just a 'hey'?"
+    f unsure frowntalk "Hey."
+    show finn frown
 
-    a talk "It's great to see you again."
+    an unsure "Huh? Just a 'hey'?"
 
-    f talk "Yeah."
+    a up frowntalk sweat "It's great to see you again."
+    show alex smile
 
-    an "?!"
+    f down frowntalk "Yeah."
+    show finn frown
 
-    a talk "It's, uh, a nice mansion."
+    an unsure "?!"
 
-    f talk "..."
+    a unsure frowntalk "It's, uh, a nice mansion."
+    show alex frown
 
-    an "Grr..."
+    f unsure "..."
+
+    an down -sweat "Grr..."
 
     ##Finn smiling 
-    f talk "Got it."
+    f up talk "Got it."
+    show finn smile
 
     an "The lock snaps and Finn finally turns to face me, a damning smile on his face."
 
     ##Finn's sprite moves closer
-    f talk "Alex."
+    show finn up at closeleft:
+        xalign 0.10
+    with dissolve
+    f up talk "Alex."
+    show finn smile
 
     ##Alex blushing and her sprite moves away
-    a talk "W-what?"
+    show alex blush with Dissolve(1.0)
+    show alex unsure at closeright:
+        xalign 0.97
+    with dissolve
+    a unsure shock "W-what?"
 
     ##Finn's sprite moves close to her again
-    f talk "I'm really glad you came."
+    show finn at closeleft:
+        xalign 0.15
+    with dissolve
+    f down talk "I'm really glad you came."
+    show finn smile
 
-    a talk "Oh... really?"
+    a up talk sweat "Oh... really?"
+    show alex smile
 
-    f talk "I missed you. A lot. I was losing it, I even forgot to put on my eyeliner yesterday."
+    f up frowntalk "I missed you. A lot. I was losing it, I even forgot to put on my eyeliner yesterday."
+    show finn frown
 
-    a talk "I-is that so?"
+    a unsure talk -sweat "I-is that so?"
+    show alex smile
 
-    f talk "Mhmm..."
+    f down talk "Mhmm..."
+    show finn smile
 
     an "He laces his fingers through mine and brings my hand to his lips for a gentle kiss that's far more princely than it has any right to be."
 
-    a talk "Wha..."
+    a up shock "Wha..."
 
-    f talk "Wanna hold hands?"
+    f unsure talk "Wanna hold hands?"
+    show finn smile
 
-    an "{i}I'm{/i} the one losing my mind! He's unbearably handsome with the way he's looking at me. I feel like a teenager right now..."
+    an frown sweat "{i}I'm{/i} the one losing my mind! He's unbearably handsome with the way he's looking at me. I feel like a teenager right now..."
 
-    a talk "S-sure."
+    a unsure talk "S-sure."
+    show alex smile
 
-    f talk "Let's go."
+    f up talk "Let's go."
+    show finn smile
+
+    hide alex
+    hide finn
+    with dissolve
 
     an "We walk inside and he was right, the first floor is incredibly stable. The mansion couldn't have been abandoned too long ago, even the mildew isn't that strong."
 
     an "Finn leads me around the place as my loving guide who won't let go of my hand even when it's inconvenient."
 
-    f talk "It's said this place was passed down generation-by-generation, only forfeited by delinquent grandchildren who spent all the inheritance and went into unspeakable debt."
+    show alex up smile -blush at closeright:
+        yalign -0.25
+    show finn up smile at closeleft
+    with dissolve
 
-    a talk "That sounds like the set-up of a crime drama show."
+    f down talk "It's said this place was passed down generation-by-generation, only forfeited by delinquent grandchildren who spent all the inheritance and went into unspeakable debt."
+    show finn smile
 
-    f talk "Heh. Then I guess you'll be pleased to know the family was full of wine tycoons."
+    a unsure talk "That sounds like the set-up of a crime drama show."
+    show alex smile
 
-    a talk "Ooh, scandalous."
+    f up talk "Heh. Then I guess you'll be pleased to know the family was full of wine tycoons."
+    show finn smile
 
-    f talk "Very. There are rumors there were even punishments carried out in this very building to those who fell out of their favor."
+    a up talk "Ooh, scandalous."
+    show alex smile
 
-    a talk "Like..."
+    f down talk "Very. There are rumors there were even punishments carried out in this very building to those who fell out of their favor."
+    show finn smile
+
+    a unsure talk "Like..."
+    show alex smile
 
     an "I make a gesture, dragging my thumb across my neck and Finn laughs."
 
-    f talk "More like..."
+    f up talk "More like..."
+    show finn smile
 
     an "His fingers move to the side of my neck before tickling it, his flirty smile contagious if I wasn't already laughing."
 
-    a talk "H-hey! Stop that before I tickle you back."
+    a up shock "H-hey! Stop that before I tickle you back."
 
-    f talk "Oh yeah? Try it."
+    f unsure talk "Oh yeah? Try it."
+    show finn smile
 
-    a talk "I warned you!"
+    a unsure talk "I warned you!"
+    show alex smile
 
     an "I move to carry out my threat but Finn snatches my free hand in his, pulling me forward into his chest."
 
-    a talk "That's cheating!"
+    a down frowntalk "That's cheating!"
+    show alex frown
 
-    f talk "Telling me I'm cheating is like admitting I won."
+    f up talk "Telling me I'm cheating is like admitting I won."
+    show finn smile
 
-    a talk "It is not. I'm simply recognizing your abhorrent conduct."
+    a up frowntalk "It is not. I'm simply recognizing your abhorrent conduct."
+    show alex frown
 
-    f talk "Uh huh. Since I won, can I have my prize now?"
+    f unsure talk "Uh huh. Since I won, can I have my prize now?"
+    show finn smile
 
-    a talk "Since when was this a competition? What prize?"
+    a unsure talk "Since when was this a competition? What prize?"
+    show alex smile
 
-    f talk "My kiss. What, not going to give me one?"
+    f up talk "My kiss. What, not going to give me one?"
+    show finn smile
 
-    a talk "You...!"
+    a up shock "You...!"
 
-    an "Alright, so maybe he has won because there's nothing more I want right now other than to kiss him."
+    an smile "Alright, so maybe he has won because there's nothing more I want right now other than to kiss him."
 
     an "He smirks down at me but I give into it, leaning up and planting a soft kiss to his lips."
 
     ##Finn blushing
-    f talk "..."
+    show finn blush with Dissolve(1.0)
+    f smile "..."
 
-    a talk "You're blushing after all that smack talk?"
+    a unsure talk "You're blushing after all that smack talk?"
+    show alex smile
 
-    f talk "I am not. A-anyway, I should show you... more."
+    f unsure talk "I am not. A-anyway, I should show you... more."
+    show finn smile
 
-    a talk "Hehe yeah... do you think there's a wine cellar here?"
+    a up talk "Hehe yeah... do you think there's a wine cellar here?"
+    show alex smile
 
-    f talk "Good point. Let's start with the basement."
+    f down talk -blush "Good point. Let's start with the basement."
+    show finn smile
 
     an "Finn takes me to the basement, testing out the stairs and staying ahead of me. When we make it down, it's hard to see anything at all in the darkness. I'm glad for flashlights."
 
-    a talk "This place is..."
+    a unsure frowntalk "This place is..."
+    show alex smile
 
-    f talk "... so cool."
+    f up talk "... so cool."
+    show finn smile
 
-    a talk "Pfft."
+    a up talk "Pfft."
+    show alex smile
 
-    f talk "What?"
+    f unsure frowntalk "What?"
+    show finn frown
 
-    a talk "Of course you'd like it. Do you want to live in a dark and brooding vampire mansion like this?"
+    a down talk "Of course you'd like it. Do you want to live in a dark and brooding vampire mansion like this?"
+    show alex smile
 
-    f talk "Ha. That's a bit much but..."
+    f up talk "Ha. That's a bit much but..."
+    show finn smile
 
-    a talk "But what?"
+    a unsure talk "But what?"
+    show alex smile
 
-    f talk "Hm. I wouldn't mind if it was with you."
+    f down talk "Hm. I wouldn't mind if it was with you."
+    show finn smile
 
-    a talk "Hehe..."
+    a up talk "Hehe..."
+    show alex smile
 
-    f talk "Huh, there's still a few bottles here."
+    f unsure talk "Huh, there's still a few bottles here."
+    show finn smile
 
-    a talk "Ah! Take a picture."
+    a up shock "Ah! Take a picture."
+    show alex smile
 
-    f talk "Haha. How about I hold it and you take the shot?"
+    f up talk "Haha. How about I hold it and you take the shot?"
+    show finn smile
 
-    a talk "Sure."
+    a unsure talk "Sure."
+    show alex smile
 
     an "Finn gingerly takes one of the dusty bottles off the rack and tilts it back, miming chugging."
 
-    a talk "These are going to come out so good."
+    a up talk "These are going to come out so good."
+    show alex smile
 
-    f talk "Nice. Shall I pour you a glass of our finest chardonnay, ma'am?"
+    f unsure talk "Nice. Shall I pour you a glass of our finest chardonnay, ma'am?"
+    show finn smile
 
     an "Finn grins at me as he takes on a terrible impersonation of an aristocratic butler."
 
-    a talk "Absolutely not, sir. Your moldy wine does not suit my palate."
+    a down frowntalk "Absolutely not, sir. Your moldy wine does not suit my palate."
+    show alex smile
 
-    f talk "Apologies for my insolence."
+    f down talk "Apologies for my insolence."
+    show finn smile
 
     an "He returns the bottle so I can take one more picture and we go back to the first floor, still laughing and still holding hands."
 
-    f talk "Next floor?"
+    f unsure talk "Next floor?"
+    show finn smile
 
-    a talk "Sure!"
+    a up talk "Sure!"
+    show alex smile
 
-    f talk "I think there should be bedrooms there..."
+    f down talk "I think there should be bedrooms there..."
+    show finn smile
 
-    a talk "Finn... you've really researched this place, huh?"
+    a unsure talk "Finn... you've really researched this place, huh?"
+    show alex smile
 
-    f talk "Hm? Not more than usual."
+    f unsure talk "Hm? Not more than usual."
+    show finn smile
 
     ##choice
     menu:
@@ -2397,7 +2595,7 @@ label finnroute:
 
     an "They've seemed to calm down as finals have approached, but none of us have been out exploring since."
 
-    a talk "Oh... hey, what are you doing here, silly?"
+    a "Oh... hey, what are you doing here, silly?"
 
     "Cerberus" "Churr..."
 
@@ -2405,46 +2603,70 @@ label finnroute:
 
     "Cerberus" "Churrrrrrrrr."
 
-    a talk "Oops, you're right, time for class!"
+    a "Oops, you're right, time for class!"
 
     ##Scene 13
     ##Classroom bg
     scene bg classroom
     with fadee
 
-    f talk "Hey, Alex."
+    show alex up smile at closeright:
+        yalign -0.25
+    show finn up smile at closeleft
+    with dissolve
 
-    a talk "Good morning! Are you ready for our final lab?"
+    f up frowntalk "Hey, Alex."
+    show finn frown
 
-    f talk "Mm."
+    a up talk "Good morning! Are you ready for our final lab?"
+    show alex smile
 
-    a talk "Oh—your little finger casts are finally off?"
+    f unsure frown "Mm."
 
-    f talk "Yeah."
+    a unsure frowntalk "Oh—your little finger casts are finally off?"
+    show alex smile
+
+    f up frowntalk "Yeah."
+    show finn frown
 
     ##Alex angry/pouting face
-    a talk "..."
+    a down frown "..."
 
     ##Alex sprite moves closer to Finn, screen shake
-    f talk "O-ow? What?"
+    show alex at closeright:
+        xalign 0.90
+    with dissolve
 
-    a talk "One-word responses mean you want to be pinched."
+    f unsure frowntalk "O-ow? What?"
+    show finn frown
 
-    f talk "No?"
+    a unsure frowntalk "One-word responses mean you want to be pinched."
+    show alex frown
+
+    f up frowntalk "No?"
+    show finn smile
 
     ##Screen shake
-    f talk "Ow! Okay, okay! Sorry!"
+    f down talk "Ow! Okay, okay! Sorry!"
+    show finn smile
 
-    a talk "Haha..."
+    a up talk "Haha..."
+    show alex smile
 
     ##Finn smiling
-    f talk "Silly... Hey, Alex. Uh, do you want to do something fun tonight... and not life-threatening, I mean?"
+    f unsure talk "Silly... Hey, Alex. Uh, do you want to do something fun tonight... and not life-threatening, I mean?"
+    show finn smile
 
-    a talk "Oh—of course, if you're interested. What is it?"
+    a unsure talk "Oh—of course, if you're interested. What is it?"
+    show alex smile
 
-    f talk "Mm, I'll talk to you about it later. Meet me at my apartment after your last class?"
+    f down talk "Mm, I'll talk to you about it later. Meet me at my apartment after your last class?"
+    show finn smile
 
-    a talk "Sure thing."
+    a up talk "Sure thing."
+    show alex smile
+
+    hide finn with easeoutleft
 
     an "Why is he being vague again? Suspicious!"
 
@@ -2453,6 +2675,8 @@ label finnroute:
     an "I huff but I can't even get mad at him."
 
     ##Screen fade to show a passage of time
+    hide alex with dissolve
+    scene black with dissolve
 
     an "Our final lab class is a huge success. Between Finn's attention to detail and my meticulous notes, I can't have asked for a better partner... even if he wasn't my boyfriend."
 
