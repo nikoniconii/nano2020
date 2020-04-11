@@ -4,19 +4,29 @@ label commonroute:
     scene bg classroom
     with fadee
 
+    show alex unsure smile backpack at closeright:
+        yalign -0.25
+    with dissolve
+
     an "For the first time ever, Finn is there before me."
 
-    an "I wave to him, and then stop."
+    an up "I wave to him, and then stop."
 
     ##Finn annoyed/mad
+    show finn down frown at closeleft
+    with dissolve
 
-    an "I don’t think I’ve ever seen him look like this either..."
+    an unsure "I don't think I've ever seen him look like this either..."
 
-    an "Taking my seat, he doesn’t acknowledge me, he’s just messing with his phone."
+    an "Taking my seat, he doesn't acknowledge me, he's just messing with his phone."
 
-    an "I wonder what’s eating him..."
+    an "I wonder what's eating him..."
 
-    an "Class is hard to focus on, and it doesn’t seem like Finn’s focusing much either. I don’t think he’s looked away from his phone for more than a minute."
+    hide alex
+    hide finn
+    with dissolve
+
+    an "Class is hard to focus on, and it doesn't seem like Finn's focusing much either. I don't think he's looked away from his phone for more than a minute."
 
     an "..."
 
@@ -27,88 +37,87 @@ label commonroute:
     an "Okay, putting away my notebook, my pen--"
 
     ##finn serious
-    f talk "I need to talk to you."
-    show finn smile
+    show alex neutral smile backpack at closeright:
+        yalign -0.25
+    show finn down frown at closeleft
+    with dissolve
+
+    f unsure frowntalk "I need to talk to you."
+    show finn frown
 
     ##Alex startled
-    an "What?"
+    an up "What?"
 
-    a talk "Um, okay?"
-    show alex smile
+    a unsure frowntalk "Um, okay?"
 
-    an "He doesn’t budge as the classroom empties out, and neither do I."
+    an frown "He doesn't budge as the classroom empties out, and neither do I."
 
     an "This is... intimidating."
 
-    f talk "What the hell were you doing?"
-    show finn smile
+    f down frowntalk "What the hell were you doing?"
+    show finn frown
 
-    a talk "Excuse me?"
-    show alex smile
+    a down frowntalk sweat "Excuse me?"
+    show alex frown
 
-    f talk "I saw the photos. What were you {i}doing{i}?"
-    show finn smile
+    f up frowntalk "I saw the photos. What were you {i}doing{i}?"
+    show finn frown
 
-    an "Photos--"
+    an up "Photos--"
 
     an "Oh my god."
 
-    an "He’s the one that runs the account?"
+    an "He's the one that runs the account?"
 
-    a talk "It’s your account?! Is {i}this{/i} what you meant about doing outdoor stuff?!"
-    show alex smile
+    a unsure shock "It's your account?! Is {i}this{/i} what you meant about doing outdoor stuff?!"
+    show alex frown
 
-    f talk "Look, yes, but that doesn’t matter. Did you go by yourself? Have you done this before?"
-    show finn smile
+    f unsure frowntalk "Look, yes, but that doesn't matter. Did you go by yourself? Have you done this before?"
+    show finn frown
 
-    a talk "I did--"
-    show alex smile
+    a down frowntalk "I did--"
+    show alex frown
 
-    f talk "Are you stupid?"
-    show finn smile
+    f down frowntalk "Are you stupid?"
+    show finn frown
 
-    a talk "I am not. I was {i}fine{/i}."
-    show alex smile
+    a up frowntalk -sweat "I am not. I was {i}fine{/i}."
+    show alex frown
 
-    f talk "Do you realize how dangerous it is to mess around in abandoned buildings?"
-    show finn smile
+    f unsure frowntalk "Do you realize how dangerous it is to mess around in abandoned buildings?"
 
-    f talk "You could’ve gotten yourself killed."
-    show finn smile
+    f up frowntalk "You could've gotten yourself killed."
+    show finn frown
 
-    a talk "Well {i}you’re{/i} the one with the account that says ‘come find us!’"
-    show alex smile
+    a unsure frowntalk "Well {i}you're{/i} the one with the account that says 'come find us!'"
 
-    an "That gets him to stop talking long enough for me to keep going."
+    an frown "That gets him to stop talking long enough for me to keep going."
 
-    a talk "I didn’t get hurt, because I’m {i}not{/i} stupid." 
-    show alex smile
+    a up frowntalk "I didn't get hurt, because I'm {i}not{/i} stupid."
 
-    a talk "I was careful, I didn’t disturb anything, I didn’t get hurt."
-    show alex smile
+    a unsure frowntalk "I was careful, I didn't disturb anything, I didn't get hurt."
 
-    an "We’ll just leave out... the part about almost getting caught by the police."
+    an frown "We'll just leave out... the part about almost getting caught by the police."
 
-    a talk "Do {i}you{/i} go by yourself?"
-    show alex smile
+    a down frowntalk "Do {i}you{/i} go by yourself?"
 
-    an "If he’s being a hypocrite..."
+    an frown "If he's being a hypocrite..."
 
-    f talk "Dammit--No, I don’t."
-    show finn smile
+    f down frowntalk "Dammit--No, I don't."
+    show finn frown
 
-    f talk "I go with a couple of friends."
-    show finn smile
+    f unsure frowntalk "I go with a couple of friends."
+    show finn frown
 
-    a talk "Then if you’re so concerned about what I’m doing--"
-    show alex smile
+    a unsure frowntalk "Then if you're so concerned about what I'm doing--"
+    show alex frown
 
     an "I take a breath."
 
-    a talk "You should let me come with you."
+    a down talk "You should let me come with you."
     show alex smile
 
-    an "The way he’s staring at me... I can’t tell if he’s mad, shocked, or just thinks I’m crazy..."
+    an "The way he's staring at me... I can't tell if he's mad, shocked, or just thinks I'm crazy..."
 
     an "Maybe I am."
 
@@ -116,59 +125,69 @@ label commonroute:
 
     an "But after a moment, he sighs, rubs his face."
 
-    f talk "Fine. I’ll ask if they’re okay with it."
+    f down frowntalk "Fine. I'll ask if they're okay with it."
+    show finn frown
+
+    f unsure talk "I'd rather you come with us than go off by yourself again."
     show finn smile
 
-    f talk "I’d rather you come with us than go off by yourself again."
+    an up "Oh."
+
+    an "I think I didn't expect him to agree to this."
+
+    an "I don't even know what to say..."
+
+    f up talk "I'll text you."
     show finn smile
 
-    an "Oh."
-
-    an "I think I didn’t expect him to agree to this."
-
-    an "I don’t even know what to say..."
-
-    f talk "I’ll text you."
-    show finn smile
-
-    a talk "Um--Yeah, that’s fine."
+    a unsure talk "Um--Yeah, that's fine."
     show alex smile
 
-    f talk "Cool."
+    f unsure talk "Cool."
     show finn smile
 
-    f talk "Don’t go off exploring anything else in the meantime."
+    f down talk "Don't go off exploring anything else in the meantime."
     show finn smile
 
-    a talk "I-I won’t."
+    a up talk "I-I won't."
     show alex smile
+
+    hide alex
+    hide finn
+    with dissolve
+
+    scene black
+    with dissolve
 
     an "My heart is thundering in my chest."
 
-    an "I didn’t know I could be this kind of person."
+    an "I didn't know I could be this kind of person."
 
     ## Scene 10
     ##Alex apartment bg
+    scene bg alex_room
+    with fadee
 
-    an "I’ve been feeling weirdly anxious the past couple of days."
+    an "I've been feeling weirdly anxious the past couple of days."
 
-    an "I really, really didn’t expect Finn to be involved with the account."
+    an "I really, really didn't expect Finn to be involved with the account."
 
-    an "I know I shouldn’t judge a book by its cover but..."
+    an "I know I shouldn't judge a book by its cover but..."
 
     an "Well, I did."
 
-    an "Not that I know {i}what{/i} I expected from him, but it wasn’t this."
+    an "Not that I know {i}what{/i} I expected from him, but it wasn't this."
 
-    an "But he probably didn’t expect this from me either."
+    an "But he probably didn't expect this from me either."
 
     ##phone buzz sfx
+    "Bzz..." with vpunch
 
-    an "I look at the notification on my screen and for once, I don’t feel stressed, I feel excited."
+    an "I look at the notification on my screen and for once, I don't feel stressed, I feel excited."
 
-    an "It’s not a number I have in my phone, but it says it’s Finn."
+    an "It's not a number I have in my phone, but it says it's Finn."
 
-    an "He’s texted me a couple times before, but since it was just for study meetups I never really bothered to add him to my contacts..."
+    an "He's texted me a couple times before, but since it was just for study meetups I never really bothered to add him to my contacts..."
 
     an "I open the message, excitement bubbling within me as I read over it."
 
@@ -176,17 +195,23 @@ label commonroute:
 
     an "Do I have time?"
 
-    an "I close my textbook that’s open on my desk."
+    an "I close my textbook that's open on my desk."
 
     an "I have time."
 
-    an "I text back that I can meet them and then add Finn’s number to my phone."
+    an "I text back that I can meet them and then add Finn's number to my phone."
 
     an "I wonder what his friends are like..."
 
     ##Cafe bg
+    scene bg cafe
+    with fadee
 
-    an "I’m a little early I think."
+    show alex up smile at closeright:
+        yalign -0.25
+    with dissolve
+
+    an "I'm a little early I think."
 
     an "This place is cute... and it smells nice."
 
@@ -199,6 +224,9 @@ label commonroute:
     an "And they have milk alternatives!"
 
     ##Paxton sprite! Friendly smile!
+    show paxton up smile at closeleft
+    with dissolve
+
     "???" "Can I get something started for you?"
 
     a talk "Oh, um, can I get the raspberry mocha with almond milk?"
@@ -226,7 +254,7 @@ label commonroute:
 
     an "Is this one of his friends?"
 
-    "???" "Nice to meet you! I’m Paxton. I’m on the clock right now but I’ll be over to join you guys soon."
+    "???" "Nice to meet you! I'm Paxton. I'm on the clock right now but I'll be over to join you guys soon."
 
     p talk "While I make your drink, you can go meet Zaina over there."
     show paxton smile
@@ -236,10 +264,10 @@ label commonroute:
     a talk "Okay--um, what do I owe you?"
     show alex smile
 
-    p talk "Don’t worry about it! It’s on the house."
+    p talk "Don't worry about it! It's on the house."
     show paxton smile
 
-    p talk "I’ll bring it over in a few minutes."
+    p talk "I'll bring it over in a few minutes."
     show paxton smile
 
     a talk "Oh! Thank you!"
@@ -255,7 +283,7 @@ label commonroute:
     ##Alex awkward/nervous/something
     an "Er..."
 
-    a talk "I’m here to meet Finn? And um, Paxton said I should just come over here..."
+    a talk "I'm here to meet Finn? And um, Paxton said I should just come over here..."
     show alex smile
 
     ##Zaina smile?
@@ -264,35 +292,35 @@ label commonroute:
 
     an "She softens immediately, pulling her headphones off and patting the seat next to her."
 
-    a talk "Oh, no, it’s just Alex." 
+    a talk "Oh, no, it's just Alex." 
     show alex smile
 
     a talk "My parents thought they were getting a boy... and they got me instead."
     show alex smile
 
-    a talk "But they didn’t like any of the feminine variations so... it’s just Alex."
+    a talk "But they didn't like any of the feminine variations so... it's just Alex."
     show alex smile
 
     z talk "Huh. Cute."
     show zaina smile
 
-    an "I can feel my cheeks get hot--usually, people just think it’s weird."
+    an "I can feel my cheeks get hot--usually, people just think it's weird."
 
-    an "She thinks it’s cute? Is it cute?"
+    an "She thinks it's cute? Is it cute?"
 
     z talk "Anyway, Finn will show up eventually. He probably overslept. Or he got distracted doing his eyeliner. You know how that goes."
     show zaina smile
 
     an "The way Zaina just moves on with the conversation snaps me out of my embarrassment."
 
-    an "I think about how the most I’ve ever done is sloppily apply a little with a pencil, so no, I don’t know."
+    an "I think about how the most I've ever done is sloppily apply a little with a pencil, so no, I don't know."
 
     an "But the day I saw him sleeping... it did look pretty good."
 
     a talk "Oh, yeah!"
     show alex smile
 
-    a talk "It’s nice to meet you by the way."
+    a talk "It's nice to meet you by the way."
     show alex smile
 
     z talk "Likewise." 
@@ -301,7 +329,7 @@ label commonroute:
     ##Zaina scowling/frowning
     an "Her attention shifts to her phone and she scowls."
 
-    z talk "Don’t leave me on read when you’re {i}late{/i}, asshole."
+    z talk "Don't leave me on read when you're {i}late{/i}, asshole."
     show zaina smile
 
     an "She rolls her eyes and puts her phone on the table."
@@ -312,13 +340,13 @@ label commonroute:
     a talk "Yeah. I went to another one too but it was locked up."
     show alex smile
 
-    a talk "I don’t know how to pick locks either."
+    a talk "I don't know how to pick locks either."
     show alex smile
 
-    z talk "I’m glad you don’t. If you got caught, you could’ve gotten charged with breaking and entering on top of trespassing."
+    z talk "I'm glad you don't. If you got caught, you could've gotten charged with breaking and entering on top of trespassing."
     show zaina smile
 
-    z talk "Can’t play dumb like you didn’t {i}know{/i} you were trespassing when you also {i}broke in{/i} after all."
+    z talk "Can't play dumb like you didn't {i}know{/i} you were trespassing when you also {i}broke in{/i} after all."
     show zaina smile
 
     a talk "O-Oh."
@@ -327,15 +355,15 @@ label commonroute:
     a talk "That makes sense..."
     show alex smile
 
-    z talk "I think Finn knows how to pick locks but like, seriously, don’t do it."
+    z talk "I think Finn knows how to pick locks but like, seriously, don't do it."
     show zaina smile
 
     z talk "Though..." 
     show zaina smile
 
-    an "She’s burning holes into her phone now..."
+    an "She's burning holes into her phone now..."
 
-    z talk "Sometimes I can’t help but think it might be a useful skill to have..."
+    z talk "Sometimes I can't help but think it might be a useful skill to have..."
     show zaina smile
 
     z talk "For when your idiot friend is incapable of being on time for {i}anything.{/i}"
@@ -352,7 +380,7 @@ label commonroute:
 
     an "Where did he come from?!"
 
-    z talk "So what’s your excuse?"
+    z talk "So what's your excuse?"
     show zaina smile
 
     f talk "I was too comfortable to get up."
@@ -366,13 +394,13 @@ label commonroute:
     z talk "..."
     show zaina smile
 
-    z talk "You’re an ass, sometimes, you know that?"
+    z talk "You're an ass, sometimes, you know that?"
     show zaina smile
 
     f talk "You never miss a chance to remind me." 
     show finn smile
 
-    an "I would be worried, except Finn doesn’t seem at all put off by Zaina’s irritation."
+    an "I would be worried, except Finn doesn't seem at all put off by Zaina's irritation."
 
     an "He might even be enjoying needling her a little?"
 
@@ -383,20 +411,20 @@ label commonroute:
     p talk "Sorry about the wait!"
     show paxton smile
 
-    a talk "It’s fine! Thank you!"
+    a talk "It's fine! Thank you!"
     show alex smile
 
-    an "Zaina doesn’t say anything but she’s holding the mug up, close to her face, and she looks like she’s in heaven..."
+    an "Zaina doesn't say anything but she's holding the mug up, close to her face, and she looks like she's in heaven..."
 
     an "Paxton walks away again before returning a moment later with two more mugs."
 
     p talk "I knew it was a good move not to go on break until you showed up."
     show paxton smile
 
-    f talk "I wasn’t {i}that{/i} late."
+    f talk "I wasn't {i}that{/i} late."
     show finn smile
 
-    f talk "Anyway--Me being late isn’t what the topic is."
+    f talk "Anyway--Me being late isn't what the topic is."
     show finn smile
 
     z talk "Maybe it should be."
@@ -405,12 +433,12 @@ label commonroute:
     f talk "Nah, telling Alex about what we do is way more exciting."
     show finn smile
 
-    an "I keep my mouth shut, not wanting to get on Zaina’s nerves by agreeing with Finn, and not wanting to be a third person on Finn’s back about being late even though he {i}was{/i} pretty late."
+    an "I keep my mouth shut, not wanting to get on Zaina's nerves by agreeing with Finn, and not wanting to be a third person on Finn's back about being late even though he {i}was{/i} pretty late."
 
-    f talk "Besides, I don’t want her running off to do this stuff on her own again."
+    f talk "Besides, I don't want her running off to do this stuff on her own again."
     show finn smile
 
-    a talk "I wasn’t going to..."
+    a talk "I wasn't going to..."
     show alex smile
 
     z talk "Good."
@@ -424,19 +452,19 @@ label commonroute:
 
     an "He drums his fingers on the table for a moment before continuing."
 
-    f talk "So generally, you don’t actually break into places. The hospital you went to was unlocked right? That’s fine, but breaking and entering is a bad idea."
+    f talk "So generally, you don't actually break into places. The hospital you went to was unlocked right? That's fine, but breaking and entering is a bad idea."
     show finn smile
 
     z talk "I told her that already."
     show zaina smile
 
-    f talk "It’s never a bad reminder. What else... Oh, you know how at parks they always tell you ‘take nothing but photos, leave nothing but footprints?’ Same rule applies here."
+    f talk "It's never a bad reminder. What else... Oh, you know how at parks they always tell you 'take nothing but photos, leave nothing but footprints?' Same rule applies here."
     show finn smile
 
     f talk "You want it to look like you were never there."
     show finn smile
 
-    f talk "You’ll find cool stuff sometimes but you leave it for the next explorers to find."
+    f talk "You'll find cool stuff sometimes but you leave it for the next explorers to find."
     show finn smile
 
     a talk "That makes sense..."
@@ -445,7 +473,7 @@ label commonroute:
     z talk "I think taking photos is the best part, personally."
     show zaina smile
 
-    z talk "There’s something cool about capturing the process of urban decay on film..."
+    z talk "There's something cool about capturing the process of urban decay on film..."
     show zaina smile
 
     f talk "Or memory card."
@@ -456,37 +484,37 @@ label commonroute:
     z talk "These days, yeah."
     show zaina smile
 
-    a talk "I did really like seeing all the photos on your account--that’s what really inspired me to go and try it for myself."
+    a talk "I did really like seeing all the photos on your account--that's what really inspired me to go and try it for myself."
     show alex smile
 
     f talk "By yourself."
     show finn smile
 
-    a talk "And I won’t do it again! Lesson learned!"
+    a talk "And I won't do it again! Lesson learned!"
     show alex smile
 
-    f talk "Good. I’ll stop bringing it up. Maybe."
+    f talk "Good. I'll stop bringing it up. Maybe."
     show finn smile
 
     f talk "Really though, the idea is that if you get hurt, or something goes wrong, someone can go get help or call 911 for you."
     show finn smile
 
-    f talk "Which, speaking of 911, sometimes we run into people when we’re exploring."
+    f talk "Which, speaking of 911, sometimes we run into people when we're exploring."
     show finn smile
 
-    p talk "Sometimes they’re cops."
+    p talk "Sometimes they're cops."
     show paxton smile
 
-    z talk "They’ve been cops more than once..."
+    z talk "They've been cops more than once..."
     show zaina smile
 
-    f talk "Even so, don’t run. Sometimes we’ve hidden, sometimes we’re just up front that we’re exploring and taking pictures."
+    f talk "Even so, don't run. Sometimes we've hidden, sometimes we're just up front that we're exploring and taking pictures."
     show finn smile
 
-    p talk "But if you run, there’s a good chance you’re going to get hurt, or they’re going to think you’re doing something like vandalism."
+    p talk "But if you run, there's a good chance you're going to get hurt, or they're going to think you're doing something like vandalism."
     show paxton smile
 
-    z talk "But we’re only taking pictures of that."
+    z talk "But we're only taking pictures of that."
     show zaina smile
 
     f talk "Are you prepared for that kind of thing?"
@@ -499,12 +527,12 @@ label commonroute:
 
     an "Might as well."
 
-    an "I’d rather not get arrested, but... We’ll just have to be careful."
+    an "I'd rather not get arrested, but... We'll just have to be careful."
 
-    f talk "Cool. Let’s see..."
+    f talk "Cool. Let's see..."
     show finn smile
 
-    z talk "We’re not taking her anywhere with asbestos right?"
+    z talk "We're not taking her anywhere with asbestos right?"
     show zaina smile
 
     f talk "Not now anyway."
@@ -516,32 +544,32 @@ label commonroute:
     f talk "Yup. Unless you want cancer in 40 years."
     show finn smile
 
-    a talk "I can’t say I do."
+    a talk "I can't say I do."
     show alex smile
 
-    f talk "Didn’t think so. Anyway, that’s most common in places that were built between the thirties and fifties."
+    f talk "Didn't think so. Anyway, that's most common in places that were built between the thirties and fifties."
     show finn smile
 
-    a talk "Right. Even though it wasn’t banned until the late seventies?"
+    a talk "Right. Even though it wasn't banned until the late seventies?"
     show alex smile
 
-    f talk "Yeah. We’re gonna be taking you to more... contemporary places, probably. Though it would be good to have gloves for that."
+    f talk "Yeah. We're gonna be taking you to more... contemporary places, probably. Though it would be good to have gloves for that."
     show finn smile
 
-    an "I nod along. So far everything they’re telling me makes sense, and it’s making my heart race."
+    an "I nod along. So far everything they're telling me makes sense, and it's making my heart race."
 
     an "The same kind of giddy excitement I felt exploring the hospital I went to before."
 
     an "This is so unlike me, but..."
 
-    an "I don’t want to let this feeling go."
+    an "I don't want to let this feeling go."
 
     z talk "You look awfully excited."
     show zaina smile
 
     an "I jump a little bit."
 
-    a talk "W-Well... I’ve always wanted to see this kind of old architecture up close..."
+    a talk "W-Well... I've always wanted to see this kind of old architecture up close..."
     show alex smile
 
     a talk "Old buildings have always kind of fascinated me..."
@@ -556,30 +584,30 @@ label commonroute:
     a talk "The old files were there, the beds were still there..."
     show alex smile
 
-    a talk "I’ve never seen anything like it before--never experienced anything like that before--and um--"
+    a talk "I've never seen anything like it before--never experienced anything like that before--and um--"
     show alex smile
 
     a talk "Um..."
     show alex smile
 
-    an "Oh no. They’re staring."
+    an "Oh no. They're staring."
 
     an "I got way too excited..."
 
     a talk "... Yeah."
     show alex smile
 
-    an "I don’t make eye contact with them until I hear Finn chuckle beside me."
+    an "I don't make eye contact with them until I hear Finn chuckle beside me."
 
-    f talk "It {i}is{/i} cool, isn’t it?"
+    f talk "It {i}is{/i} cool, isn't it?"
     show finn smile
 
-    f talk "I think you’ll make a good addition to our little team."
+    f talk "I think you'll make a good addition to our little team."
     show finn smile
 
     an "I feel my face flush from the compliment, my heart pounding in my chest."
 
-    f talk "Meet us back here say... This Thursday, around ten thirty PM? We’ll leave after Paxton’s off work."
+    f talk "Meet us back here say... This Thursday, around ten thirty PM? We'll leave after Paxton's off work."
     show finn smile
 
     a talk "I can do that!"
@@ -588,26 +616,26 @@ label commonroute:
     f talk "Cool. Anyone wanna tell her anything else?"
     show finn smile
 
-    z talk "I’m curious to see what our newbie is made of."
+    z talk "I'm curious to see what our newbie is made of."
     show zaina smile
 
     a talk "N-Newbie?"
     show alex smile
 
-    an "Okay, {i}now{/i} I’m embarrassed." 
+    an "Okay, {i}now{/i} I'm embarrassed." 
 
-    p talk "Don’t tease her too much, Zaina."
+    p talk "Don't tease her too much, Zaina."
     show paxton smile
 
-    z talk "If she’s put off by {i}this{/i} she’s gonna have a bad time."
+    z talk "If she's put off by {i}this{/i} she's gonna have a bad time."
     show zaina smile
 
-    a talk "I-I’m not! I’m fine!"
+    a talk "I-I'm not! I'm fine!"
     show alex smile
 
     an "I can handle a little teasing!"
 
-    z talk "Good. We’ll see you Thursday then."
+    z talk "Good. We'll see you Thursday then."
     show zaina smile
 
     p talk "It was good meeting you, by the way."
@@ -616,32 +644,32 @@ label commonroute:
     a talk "It was good meeting you too--all of you."
     show alex smile
 
-    a talk "Thank you. I’ll see you Thursday!"
+    a talk "Thank you. I'll see you Thursday!"
     show alex smile
 
-    an "I can’t think of the last time I was this excited about anything..."
+    an "I can't think of the last time I was this excited about anything..."
 
 
     ## Scene 11
     ##black screen
     an "Finn texted me this morning to let me know that I just need a good pair of shoes for this."
 
-    an "No respirator required for this particular place, which is good, given that I haven’t had a chance to get one yet." 
+    an "No respirator required for this particular place, which is good, given that I haven't had a chance to get one yet." 
 
-    an "It seems to be their regular thing to meet up with Paxton once he’s done with his shift at the cafe."
+    an "It seems to be their regular thing to meet up with Paxton once he's done with his shift at the cafe."
 
-    an "I’m filled with nervous energy, but something else too."
+    an "I'm filled with nervous energy, but something else too."
 
     an "But once the front door of the mansion opened, all that nervousness melted away into pure, unadulterated excitement."
 
     ##mansion BG
 
-    an "We head inside, and I’m met with that same feeling as before, but also something new."
+    an "We head inside, and I'm met with that same feeling as before, but also something new."
 
-    f talk "Let’s take a look around, shall we?"
+    f talk "Let's take a look around, shall we?"
     show finn smile
 
-    an "I’m not lonely."
+    an "I'm not lonely."
 
     a talk "Y-Yeah."
     show alex smile
@@ -664,7 +692,7 @@ label commonroute:
     f talk "What about you two?"
     show finn smile
 
-    z talk "Dunno yet, we’ll see where inspiration and my camera takes me. "
+    z talk "Dunno yet, we'll see where inspiration and my camera takes me. "
     show zaina smile
 
     p talk "I mostly just want to explore the house."
@@ -681,13 +709,13 @@ label commonroute:
 
     ##choice
     menu:
-        "I’d like to explore the place with Paxton.":
-            a talk "If that’s not any trouble!"
+        "I'd like to explore the place with Paxton.":
+            a talk "If that's not any trouble!"
             show alex smile
             an "He seems pretty easy going..."
             p talk "Sounds great!"
             show paxton smile
-            an "But I’m relieved nonetheless."
+            an "But I'm relieved nonetheless."
             ##end choice (+1 to Paxton Go to Scene 12A)
         "Maybe I could help you, Finn?":
             f talk "Oh? You have more of an appetite for excitement than I expected."
@@ -695,24 +723,24 @@ label commonroute:
             a talk "I could say the same to you."
             show alex smile
             an "Finn laughs easily at that."
-            an "He has a point though--I didn’t think I had this in me either."
+            an "He has a point though--I didn't think I had this in me either."
             ##end choice (+1 to Finn Go to Scene 12B)
         "You take the photos for the Instagram page, Zaina?":
             z talk "Usually, yeah."
             show zaina smile
-            an "I’m really curious about how she takes the photos. They all look so amazing..."
+            an "I'm really curious about how she takes the photos. They all look so amazing..."
             an "Is there a trick to it?"
             ##Zaina smile
-            z talk "I’ll let you come along if you don’t get in my way."
+            z talk "I'll let you come along if you don't get in my way."
             show zaina smile
-            a talk "I won’t."
+            a talk "I won't."
             show alex smile
             an "Something about her playful tone relaxes something in me."
             a talk "Probably."
             show alex smile
             ##end choice (+1 to Zaina Go to Scene 12C)
 
-    f talk "With that settled, we’ll meet back here in half an hour or so."
+    f talk "With that settled, we'll meet back here in half an hour or so."
     show finn smile
     ## Scene 11A
     p talk "Ready, Alex?"
@@ -723,9 +751,9 @@ label commonroute:
 
     an "Zaina goes to follow Finn while Paxton and I make our way through the downstairs area."
 
-    an "I can’t help but fall a bit quiet as I take in the sights around me."
+    an "I can't help but fall a bit quiet as I take in the sights around me."
 
-    an "Everything’s covered in a thick layer of dust, furniture left in place."
+    an "Everything's covered in a thick layer of dust, furniture left in place."
 
     an "But still, I can imagine this was once a beautiful place to live..."
 
@@ -735,10 +763,10 @@ label commonroute:
     a talk "Oh--Um, yes."
     show alex smile
 
-    a talk "I wonder a bit what it might’ve been like to live here..." 
+    a talk "I wonder a bit what it might've been like to live here..." 
     show alex smile
 
-    a talk "And who might’ve."
+    a talk "And who might've."
     show alex smile
 
     p talk "Finn might know."
@@ -747,7 +775,7 @@ label commonroute:
     p talk "He usually researches these places pretty thoroughly."
     show paxton smile
 
-    p talk "It’s fun to hear about, but sometimes I like having it stay a mystery."
+    p talk "It's fun to hear about, but sometimes I like having it stay a mystery."
     show paxton smile
 
     a talk "Oh?"
@@ -760,7 +788,7 @@ label commonroute:
     p talk "I write RPG campaigns..."
     show paxton smile
 
-    p talk "And while this is totally different from that, it’s still a fun way to flex that muscle."
+    p talk "And while this is totally different from that, it's still a fun way to flex that muscle."
     show paxton smile
 
     a talk "Like coming up with stories for the people who may have lived here?"
@@ -769,9 +797,9 @@ label commonroute:
     p talk "Yeah!"
     show paxton smile
 
-    an "We’re wandering down a hallway, stopping at a double set of doors."
+    an "We're wandering down a hallway, stopping at a double set of doors."
 
-    p talk "Wanna see what’s in here?"
+    p talk "Wanna see what's in here?"
     show paxton smile
 
     a talk "Sure!"
@@ -787,7 +815,7 @@ label commonroute:
     p talk "Hmm yeah."
     show paxton smile
 
-    p talk "I think maybe a lot of dancing didn’t happen here. Maybe more of a focus on socializing..."
+    p talk "I think maybe a lot of dancing didn't happen here. Maybe more of a focus on socializing..."
     show paxton smile
 
     p talk "Maybe a wealthy, middle aged couple lived here, retired early."
@@ -799,7 +827,7 @@ label commonroute:
     p talk "Or, well, any reason at all."
     show paxton smile
 
-    an "It’s a simple idea, but it’s fun to think about."
+    an "It's a simple idea, but it's fun to think about."
 
     a talk "Do you think they were important?"
     show alex smile
@@ -807,15 +835,15 @@ label commonroute:
     p talk "Hmm... Yeah but not {i}too{/i} important."
     show paxton smile
 
-    p talk "This isn’t a former governor’s house or anything as far as I know."
+    p talk "This isn't a former governor's house or anything as far as I know."
     show paxton smile
 
     a talk "Makes sense..."
     show alex smile
 
-    an "It’s fascinating to think about this room being filled with people, chatting and drinking champagne."
+    an "It's fascinating to think about this room being filled with people, chatting and drinking champagne."
 
-    a talk "Maybe the couple did dance here though, when the room wasn’t being used for a party."
+    a talk "Maybe the couple did dance here though, when the room wasn't being used for a party."
     show alex smile
 
     p talk "Haha, maybe."
@@ -833,18 +861,18 @@ label commonroute:
 
     an "Part of me feels embarrassed in an instant."
 
-    an "It’s not as though I know how to dance at all."
+    an "It's not as though I know how to dance at all."
 
-    an "But there’s no one here but him to judge my lack of skills."
+    an "But there's no one here but him to judge my lack of skills."
 
-    an "And he really doesn’t seem like the type."
+    an "And he really doesn't seem like the type."
 
     a talk "Sounds fun!"
     show alex smile
 
-    an "I don’t know what I’m doing at all, but neither does he."
+    an "I don't know what I'm doing at all, but neither does he."
 
-    an "And in the end we’re both laughing." 
+    an "And in the end we're both laughing." 
 
     an "I feel lighter than I have in months and months..."
 
@@ -863,7 +891,7 @@ label commonroute:
     a talk "Y-Yeah."
     show alex smile
 
-    a talk "I’m fine. Sorry."
+    a talk "I'm fine. Sorry."
     show alex smile
 
     an "He helps me steady myself, and otherwise seems unbothered as he turns off the music."
@@ -876,17 +904,17 @@ label commonroute:
 
     an "Before I can make a fool of myself any further."
 
-    an "We’re a little quiet on the walk back and I wonder if I’ve fumbled this already."
+    an "We're a little quiet on the walk back and I wonder if I've fumbled this already."
 
-    p talk "You know, I didn’t think dancing would be the most dangerous part of today’s venture."
+    p talk "You know, I didn't think dancing would be the most dangerous part of today's venture."
     show paxton smile
 
-    a talk "W-Well maybe that’s for the best."
+    a talk "W-Well maybe that's for the best."
     show alex smile
 
     p talk "Ha! Probably. Better than any broken bones or scratches."
     show paxton smile
 
-    an "He doesn’t sound like he’s making fun of me or laughing at me, and some anxiety in my stomach eases."
+    an "He doesn't sound like he's making fun of me or laughing at me, and some anxiety in my stomach eases."
 
-    an "Maybe I didn’t ruin this."
+    an "Maybe I didn't ruin this."
