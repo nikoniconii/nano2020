@@ -9,8 +9,17 @@ define f = Character("FINN", color="#bd8be7", image="finn")
 define z = Character("ZAINA", color="#62baf0", image="zaina")
 define p = Character("PAXTON", color="#cca3a3", image="paxton")
 
+define Classmate1 = Character("CLASSMATE 1", color="#fff")
+define Classmate2 = Character("CLASSMATE 2", color="#fff")
+define c = Character("CUSTOMER", color="#ffffff")
+
 define light = Fade(1.0, 0.3, 0.6, color="#fff3c9")
 define fadee = Fade(1.0, 1.0, 1.0, color="#000")
+define sideswipe = ImageDissolve("gradient2.png", 1.0)
+define sidefade = ImageDissolve("gradient2.png", 1.0)
+
+define pa = Character("{color=#ffff66}ALEX{/color} {color=#ffffff}&{/color} {color=#cca3a3}PAXTON{/color}")
+define fpz = Character("{color=#bd8be7}FINN{/color} {color=#ffffff}&{/color} {color=#cca3a3}PAXTON{/color} {color=#ffffff}&{/color} {color=#62baf0}ZAINA{/color}")
 
 transform rightt:
     xalign 0.80
@@ -91,5 +100,13 @@ label examplescene:     ## examples~
 
 label start:    ## start of the game!
 
-    jump finnroute
+    stop music fadeout 1
+    
+    menu:
+        "Finn Route":
+            jump finnroute
+        "Paxton Route":
+            jump paxtonroute
+        "Zaina Route":
+            jump zainaroute
 
