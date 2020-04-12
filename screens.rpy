@@ -4,7 +4,6 @@
 
 init offset = -1
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -227,10 +226,11 @@ style choice_vbox:
     ypos 270
     yanchor 0.5
 
-    spacing gui.choice_spacing
+    spacing 50
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
@@ -248,20 +248,34 @@ screen quick_menu():
 
     if quick_menu:
 
-        hbox:
-            style_prefix "quick"
+        imagemap:
+            idle "gui/texthover.png"
+            hover "gui/textidle.png"
+            xpos 520
+            ypos 690
+            hotspot (0, 0, 50, 710) action Rollback()
+            hotspot (60, 0, 75, 710) action ShowMenu('history')
+            hotspot (120, 0, 75, 710) action Skip() alternate Skip(fast=True, confirm=True)
+            hotspot (190, 0, 55, 710) action Preference("auto-forward", "toggle")
+            hotspot (250, 0, 60, 710) action ShowMenu('save')
+            hotspot (300, 0, 80, 710) action QuickSave()
+            hotspot (370, 0, 80, 710) action QuickLoad()
+            hotspot (450, 0, 400, 710) action ShowMenu('preferences')
 
-            xalign 0.65
-            yalign 1.0
+        #hbox:
+            #style_prefix "quick"
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            #xalign 0.65
+            #yalign 1.0
+
+            #textbutton _("Back") action Rollback()
+            #textbutton _("History") action ShowMenu('history')
+            #textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            #textbutton _("Auto") action Preference("auto-forward", "toggle")
+            #textbutton _("Save") action ShowMenu('save')
+            #textbutton _("Q.Save") action QuickSave()
+            #textbutton _("Q.Load") action QuickLoad()
+            #textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -358,9 +372,8 @@ screen main_menu():
     imagebutton idle "gui/Start.png" hover "gui/Start-Hover.png" action Start() xpos 78 ypos 640 xysize(129,28)
     imagebutton idle "gui/Load.png" hover "gui/Load-Hover.png" action ShowMenu("load") xpos 335 ypos 640 xysize(104,28)
     imagebutton idle "gui/Prefs.png" hover "gui/Prefs-Hover.png" action ShowMenu("preferences") xpos 577 ypos 640 xysize(127,28)
-    imagebutton idle "gui/Extra.png" hover "gui/Extra-Hover.png" action NullAction() xpos 849 ypos 641 xysize(135,26)
+    imagebutton idle "gui/Extra.png" hover "gui/Extra-Hover.png" action ShowMenu("extras") xpos 849 ypos 641 xysize(135,26)
     imagebutton idle "gui/Quit.png" hover "gui/Quit-Hover.png" action Quit(confirm=not main_menu) xpos 1107 ypos 640 xysize(98,30)
-    #key "K_UP" action MainMenu()
     ## This empty frame darkens the main menu.
     #frame:
         #pass
@@ -647,6 +660,120 @@ style about_return_button:
     yalign 1.0
     yoffset -30
 
+screen history_game_menu(title, scroll=None, yinitial=0.0):
+
+    style_prefix "game_menu"
+
+    frame:
+        style "history_game_menu_outer_frame"
+
+        hbox:
+
+            ## Reserve space for the navigation section.
+            frame:
+                style "history_game_menu_navigation_frame"
+
+            frame:
+                style "history_game_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    use navigation
+
+    #textbutton _("Return"):
+        #style "return_button"
+
+        #action Return()
+
+    label title
+
+    if main_menu:
+        key "game_menu" action ShowMenu("main_menu")
+
+
+style history_game_menu_outer_frame is empty
+style history_game_menu_navigation_frame is empty
+style history_game_menu_content_frame is empty
+style history_game_menu_viewport is gui_viewport
+style history_game_menu_side is gui_side
+style history_game_menu_scrollbar is gui_vscrollbar
+
+style history_game_menu_label is gui_label
+style history_game_menu_label_text is gui_label_text
+
+style return_button is navigation_button
+style return_button_text is navigation_button_text
+
+style history_game_menu_outer_frame:
+    bottom_padding 30
+    top_padding 120
+
+    background "gui/overlay/game_menu.png"
+
+style history_game_menu_navigation_frame:
+    xsize 280
+    yfill True
+
+style history_game_menu_content_frame:
+    left_margin 40
+    right_margin 20
+    top_margin 10
+
+style history_game_menu_viewport:
+    xsize 920
+
+style history_game_menu_vscrollbar:
+    unscrollable gui.unscrollable
+
+style history_game_menu_side:
+    spacing 10
+
+style history_game_menu_label:
+    xpos 50
+    ysize 120
+
+style history_game_menu_label_text:
+    size gui.title_text_size
+    color gui.accent_color
+    yalign 0.5
+
+style return_button:
+    xpos gui.navigation_xpos
+    ypos 650
+    yalign 1.0
+    yoffset -30
+
 ## About screen ################################################################
 ##
 ## This screen gives credit and copyright information about the game and Ren'Py.
@@ -870,14 +997,6 @@ screen preferences():
     tag menu
     if main_menu:
         add gui.main_menu_background
-        #textbutton _("History") action ShowMenu("history") xpos 200 ypos 200
-        #textbutton _("Save") action ShowMenu("save")
-        #textbutton _("Load") action ShowMenu("load")
-        #textbutton _("Preferences") action ShowMenu("preferences")
-        #textbutton _("Main Menu") action MainMenu()
-        #textbutton _("About") action ShowMenu("about")
-        #textbutton _("Help") action ShowMenu("help")
-        #textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
     add gui.preferences_background
@@ -1080,7 +1199,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_(" "), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use history_game_menu(_(" "), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
@@ -1128,8 +1247,9 @@ style history_label is gui_label
 style history_label_text is gui_label_text
 
 style history_window:
-    xfill True
+    #xfill True
     ysize gui.history_height
+    right_padding 250
 
 style history_name:
     xpos gui.history_name_xpos
@@ -1327,8 +1447,287 @@ style help_label_text:
     xalign 1.0
     text_align 1.0
 
+## EXTRAS SCREENS MAIN
+screen extras():
+
+    tag menu
+    if main_menu:
+        add gui.main_menu_background
+    add gui.extras_background
+    if main_menu:
+        textbutton _("Return") action Return() xpos 620 ypos 550 text_size 25
+    imagebutton idle "gui/CGGallery-Idle.png" hover "gui/CGGallery-Hover.png" action ShowMenu("CGGallery") xpos 320 ypos 200 xysize(662,109)
+    imagebutton idle "gui/PromoArt-Idle.png" hover "gui/PromoArt-Hover.png" action ShowMenu("PromoArt") xpos 320 ypos 400 xysize(662,109)
+    key "K_ESCAPE" action Return()
+    key "mouseup_3" action Return()
+    key "K_MENU" action Return()
+## CG gallery
+screen CGGallery():
+
+    tag menu
+    if main_menu:
+        add gui.main_menu_background
+    add gui.CGGallery_background
+    if main_menu:
+        textbutton _("Return") action Return() xpos 120 ypos 500 text_size 25
+        textbutton _("CG Gallery") action ShowMenu("CGGallery") xpos 120 ypos 250 text_size 25
+        textbutton _("Promo Art") action ShowMenu("PromoArt") xpos 120 ypos 300 text_size 25
+        #textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        #textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        #textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        #textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        #textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
+    if persistent.CG1_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 416 ypos 240 focus_mask True action ShowMenu('CG1')
+        add "images/Finn CG1+.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 421 ypos 248
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 416 ypos 240 focus_mask True action NullAction
+    if persistent.CG4_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 416 ypos 390 focus_mask True action ShowMenu('CG4')
+        add "images/Zaina CG2+.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 421 ypos 398
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 416 ypos 390 focus_mask True action NullAction
+    if persistent.CG2_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 646 ypos 240 focus_mask True action ShowMenu('CG2')
+        add "images/Finn CG2+.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 651 ypos 248
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 646 ypos 240 focus_mask True action NullAction
+    if persistent.CG5_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 646 ypos 390 focus_mask True action ShowMenu('CG5')
+        add "images/Paxton CG1+.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 651 ypos 398
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 646 ypos 390 focus_mask True action NullAction
+    if persistent.CG3_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 876 ypos 240 focus_mask True action ShowMenu('CG3')
+        add "images/Zaina CG1+.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 881 ypos 248
+    if persistent.CG6_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 876 ypos 390 focus_mask True action ShowMenu('CG6')
+        add "images/Paxton CG2+.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 881 ypos 398
 
 
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 876 ypos 240 focus_mask True action NullAction
+
+    key "K_ESCAPE" action Return()
+    key "mouseup_3" action Return()
+    key "K_MENU" action Return()
+## Promo Art gallery
+screen PromoArt():
+
+    tag menu
+    if main_menu:
+        add gui.main_menu_background
+    add gui.PromoArt_background
+    if main_menu:
+        textbutton _("Return") action Return() xpos 120 ypos 500 text_size 25
+        textbutton _("CG Gallery") action ShowMenu("CGGallery") xpos 120 ypos 250 text_size 25
+        textbutton _("Promo Art") action ShowMenu("PromoArt") xpos 120 ypos 300 text_size 25
+        #textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        #textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        #textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        #textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        #textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        #textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
+    if persistent.PA1_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 416 ypos 190 focus_mask True action ShowMenu('PA1')
+        add "images/ButterflyLate-Promo2.png":
+            xzoom 0.12 yzoom 0.065
+            xpos 426 ypos 195
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 416 ypos 190 focus_mask True action NullAction
+    if persistent.PA4_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 416 ypos 340 focus_mask True action ShowMenu('PA4')
+        add "images/ButterflyLatte - AlePaxwithbg.png":
+            xzoom 0.12 yzoom 0.055
+            xpos 423 ypos 346
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 416 ypos 340 focus_mask True action NullAction
+    if persistent.PA2_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 646 ypos 190 focus_mask True action ShowMenu('PA2')
+        add "images/InstantRiot - Promo 1b.png":
+            xzoom 0.095 yzoom 0.06
+            xpos 653 ypos 196
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 646 ypos 190 focus_mask True action NullAction
+    if persistent.PA5_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 646 ypos 340 focus_mask True action ShowMenu('PA5')
+        add "images/mustacheskulls-promo art.png":
+            xzoom 0.058 yzoom 0.05
+            xpos 651 ypos 347
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 646 ypos 340 focus_mask True action NullAction
+    if persistent.PA3_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 876 ypos 190 focus_mask True action ShowMenu('PA3')
+        add "images/OHISASHI-Promo.png":
+            xzoom 0.09 yzoom 0.045
+            xpos 881 ypos 198
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 876 ypos 190 focus_mask True action NullAction
+    if persistent.PA6_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 876 ypos 340 focus_mask True action ShowMenu('PA6')
+        add "images/Violora_Alex.png":
+            xzoom 0.055 yzoom 0.045
+            xpos 881 ypos 347
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 876 ypos 340 focus_mask True action NullAction
+    if persistent.PA7_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 416 ypos 490 focus_mask True action ShowMenu('PA7')
+        add "images/Violora_Alex_Zaina.png":
+            xzoom 0.065 yzoom 0.028
+            xpos 423 ypos 494
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 416 ypos 190 focus_mask True action NullAction
+
+    if persistent.PA8_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 646 ypos 490 focus_mask True action ShowMenu('PA8')
+        add "images/bluepuzzlebox_promoart.png":
+            xzoom 0.38 yzoom 0.2
+            xpos 651 ypos 495
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 646 ypos 340 focus_mask True action NullAction
+    if persistent.PA9_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 876 ypos 490 focus_mask True action ShowMenu('PA9')
+        add "images/Akira - Paxton Promo Art.png":
+            xzoom 0.095 yzoom 0.04
+            xpos 881 ypos 496
+    else:
+        imagebutton idle "GUI/extras/Locked-Slot.png" hover "GUI/extras/Locked-Slot.png" xpos 876 ypos 490 focus_mask True action NullAction
+    key "K_ESCAPE" action Return()
+    key "mouseup_3" action Return()
+    key "K_MENU" action Return()
+
+screen CG1:
+    tag menu
+    imagemap:
+       ground 'images/Finn CG1+small.png'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen CG2:
+    tag menu
+    imagemap:
+       ground 'images/Finn CG2+small.png'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen CG3:
+    tag menu
+    imagemap:
+       ground 'images/Zaina CG1+small.png'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen CG4:
+    tag menu
+    imagemap:
+       ground 'images/Zaina CG2+small.png'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen CG5:
+    tag menu
+    imagemap:
+       ground 'images/Paxton CG1+small.png'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+
+screen CG6:
+    tag menu
+    imagemap:
+       ground 'images/Paxton CG2+small.png'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen PA1:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/ButterflyLate-Promo2small.png':
+           xpos 350
+screen PA2:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/InstantRiot - Promo 1bsmall.png':
+           xpos 280
+screen PA3:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/OHISASHI-Promosmall.png':
+           xpos 320
+screen PA4:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/ButterflyLatte - AlePaxwithbgsmall.png':
+           xpos 320
+screen PA5:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/mustacheskulls-promo artsmall.png':
+           xpos 120
+screen PA6:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/Violora_Alexsmall.png':
+           xpos 140
+screen PA7:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/Violora_Alex_Zainasmall.png':
+           xpos 360
+
+screen PA8:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/bluepuzzlebox_promoart.png':
+           xpos 380
+           ypos 80
+screen PA9:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add 'images/dark.png'
+       add 'images/Akira - Paxton Promo Artsmall.png':
+           xpos 380
 ################################################################################
 ## Additional screens
 ################################################################################

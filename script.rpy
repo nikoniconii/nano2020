@@ -27,6 +27,7 @@ label start:
     $ persistent.CG3_unlocked = True
     $ persistent.CG4_unlocked = True
     $ persistent.CG5_unlocked = True
+    $ persistent.CG6_unlocked = True
 
     $ persistent.PA1_unlocked = True
     $ persistent.PA2_unlocked = True
@@ -35,6 +36,8 @@ label start:
     $ persistent.PA5_unlocked = True
     $ persistent.PA6_unlocked = True
     $ persistent.PA7_unlocked = True
+    $ persistent.PA8_unlocked = True
+    $ persistent.PA9_unlocked = True
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -48,6 +51,17 @@ label start:
         xalign 0.5
 
     #play sound phonebuzz.ogg
+
+    menu:
+     "What should I do?"
+
+     "Drink coffee.":
+         "I drink the coffee, and it's good to the last drop."
+
+     "Drink tea.":
+         $ drank_tea = True
+
+         "I drink the tea, trying not to make a political statement as I do."
 
     a "Nn…"
 
@@ -699,7 +713,7 @@ label start:
     f frowntalk "Uh… yeah."
 
     show Finn frown:
-        xalign 0.2    
+        xalign 0.2
 
     an "The rest of the evening feels stiff—off and tense—but we get through it."
 

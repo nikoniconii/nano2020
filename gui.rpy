@@ -93,6 +93,9 @@ define gui.game_menu_background = "gui/game_menu.png"
 define gui.preferences_background = "gui/PrefsBG.png"
 define gui.save_background = "gui/SaveBG.png"
 define gui.load_background = "gui/LoadBG.png"
+define gui.extras_background = "gui/ExtrasBG.png"
+define gui.CGGallery_background = "gui/CGGalleryBG.png"
+define gui.PromoArt_background = "gui/PromoArtBG.png"
 define gui.history_background = "gui/HistoryBG.png"
 define gui.about_background = "gui/AboutBG.png"
 define gui.help_background = "gui/HelpBG.png"
@@ -204,21 +207,22 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## navigation button.
 
 define gui.navigation_button_text_size = 25
+
 #define gui.slider_button_text_height = 80
 
 ## Choice Buttons ##############################################################
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 790
-define gui.choice_button_height = None
+define gui.choice_button_width = 927
+define gui.choice_button_height = 78
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(100, 5, 100, 5)
+define gui.choice_button_borders = Borders(100, 25, 100, 25)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#cccccc"
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = "#000000"
+define gui.choice_button_text_hover_color = "ff0078"
 define gui.choice_button_text_insensitive_color = "#444444"
 
 
