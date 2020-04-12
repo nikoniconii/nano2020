@@ -65,7 +65,7 @@ label zainaroute_scene_1:
     an "Worries of my overbearing parents hovering over my shoulders, watching my every move, they all simply melt away when I'm with them."
 
     ##phone buzz sound effect
-    #TODO Phone buzz/ringing sound effect
+    #TODO Scene 1 - line 68; Phone buzz/ringing sound effect
 
     show alex shock
     "Bzzzzzz..." with vpunch
@@ -125,8 +125,8 @@ label zainaroute_scene_2:
     ## Scene Two
 
     ##outside alex's apartment
-    #TODO Scene 2 - line 128; Outside of Alex's apartment apparently. Need a BG for this.
-    scene bg alex_apartment with fadee
+    #TODO Scene 2 - line 128; Outside of Alex's apartment apparently.
+    scene black with fadee
     show alex at center with dissolve:
         yoffset 50
     
@@ -204,6 +204,8 @@ label zainaroute_scene_2:
             an "I sigh, though secretly I'm quite pleased she noticed the effort I put into dressing for our date."
             
             a talk "Fine."
+
+            show alex smile
 
         "That's hot.":
             ##zaina smirk
@@ -669,7 +671,7 @@ label zainaroute_scene_4:
     show alex:
         easein 5 xoffset -300
 
-    ##TODO Scene 4 - line 672; Has Finn and Paxton left the scene? - Angel
+    ##TODO Scene 4 - line 672; Has Finn and Paxton left the scene?
     show zaina:
         linear 4 xoffset -200
     show finn:
@@ -916,7 +918,7 @@ label zainaroute_scene_4:
     an "Just before I finish pressing it, a flash of movement blindsides me and so does the featherlight touch on my cheek. It takes a second to sink in, but just as the phone flashes, I can only stare dumbly at the screen."
 
     ##EVENT IMAGE: FIRST KISS
-    #TODO Scene 4 - Line 919; Event Image - I assume it's ZAINA + ALEX kissing (?)
+    #TODO Scene 4 - Line 921; Event Image - I assume it's ZAINA + ALEX kissing (?)
 
     an blush "Me, my lips parted and my cheeks flushed. Zaina, eyes closed and her lips brushing my cheek."
 
@@ -967,8 +969,8 @@ label zainaroute_scene_4:
     an "Still, who am I to deny an opportunity to hold Zaina as close to me as possible?"
 
     ##outside of apartment
-    #TODO Scene 4 - line 970; Outside bg of where? - Angel
-    scene bg outside with fadee
+    #TODO Scene 4 - line 972; BG needed
+    scene black with fadee
 
     show alex at rightt:
         yoffset 50 xoffset -100
@@ -1028,8 +1030,8 @@ label zainaroute_scene_6:
     ##scene six
     ##mansion bg
 
-    #TODO Scene 6 - line 1031; I assume this is suppose to be outside of the mansion? Image needed.
-    scene bg mansion with fadee
+    #TODO Scene 6 - line 1033; BG needed.
+    scene black with fadee
 
     show zaina at leftt:
         yoffset 50
@@ -1192,7 +1194,7 @@ label zainaroute_scene_6:
 
     an frown "My brain is buzzing with possibilities of what had possibly turned things sour, but before I could pick any of the theories apart, Finn appears."
 
-    ##TODO Scene 6 - line 1194; Should I add Finn and Paxton's sprites here?
+    ##TODO Scene 6 - line 1197; Should I add Finn and Paxton's sprites here?
 
     # show zaina at leftt:
     #     yoffset 100 xoffset 100
@@ -1254,7 +1256,7 @@ label zainaroute_scene_7:
 
     ##make the text smaller as this is said very quietly
 
-    f "{mumble}Damn...{/mumble}" 
+    f frowntalk "{mumble}Damn...{/mumble}" 
 
     ##everyone shocked
     show alex shock up
@@ -1312,7 +1314,7 @@ label zainaroute_scene_7:
 
     show zaina frown
 
-    an "At Zaina taking out the first-aid kit from her bag, Finn turns to me."  #TODO Scene 7 - line 1315; Not sure if this reads correctly. - Angel
+    an "At Zaina taking out the first-aid kit from her bag, Finn turns to me."
 
     f talk "Alex, do you mind?"
 
@@ -1425,9 +1427,9 @@ label zainaroute_scene_7:
     an "We exit the mansion together, though I insist on taking up the rear in case something happens on the way."
 
 
-    #TODO Scene 7 - line 1428; Outside the mansion? Are we suppose to transition to the outside? - Angel
+    #TODO Scene 7 - line 1430; BG needed
 
-    scene bg outside with fade
+    scene black with fadee
 
     show alex at right:
         yoffset 100
@@ -1515,7 +1517,7 @@ label zainaroute_scene_8:
     an "The joys of actually having a social life, I guess. Who knew?"
 
     ##phone buzz
-    #TODO Phone buzz/ringing sound
+    #TODO Scene 8 - line 1520; Phone buzz/ringing sound
 
     an shock "I reach for my phone, expecting a text from one of the friends I had just reconnected with."
 
@@ -1754,7 +1756,7 @@ label zainaroute_scene_9:
 
     an neutral "I try not to get disheartened. At least it meant she wasn't just ignoring me, right?"
 
-    an "But if no one has gotten a hold of her... Then..." ## Correction: 'a hold' and not 'ahold'. I assume that was a typo. - Angel
+    an "But if no one has gotten ahold of her... Then..."
 
     an "Is Zaina okay?"
 
@@ -2267,7 +2269,6 @@ label zainaroute_scene_11:
     ##scene eleven
     ##sanitorium bg
 
-    ##TODO Scene 11 - line 2270; Sanatorium BG? I assume you meant 'Hospital bg', right?
     scene bg hospital with fadee
 
     show zaina at leftt:
@@ -2291,7 +2292,7 @@ label zainaroute_scene_11:
 
     an smile up "But that is the furthest thing from my mind right now when she's holding my hand."
 
-    an "Zaina leads me through the sanatorium with the ease of a seasoned veteran, confident and sure of herself, but she holds my hand as if it were a lifeline."  ## I think you meant 'sanAtorium' and not 'sanItorium'. Corrected it. - Angel
+    an "Zaina leads me through the sanitorium with the ease of a seasoned veteran, confident and sure of herself, but she holds my hand as if it were a lifeline."  ## I think you meant 'sanAtorium' and not 'sanItorium'. Though, both are 'kind of' correct.
 
     an "She lets go only to take pictures and before I can even blink, her palm is already sliding back into mine."
 
@@ -2342,7 +2343,7 @@ label zainaroute_scene_11:
     show alex smile
 
     ##camera sfx, zaina smirk
-    #TODO Scene 11 - line 2345; Camera shutter sound effect
+    #TODO Scene 11 - line 2346; Camera shutter sound effect
     "Click..." with flash
 
     an "The sound of the camera shutter going off is almost swallowed by Zaina's laugh."
@@ -2446,7 +2447,7 @@ label zainaroute_scene_11:
 
     an "So she liked having something she made up on display..."
 
-    an "She takes a few more pictures before I catch her looking at me over the lens."  ## Did you mean 'lenS' and not 'lenSE'? Corrected it. - Angel
+    an "She takes a few more pictures before I catch her looking at me over the lens."  ## Did you mean 'lenS' and not 'lenSE'? Corrected it.
 
     an "Perhaps sensing I still had more to ask her, Zaina lowers her camera and gestures for me to come over."
 
@@ -2570,8 +2571,8 @@ label zainaroute_scene_11:
 
     ##they're moving to a different room so maybe a fadee in and fadee out?
 
-    #TODO Scene 11 - line 2573; What room is this? - Angel
-    scene bg room with fadee
+    #TODO Scene 11 - line 2574; BG needed.
+    scene black with fadee
 
     show zaina at closeleft:
         xoffset 130 yoffset 80
@@ -2614,7 +2615,7 @@ label zainaroute_scene_11:
     an "I proceed to lose myself in that very storm for a moment and it's the sound of a bird chirping a little song that brings me back to Earth."
 
     ##chirping bird sfx
-    #TODO Scene 11 - line 2617; Birds chirping sound effect
+    #TODO Scene 11 - line 2618; Birds chirping sound effect
 
     a talk "Oh!"
 
@@ -2662,12 +2663,12 @@ label zainaroute_scene_11:
 
     an "I press the button."
 
-    #TODO Scene 11 - line 2665; What room is this? - Angel
+    #TODO Scene 11 - line 2666; Camera shutter sound effect
     "Click" with flash
 
     an "I glance at Zaina in the corner of my eye, triumphant, but when I do so, I take my attention off the bird."
 
-    #TODO Scene 11 - line 2670; Birds cry/wings flapping sound effect (?)
+    #TODO Scene 11 - line 2671; Birds cry/wings flapping sound effect (?)
 
     an "I hear the bird's alarm at the flash rather than see it."
 
@@ -2852,6 +2853,6 @@ label zainaroute_scene_11:
     an "When I go to sleep that night, I dream of soft hands and gentle caresses."
 
 
-    #TODO Consult with 'Wolf' for label name of scene 12
+    #TODO Consult with 'Wolf' for label name of scene 12 or merge scripts.
     #jump zainaroute_scene_12  ## Or whatever it may be called.
 
