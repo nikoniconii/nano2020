@@ -290,7 +290,9 @@ label commonroute:
 
     an "The pretty girl—Zaina?—notices me and looks up."
 
-    show zaina up frown at closeleft
+    show zaina up frown at closeleft:
+        xalign 0.15
+        yalign -0.20
     with dissolve
 
     z unsure frowntalk "Can I help you?"
@@ -398,10 +400,10 @@ label commonroute:
         xalign 0.05
         yalign 1.0
     show zaina up smile:
-        xalign 0.33
+        xalign 0.67
         yalign -1.5
     show alex up smile:
-        xalign 0.55
+        xalign 0.37
         yalign 1.0
     with dissolve
 
@@ -439,7 +441,7 @@ label commonroute:
     an "And a mug in front of me."
 
     show paxton up smile apron:
-        xalign 0.85
+        xalign 1.0
         yalign 1.0
     with dissolve
 
@@ -457,7 +459,7 @@ label commonroute:
     an "Paxton walks away again before returning a moment later with two more mugs."
 
     show paxton unsure smile apron:
-        xalign 0.85
+        xalign 1.0
         yalign 1.0
     with dissolve
 
@@ -688,7 +690,6 @@ label commonroute:
 
     an smile "I can't think of the last time I was this excited about anything..."
 
-
     ## Scene 11
     ##black screen
     scene black
@@ -710,14 +711,26 @@ label commonroute:
 
     an "We head inside, and I'm met with that same feeling as before, but also something new."
 
-    
+    show finn up smile:
+        xalign 0.05
+        yalign 1.0
+    show zaina up smile:
+        xalign 0.67
+        yalign -1.5
+    show alex neutral smile:
+        xalign 0.37
+        yalign 1.0
+    show paxton up smile -apron hat:
+        xalign 1.0
+        yalign 1.0
+    with dissolve
 
-    f talk "Let's take a look around, shall we?"
+    f unsure talk "Let's take a look around, shall we?"
     show finn smile
 
     an "I'm not lonely."
 
-    a talk "Y-Yeah."
+    a up talk "Y-Yeah."
     show alex smile
 
     an "It feels nice to really {i}be{/i} with people again, outside of class, outside of schoolwork."
@@ -726,29 +739,27 @@ label commonroute:
 
     an "Or hopefully, it will be."
 
-    p talk "Do we want to split off into pairs?"
+    p unsure talk "Do we want to split off into pairs?"
     show paxton smile
 
-    f talk "That sounds good to me."
+    f up talk "That sounds good to me."
+
+    f down talk "Personally, whoever comes with me is getting dragged into looking for any secret pathways."
+
+    f unsure talk "What about you two?"
     show finn smile
 
-    f talk "Personally, whoever comes with me is getting dragged into looking for any secret pathways."
-    show finn smile
-
-    f talk "What about you two?"
-    show finn smile
-
-    z talk "Dunno yet, we'll see where inspiration and my camera take me. "
+    z unsure talk "Dunno yet, we'll see where inspiration and my camera take me. "
     show zaina smile
 
-    p talk "I mostly just want to explore the house."
+    p down talk "I mostly just want to explore the house."
     show paxton smile
 
-    an "Hmm..." 
+    an down frown "Hmm..." 
 
-    an "This would be a good chance to get to know them all a little better..."
+    an unsure "This would be a good chance to get to know them all a little better..."
 
-    f talk "Anywhere you wanna go in particular, Alex?"
+    f up talk "Anywhere you wanna go in particular, Alex?"
     show finn smile
 
     ##Basically there are four sets of choices, each one giving a point to one of the love interests.
@@ -756,44 +767,75 @@ label commonroute:
     ##choice
     menu:
         "I'd like to explore the place with Paxton.":
-            a talk "If that's not any trouble!"
-            show alex smile
-            an "He seems pretty easy going..."
-            p talk "Sounds great!"
-            show paxton smile
+            a up talk "If that's not any trouble!"
+            an smile "He seems pretty easy going..."
+            p up talk "Sounds great!"
             an "But I'm relieved nonetheless."
-            ##end choice (+1 to Paxton Go to Scene 12A)
-        "Maybe I could help you, Finn?":
-            f talk "Oh? You have more of an appetite for excitement than I expected."
+            ##end choice (+1 to Paxton Go to Scene 11A)
+            $ paxton_stat += 1
+            f down talk "With that settled, we'll meet back here in half an hour or so."
             show finn smile
-            a talk "I could say the same to you."
-            show alex smile
-            an "Finn laughs easily at that."
+            hide alex
+            hide finn
+            hide paxton
+            hide zaina
+            with dissolve
+            jump Scene11A
+        "Maybe I could help you, Finn?":
+            f unsure talk "Oh? You have more of an appetite for excitement than I expected."
+            show finn smile
+            a up talk "I could say the same to you."
+            an smile "Finn laughs easily at that."
             an "He has a point, though—I didn't think I had this in me either."
-            ##end choice (+1 to Finn Go to Scene 12B)
+            ##end choice (+1 to Finn Go to Scene 11B)
+            $ finn_stat += 1
+            f down talk "With that settled, we'll meet back here in half an hour or so."
+            show finn smile
+            hide alex
+            hide finn
+            hide paxton
+            hide zaina
+            with dissolve
+            jump Scene11B
         "You take the photos for the Instagram page, Zaina?":
-            z talk "Usually, yeah."
+            z up talk "Usually, yeah."
             show zaina smile
             an "I'm really curious about how she takes the photos. They all look so amazing..."
             an "Is there a trick to it?"
             ##Zaina smile
-            z talk "I'll let you come along if you don't get in my way."
+            z down talk "I'll let you come along if you don't get in my way."
             show zaina smile
-            a talk "I won't."
+            a up talk "I won't."
+            an smile "Something about her playful tone relaxes something in me."
+            a down talk "Probably."
             show alex smile
-            an "Something about her playful tone relaxes something in me."
-            a talk "Probably."
-            show alex smile
-            ##end choice (+1 to Zaina Go to Scene 12C)
+            ##end choice (+1 to Zaina Go to Scene 11C)
+            $ zaina_stat += 1
+            f down talk "With that settled, we'll meet back here in half an hour or so."
+            show finn smile
+            hide alex
+            hide finn
+            hide paxton
+            hide zaina
+            with dissolve
+            jump Scene11C
 
-    f talk "With that settled, we'll meet back here in half an hour or so."
-    show finn smile
+label Scene11A:
     ## Scene 11A
-    p talk "Ready, Alex?"
+    show alex neutral smile at closeright:
+        yalign -0.25
+    show paxton down smile hat at closeleft
+    with dissolve
+
+    p unsure talk "Ready, Alex?"
     show paxton smile
 
-    a talk "Y-Yeah!"
+    a up talk "Y-Yeah!"
     show alex smile
+
+    hide paxton
+    hide alex
+    with dissolve
 
     an "Zaina goes to follow Finn while Paxton and I make our way through the downstairs area."
 
@@ -803,109 +845,104 @@ label commonroute:
 
     an "But still, I can imagine this was once a beautiful place to live..."
 
-    p talk "Enjoying yourself?"
+    show alex up smile at closeright:
+        yalign -0.25
+    show paxton up smile hat at closeleft
+    with dissolve
+
+    p unsure talk "Enjoying yourself?"
     show paxton smile
 
-    a talk "Oh—um, yes."
+    a unsure talk "Oh—um, yes."
+
+    a down talk "I wonder a bit what it might've been like to live here..."
+
+    a unsure talk "And who might've."
     show alex smile
 
-    a talk "I wonder a bit what it might've been like to live here..." 
-    show alex smile
+    p up talk "Finn might know."
 
-    a talk "And who might've."
-    show alex smile
+    p unsure talk "He usually researches these places pretty thoroughly."
 
-    p talk "Finn might know."
+    p up talk "It's fun to hear about, but sometimes I like having it stay a mystery."
     show paxton smile
 
-    p talk "He usually researches these places pretty thoroughly."
-    show paxton smile
-
-    p talk "It's fun to hear about, but sometimes I like having it stay a mystery."
-    show paxton smile
-
-    a talk "Oh?"
+    a up talk "Oh?"
     show alex smile
 
     ##paxton flustered/blushing/whatever
-    p talk "Well, uh, I like writing a lot."
+    show paxton unsure talk sweat
+    p blush "Well, uh, I like writing a lot." with Dissolve(1.0)
+
+    p up talk "I write RPG campaigns..."
+
+    show paxton unsure -sweat
+    p -blush "And while this is totally different from that, it's still a fun way to flex that muscle." with Dissolve(1.0)
     show paxton smile
 
-    p talk "I write RPG campaigns..."
-    show paxton smile
-
-    p talk "And while this is totally different from that, it's still a fun way to flex that muscle."
-    show paxton smile
-
-    a talk "Like coming up with stories for the people who may have lived here?"
+    a unsure talk "Like coming up with stories for the people who may have lived here?"
     show alex smile
 
-    p talk "Yeah!"
+    p up talk "Yeah!"
     show paxton smile
 
     an "We wander down a hallway, stopping at a double set of doors."
 
-    p talk "Wanna see what's in here?"
+    p unsure talk "Wanna see what's in here?"
     show paxton smile
 
-    a talk "Sure!"
+    a up talk "Sure!"
     show alex smile
 
     an "The door opens with a creak and we step inside, discovering a grand and dusty ballroom."
 
     an "It must have been beautiful when it was in use..."
 
-    a talk "So would you come up with a story about the people who might dance here?"
+    a unsure talk "So would you come up with a story about the people who might dance here?"
     show alex smile
 
-    p talk "Hmm, yeah."
-    show paxton smile
+    p up talk "Hmm, yeah."
 
-    p talk "I think maybe not a lot of dancing happened here. Maybe more of a focus on socializing..."
-    show paxton smile
+    p down talk "I think maybe not a lot of dancing happened here. Maybe more of a focus on socializing..."
 
-    p talk "Maybe a wealthy, middle aged couple lived here, retired early."
-    show paxton smile
+    p unsure talk "Maybe a wealthy, middle aged couple lived here, retired early."
 
-    p talk "And were just living out their days throwing parties for no good reason."
-    show paxton smile
+    p up talk "And were just living out their days throwing parties for no good reason."
 
-    p talk "Or, well, any reason at all."
+    p unsure talk "Or, well, any reason at all."
     show paxton smile
 
     an "It's a simple idea, but it's fun to think about."
 
-    a talk "Do you think they were important?"
+    a down talk "Do you think they were important?"
     show alex smile
 
-    p talk "Hmm... yeah, but not {i}too{/i} important."
+    p down talk "Hmm... yeah, but not {i}too{/i} important."
+
+    p unsure talk "This isn't a former governor's house or anything as far as I know."
     show paxton smile
 
-    p talk "This isn't a former governor's house or anything as far as I know."
-    show paxton smile
-
-    a talk "Makes sense..."
+    a unsure talk "Makes sense..."
     show alex smile
 
     an "It's fascinating to think about this room being filled with people chatting and drinking champagne."
 
-    a talk "Maybe the couple did dance here though, when the room wasn't being used for a party."
+    a down talk "Maybe the couple did dance here though, when the room wasn't being used for a party."
     show alex smile
 
-    p talk "Haha, maybe."
+    p up talk "Haha, maybe."
     show paxton smile
 
     an "I watch as he pulls out his phone and a song starts to play."
     ## https://freesound.org/people/mistermender/sounds/512340/ 
     ## if you prefer something else you can swap it it just needs to be upbeat
 
-    p talk "Would you like to dance?"
+    p unsure talk "Would you like to dance?"
+
+    p up talk "Just for fun."
     show paxton smile
 
-    p talk "Just for fun."
-    show paxton smile
-
-    an "Part of me feels embarrassed in an instant."
+    an unsure "Part of me feels embarrassed in an instant."
 
     an "It's not as though I know how to dance at all."
 
@@ -913,10 +950,9 @@ label commonroute:
 
     an "And he really doesn't seem like the type."
 
-    a talk "Sounds fun!"
-    show alex smile
+    a up talk "Sounds fun!"
 
-    an "I don't know what I'm doing at all, but neither does he."
+    an smile "I don't know what I'm doing at all, but neither does he."
 
     an "And in the end we're both laughing." 
 
@@ -924,49 +960,58 @@ label commonroute:
 
     an "Impulsively, I try to spin around—"
 
-    a talk "Eep!"
-    show alex smile
+    a up shock "Eep!"
 
     an "I feel myself falling, but before I can hit the ground, I feel something—someone—grab me."
 
-    p talk "You okay?"
+    p down talk "You okay?"
     show paxton smile
 
-    an "Breathless, I look up at Paxton. I can feel my cheeks burn."
+    an frown blush "Breathless, I look up at Paxton. I can feel my cheeks burn." with Dissolve(1.0)
 
-    a talk "Y-Yeah."
-    show alex smile
+    a unsure talk "Y-Yeah."
 
-    a talk "I'm fine. Sorry."
+    a down talk "I'm fine. Sorry."
     show alex smile
 
     an "He helps me steady myself, and otherwise seems unbothered as he turns off the music."
 
-    p talk "Should we head back?"
+    p unsure talk "Should we head back?"
     show paxton smile
 
-    a talk "Yeah, maybe."
-    show alex smile
+    a unsure talk "Yeah, maybe."
 
-    an "Before I can make a fool of myself any further."
+    an smile "Before I can make a fool of myself any further."
 
     an "We're a little quiet on the walk back, and I wonder if I've fumbled this already."
 
-    p talk "You know, I didn't think dancing would be the most dangerous part of today's venture."
+    p down talk "You know, I didn't think dancing would be the most dangerous part of today's venture."
     show paxton smile
 
-    a talk "W-Well, maybe that's for the best."
+    a down talk "W-Well, maybe that's for the best."
     show alex smile
 
-    p talk "Ha! Probably. Better than any broken bones or scratches."
+    p up talk "Ha! Probably. Better than any broken bones or scratches."
     show paxton smile
 
-    an "He doesn't sound like he's making fun of me or laughing at me, and some anxiety in my stomach eases."
+    an unsure "He doesn't sound like he's making fun of me or laughing at me, and some anxiety in my stomach eases."
 
     an "Maybe I didn't ruin this."
 
+    hide alex
+    hide paxton
+    with dissolve
+    jump Scene11D
+
+label Scene11B:
+    jump Scene11D
+    
+label Scene11C:
+    jump Scene11D
+
+label Scene11D:
     ## Scene 11D
-    ##This isn’t a romance scene this is just how I’m labeling the end scene for this set of things so I don’t screw up the scene numbering again
+    ##This isn't a romance scene this is just how I'm labeling the end scene for this set of things so I don't screw up the scene numbering again
     scene black
     with fadee
 
@@ -976,11 +1021,11 @@ label commonroute:
     scene bg alex_room
     with fadee
 
-    an "Back in my apartment, I fall into bed. I’m tired, but for the first time in months my eyes aren’t burning."
+    an "Back in my apartment, I fall into bed. I'm tired, but for the first time in months my eyes aren't burning."
 
-    an "My back doesn’t hurt."
+    an "My back doesn't hurt."
 
-    an "I don’t close my eyes and see walls of text."
+    an "I don't close my eyes and see walls of text."
 
     an "For the first time in months, I feel really, really happy."
 
@@ -1081,8 +1126,796 @@ label commonroute:
             jump Scene12C
 
 label Scene12A:
+    ## Scene 12A
+    an "So where are we heading?"
+
+    p talk "Hmm we'll see. I don't have anything particular in mind."
+    show paxton smile
+
+    an "It's a pleasant quiet between us as we walk down the empty corridors."
+
+    an "But I can't help but want to fill the silence a little more."
+
+    an "I want to get to know him a little better."
+
+    a talk "So, um, what got you interested in working as a barista anyway?"
+    show alex smile
+
+    p talk "Oh, nothing special."
+    show paxton smile
+
+    p talk "I've always liked coffee, and I needed a job."
+    show paxton smile
+
+    p talk "So when I heard the cafe was hiring, I went ahead and applied!" 
+    show paxton smile
+
+    p talk "I figured it couldn't be too hard—it's minimum wage."
+    show paxton smile
+
+    p talk "And it wasn't."
+    show paxton smile
+
+    p talk "The trickiest part you {i}have{/i} to learn is steaming the milk right."
+    show paxton smile
+
+    p talk "It has to be a certain texture for latte art in particular, but even in general there's a big difference in how much foam there should be for a latte versus a cappuccino." 
+    show paxton smile
+
+    p talk "And getting a handle on that, and how far what milks go is the main thing to learn."
+    show paxton smile
+
+    a talk "What about the flavored lattes? And the things you make up?"
+    show alex smile
+
+    p talk "Oh, those just follow proportion rules."
+    show paxton smile
+
+    p talk "Just a lot of memorizing measurements."
+    show paxton smile
+
+    a talk "Oh."
+    show alex smile
+
+    an "Somehow I always thought it was more complicated than that."
+
+    a talk "So it's pretty hard to mess up?"
+    show alex smile
+
+    p talk "Yeah. Unless you're not paying attention to how many pumps of something you're putting in."
+    show paxton smile
+
+    p talk "Or you put too much milk in the pitcher so it overflows all over your hand."
+    show paxton smile
+
+    p talk "After awhile it's all automatic though."
+    show paxton smile
+
+    a talk "That doesn't seem so bad—Aside from the overflowing milk..."
+    show alex smile
+
+    an "He makes it sound way more interesting than I expected."
+
+    p talk "Haha, it's not that bad."
+    show paxton smile
+
+    p talk "This is going to sound {i}way{/i} worse than I mean it, but after awhile of working with hot drinks all day, your reaction to spilling hot liquids on yourself is pretty muted."
+    show paxton smile
+
+    p talk "Aside from when I've gotten {i}really{/i} hot water on myself, my reaction is usually just ‘ow' after the first few times..."
+    show paxton smile
+
+    a talk "As long as you run your hand under cold water after..."
+    show alex smile
+
+    p talk "Oh yeah, usually."
+    show paxton smile
+
+    p talk "Unless I have a line of drinks."
+    show paxton smile
+
+    p talk "Then I usually forget I burned myself by the time I address it."
+    show paxton smile
+
+    a talk "That isn't good!"
+    show alex smile
+
+    p talk "It's fine, it's fine! Really, I don't make a habit of it."
+    show paxton smile
+
+    p talk "I'm not a masochist or anything."
+    show paxton smile
+
+    a talk "Well... Good."
+    show alex smile
+
+    an "I'm trying to think of what else to say when I spy a room with the door slightly ajar."
+
+    an "Curious, I stop and push the door open."
+
+    an "It's nothing particularly exciting, a room full of filing cabinets."
+
+    an "A couple of knicknacks left on this old desk."
+
+    p talk "Something catch your eye?"
+    show paxton smile
+
+    a talk "I just wanted to see what was in here."
+    show alex smile
+
+    an "I remember what Finn said about not taking anything."
+
+    an "But I wonder what's stored away here..."
+
+    an "Nothing too important if it's still here, but..."
+
+    an "I experimentally tug on one of the filing cabinet drawers, only to find that it doesn't open."
+
+    p talk "Is it locked? I can open it."
+    show paxton smile
+
+    an "He pulls out a knife—"
+
+    a talk "Aren't we not supposed to damage anything?"
+    show alex smile
+
+    p talk "This won't break it."
+    show paxton smile
+
+    an "I watch as he puts it into the keyhole, and carefully jiggles it around for a moment."
+
+    an "I never thought of picking a lock with a knife, but he seems to know what he's doing..."
+
+    an "After a moment, the lock pops open, the mechanism sliding out, and the knife falls from Paxton's hands."
+
+    an "Before I can react, I see him reflexively reach for the knife—"
+
+    p talk "Ouch! Shit..."
+    show paxton smile
+
+    an "Blood wells on the surface of his skin and the knife lays on the floor."
+
+    an "It takes it a second to hit me what just happened."
+
+    a talk "Paxton!"
+    show alex smile
+
+    p talk "I'm fine, I'm fine!"
+    show paxton smile
+
+    a talk "You're bleeding!"
+    show alex smile
+
+    p talk "... Okay maybe I'm not fine."
+    show paxton smile
+
+    a talk "Um—Hold on."
+    show alex smile
+
+    an "I take off my backpack and quickly pull out my first aid kit. I'm glad I brought it—I didn't think I'd need it but here we are."
+
+    a talk "Let me see?"
+    show alex smile
+
+    an "He holds out his hand for me so I can see the cut across the side of his finger."
+
+    an "I grab a piece of gauze from my first aid kid to wipe up the blood as best I can, carefully holding his hand in mine."
+
+    an "His hand is steady in mine as I grab the antiseptic and spray it on."
+
+    an "... Maybe a little too much, given that it's dripping but..."
+
+    a talk "Sorry if that stung."
+    show alex smile
+
+    p talk "It's fine. Barely felt it."
+    show paxton smile
+
+    an "The way he smiles loosens something in me I didn't realize was tense..."
+
+    a talk "Hrm... This is an awkward cut..."
+    show alex smile
+
+    an "Bandages won't cut it."
+
+    an "Or well, they might, for five minutes at best."
+
+    an "I pull out the gauze again, wrapping it around the wound before getting the medical tape and using that to secure it in place."
+
+    an "It's not the prettiest bandaging job but..."
+
+    p talk "Thank you."
+    show paxton smile
+
+    p talk "Do you still want to see what's in there?"
+    show paxton smile
+
+    a talk "Oh um, sure, if it's already open."
+    show alex smile
+
+    p talk "I had to pay the price in blood..." 
+    show paxton smile
+
+    ##Paxton smile
+
+    p talk "So the treasure within {i}must{/i} be worth it."
+    show paxton smile
+
+    an "I start giggling before I can even try to catch myself."
+
+    a talk "Is that your inner creative writing major coming out?"
+    show alex smile
+
+    p talk "More like my inner dungeon master."
+    show paxton smile
+
+    an "He pulls open the drawer, looking quite pleased with himself."
+
+    p talk "You're welcome to sit in on one of my campaigns sometime if you'd like."
+    show paxton smile
+
+    an "I've never done something like that before either..."
+
+    a talk "I might take you up on that."
+    show alex smile
+
+    an "But first..."
+
+    an "I peek into the drawer, seeing a couple of medical books, an old yellow notepad with a bunch of medical terms on it. Medication notes I think, but the author's handwriting is worse than mine."
+
+    an "Paxton picks up an envelope, carefully pulling out the contents."
+
+    a talk "What's that?"
+    show alex smile
+
+    p talk "A letter it seems..."
+    show paxton smile
+
+    an "We read over it together, and it's short but sweet."
+
+    an "One doctor asking another on a date."
+
+    a talk "Aww..."
+    show alex smile
+
+    p talk "Yeah... This is pretty sweet."
+    show paxton smile
+
+    ##paxton blushing
+
+    p talk "I think we should probably get back to the others though."
+    show paxton smile
+
+    a talk "Oh! Yeah, probably. It's been awhile now hasn't it..."
+    show alex smile
+
+    an "I watch as he carefully puts the letter back in the envelope, and the envelope back in the drawer, before he shuts it."
+
+    an "As we make our way back to the main entrance, I wonder what came of the doctor that wrote the letter."
+
+    an "And I wonder what whoever finds it next will think of it."
+
 
 label Scene12B:
+    ## Scene 12B
+    an "He doesn't wait long before he's already trekking down the hall, away from the others."
+
+    a talk "Oh—wait up!"
+    show alex smile
+
+    f talk "Hm? Oh, right, sorry."
+    show finn smile
+
+    an "He slows his steps until I'm at his side and we continue our walk together."
+
+    f talk "This place feels bigger on the inside."
+    show finn smile
+
+    a talk "Yeah, it does."
+    show alex smile
+
+    f talk "More than usual, anyway."
+    show finn smile
+
+    a talk "More than usual?"
+    show alex smile
+
+    f talk "Well a lot of these abandoned places look big on the inside cause so much of the clutter is gone. But this place... is different."
+    show finn smile
+
+    an "I don't really know what Finn is seeing. It's a standard, albeit dusty, hospital to me. But I wonder what the world is like in Finn's eyes?"
+
+    a talk "Anything in particular you're searching for?"
+    show alex smile
+
+    f talk "If you're asking about what I'm searching for in life, the answer is no. If you're asking about the hospital then the answer is..."
+    show finn smile
+
+    f talk "... Also no."
+    show finn smile
+
+    a talk "Haha. Fair enough."
+    show alex smile
+
+    an "It's mostly quiet between us after that, but I'm still pretty entertained by Finn's eyes that seem to sweep the entire place meticulously."
+
+    an "He's serious about it in his own way. It's nice. Hehe, I feel like we're undercover investigating or something."
+
+    f talk "Do I have something on my face?"
+    show finn smile
+
+    a talk "Oh! Sorry, I didn't mean to stare."
+    show alex smile
+
+    ##Finn smile
+    f talk "So you {i}were{/i} staring."
+    show finn smile
+
+    a talk "It's n-not like that!"
+    show alex smile
+
+    f talk "Like what? I didn't say anything."
+    show finn smile
+
+    a talk "I was just noticing how you seemed very focused. That's all."
+    show alex smile
+
+    f talk "Hm. I guess it might seem that way."
+    show finn smile
+
+    an "He trails off, his focus returning to the numerous doors we pass. I wonder what he's looking out for?"
+
+    f talk "This time..."
+    show finn smile
+
+    a talk "Huh? This time, what?"
+    show alex smile
+
+    f talk "We didn't find anything last time. This time I know we will."
+    show finn smile
+
+    ##Alex smile
+    a talk "Wow, you really are excited today. And optimistic, too?"
+    show alex smile
+
+    f talk "What are you going on about now?"
+    show finn smile
+
+    a talk "You seem determined, that's all. It's getting me excited, too."
+    show alex smile
+
+    f talk "You're the one who wanted to come. I'd hope you are."
+    show finn smile
+
+    a talk "You know what I meant, Finn."
+    show alex smile
+
+    #Finn smile
+    an "He chuckles and rolls his eyes at me before focusing on the next door we come across. I can't pinpoint why, but it's built differently than the others."
+
+    a talk "This one looks like it might have something interesting for you."
+    show alex smile
+
+    f talk "Hm. Nice eye, I think you're right."
+    show finn smile
+    ##Vibration
+
+    f talk "Huh?"
+    show finn smile
+
+    a talk "Oh, is it locked?"
+    show alex smile
+
+    f talk "No way. I think it's just stuck."
+    show finn smile
+
+    an "He uses both hands this time, straining against the door that's not budging."
+    ##Vibration
+
+    a talk "Are you sure it's stuck? Should I help?"
+    show alex smile
+
+    f talk "No, it's fine. I can open a stuck door. No reason for you to hurt yourself."
+    show finn smile
+
+    an "Ha, can't tell if he's trying to be nice or patronizing me..."
+
+    a talk "Well if you think someone might get hurt, maybe we should just move on."
+    show alex smile
+
+    an "He shakes his head way too fast."
+
+    f talk "Nuh uh. Hold on, one more try."
+    show finn smile
+
+    a talk "Umm..."
+    show alex smile
+
+    ##Vibration
+
+    ##Surprised Finn face
+    f talk "Ah!"
+    show finn smile
+
+    a talk "Finn?!"
+    show alex smile
+
+    an "Whether the door was stuck or locked doesn't matter anymore. It falls with a crash to the floor and Finn along with it."
+
+    an "I rush over to him, past the snapped-off door hinges that roll under the kicked up dust and debris."
+
+    a talk "Finn. {i}Cough, cough.{/i} Are you okay?"
+    show alex smile
+
+    f talk "Ugh..."
+    show finn smile
+
+    an "I move to help him sit up before I gasp and see red, tinged on both his shoulder and the broken door."
+
+    a talk "Oh my God. Finn! You're hurt!"
+    show alex smile
+
+    an "He looks over to his shoulder and winces."
+
+    f talk "Aw man, I liked this shirt..."
+    show finn smile
+
+    a talk "Focus, Finn. H-hold on, I brought my first aid kit. I'll bandage you up."
+    show alex smile
+
+    f talk "It's fine... I think the door got worse than me."
+    show finn smile
+
+    a talk "It's not fine! Who cares about a door when you're bleeding?!"
+    show alex smile
+
+    an "I'm definitely panicking more than Finn is. Isn't he worried about getting an infection?"
+
+    an "Finn sighs and shakes his head when I start pulling out the kit."
+
+    f talk "Alex, I promise I'm okay. Jeez... A little pain doesn't matter. I'm more annoyed about the damaged property more than anything."
+    show finn smile
+
+    a talk "Well, sure, but shouldn't we make sure you don't get infected or something?"
+    show alex smile
+
+    f talk "Don't want to be bandaged. I'd rather keep going."
+    show finn smile
+
+    a talk "But your {i}shoulder{/i}, Finn. I really insist."
+    show alex smile
+
+    an "He chuckles and reaches for my head before pausing."
+
+    ##Finn frowning
+    a talk "Huh? What is it?"
+    show alex smile
+
+    f talk "..."
+    show finn smile
+
+    an "He moves away from my head and instead takes my hand in his."
+
+    ##Alex blushing
+    a talk "U-um—"
+    show alex smile
+
+    f talk "Blood."
+    show finn smile
+
+    an "I follow his gaze to see him turn my hand palm-up. He's right. I got some of his blood on my hand when I helped him sit up."
+
+    a talk "Oh. I didn't notice..."
+    show alex smile
+
+    an "Finn sighs and gently lets me go, a brief flash of guilt crossing his face."
+
+    f talk "... Fine."
+    show finn smile
+
+    a talk "What? So you want me to bandage you?"
+    show alex smile
+
+    f talk "... Sure."
+    show finn smile
+
+    an "I don't really know why he changed his mind, but I'm grateful for it. It's one less thing to worry about."
+
+    a talk "Good. Thank you."
+    show alex smile
+
+    f talk "Mm."
+    show finn smile
+
+    an "I carefully blot away the blood and then spray the antiseptic. It's not as bad as it initially looked, thank goodness."
+
+    an "Finn says nothing, gazing off into the distance and only flinching when I finally tighten the end of the gauze. It's not perfect but it'll hold."
+
+    a talk "Oops, sorry! Did that hurt? I'm done, by the way."
+    show alex smile
+
+    f talk "..."
+    show finn smile
+
+    an "He looks down at his shoulder and flexes it before smiling back at me."
+
+    f talk "Didn't hurt. Thanks."
+    show finn smile
+
+    a talk "Oh. You're welcome."
+    show alex smile
+
+    an "He carefully takes my hand again, opening a wet tissue packet from the kit before cleaning away the small spot of blood there."
+
+    an "For a moment, he really does look like a vampire with the way he's so focused on it."
+
+    a talk "Oh. Uh, thanks..."
+    show alex smile
+
+    f talk "Mhmm. Let's go back."
+    show finn smile
+
+    a talk "Right... I guess it is getting late. I'm sorry we didn't find something cool."
+    show alex smile
+
+    an "Finn doesn't look disappointed in the slightest, much to my surprise. In fact, he just grins at me again."
+
+    f talk "Nah. I think I saw plenty."
+    show finn smile
+
+    a talk "Huh...?"
+    show alex smile
+
+    an "He doesn't elaborate but I'm too exasperated to question him further. We leave the broken door behind and I wonder what about it was so cool."
+
+    ##Alex smile
+    an "What a weirdo."
 
 label Scene12C:
-    
+
+label Scene13B:
+    ## Scene 13B
+
+    f talk "H-huh? Me?"
+    show finn smile
+
+    a talk "Yeah! You don't want to?"
+    show alex smile
+
+    ##Finn blush
+    f talk "... I Didn't say that."
+    show finn smile
+
+    f talk "Sure."
+    show finn smile
+
+    an "Finn lets me take the lead to the roof, which is a nice change of pace. I feel a bit giddy about the whole situation."
+
+    an "Though it doesn't escape my notice that he keeps looking past me."
+
+    a talk "Hey, Finn. What are you looking at?"
+    show alex smile
+
+    f talk "Nothing."
+    show finn smile
+
+    an "Yeah, right. The staircase to the roof is pretty sturdy and it boosts my confidence when I see the door knob approaching."
+
+    f talk "Watch the last step."
+    show finn smile
+
+    an "I squint and see it—the last step has a slightly different color. I gingerly step on it but it doesn't budge."
+
+    a talk "It's safe. Haha, is that what you were watching for? You were worried?"
+    show alex smile
+
+    f talk "{i}Definitely{/i} didn't say that."
+    show finn smile
+
+    an "Finn pouts and snaps his head away from my gaze. What's he so embarrassed about anyway?"
+
+    an "I don't let it distract me for too long before I carefully push the door and step onto the roof."
+
+    a talk "Wow..."
+    show alex smile
+
+    an "It's better than I thought it'd be. The stars are brilliant above, but so is the city below. It glitters beautifully just like the sky in a sea of swirling navies and golds."
+
+    an "If one is merely reflecting on the other, part of me wonders which is the original."
+
+    an "Finn comes up behind me, but he looks far less impressed."
+
+    f talk "No danger whatsoever."
+    show finn smile
+
+    a talk "Finn... {i}That's{/i} what you're looking for?"
+    show alex smile
+
+    an "I don't know whether to laugh or cry and Finn chuckles when he sees my expression."
+
+    f talk "The view is... just okay."
+    show finn smile
+
+    ##Alex frown
+    a talk "Just okay?"
+    show alex smile
+
+    an "I don't know why I'm so desperate to show him, but I wave my hand enthusiastically toward the sea to get him to look again."
+
+    a talk "It's beautiful, Finn. We can see everything from here!"
+    show alex smile
+
+    an "I hesitate and pull my hand back, feeling as if the ‘sea' was real and I caused a ripple across it. It must've been the wind."
+
+    f talk "It's just a bunch of lights."
+    show finn smile
+
+    a talk "It is {i}not.{/i} L-look! Over there."
+    show alex smile
+
+    an "I point to the left of the roof."
+
+    a talk "See? If you really look you can see there's so many different colors, there's even a range of the whites and yellows. Some are big and some are small. Isn't it beautiful?"
+    show alex smile
+
+    a talk "So many different lives at home, so many families having dinner, or maybe they're stuck late at work, or maybe they're on dates..."
+    show alex smile
+
+    ##Finn smile
+    ##I think the flow of the scene works best if this expression isn't accompanied by his own dialogue
+
+    a talk "And there? See straight head?"
+    show alex smile
+
+    an "Maybe he's not convinced yet, but I can show him!"
+
+    a talk "There's a giant light right in the center. But it's probably just an apartment or something, you know? Or maybe it's a party or a gathering... And we can see it all from here, it's incredible."
+    show alex smile
+
+    f talk "Could be a fire."
+    show finn smile
+
+    a talk "O-or a {i}bonfire{/i}!"
+    show alex smile
+
+    an "Finn laughs at my counter suggestion, which just fires me up even more."
+
+    a talk "And—um—it's all relaxing. You can sit back and realize you're not alone in the world, you know? The sky looks so beautiful and vast..."
+    show alex smile
+
+    ##Alex smile
+    a talk "... and so does the city. Except these lights are lives, so while the stars sometimes feel too far away, we know these city ones are right here with us."
+    show alex smile
+
+    f talk "... So optimistic. You're just like him."
+    show finn smile
+
+    a talk "Er, what? Sorry, I'm not sure I caught that."
+    show alex smile
+
+    an "‘You're just like him?' Did I hear that right? What does he mean by that?"
+    ##Vibration
+
+    a talk "Ah!"
+    show alex smile
+
+    f talk "Hey, now..."
+    show finn smile
+
+    an "Finn rushes to my side, helping steady me with a strong grip around my waist."
+
+    a talk "I'm alright, I just tripped a little."
+    show alex smile
+
+    f talk "You need to be careful up here. You could fall."
+    show finn smile
+
+    a talk "Y-yeah, noted."
+    show alex smile
+
+    an "He stares at me a little longer before nodding and gently letting me go."
+
+    an "He's not touching me anymore but the warmth of Finn's hands still makes me feel..."
+
+    ##Alex blush
+    a talk "Um. So what were you saying?"
+    show alex smile
+
+    f talk "... That you've convinced me."
+    show finn smile
+
+    a talk "Really?"
+    show alex smile
+
+    f talk "Sure. The roof is fine, so... will you sit with me?"
+    show finn smile
+
+    ##Alex smile
+    a talk "You want to stay?"
+    show alex smile
+
+    an "I knew he'd see how beautiful this view was!"
+
+    an "Finn plops down and pats the spot next to him."
+
+    f talk "We can stay a little longer if you want as long as you stay away from the edge."
+    show finn smile
+
+    a talk "Haha. That won't be a problem."
+    show alex smile
+
+    an "I carefully sit down and stare over the gorgeous sight."
+
+    a talk "It's so great we can see the sky clearly at all with pollution these days. It's a great night."
+    show alex smile
+
+    f talk "..."
+    show finn smile
+
+    a talk "Finn?"
+    show alex smile
+
+    f talk "Yeah. It's a beautiful night."
+    show finn smile
+
+    an "I peek over to see him smiling, the stars—or perhaps the city lights—reflecting in his eyes."
+
+    an "It takes my breath away."
+
+    f talk "You know... If you like the stars so much, there are plenty of other rooftops to see them."
+    show finn smile
+
+    a talk "Are you offering to take me?"
+    show alex smile
+
+    an "He turns his head to look at me, still smiling."
+
+    f talk "I am."
+    show finn smile
+
+    a talk "Perhaps I'll take you up on that."
+    show alex smile
+
+    a talk "I'm glad I've convinced you to enjoy the view."
+    show alex smile
+
+    f talk "The view is still just average."
+    show finn smile
+
+    a talk "Hey!"
+    show alex smile
+
+    an "He laughs and lays back on the roof, using his arms as a headrest."
+
+    f talk "In comparison to the others I could show you, I mean."
+    show finn smile
+
+    a talk "Oh... You could've said that in the first place, you know."
+    show alex smile
+
+    f talk "But what would be the fun in that?"
+    show finn smile
+
+    an "I sigh and find myself deciding to lay down next to him. If the occasional gust of wind didn't pass by, I feel like I'd be able to sleep here."
+
+    a talk "This is comfortable. A bit chilly though after a while."
+    show alex smile
+
+    f talk "Mhmm. Here."
+    show finn smile
+
+    an "He scoots himself next to me until our bodies touch. I'm instantly warmer, both from his body heat and his kindness."
+
+    a talk "Oh. T-thank you."
+    show alex smile
+
+    f talk "Mhmm."
+    show finn smile
+
+    an "Maybe Finn means what he said about better views because he's no longer looking, just staring at the same spot in the sky as if it holds a secret."
+
+    an "He looks so peaceful..."
+
+    an "I try not to laugh, seeing how his hair seems to blend in with the dark of the night and his jewelry glistens like stars of their own."
+
+    an "I keep my musings to myself, wondering how any view could be better than this one right now."
