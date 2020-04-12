@@ -219,42 +219,53 @@ label commonroute:
 
     an "Seems like mostly normal things that you can get at any coffee shop."
 
-    an "The raspberry mocha sounds nice though..."
+    an unsure "The raspberry mocha sounds nice though..."
 
-    an "And they have milk alternatives!"
+    an up shock "And they have milk alternatives!"
 
     ##Paxton sprite! Friendly smile!
     show paxton up smile at closeleft
     with dissolve
 
+    show paxton up talk
     "???" "Can I get something started for you?"
+    show paxton smile
 
-    a talk "Oh, um, can I get the raspberry mocha with almond milk?"
+    a unsure talk "Oh, um, can I get the raspberry mocha with almond milk?"
     show alex smile
 
     an "He writes in a flurry across the cup."
 
+    show paxton unsure talk
     "???" "Do you want whipped cream on that?"
+    show paxton smile
 
-    a talk "No, thank you."
+    a down talk "No, thank you."
     show alex smile
 
+    show paxton up talk
     "???" "You got it. Can I get a name?"
+    show paxton smile
 
-    a talk "Alex."
+    a up talk "Alex."
     show alex smile
 
     ##surprised Paxton
+    show paxton up frown
     an "He stops and blinks at me."
 
+    show paxton up talk
     "???" "Are you here to meet Finn by any chance?"
+    show paxton smile
 
     a talk "I am..."
     show alex smile
 
     an "Is this one of his friends?"
 
+    show paxton up talk
     "???" "Nice to meet you! I'm Paxton. I'm on the clock right now but I'll be over to join you guys soon."
+    show paxton smile
 
     p talk "While I make your drink, you can go meet Zaina over there."
     show paxton smile
