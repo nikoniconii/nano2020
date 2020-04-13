@@ -163,7 +163,7 @@ label commonroute:
 
     an "I didn't know I could be this kind of person."
 
-    ## Scene 10
+## Scene 10
     ##Alex apartment bg
     scene bg alex_room
     with fadee
@@ -691,7 +691,7 @@ label commonroute:
 
     an smile "I can't think of the last time I was this excited about anything..."
 
-    ## Scene 11
+## Scene 11
     ##black screen
     scene black
     with fadee
@@ -1005,6 +1005,143 @@ label Scene11A:
     jump Scene11D
 
 label Scene11B:
+    ## Scene 11B
+
+    an "We split into two groups, Paxton following after Zaina while I go with Finn."
+
+    an "Our pace is slow and he periodically stops to examine the walls, his touch light and careful."
+
+    show alex up smile backpack at closeright:
+        yalign -0.25
+    show finn up smile at closeleft
+    with dissolve
+
+    a unsure talk "Do you often find secret passages?"
+    show alex smile
+
+    f unsure talk "Not often, but sometimes."
+
+    ##Finn smile
+    f up talk "Just often enough that it's worth looking every time."
+
+    f unsure talk "There's maintenance tunnels under the school, you know."
+    show finn smile
+
+    a down talk "Have you been in them?"
+    show alex smile
+
+    f up talk "Yeah, with Zaina and Paxton."
+
+    f down talk "We've only done it the one time, though. Pretty sure we'd get in more trouble with the school that we {i}couldn't{/i} talk our way out of than with police, you know?"
+    show finn smile
+
+    a unsure talk "Hm... yeah..."
+    show alex smile
+
+    f unsure talk "Wanna go sometime?"
+    show finn smile
+
+    a up frowntalk "I don't want to get kicked out of school!"
+
+    an frown "My parents would have my head!"
+
+    f down talk "You're not the only one. We'd just be extra careful."
+    show finn smile
+
+    an unsure smile "I'm not convinced now, but maybe I'll be more interested another time."
+
+    an "Especially given that I didn't think I'd be doing any of this in the first place."
+
+    an "As we wander through the mansion, we end up in a storage room."
+
+    an "While Finn looks around, my eyes fall on a gold frame with a sheet over it."
+
+    an frown "What's this?"
+
+    an "I lift up the sheet carefully, revealing a painting of a man and a woman kissing. It has an unexpectedly calming atmosphere despite the darkness of the storage room."
+
+    f up talk "Nice find." 
+    show finn smile
+
+    a up talk "Oh—thank you..."
+
+    a down talk "It's pretty..." 
+    show alex smile
+
+    f unsure talk "It is." 
+    show finn smile
+
+    an "I watch as he carefully leans the frame forward, examining the back of it."
+
+    a unsure talk "What are you doing?"
+    show alex smile
+
+    f up talk "Seeing if there's a potential title for this thing anywhere."
+    show finn smile
+
+    a down talk "Are they usually on the back?"
+    show alex smile
+
+    f down talk "No, I've found old paintings that aren't titled at all."
+
+    f up talk "But it's worth looking."
+    show finn smile
+
+    f unsure talk "Hmm... 'Le Confort,' maybe."
+    show finn smile
+
+    an "He sets the frame back in place and we take a look at it again."
+
+    a unsure talk "I wonder who painted it..."
+
+    a up talk "And who the subjects are."
+    show alex smile
+
+    f down frowntalk "Hmm... well, it's down in this dusty storage area, so maybe one of them got dumped after they painted this."
+    show finn frown
+
+    a down frowntalk "That's depressing..." 
+    show alex frown
+
+    f unsure frowntalk "Or maybe one of them died, hmm..."
+    show finn frown
+
+    a unsure talk "Do you think this way because you're a goth or is this just who you are?"
+    show alex smile
+
+    f up talk "Why not both?"
+    show finn smile
+
+    an "I can't help but laugh a little at that."
+
+    an "I like his sense of humor."
+
+    a up talk "What if it wasn't so miserable? Maybe the couple lived a long, happy life together and this ended up down here after they passed."
+    show alex smile
+
+    f unsure talk "Since that still involves dying, you're not really making this all that better."
+    show finn smile
+
+    a down talk "It's less sad than one of them being alone."
+    show alex smile
+
+    f down talk "Hmm... you have a point."
+    show finn smile
+
+    a up talk "I {i}do{/i}."
+
+    an smile "I drop the sheet back over the painting."
+
+    a unsure talk "Should we start heading back?"
+    show alex smile
+
+    f up talk "Sounds good."
+    show finn smile
+
+    hide finn
+    hide alex
+    with dissolve
+
     jump Scene11D
 
 label Scene11C:
