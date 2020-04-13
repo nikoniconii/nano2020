@@ -1586,7 +1586,7 @@ label Scene12B:
     show alex frown
 
     f unsure frowntalk "It's fine... I think the door got worse than me."
-    show finnfrown
+    show finn frown
 
     a up frowntalk "It's not fine! Who cares about a door when you're bleeding?!"
 
@@ -1750,17 +1750,12 @@ label Scene13:
             with dissolve
             jump Scene13A
         "Hey, Finn.":
-            f unsure talk "What's on your mind?"
-            show finn smile
+            f unsure frowntalk "What's on your mind?"
+            show finn frown
             a unsure talk "Want to go up to the roof with me?"
             show alex smile
             ##end choice (+1 to Finn Go to Scene 13B)
             $ finn_stat += 1
-            hide alex
-            hide paxton
-            hide finn
-            hide zaina
-            with dissolve
             jump Scene13B
         "Hey Zaina.":
             a unsure talk "Have you been to the roof here before?"
@@ -1945,7 +1940,7 @@ label Scene13A:
 
     an "His cheeks are flushed, and I can't tell if it's from the wind or from laughing so much."
 
-    an "But it's a cute look for him."
+    an "But it's a cute look on him."
 
     hide alex
     hide paxton
@@ -1954,242 +1949,255 @@ label Scene13A:
 
 label Scene13B:
     ## Scene 13B
-
-    f talk "H-huh? Me?"
-    show finn smile
+    f up frowntalk "H-huh? Me?"
+    show finn frown
 
     a talk "Yeah! You don't want to?"
     show alex smile
 
     ##Finn blush
-    f talk "... I Didn't say that."
+    show finn unsure frowntalk
+    f blush "... I didn't say that." with Dissolve(1.0)
+
+    show finn up talk
+    f -blush "Sure." with Dissolve(1.0)
     show finn smile
 
-    f talk "Sure."
-    show finn smile
+    hide alex
+    hide paxton
+    hide finn
+    hide zaina
+    with dissolve
+
+    scene black
+    with fadee
+
+    scene bg hospital
+    with sidefade
 
     an "Finn lets me take the lead to the roof, which is a nice change of pace. I feel a bit giddy about the whole situation."
 
     an "Though it doesn't escape my notice that he keeps looking past me."
 
-    a talk "Hey, Finn. What are you looking at?"
+    show alex up smile backpack at closeright:
+        yalign -0.25
+    show finn up smile at closeleft
+    with dissolve
+
+    a unsure talk "Hey, Finn. What are you looking at?"
     show alex smile
 
-    f talk "Nothing."
+    f down talk "Nothing."
     show finn smile
 
     an "Yeah, right. The staircase to the roof is pretty sturdy and it boosts my confidence when I see the door knob approaching."
 
-    f talk "Watch the last step."
+    f up talk "Watch the last step."
     show finn smile
 
-    an "I squint and see it—the last step has a slightly different color. I gingerly step on it but it doesn't budge."
+    an down "I squint and see it—the last step has a slightly different color. I gingerly step on it but it doesn't budge."
 
-    a talk "It's safe. Haha, is that what you were watching for? You were worried?"
+    a unsure talk "It's safe. Haha, is that what you were watching for? You were worried?"
     show alex smile
 
-    f talk "{i}Definitely{/i} didn't say that."
+    f unsure talk "{i}Definitely{/i} didn't say that."
     show finn smile
 
     an "Finn pouts and snaps his head away from my gaze. What's he so embarrassed about anyway?"
 
     an "I don't let it distract me for too long before I carefully push the door and step onto the roof."
 
-    a talk "Wow..."
-    show alex smile
+    a up shock "Wow..."
 
-    an "It's better than I thought it'd be. The stars are brilliant above, but so is the city below. It glitters beautifully just like the sky in a sea of swirling navies and golds."
+    an smile "It's better than I thought it'd be. The stars are brilliant above, but so is the city below. It glitters beautifully, just like the sky, in a sea of swirling navies and golds."
 
-    an "If one is merely reflecting on the other, part of me wonders which is the original."
+    an "If one is merely reflecting the other, part of me wonders which is the original."
 
     an "Finn comes up behind me, but he looks far less impressed."
 
-    f talk "No danger whatsoever."
+    f down talk "No danger whatsoever."
     show finn smile
 
-    a talk "Finn... {i}That's{/i} what you're looking for?"
-    show alex smile
+    a unsure talk "Finn... {i}that's{/i} what you're looking for?"
 
-    an "I don't know whether to laugh or cry and Finn chuckles when he sees my expression."
+    an smile "I don't know whether to laugh or cry, and Finn chuckles when he sees my expression."
 
-    f talk "The view is... just okay."
-    show finn smile
+    f unsure frowntalk "The view is... just okay."
+    show finn frown
 
     ##Alex frown
-    a talk "Just okay?"
-    show alex smile
+    a unsure frowntalk "Just okay?"
 
-    an "I don't know why I'm so desperate to show him, but I wave my hand enthusiastically toward the sea to get him to look again."
+    an frown "I don't know why I'm so desperate to show him, but I wave my hand enthusiastically toward the sea to get him to look again."
 
-    a talk "It's beautiful, Finn. We can see everything from here!"
-    show alex smile
+    a up talk "It's beautiful, Finn. We can see everything from here!"
 
-    an "I hesitate and pull my hand back, feeling as if the 'sea' was real and I caused a ripple across it. It must've been the wind."
+    an smile "I hesitate and pull my hand back, feeling as if the 'sea' was real and I caused a ripple across it. It must've been the wind."
 
-    f talk "It's just a bunch of lights."
-    show finn smile
+    f down frowntalk "It's just a bunch of lights."
+    show finn frown
 
-    a talk "It is {i}not.{/i} L-look! Over there."
-    show alex smile
+    a down frowntalk "It is {i}not.{/i} L-look! Over there."
 
-    an "I point to the left of the roof."
+    an frown "I point to the left of the roof."
 
-    a talk "See? If you really look you can see there's so many different colors, there's even a range of the whites and yellows. Some are big and some are small. Isn't it beautiful?"
-    show alex smile
+    a unsure talk "See? If you really look you can see there's so many different colors, there's even a range of the whites and yellows. Some are big and some are small. Isn't it beautiful?"
 
-    a talk "So many different lives at home, so many families having dinner, or maybe they're stuck late at work, or maybe they're on dates..."
-    show alex smile
+    a up talk "So many different lives at home, so many families having dinner, or maybe they're stuck late at work, or maybe they're on dates..."
 
     ##Finn smile
     ##I think the flow of the scene works best if this expression isn't accompanied by his own dialogue
+    f unsure smile "..."
 
-    a talk "And there? See straight head?"
+    a unsure talk "And there? See straight head?"
+
+    an smile "Maybe he's not convinced yet, but I can show him!"
+
+    a down talk "There's a giant light right in the center. But it's probably just an apartment or something, you know? Or maybe it's a party or a gathering... And we can see it all from here, it's incredible."
     show alex smile
 
-    an "Maybe he's not convinced yet, but I can show him!"
-
-    a talk "There's a giant light right in the center. But it's probably just an apartment or something, you know? Or maybe it's a party or a gathering... And we can see it all from here, it's incredible."
-    show alex smile
-
-    f talk "Could be a fire."
+    f down talk "Could be a fire."
     show finn smile
 
-    a talk "O-or a {i}bonfire{/i}!"
-    show alex smile
+    a up talk "O-or a {i}bonfire{/i}!"
 
-    an "Finn laughs at my counter suggestion, which just fires me up even more."
+    show finn up
+    an smile "Finn laughs at my counter suggestion, which just fires me up even more."
 
-    a talk "And—um—it's all relaxing. You can sit back and realize you're not alone in the world, you know? The sky looks so beautiful and vast..."
-    show alex smile
+    a unsure talk "And—um—it's all relaxing. You can sit back and realize you're not alone in the world, you know? The sky looks so beautiful and vast..."
 
     ##Alex smile
-    a talk "... and so does the city. Except these lights are lives, so while the stars sometimes feel too far away, we know these city ones are right here with us."
+    a up talk "... and so does the city. Except these lights are lives, so while the stars sometimes feel too far away, we know these city ones are right here with us."
     show alex smile
 
-    f talk "... So optimistic. You're just like him."
+    f unsure talk "... so optimistic. You're just like him."
     show finn smile
 
-    a talk "Er, what? Sorry, I'm not sure I caught that."
-    show alex smile
+    a unsure frowntalk "Er, what? Sorry, I'm not sure I caught that."
+    show alex frown
 
     an "'You're just like him?' Did I hear that right? What does he mean by that?"
-
+    
     ##Vibration
-    a talk "Ah!" with vpunch
-    show alex smile
+    a up shock "Ah!" with vpunch
 
-    f talk "Hey, now..."
-    show finn smile
+    f down frowntalk "Hey, now..."
+    show finn frown
 
     an "Finn rushes to my side, helping steady me with a strong grip around my waist."
 
-    a talk "I'm alright, I just tripped a little."
-    show alex smile
+    a unsure frowntalk sweat "I'm alright, I just tripped a little."
+    show alex frown
 
-    f talk "You need to be careful up here. You could fall."
+    f unsure frowntalk "You need to be careful up here. You could fall."
+    show finn frown
+
+    a down talk "Y-yeah, noted."
+    show alex smile -sweat
+
     show finn smile
-
-    a talk "Y-yeah, noted."
-    show alex smile
-
     an "He stares at me a little longer before nodding and gently letting me go."
 
-    an "He's not touching me anymore but the warmth of Finn's hands still makes me feel..."
+    an "He's not touching me anymore, but the warmth of Finn's hands still makes me feel..."
 
     ##Alex blush
-    a talk "Um. So what were you saying?"
+    show alex unsure talk
+    a blush "Um. So what were you saying?" with Dissolve(1.0)
     show alex smile
 
-    f talk "... That you've convinced me."
+    f up talk "... that you've convinced me."
     show finn smile
 
-    a talk "Really?"
+    a up talk "Really?"
     show alex smile
 
-    f talk "Sure. The roof is fine, so... will you sit with me?"
+    f unsure talk "Sure. The roof is fine, so... will you sit with me?"
     show finn smile
 
     ##Alex smile
-    a talk "You want to stay?"
+    show alex unsure talk
+    a -blush "You want to stay?" with Dissolve(1.0)
     show alex smile
 
     an "I knew he'd see how beautiful this view was!"
 
     an "Finn plops down and pats the spot next to him."
 
-    f talk "We can stay a little longer if you want as long as you stay away from the edge."
+    f up talk "We can stay a little longer if you want as long as you stay away from the edge."
     show finn smile
 
-    a talk "Haha. That won't be a problem."
+    a up talk "Haha. That won't be a problem."
+
+    an smile "I carefully sit down and stare at the gorgeous sight."
+
+    a down talk "It's so great that we can see the sky clearly at all with pollution these days. It's a great night."
     show alex smile
 
-    an "I carefully sit down and stare over the gorgeous sight."
+    f unsure smile "..."
 
-    a talk "It's so great we can see the sky clearly at all with pollution these days. It's a great night."
+    a unsure talk "Finn?"
     show alex smile
 
-    f talk "..."
-    show finn smile
-
-    a talk "Finn?"
-    show alex smile
-
-    f talk "Yeah. It's a beautiful night."
+    f up talk "Yeah. It's a beautiful night."
     show finn smile
 
     an "I peek over to see him smiling, the stars—or perhaps the city lights—reflecting in his eyes."
 
     an "It takes my breath away."
 
-    f talk "You know... If you like the stars so much, there are plenty of other rooftops to see them."
+    f unsure talk "You know... if you like the stars so much, there are plenty of other rooftops to see them from."
     show finn smile
 
-    a talk "Are you offering to take me?"
-    show alex smile
+    a down talk "Are you offering to take me?"
 
-    an "He turns his head to look at me, still smiling."
+    an smile "He turns his head to look at me, still smiling."
 
-    f talk "I am."
+    f up talk "I am."
     show finn smile
 
-    a talk "Perhaps I'll take you up on that."
+    a unsure talk "Perhaps I'll take you up on that."
+
+    a up talk "I'm glad I've convinced you to enjoy the view."
     show alex smile
 
-    a talk "I'm glad I've convinced you to enjoy the view."
-    show alex smile
-
-    f talk "The view is still just average."
+    f unsure talk "The view is still just average."
     show finn smile
 
-    a talk "Hey!"
-    show alex smile
+    a down frowntalk "Hey!"
 
-    an "He laughs and lays back on the roof, using his arms as a headrest."
+    an smile "He laughs and lays back on the roof, using his arms as a headrest."
 
-    f talk "In comparison to the others I could show you, I mean."
+    f up talk "In comparison to the others I could show you, I mean."
     show finn smile
 
-    a talk "Oh... You could've said that in the first place, you know."
+    a unsure talk "Oh... you could've said that in the first place, you know."
     show alex smile
 
-    f talk "But what would be the fun in that?"
+    f unsure talk "But what would be the fun in that?"
     show finn smile
 
     an "I sigh and find myself deciding to lay down next to him. If the occasional gust of wind didn't pass by, I feel like I'd be able to sleep here."
 
-    a talk "This is comfortable. A bit chilly though after a while."
+    a down talk "This is comfortable. A bit chilly, though, after a while."
     show alex smile
 
-    f talk "Mhmm. Here."
+    f down talk "Mhmm. Here."
     show finn smile
 
     an "He scoots himself next to me until our bodies touch. I'm instantly warmer, both from his body heat and his kindness."
 
-    a talk "Oh. T-thank you."
+    show alex up talk 
+    a blush "Oh. T-thank you." with Dissolve(1.0)
     show alex smile
 
-    f talk "Mhmm."
-    show finn smile
+    f up smile "Mhmm."
+
+    hide finn
+    hide alex
+    with dissolve
+
+    scene black
+    with dissolve
 
     an "Maybe Finn means what he said about better views because he's no longer looking, just staring at the same spot in the sky as if it holds a secret."
 
@@ -2198,6 +2206,8 @@ label Scene13B:
     an "I try not to laugh, seeing how his hair seems to blend in with the dark of the night and his jewelry glistens like stars of their own."
 
     an "I keep my musings to myself, wondering how any view could be better than this one right now."
+
+    jump Scene14
 
 label Scene14:
     return
