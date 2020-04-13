@@ -181,6 +181,7 @@ label commonroute:
     an "But he probably didn't expect this from me either."
 
     ##phone buzz sfx
+    play sound "phonevibrate.mp3"
     "Bzz..." with vpunch
 
     an "I look at the notification on my screen, and for once, I don't feel stressed—I feel excited."
@@ -1209,7 +1210,7 @@ label Scene12A:
 
     p down talk "This is going to sound {i}way{/i} worse than I mean it, but after awhile of working with hot drinks all day, your reaction to spilling hot liquids on yourself is pretty muted."
 
-    p unsure talk "Aside from when I've gotten {i}really{/i} hot water on myself, my reaction is usually just ‘ow' after the first few times..."
+    p unsure talk "Aside from when I've gotten {i}really{/i} hot water on myself, my reaction is usually just 'ow' after the first few times..."
     show paxton smile
 
     a unsure talk "As long as you run your hand under cold water after..."
@@ -1267,6 +1268,8 @@ label Scene12A:
     an frown "I watch as he puts it into the keyhole, and carefully jiggles it around for a moment."
 
     an "I never thought of picking a lock with a knife, but he seems to know what he's doing..."
+
+    play sound "break.mp3"
 
     an "After a moment, the lock pops open, the mechanism sliding out, and the knife falls from Paxton's hands."
 
@@ -1546,6 +1549,8 @@ label Scene12B:
     ##Vibration
     "..." with vpunch
 
+    play sound "break.mp3"
+
     ##Surprised Finn face
     f up frowntalk sweat "Ah!"
     show finn frown
@@ -1707,7 +1712,7 @@ label Scene13:
     show zaina up smile:
         xalign 0.67
         yalign -1.5
-    show alex up smile:
+    show alex up smile backpack:
         xalign 0.37
         yalign 1.0
     show paxton up smile hat:
@@ -1775,37 +1780,48 @@ label Scene13:
 
 label Scene13A:
     ##Scene 13A
+    scene black
+    with fadee
+
+    scene bg hospital
+    with sidefade
+
     an "Before I can suggest we find the stairs to the roof together, Paxton is ahead of me. He seems to know right where he's going, and honestly, his excitement is pretty cute..."
 
     an "I follow after him, picking up the pace a bit."
 
     an "But regardless, he arrives first."
 
-    p talk "After you."
+    show paxton up smile hat at closeleft
+    with dissolve
+
+    p up talk "After you."
     show paxton smile
 
     an "He holds the door open for me, bowing a bit in the process."
 
-    a talk "Why thank you!"
+    show alex up smile backpack at closeright:
+        yalign -0.25
+    with dissolve
+
+    a up talk "Why thank you!"
     show alex smile
 
     an "He's cute--I keep being surprised by that but he's really charming..." 
 
     an "The air is cool and crisp, but not too cold."
 
-    p talk "You want a good view, right?"
+    p unsure talk "You want a good view, right?"
     show paxton smile
 
-    a talk "Yeah--That's why I wanted to come up here."
+    a unsure talk "Yeah--That's why I wanted to come up here."
+
+    a down talk "The photos that get posted are so pretty..." 
+
+    a up talk "I wanted to see what it was like in person."
     show alex smile
 
-    a talk "The photos that get posted are so pretty..." 
-    show alex smile
-
-    a talk "I wanted to see what it was like in person."
-    show alex smile
-
-    p talk "Let's see then..." 
+    p down talk "Let's see then..." 
     show paxton smile
 
     an "He looks around a bit and seems to settle on a spot near the edge."
@@ -1814,131 +1830,127 @@ label Scene13A:
 
     an "... And dumps everything on the ground?!"
 
-    a talk "Uhm... Paxton?"
+    a unsure talk "Uhm... Paxton?"
     show alex smile
 
-    p talk "Here! The roof is pretty dirty."
+    p up talk "Here! The roof is pretty dirty."
     show paxton smile
 
     an "He lays his backpack on the roof and gestures for me to take a seat."
 
-    a talk "Oh um, thank you."
-    show alex smile
+    a down talk "Oh um, thank you."
 
-    an "He's so sweet..."
+    an smile "He's so sweet..."
 
-    an "Sitting next to him, I gaze out over the city, the sea of lights..."
+    an unsure "Sitting next to him, I gaze out over the city, the sea of lights..."
 
     an "It's {i}incredible{/i}."
 
-    p talk "Enjoying yourself?"
+    p unsure talk "Enjoying yourself?"
     show paxton smile
 
-    a talk "Yeah! It's so pretty... Everything looks like ants from up here."
+    a up talk "Yeah! It's so pretty... Everything looks like ants from up here."
     show alex smile
 
     an "Paxton laughs easily before falling quiet again, his eyes passing over the city."
 
-    p talk "Do you recognize anything from up here?"
+    p down talk "Do you recognize anything from up here?"
     show paxton smile
 
-    a talk "Um... Not really. I'm not really all that familiar with the city, honestly."
+    a unsure talk "Um... Not really. I'm not really all that familiar with the city, honestly."
     show alex smile
 
-    a talk "I'm just here for college."
+    a up talk "I'm just here for college."
     show alex smile
 
-    a talk "Did you grow up here?"
+    a unsure talk "Did you grow up here?"
     show alex smile
 
-    p talk "I did, yeah."
+    p up talk "I did, yeah."
     show paxton smile
 
-    p talk "Do you see that over there?"
+    p unsure talk "Do you see that over there?"
     show paxton smile
 
-    a talk "I squint into the distance."
+    an down frown "I squint into the distance."
+
+    p up talk "The baseball field."
+    show paxton smile
+
+    a unsure talk "I think so, yeah."
+
+    a up talk "What about it?"
     show alex smile
 
-    p talk "The baseball field."
-    show paxton smile
+    p unsure talk "I went there a lot when I was a kid."
 
-    a talk "I think so, yeah."
-    show alex smile
+    p up talk "My dad was {i}super{/i} into baseball. He did sports journalism."
 
-    a talk "What about it?"
-    show alex smile
+    p unsure talk "So I saw a lot of games as a kid."
 
-    p talk "I went there a lot when I was a kid."
-    show paxton smile
+    p down talk "When this stadium opened up, there was a press conference about it."
 
-    p talk "My dad was {i}super{/i} into baseball. He did sports journalism."
-    show paxton smile
-
-    p talk "So I saw a lot of games as a kid."
-    show paxton smile
-
-    p talk "When this stadium opened up, there was a press conference about it."
-    show paxton smile
-
-    p talk "I was just a kid, but my dad took me, since he was there to write an article about it."
+    p unsure talk "I was just a kid, but my dad took me, since he was there to write an article about it."
     show paxton smile
 
     an "He pauses, a smile on his lips."
 
-    a talk "Yeah?"
+    a unsure talk "Yeah?"
     show alex smile
 
     an "I'm curious about where he's going with this..."
 
-    p talk "The owner was a bit of an older dude, and it was a windy day."
+    p down talk "The owner was a bit of an older dude, and it was a windy day."
     show paxton smile
 
-    p talk "And... well..."
+    p unsure frowntalk "And... well..."
+
+    p up frowntalk "Turns out he had a toupee."
+    show paxton frown
+
+    a down frowntalk "Oh no."
+    show alex frown
+
+    p unsure frowntalk "And it wasn't very well secured."
+    show paxton frown
+
+    an up shock "I put my hands over my mouth. I can see where this is going..."
+
+    p down talk "So it blew off and, well."
     show paxton smile
 
-    p talk "Turns out he had a toupee."
+    an smile "He's stifling laughter now, with mixed success."
+
+    p up talk "It hit my dad in the face."
     show paxton smile
 
-    a talk "Oh no."
+    a unsure talk "No! Oh my God..."
     show alex smile
 
-    p talk "And it wasn't very well secured."
-    show paxton smile
+    p unsure talk "So every time I see the stadium, I remember that."
 
-    an "I put my hands over my mouth. I can see where this is going..."
-
-    p talk "So it blew off and, well."
-    show paxton smile
-
-    an "He's stifling laughter now, with mixed success."
-
-    p talk "It hit my dad in the face."
-    show paxton smile
-
-    a talk "No! Oh my God..."
-    show alex smile
-
-    p talk "So every time I see the stadium, I remember that."
-    show paxton smile
-
-    p talk "I don't think I'll ever witness something as funny or embarrassing for the rest of my life."
+    p down talk "I don't think I'll ever witness something as funny or embarrassing for the rest of my life."
     show paxton smile
 
     an "I'm trying to stifle my own laughter now, at the visual of all this."
 
-    a talk "That-That {i}is{/i} a really high bar, isn't it."
+    a down talk "That-That {i}is{/i} a really high bar, isn't it."
     show alex smile
 
-    p talk "It sure is..."
+    show paxton up talk
+    p blush "It sure is..." with Dissolve(1.0)
     show paxton smile
 
-    an "We both laugh a little more about it before managing to catch our breath."
+    an up "We both laugh a little more about it before managing to catch our breath."
 
     an "His cheeks are flushed, and I can't tell if it's from the wind or from laughing so much."
 
     an "But it's a cute look for him."
 
+    hide alex
+    hide paxton
+    with dissolve
+    jump Scene14
 
 label Scene13B:
     ## Scene 13B
@@ -2012,7 +2024,7 @@ label Scene13B:
     a talk "It's beautiful, Finn. We can see everything from here!"
     show alex smile
 
-    an "I hesitate and pull my hand back, feeling as if the ‘sea' was real and I caused a ripple across it. It must've been the wind."
+    an "I hesitate and pull my hand back, feeling as if the 'sea' was real and I caused a ripple across it. It must've been the wind."
 
     f talk "It's just a bunch of lights."
     show finn smile
@@ -2060,10 +2072,10 @@ label Scene13B:
     a talk "Er, what? Sorry, I'm not sure I caught that."
     show alex smile
 
-    an "‘You're just like him?' Did I hear that right? What does he mean by that?"
-    ##Vibration
+    an "'You're just like him?' Did I hear that right? What does he mean by that?"
 
-    a talk "Ah!"
+    ##Vibration
+    a talk "Ah!" with vpunch
     show alex smile
 
     f talk "Hey, now..."
