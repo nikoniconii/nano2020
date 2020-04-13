@@ -1401,7 +1401,7 @@ label Scene12A:
 
 label Scene12B:
     ## Scene 12B
-    
+
     an "He doesn't wait long before he's already trekking down the hall, away from the others."
 
     show alex up smile backpack at closeright:
@@ -1678,10 +1678,16 @@ label Scene12B:
 
     a unsure frowntalk "Huh...?"
 
+    hide finn
+    with dissolve
+
     an frown "He doesn't elaborate but I'm too exasperated to question him further. We leave the broken door behind and I wonder what about it was so cool."
 
     ##Alex smile
     an up smile "What a weirdo."
+
+    hide alex
+    with dissolve
 
     jump Scene13
 
@@ -1692,7 +1698,22 @@ label Scene13:
     ## Scene 13
 
     ##probably you're gonna wanna black bg each scene once they get to the roof
+    scene bg hospital
+    with fadee
 
+    show finn up smile:
+        xalign 0.05
+        yalign 1.0
+    show zaina up smile:
+        xalign 0.67
+        yalign -1.5
+    show alex up smile:
+        xalign 0.37
+        yalign 1.0
+    show paxton up smile hat:
+        xalign 1.0
+        yalign 1.0
+    with dissolve
 
     an "So we're at a hospital again."
 
@@ -1708,29 +1729,49 @@ label Scene13:
 
     an "I don't need to see the inside of this one again, but since it's such a tall building..."
 
-    ##choice 
+    ##choice
+    menu:
         "Hey, Paxton...":
-            a talk "Do you want to go up to the roof with me?"
+            a unsure talk "Do you want to go up to the roof with me?"
             show alex smile
-            p talk "The roof? I'd love to."
+            p unsure talk "The roof? I'd love to."
             show paxton smile
             ##end choice (+1 to Paxton Go to Scene 13A)
-
+            $ paxton_stat += 1
+            hide alex
+            hide paxton
+            hide finn
+            hide zaina
+            with dissolve
+            jump Scene13A
         "Hey, Finn.":
-            f talk "What's on your mind?"
+            f unsure talk "What's on your mind?"
             show finn smile
-            a talk "Want to go up to the roof with me?"
+            a unsure talk "Want to go up to the roof with me?"
             show alex smile
             ##end choice (+1 to Finn Go to Scene 13B)
-
+            $ finn_stat += 1
+            hide alex
+            hide paxton
+            hide finn
+            hide zaina
+            with dissolve
+            jump Scene13B
         "Hey Zaina.":
-            a talk "Have you been to the roof here before?"
+            a unsure talk "Have you been to the roof here before?"
             show alex smile
-            z talk "I have. Do you wanna go see it?"
+            z unsure talk "I have. Do you wanna go see it?"
             show zaina smile
-            a talk "Yeah!"
+            a up talk "Yeah!"
             show alex smile
             ##end choice (+1 to Zaina Go to Scene 13C)
+            $ zaina_stat += 1
+            hide alex
+            hide paxton
+            hide finn
+            hide zaina
+            with dissolve
+            jump Scene13C
 
 label Scene13A:
     ##Scene 13A
