@@ -1005,7 +1005,7 @@ label Scene11A:
 
 label Scene11B:
     jump Scene11D
-    
+
 label Scene11C:
     jump Scene11D
 
@@ -1065,13 +1065,13 @@ label Scene11D:
         xalign 0.05
         yalign 1.0
     show zaina up smile:
-        xalign 0.33
+        xalign 0.67
         yalign -1.5
-    show paxton up smile:
-        xalign 0.55
-        yalign 1.0
     show alex up smile:
-        xalign 0.85
+        xalign 0.37
+        yalign 1.0
+    show paxton up smile hat:
+        xalign 1.0
         yalign 1.0
     with dissolve
 
@@ -1103,12 +1103,22 @@ label Scene11D:
             an up "He's so easy going, it's really relaxing to me..."
             ##end choice (+1 to Paxton Go to Scene 12A)
             $ paxton_stat += 1
+            hide alex
+            hide finn
+            hide zaina
+            hide paxton
+            with dissolve
             jump Scene12A
         "Um... Finn? If that's okay with you.":
             f down talk "Fine by me."
             show finn smile
             ##end choice (+1 to Finn Go to Scene 12B)
             $ finn_stat += 1
+            hide alex
+            hide finn
+            hide zaina
+            hide paxton
+            with dissolve
             jump Scene12B
         "If you're going to call me a newbie...":
             a down talk "... then you should help keep an eye on me, right?"
@@ -1123,13 +1133,24 @@ label Scene11D:
             show zaina smile
             ##end choice (+1 to Zaina Go to Scene 12C)
             $ zaina_stat += 1
+            hide alex
+            hide finn
+            hide zaina
+            hide paxton
+            with dissolve
             jump Scene12C
 
 label Scene12A:
     ## Scene 12A
-    an "So where are we heading?"
+    show alex neutral smile at closeright:
+        yalign -0.25
+    show paxton up smile hat at closeleft
+    with dissolve
 
-    p talk "Hmm we'll see. I don't have anything particular in mind."
+    a unsure talk "So where are we heading?"
+    show alex smile
+
+    p unsure talk "Hmm we'll see. I don't have anything particular in mind."
     show paxton smile
 
     an "It's a pleasant quiet between us as we walk down the empty corridors."
@@ -1138,98 +1159,80 @@ label Scene12A:
 
     an "I want to get to know him a little better."
 
-    a talk "So, um, what got you interested in working as a barista anyway?"
+    a up talk "So, um, what got you interested in working as a barista anyway?"
     show alex smile
 
-    p talk "Oh, nothing special."
+    p down talk "Oh, nothing special."
+
+    p unsure talk "I've always liked coffee, and I needed a job."
+
+    p up talk "So when I heard the cafe was hiring, I went ahead and applied!" 
+
+    p unsure talk "I figured it couldn't be too hard—it's minimum wage."
+
+    p up talk "And it wasn't."
+
+    p down talk "The trickiest part you {i}have{/i} to learn is steaming the milk right."
+
+    p unsure talk "It has to be a certain texture for latte art in particular, but even in general there's a big difference in how much foam there should be for a latte versus a cappuccino." 
+
+    p up talk "And getting a handle on that, and how far what milks go is the main thing to learn."
     show paxton smile
 
-    p talk "I've always liked coffee, and I needed a job."
-    show paxton smile
-
-    p talk "So when I heard the cafe was hiring, I went ahead and applied!" 
-    show paxton smile
-
-    p talk "I figured it couldn't be too hard—it's minimum wage."
-    show paxton smile
-
-    p talk "And it wasn't."
-    show paxton smile
-
-    p talk "The trickiest part you {i}have{/i} to learn is steaming the milk right."
-    show paxton smile
-
-    p talk "It has to be a certain texture for latte art in particular, but even in general there's a big difference in how much foam there should be for a latte versus a cappuccino." 
-    show paxton smile
-
-    p talk "And getting a handle on that, and how far what milks go is the main thing to learn."
-    show paxton smile
-
-    a talk "What about the flavored lattes? And the things you make up?"
+    a unsure talk "What about the flavored lattes? And the things you make up?"
     show alex smile
 
-    p talk "Oh, those just follow proportion rules."
+    p unsure talk "Oh, those just follow proportion rules."
+
+    p down talk "Just a lot of memorizing measurements."
     show paxton smile
 
-    p talk "Just a lot of memorizing measurements."
-    show paxton smile
+    a down talk "Oh."
 
-    a talk "Oh."
+    an smile "Somehow I always thought it was more complicated than that."
+
+    a unsure talk "So it's pretty hard to mess up?"
     show alex smile
 
-    an "Somehow I always thought it was more complicated than that."
+    p unsure talk "Yeah. Unless you're not paying attention to how many pumps of something you're putting in."
 
-    a talk "So it's pretty hard to mess up?"
+    p down talk "Or you put too much milk in the pitcher so it overflows all over your hand."
+
+    p up talk "After awhile it's all automatic though."
+    show paxton smile
+
+    a down talk "That doesn't seem so bad—Aside from the overflowing milk..."
+
+    an smile "He makes it sound way more interesting than I expected."
+
+    p unsure talk "Haha, it's not that bad."
+
+    p down talk "This is going to sound {i}way{/i} worse than I mean it, but after awhile of working with hot drinks all day, your reaction to spilling hot liquids on yourself is pretty muted."
+
+    p unsure talk "Aside from when I've gotten {i}really{/i} hot water on myself, my reaction is usually just ‘ow' after the first few times..."
+    show paxton smile
+
+    a unsure talk "As long as you run your hand under cold water after..."
     show alex smile
 
-    p talk "Yeah. Unless you're not paying attention to how many pumps of something you're putting in."
+    p up talk "Oh yeah, usually."
+
+    p unsure talk "Unless I have a line of drinks."
+
+    p down talk "Then I usually forget I burned myself by the time I address it."
     show paxton smile
 
-    p talk "Or you put too much milk in the pitcher so it overflows all over your hand."
+    a up frowntalk "That isn't good!"
+    show alex frown
+
+    p unsure talk "It's fine, it's fine! Really, I don't make a habit of it."
+
+    p up talk "I'm not a masochist or anything."
     show paxton smile
 
-    p talk "After awhile it's all automatic though."
-    show paxton smile
+    a unsure talk "Well... Good."
 
-    a talk "That doesn't seem so bad—Aside from the overflowing milk..."
-    show alex smile
-
-    an "He makes it sound way more interesting than I expected."
-
-    p talk "Haha, it's not that bad."
-    show paxton smile
-
-    p talk "This is going to sound {i}way{/i} worse than I mean it, but after awhile of working with hot drinks all day, your reaction to spilling hot liquids on yourself is pretty muted."
-    show paxton smile
-
-    p talk "Aside from when I've gotten {i}really{/i} hot water on myself, my reaction is usually just ‘ow' after the first few times..."
-    show paxton smile
-
-    a talk "As long as you run your hand under cold water after..."
-    show alex smile
-
-    p talk "Oh yeah, usually."
-    show paxton smile
-
-    p talk "Unless I have a line of drinks."
-    show paxton smile
-
-    p talk "Then I usually forget I burned myself by the time I address it."
-    show paxton smile
-
-    a talk "That isn't good!"
-    show alex smile
-
-    p talk "It's fine, it's fine! Really, I don't make a habit of it."
-    show paxton smile
-
-    p talk "I'm not a masochist or anything."
-    show paxton smile
-
-    a talk "Well... Good."
-    show alex smile
-
-    an "I'm trying to think of what else to say when I spy a room with the door slightly ajar."
+    an smile "I'm trying to think of what else to say when I spy a room with the door slightly ajar."
 
     an "Curious, I stop and push the door open."
 
@@ -1237,13 +1240,12 @@ label Scene12A:
 
     an "A couple of knicknacks left on this old desk."
 
-    p talk "Something catch your eye?"
+    p unsure talk "Something catch your eye?"
     show paxton smile
 
-    a talk "I just wanted to see what was in here."
-    show alex smile
+    a down talk "I just wanted to see what was in here."
 
-    an "I remember what Finn said about not taking anything."
+    an smile "I remember what Finn said about not taking anything."
 
     an "But I wonder what's stored away here..."
 
@@ -1251,18 +1253,18 @@ label Scene12A:
 
     an "I experimentally tug on one of the filing cabinet drawers, only to find that it doesn't open."
 
-    p talk "Is it locked? I can open it."
+    p down talk "Is it locked? I can open it."
     show paxton smile
 
     an "He pulls out a knife—"
 
-    a talk "Aren't we not supposed to damage anything?"
-    show alex smile
+    a unsure frowntalk "Aren't we not supposed to damage anything?"
+    show alex frown
 
-    p talk "This won't break it."
+    p up talk "This won't break it."
     show paxton smile
 
-    an "I watch as he puts it into the keyhole, and carefully jiggles it around for a moment."
+    an frown "I watch as he puts it into the keyhole, and carefully jiggles it around for a moment."
 
     an "I never thought of picking a lock with a knife, but he seems to know what he's doing..."
 
@@ -1270,34 +1272,32 @@ label Scene12A:
 
     an "Before I can react, I see him reflexively reach for the knife—"
 
-    p talk "Ouch! Shit..."
-    show paxton smile
+    p down frowntalk "Ouch! Shit..."
+    show paxton frown
 
     an "Blood wells on the surface of his skin and the knife lays on the floor."
 
     an "It takes it a second to hit me what just happened."
 
-    a talk "Paxton!"
-    show alex smile
+    a down frowntalk "Paxton!"
+    show alex frown
 
-    p talk "I'm fine, I'm fine!"
-    show paxton smile
+    p unsure frowntalk "I'm fine, I'm fine!"
+    show paxton frown
 
-    a talk "You're bleeding!"
-    show alex smile
+    a up frowntalk "You're bleeding!"
+    show alex frown
 
-    p talk "... Okay maybe I'm not fine."
-    show paxton smile
+    p down frowntalk "... Okay maybe I'm not fine."
+    show paxton frown
 
-    a talk "Um—Hold on."
-    show alex smile
+    a down frowntalk "Um—Hold on."
 
-    an "I take off my backpack and quickly pull out my first aid kit. I'm glad I brought it—I didn't think I'd need it but here we are."
+    an frown "I take off my backpack and quickly pull out my first aid kit. I'm glad I brought it—I didn't think I'd need it but here we are."
 
-    a talk "Let me see?"
-    show alex smile
+    a unsure frowntalk "Let me see?"
 
-    an "He holds out his hand for me so I can see the cut across the side of his finger."
+    an frown "He holds out his hand for me so I can see the cut across the side of his finger."
 
     an "I grab a piece of gauze from my first aid kid to wipe up the blood as best I can, carefully holding his hand in mine."
 
@@ -1305,18 +1305,17 @@ label Scene12A:
 
     an "... Maybe a little too much, given that it's dripping but..."
 
-    a talk "Sorry if that stung."
-    show alex smile
+    a down frowntalk "Sorry if that stung."
+    show alex frown
 
-    p talk "It's fine. Barely felt it."
+    p unsure talk "It's fine. Barely felt it."
     show paxton smile
 
     an "The way he smiles loosens something in me I didn't realize was tense..."
 
-    a talk "Hrm... This is an awkward cut..."
-    show alex smile
+    a unsure frowntalk "Hrm... This is an awkward cut..."
 
-    an "Bandages won't cut it."
+    an frown "Bandages won't cut it."
 
     an "Or well, they might, for five minutes at best."
 
@@ -1324,77 +1323,81 @@ label Scene12A:
 
     an "It's not the prettiest bandaging job but..."
 
-    p talk "Thank you."
-    show paxton smile
+    p up talk "Thank you."
 
-    p talk "Do you still want to see what's in there?"
-    show paxton smile
+    p unsure frowntalk "Do you still want to see what's in there?"
+    show paxton frown
 
-    a talk "Oh um, sure, if it's already open."
+    a down talk "Oh um, sure, if it's already open."
     show alex smile
 
-    p talk "I had to pay the price in blood..." 
-    show paxton smile
+    p down frowntalk "I had to pay the price in blood..." 
 
     ##Paxton smile
-
-    p talk "So the treasure within {i}must{/i} be worth it."
+    show paxton smile
+    p unsure talk "So the treasure within {i}must{/i} be worth it."
     show paxton smile
 
     an "I start giggling before I can even try to catch myself."
 
-    a talk "Is that your inner creative writing major coming out?"
+    a unsure talk "Is that your inner creative writing major coming out?"
     show alex smile
 
-    p talk "More like my inner dungeon master."
+    p up talk "More like my inner dungeon master."
     show paxton smile
 
     an "He pulls open the drawer, looking quite pleased with himself."
 
-    p talk "You're welcome to sit in on one of my campaigns sometime if you'd like."
+    p unsure talk "You're welcome to sit in on one of my campaigns sometime if you'd like."
     show paxton smile
 
     an "I've never done something like that before either..."
 
-    a talk "I might take you up on that."
-    show alex smile
+    a up talk "I might take you up on that."
 
-    an "But first..."
+    an smile "But first..."
 
     an "I peek into the drawer, seeing a couple of medical books, an old yellow notepad with a bunch of medical terms on it. Medication notes I think, but the author's handwriting is worse than mine."
 
     an "Paxton picks up an envelope, carefully pulling out the contents."
 
-    a talk "What's that?"
+    a unsure talk "What's that?"
     show alex smile
 
-    p talk "A letter it seems..."
+    p up talk "A letter it seems..."
     show paxton smile
 
     an "We read over it together, and it's short but sweet."
 
     an "One doctor asking another on a date."
 
-    a talk "Aww..."
+    a down talk "Aww..."
     show alex smile
 
-    p talk "Yeah... This is pretty sweet."
+    p unsure talk "Yeah... This is pretty sweet."
     show paxton smile
 
     ##paxton blushing
-
-    p talk "I think we should probably get back to the others though."
+    show paxton up talk
+    p blush "I think we should probably get back to the others though." with Dissolve(1.0)
     show paxton smile
 
-    a talk "Oh! Yeah, probably. It's been awhile now hasn't it..."
-    show alex smile
+    a up talk "Oh! Yeah, probably. It's been awhile now hasn't it..."
 
-    an "I watch as he carefully puts the letter back in the envelope, and the envelope back in the drawer, before he shuts it."
+    an smile "I watch as he carefully puts the letter back in the envelope, and the envelope back in the drawer, before he shuts it."
+
+    hide alex
+    hide paxton
+    with dissolve
+
+    scene black
+    with fadee
 
     an "As we make our way back to the main entrance, I wonder what came of the doctor that wrote the letter."
 
     an "And I wonder what whoever finds it next will think of it."
 
+    jump Scene13
 
 label Scene12B:
     ## Scene 12B
@@ -1429,15 +1432,13 @@ label Scene12B:
     show alex smile
 
     f talk "If you're asking about what I'm searching for in life, the answer is no. If you're asking about the hospital then the answer is..."
-    show finn smile
 
     f talk "... Also no."
     show finn smile
 
     a talk "Haha. Fair enough."
-    show alex smile
 
-    an "It's mostly quiet between us after that, but I'm still pretty entertained by Finn's eyes that seem to sweep the entire place meticulously."
+    an smile "It's mostly quiet between us after that, but I'm still pretty entertained by Finn's eyes that seem to sweep the entire place meticulously."
 
     an "He's serious about it in his own way. It's nice. Hehe, I feel like we're undercover investigating or something."
 
@@ -1488,17 +1489,19 @@ label Scene12B:
     show finn smile
 
     a talk "You know what I meant, Finn."
-    show alex smile
 
     #Finn smile
-    an "He chuckles and rolls his eyes at me before focusing on the next door we come across. I can't pinpoint why, but it's built differently than the others."
+    show finn up smile
+    an smile "He chuckles and rolls his eyes at me before focusing on the next door we come across. I can't pinpoint why, but it's built differently than the others."
 
     a talk "This one looks like it might have something interesting for you."
     show alex smile
 
     f talk "Hm. Nice eye, I think you're right."
     show finn smile
+
     ##Vibration
+    "..." with vpunch
 
     f talk "Huh?"
     show finn smile
@@ -1510,7 +1513,9 @@ label Scene12B:
     show finn smile
 
     an "He uses both hands this time, straining against the door that's not budging."
+    
     ##Vibration
+    "..." with vpunch
 
     a talk "Are you sure it's stuck? Should I help?"
     show alex smile
@@ -1521,9 +1526,8 @@ label Scene12B:
     an "Ha, can't tell if he's trying to be nice or patronizing me..."
 
     a talk "Well if you think someone might get hurt, maybe we should just move on."
-    show alex smile
 
-    an "He shakes his head way too fast."
+    an smile "He shakes his head way too fast."
 
     f talk "Nuh uh. Hold on, one more try."
     show finn smile
@@ -1532,15 +1536,15 @@ label Scene12B:
     show alex smile
 
     ##Vibration
+    "..." with vpunch
 
     ##Surprised Finn face
     f talk "Ah!"
     show finn smile
 
     a talk "Finn?!"
-    show alex smile
 
-    an "Whether the door was stuck or locked doesn't matter anymore. It falls with a crash to the floor and Finn along with it."
+    an smile "Whether the door was stuck or locked doesn't matter anymore. It falls with a crash to the floor and Finn along with it."
 
     an "I rush over to him, past the snapped-off door hinges that roll under the kicked up dust and debris."
 
@@ -1553,9 +1557,8 @@ label Scene12B:
     an "I move to help him sit up before I gasp and see red, tinged on both his shoulder and the broken door."
 
     a talk "Oh my God. Finn! You're hurt!"
-    show alex smile
 
-    an "He looks over to his shoulder and winces."
+    an smile "He looks over to his shoulder and winces."
 
     f talk "Aw man, I liked this shirt..."
     show finn smile
@@ -1567,9 +1570,8 @@ label Scene12B:
     show finn smile
 
     a talk "It's not fine! Who cares about a door when you're bleeding?!"
-    show alex smile
 
-    an "I'm definitely panicking more than Finn is. Isn't he worried about getting an infection?"
+    an smile "I'm definitely panicking more than Finn is. Isn't he worried about getting an infection?"
 
     an "Finn sighs and shakes his head when I start pulling out the kit."
 
@@ -1583,9 +1585,8 @@ label Scene12B:
     show finn smile
 
     a talk "But your {i}shoulder{/i}, Finn. I really insist."
-    show alex smile
 
-    an "He chuckles and reaches for my head before pausing."
+    an smile "He chuckles and reaches for my head before pausing."
 
     ##Finn frowning
     a talk "Huh? What is it?"
@@ -1606,9 +1607,8 @@ label Scene12B:
     an "I follow his gaze to see him turn my hand palm-up. He's right. I got some of his blood on my hand when I helped him sit up."
 
     a talk "Oh. I didn't notice..."
-    show alex smile
 
-    an "Finn sighs and gently lets me go, a brief flash of guilt crossing his face."
+    an smile "Finn sighs and gently lets me go, a brief flash of guilt crossing his face."
 
     f talk "... Fine."
     show finn smile
@@ -1643,9 +1643,8 @@ label Scene12B:
     show finn smile
 
     a talk "Oh. You're welcome."
-    show alex smile
 
-    an "He carefully takes my hand again, opening a wet tissue packet from the kit before cleaning away the small spot of blood there."
+    an smile "He carefully takes my hand again, opening a wet tissue packet from the kit before cleaning away the small spot of blood there."
 
     an "For a moment, he really does look like a vampire with the way he's so focused on it."
 
@@ -1656,22 +1655,25 @@ label Scene12B:
     show finn smile
 
     a talk "Right... I guess it is getting late. I'm sorry we didn't find something cool."
-    show alex smile
 
-    an "Finn doesn't look disappointed in the slightest, much to my surprise. In fact, he just grins at me again."
+    an smile "Finn doesn't look disappointed in the slightest, much to my surprise. In fact, he just grins at me again."
 
     f talk "Nah. I think I saw plenty."
     show finn smile
 
     a talk "Huh...?"
-    show alex smile
 
-    an "He doesn't elaborate but I'm too exasperated to question him further. We leave the broken door behind and I wonder what about it was so cool."
+    an smile "He doesn't elaborate but I'm too exasperated to question him further. We leave the broken door behind and I wonder what about it was so cool."
 
     ##Alex smile
     an "What a weirdo."
 
+    jump Scene13
+
 label Scene12C:
+    jump Scene13
+
+label Scene13:
 
 label Scene13B:
     ## Scene 13B
