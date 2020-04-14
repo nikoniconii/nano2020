@@ -2804,97 +2804,103 @@ label Scene13B:
 
 label Scene13C:
     ## Scene 13C
-    z talk "Before you get any ideas, I was already planning on heading up to the roof. With or without you."
+    scene black
+    with fadee
+
+    scene bg hospital
+    with sidefade
+
+    show alex up smile backpack at closeright:
+        yalign -0.25
+    show zaina up smile at closeleft:
+        xalign 0.15
+        yalign -0.20
+    with dissolve
+
+    z unsure talk "Before you get any ideas, I was already planning on heading up to the roof. With or without you."
     show zaina smile
 
     ##alex smile
+    a down talk "I wouldn't think of it."
 
-    a talk "I wouldn't think of it."
-    show alex smile
-
-    an "So she wants to go to the roof just as much as I do. Guess we were both left wanting after our last trip."
+    an smile "So she wants to go to the roof just as much as I do. Guess we were both left wanting after our last trip."
 
     an "Zaina waits for me to fall into step with her and then we set off—in no rush, just like last time. I think we both want for that to be the only thing that's the same, as we're careful not to jinx it by hurrying over there too soon."
 
     an "I glance at her right hand. It's covered by the sleeve of her jacket."
 
-    a talk "How's your hand?"
+    a unsure talk "How's your hand?"
     show alex smile
 
-    z talk "Better."
+    z unsure talk "Better."
     show zaina smile
 
     an "She lifts her hand up and pulls down her sleeve."
 
-    z talk "It was hard to wrap it with my left hand, but I managed."
+    z up talk "It was hard to wrap it with my left hand, but I managed."
     show zaina smile
 
     an "Sure enough, the bandaging looks like it was done more than once, like she couldn't quite get it the first time."
 
     an "But otherwise, it looks pretty good."
 
-    z talk "Washing my hands is a bitch, though."
+    z down talk "Washing my hands is a bitch, though."
     show zaina smile
 
     ##alex laugh
-
-    a talk "If it wasn't, I'd suspect you'd have super healing powers."
+    a up talk "If it wasn't, I'd suspect you'd have super healing powers."
     show alex smile
 
     ##zaina playful smile
-
-    z talk "How'd you know I wasn't just trying not to blow my cover?"
+    z unsure talk "How'd you know I wasn't just trying not to blow my cover?"
     show zaina smile
 
-    a talk "Is that what you get up to in your spare time?"
+    a unsure talk "Is that what you get up to in your spare time?"
     show alex smile
 
-    z talk "Maybe."
+    z up talk "Maybe."
     show zaina smile
 
     an "Her smile turns coy as she bumps my shoulders."
 
-    z talk "Well, since you figured it out, I guess I can let you know I'm looking for a sidekick."
+    z down talk "Well, since you figured it out, I guess I can let you know I'm looking for a sidekick."
     show zaina smile
 
     an "I hem and haw, putting on the airs of somebody who's not quite convinced by her offer."
 
-    a talk "I don't know... spandex isn't really my thing."
-    show alex smile
+    a down talk "I don't know... spandex isn't really my thing."
 
-    an "Something in my words gives her pause and I glance at Zaina to find her studying me with a hand stroking her chin."
+    an smile "Something in my words gives her pause and I glance at Zaina to find her studying me with a hand stroking her chin."
 
     an "Her examination of me is clearly exaggerated, but nonetheless, I feel my mouth grow dry at the way she looks me up and down, not once, not twice, but {i}three{/i} times."
 
     an "I might've felt self-conscious if not for the lazy smile quirking her lips."
 
-    z talk "No, I think you can pull it off."
+    z unsure talk "No, I think you can pull it off."
     show zaina smile
 
     an "I try not to think about the way her gaze lingers and clear my throat, jumping at the lifeline offered to me by the door to the roof."
 
     an "Our hands both hover at the handle, neither of us quite ready to attempt to try the door just yet."
 
-    a talk "What will you do if it's locked this time too?"
+    a unsure talk "What will you do if it's locked this time too?"
     show alex smile
 
-    z talk "What will {i}we{/i} do."
+    z up talk "What will {i}we{/i} do."
     show zaina smile
 
     an "Somehow, that distinction warms my heart more than I ever thought it could."
 
-    z talk "And I dunno."
+    z unsure talk "And I dunno."
+
+    z down talk "Definitely won't be climbing out of any windows any time soon."
     show zaina smile
 
-    z talk "Definitely won't be climbing out of any windows any time soon."
-    show zaina smile
-
-    a talk "It's too bad you don't have laser vision as your superpower."
+    a down talk "It's too bad you don't have laser vision as your superpower."
     show alex smile
 
     ##zaina laugh
-
-    z talk "Right? Healing is so useless."
+    z unsure talk "Right? Healing is so useless."
     show zaina smile
 
     an "The two of us share a laugh and content that we'll at least have each other's company, we grasp the handle together and turn it."
@@ -2909,13 +2915,12 @@ label Scene13C:
 
     an "It caresses my cheeks, turning them apple red, and when I turn to Zaina, I marvel at the way the wind lightly tousles her hair."
 
-    a talk "Good?"
+    a unsure talk "Good?"
     show alex smile
 
-    z talk "{i}Better{/i}."
-    show zaina smile
+    z up talk "{i}Better{/i}."
 
-    z talk "Injuring myself and waiting a couple days might've been worth it for this view."
+    z unsure talk "Injuring myself and waiting a couple days might've been worth it for this view."
     show zaina smile
 
     an "It's an embellishment, of course, but I sort of see what she means. The twinkling lights of the city below are ordinarily no match for the stars when they're visible, but tonight it appears as though they're working in tandem."
@@ -2933,17 +2938,14 @@ label Scene13C:
     an "She sets it up so fast that I blink and miss it."
 
     ##zaina smile
+    z down talk "Yup."
 
-    z talk "Yup."
+    z up talk "Definitely worth it."
     show zaina smile
 
-    z talk "Definitely worth it."
-    show zaina smile
+    a up talk "Yeah."
 
-    a talk "Yeah."
-    show alex smile
-
-    an "Though I'm talking about a different view altogether..."
+    an smile "Though I'm talking about a different view altogether..."
 
     an "For a few minutes, I'm content to just watch, settling down on the ground while Zaina does her thing."
 
@@ -2959,44 +2961,40 @@ label Scene13C:
 
     an "But I'd be surprised if she feels the cold at all."
 
-    a talk "Zaina?"
-    show alex smile
+    a unsure frowntalk "Zaina?"
+    show alex frown
 
-    z talk "Hm...?"
-    show zaina smile
+    z unsure frown "Hm...?"
 
     an "She clearly hears me, but everything else apart from her camera and the view is secondary."
 
-    a talk "Could you maybe, um, put down the camera?"
-    show alex smile
+    a down talk "Could you maybe, um, put down the camera?"
 
-    an "Now {i}this{/i} gets her attention."
+    an smile "Now {i}this{/i} gets her attention."
 
     an "She steps from behind the tripod and fixes me with a look that I'm not quite sure what to make of. Annoyed? Curious? Contemplative, maybe?"
 
-    z talk "I can't exactly 'put it down.' It's attached to my tripod." 
-    show zaina smile
+    z down frowntalk "I can't exactly 'put it down.' It's attached to my tripod." 
+    show zaina frown
 
     an "That settles my nerves a little. If she's making jokes, she must not be mad like I thought she was."
 
     an "Evidently, she's receptive enough to the idea to consider it."
 
-    a talk "I just meant, um..."
-    show alex smile
+    a unsure frowntalk "I just meant, um..."
 
-    a talk "I don't know..."
-    show alex smile
+    a down frowntalk "I don't know..."
 
-    an "I'm suddenly finding everywhere and everything absolutely interesting, except, that is, her eyes."
+    an smile "I'm suddenly finding everywhere and everything absolutely interesting, except, that is, her eyes."
 
-    z talk "Hey."
-    show zaina smile
+    z unsure frowntalk "Hey."
 
-    z talk "Look at me when you're making a request like that."
-    show zaina smile
+    z up frowntalk "Look at me when you're making a request like that."
+    show zaina frown
 
     an "I force myself to do so, cringing when our eyes finally meet."
 
+    show zaina smile
     an "But to my surprise, the smile that's quirking her lips is an amused one." 
 
     ##zaina smile
@@ -3005,81 +3003,74 @@ label Scene13C:
 
     ##zaina smirk
 
-    z talk "You were saying?"
+    z unsure talk "You were saying?"
     show zaina smile
 
     an "I pout, which only gets me a laugh for my troubles."
 
     an "She's really making me say it again..."
 
-    a talk "I was just saying that, um, it would be nice if we, you know, were just present in the moment."
-    show alex smile
+    a unsure talk "I was just saying that, um, it would be nice if we, you know, were just present in the moment."
 
-    a talk "With no cameras or anything."
-    show alex smile
+    a down talk "With no cameras or anything."
 
-    an "I'm aware of how much that makes me sound like a sixty year old, but I can't take it back now. All I can do now is own it."
+    an smile "I'm aware of how much that makes me sound like a sixty year old, but I can't take it back now. All I can do now is own it."
 
     an "It's difficult to, what with Zaina's gaze penetrating through my soul, but I steel myself to not look away from her anyway." 
 
     an "I'm mostly successful."
 
-    z talk "It's not like I'm on my phone or anything."
-    show zaina smile
+    z unsure frowntalk "It's not like I'm on my phone or anything."
 
-    z talk "It's completely different."
-    show zaina smile
+    z down frowntalk "It's completely different."
+    show zaina frown
 
     an "My stomach churns and I feel a little silly for bringing it up now. I immediately backtrack."
 
-    a talk "Sorry—"
-    show alex smile
+    a down frowntalk "Sorry—"
 
-    an "She clicks her tongue."
+    an frown "She clicks her tongue."
 
-    z talk "You didn't let me finish."
-    show zaina smile
+    z unsure frowntalk "You didn't let me finish."
+    show zaina frown
 
     an "I open my mouth to apologize again, but I shut it at the look Zaina shoots me."
 
-    z talk "It's completely different, but..."
-    show zaina smile
+    z down frowntalk "It's completely different, but..."
+    show zaina frown
 
     an "{i}But{/i}?"
 
-    z talk "But I guess I can be 'present in the moment.'"
-    show zaina smile
+    z up talk "But I guess I can be 'present in the moment.'"
 
-    z talk "Can't be too different from hanging out with my grandma, right?"
+    z unsure talk "Can't be too different from hanging out with my grandma, right?"
     show zaina smile
 
     an "She grins while unattaching her camera and folding up her tripod, and I groan, convinced she'll never let me live it down."
 
     an "But, well..."
 
-    an "With her grinning like that, a life spent getting teased by Zaina couldn't be {i}too{/i} bad."
+    an smile "With her grinning like that, a life spent getting teased by Zaina couldn't be {i}too{/i} bad."
 
     an "In fact, as she settles down beside me, arm around my shoulder to keep us both warm, I'd say I'd be lucky to have her in my life for nearly half as long."
 
-    a talk "What were you taking pictures of?"
-    show alex smile
+    a unsure talk "What were you taking pictures of?"
 
-    an "I can't say I wasn't curious as to what could've kept her attention for so long."
+    an smile "I can't say I wasn't curious as to what could've kept her attention for so long."
 
-    z talk "A little of this, a little of that."
+    z down talk "A little of this, a little of that."
     show zaina smile
 
-    an "I pout, again, and she must feel sorry for me because she decides to throw me a bone."
+    an frown "I pout, again, and she must feel sorry for me because she decides to throw me a bone."
 
     an "Not before laughing first, though."
 
-    z talk "Mostly constellations."
+    z up talk "Mostly constellations."
+
+    z down talk "They're really clear tonight." 
     show zaina smile
 
-    z talk "They're really clear tonight." 
-    show zaina smile
-
-    an "I look up. I don't know much about constellations except the Big Dipper and I don't see that one now."
+    an smile "I look up. I don't know much about constellations except the Big Dipper and I don't see that one now."
 
     an "I squint to see if it'd help any, but it doesn't."
 
@@ -3089,45 +3080,48 @@ label Scene13C:
 
     an "So while I could probably name a lot of them, I was as good as lost trying to find them in the sky."
 
-    z talk "You can't see them, can you?"
+    z unsure talk "You can't see them, can you?"
     show zaina smile
 
     an "I shake my head."
 
-    z talk "Probably 'cause we don't have a telescope or binoculars."
-    show zaina smile
+    z down talk "Probably 'cause we don't have a telescope or binoculars."
 
-    z talk "I could see them through my camera, at least."
-    show zaina smile
+    z up talk "I could see them through my camera, at least."
 
-    z talk "But, see, that one there..."
+    z down talk "But, see, that one there..."
     show zaina smile
 
     an "Zaina traces a pattern in the sky and I follow it with my eyes."
 
-    z talk "Doesn't it look like Finn's ass?"
+    z unsure talk "Doesn't it look like Finn's ass?"
     show zaina smile
 
     ##alex laugh
 
-    a talk "What—what does that even look like?"
+    a unsure talk "What—what does that even look like?"
     show alex smile
 
-    z talk "{i}Flat{/i}."
+    z down talk "{i}Flat{/i}."
     show zaina smile
 
-    an "Any hope I have of stifling my laughter goes out the window. My shoulders shake despite my best attempts and when I reach out to point out something in the sky, it's difficult to keep my finger still."
+    an up "Any hope I have of stifling my laughter goes out the window. My shoulders shake despite my best attempts and when I reach out to point out something in the sky, it's difficult to keep my finger still."
 
-    a talk "That one there looks like Paxton's hat."
-    show alex smile
+    a unsure talk "That one there looks like Paxton's hat."
 
-    an "She tilts her head and traces the pattern I pointed out with a finger."
+    an smile "She tilts her head and traces the pattern I pointed out with a finger."
 
-    z talk "{i}Nice{/i}."
+    z up talk "{i}Nice{/i}."
+
+    z unsure talk "Oh, look at that one—"
     show zaina smile
 
-    z talk "Oh, look at that one—"
-    show zaina smile
+    hide alex
+    hide zaina
+    with dissolve
+
+    scene black
+    with fadee
 
     an "We continue on like that for a while. It's hard to keep track of all the constellations we make up, but by the end of it, Zaina's in a good enough mood that when I ask her if she'll teach me how to take photos, she says maybe instead of refusing outright."
 
