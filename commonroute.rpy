@@ -1145,6 +1145,171 @@ label Scene11B:
     jump Scene11D
 
 label Scene11C:
+    ## Scene 11C
+
+    show alex up smile backpack at closeright:
+        yalign -0.25
+    show zaina up smile at closeleft:
+        xalign 0.15
+        yalign -0.20
+    with dissolve
+
+    z up talk "Come on if you're coming."
+    show zaina smile
+
+    an "I quickly follow after her, wondering where exactly we're going."
+
+    an "Does she already have an idea in mind?"
+
+    a unsure talk "How do you usually choose what to take pictures of?"
+    show alex smile
+
+    z unsure talk "Eh, it's whatever strikes my mood."
+    show zaina smile
+
+    an down frown "That's pretty vague..." 
+
+    a unsure frowntalk "Is there something specific you do to get good shots?"
+    show alex frown
+
+    z down talk "Who knows."
+    show zaina smile
+
+    ##Alex frowning/scowling/pouting/w/e
+    z unsure talk "Do you have an interest in this kind of thing?"
+    show zaina smile
+
+    a up talk "I do now."
+
+    a unsure talk "What kind of camera is that?"
+    show alex smile
+
+    z down talk "A mirrorless."
+    show zaina smile
+
+    an frown "I realize that I have no idea what that means."
+
+    z up talk "Sometimes I just use my phone, though—phone cameras have improved a lot these days."
+
+    z unsure talk "But this is my nicer camera."
+    show zaina smile
+
+    an "Looking around as we walk, I try to see what she might see."
+
+    an up smile "In all the photos she posted to the account, there's something striking about them."
+
+    an "And though the inside of this mansion is fascinating, I don't quite get how she manages to make them look {i}so{/i} enticing."
+
+    a unsure talk "How does it pick up the light when it's so dark?"
+    show alex smile
+
+    z down talk "I don't know, I know how to use it, not how it {i}works{/i}. Those are two different things."
+    show zaina smile
+
+    a down smile "Hmm..."
+
+    an "We stop in what seems to be a foyer."
+
+    an "I don't think I'll ever understand how anyone can need {i}this{/i} many rooms with couches and stuff."
+
+    an "Zaina starts taking pictures, multiple ones that all seem to be of the same thing."
+
+    an "I watch as she squats down for a few shots before standing up again."
+
+    a up talk "Is there something interesting about that couch?"
+    show alex smile
+
+    z unsure talk "Hmmm I liked the angle I guess."
+    show zaina smile
+
+    a unsure frowntalk "The... angle?"
+    show alex frown
+
+    z down talk "The way all the stuff is laid out, from where I'm standing."
+
+    z up talk "I thought it'd make a good shot."
+    show zaina smile
+
+    a up talk "Oh!"
+
+    an smile "I wonder how she sees things that way."
+
+    an "Maybe I'm too logical of a person for this kind of thing?"
+
+    a unsure talk "Do you take pictures of people or just things?"
+    show alex smile
+
+    z unsure talk "Usually just things. Why, do you want me to take a picture of you?"
+    show zaina smile
+
+    ##Alex blushing/flustered
+    show alex down talk sweat
+    a blush "No! Not in particular..." with Dissolve(1.0)
+
+    an smile "Did that sound like I wanted her to take a picture of me?"
+
+    a unsure talk "I just—I think all the photos you take are cool an—"
+
+    ## First ten seconds of this? If there's something better I'm all for it, I'm going for something skittering over the roof and this sounds close enough https://freesound.org/people/Darius%20Kedros/sounds/276857/
+    show alex up frown -blush -sweat
+    show zaina up frown
+    "Skitterr..."
+
+    an down shock "What—What was—"
+
+    an unsure frown "An animal, probably. It was probably definitely an animal."
+
+    an down "Given that we are, in fact, in an old building."
+
+    an up "That has been partially overtaken by nature."
+
+    an down "Just an animal."
+
+    an unsure "It's just an animal—"
+
+    ##Zaina smile
+    z unsure talk "You okay there?"
+    show zaina smile
+
+    a up frowntalk sweat "I'm fine—"
+
+    an smile "She looks... really happy for some reason."
+
+    an "I'm immediately suspicious."
+
+    z up talk "Well that's good."
+
+    z down talk "Can't have my new favorite model {i}too{/i} spooked."
+    show zaina smile
+
+    a unsure shock "M-Model?"
+
+    a up frowntalk "Did you take a picture of me?!"
+    show alex frown
+
+    z up talk "Sure did. It was too good to pass up."
+    show zaina smile
+
+    a down frowntalk "You're gonna delete it, right?"
+    show alex frown
+
+    z down talk "Nah."
+    show zaina smile
+
+    a unsure frowntalk "Zaina!"
+
+    hide zaina
+    with dissolve
+
+    an frown "She isn't listening to me though, already heading back the way we came."
+
+    an "I'm so embarrassed..."
+
+    an smile "But I have no choice but to follow after her."
+
+    hide alex
+    with dissolve
+
     jump Scene11D
 
 label Scene11D:
@@ -1834,6 +1999,306 @@ label Scene12B:
     jump Scene13
 
 label Scene12C:
+    ## Scene 12C
+
+    an "As soon as we split up from the boys, it becomes very apparent that Zaina has something on her mind."
+
+    an "She's restless, constantly holding up her camera at something, then lowering it."
+
+    an "We haven't spent very long exploring these halls, but even so, I don't think I see her take a single picture at all."
+
+    a talk "Something wrong?"
+    show alex smile
+
+    an "Zaina drops her camera again, this time letting it hang by the strap around her neck."
+
+    z talk "That obvious, huh?"
+    show zaina smile
+
+    an "It's clear she's frustrated, and I'm not exactly sure what kind of answer she wants to hear."
+
+    a talk "Um. Sort of?"
+    show alex smile
+
+    an "{i}Smooth{/i}, Alex."
+
+    an "But my non-answer doesn't seem to irritate Zaina, in fact, it seems she's more annoyed at {i}herself{/i}."
+
+    z talk "I guess you could say it's kind of like writer's block?"
+    show zaina smile
+
+    an "Her lips twist into a scowl, as if it hurt her to admit that something like writer's block could ever happen to her."
+
+    z talk "Nothing's standing out to me."
+    show zaina smile
+
+    an "I look around. Well apart from the cobwebs and the paint peeling from the walls, there wasn't much to see in these hallways."
+
+    a talk "We could go somewhere else? See if you get inspired elsewhere?"
+    show alex smile
+
+    z talk "... Like?"
+    show zaina smile
+
+    an "She's looking at me expectantly, apparently waiting for my suggestion now since I was the one to bring it up."
+
+    an "I squirm under her gaze."
+
+    an "Come on, Alex. This is a hospital, it's practically your backyard!" 
+
+    an "What could be a place someone can take a lot of pictures at in here?"
+
+    an "The ICU, maybe? There's bound to be abandoned beds and machines laying around in that department."
+
+    an "No... I don't know where that'd be in here."
+
+    an "Any maps left on the walls have pretty much degraded, rendering them useless."
+
+    an "So then..."
+
+    a talk "Um, how about the roof?"
+    show alex smile
+
+    z talk "..."
+    show zaina smile
+
+    an "I cringe when all I get is silence. That was a stupid idea, wasn't it? Oh, I knew I should've—"
+
+    z talk "The roof, huh? That's not bad, Newbie."
+    show zaina smile
+
+    z talk "We can probably make out the stars clear as day up there."
+    show zaina smile
+
+    a talk "Well, it's {i}night{/i} actually."
+    show alex smile
+
+    an "I blurt that out without thinking."
+
+    an "..."
+
+    z talk "..."
+    show zaina smile
+
+    an "If I thought the silence before was bad, then this is even {i}worse{/i}."
+
+    ##alex blush
+
+    an "Oh God. Please, Earth, swallow me whole."
+
+    ##zaina laugh
+
+    z talk "So she can make jokes, too."
+    show zaina smile
+
+    z talk "{i}Shitty{/i} ones, but..." 
+    show zaina smile
+
+    z talk "You're pretty entertaining to have around, aren't you?"
+    show zaina smile
+
+    an "She's mostly laughing {i}at{/i} me, but I've never seen her look so animated. It's hard to feel too bad about it when her laugh lights up her entire face."
+
+    an "I stare, transfixed."
+
+    an "By the time her laughter dies down, the heat in my cheeks is there for an entirely different reason."
+
+    a talk "So, um, the roof, then?" 
+    show alex smile
+
+    an "I'm eager to get moving before I embarrass myself again."
+
+    z talk "Sure, I think it's this way..."
+    show zaina smile
+
+    an "It turns out to be a good thing that we didn't get far thanks to Zaina's dawdling. The stairs to the roof happen to be nearby, just a short walk from where we currently are."
+
+    an "Still, we're in no particular hurry."
+
+    a talk "You don't normally get stuck like this, then?"
+    show alex smile
+
+    an "Zaina frowns, but I get the feeling it isn't directed at me."
+
+    z talk "Nah."
+    show zaina smile
+
+    z talk "But I wanna get good shots this time since last time was a bust."
+    show zaina smile
+
+    an "Last time..."
+
+    an "I wince. I'd spent so much of our time asking her questions she didn't get the chance to take any photos."
+
+    an "It was all my fault."
+
+    an "I frown, lips parting to offer an apology, but before I can do so, Zaina pinches my nose."
+
+    a talk "Ow!"
+    show alex smile
+
+    z talk "Doom and gloom doesn't suit you, Newbie."
+    show zaina smile
+
+    z talk "Besides..."
+    show zaina smile
+
+    ##zaina smirk
+
+    z talk "I didn't leave the mansion completely empty handed."
+    show zaina smile
+
+    a talk "Huh?"
+    show alex smile
+
+    an "I have no idea what she's talking about. Did she take pictures when I wasn't looking?"
+
+    z talk "Don't remember?"
+    show zaina smile
+
+    ##zaina shocked/scared
+
+    an "Zaina pulls a face that can only be straight out of a horror movie. She looks like the first victim meeting the killer for the—{i}wait{/i}."
+
+    an "Was that supposed to be {i}me{/i}? From the other day?"
+
+    an "Her shaking shoulders ruin the effect she's going for and it isn't long before she dissolves into chuckles."
+
+    ##zaina laugh, alex pout
+
+    a talk "Hey!"
+    show alex smile
+
+    a talk "That's not—"
+    show alex smile
+
+    z talk "Funny? Oh, I think so."
+    show zaina smile
+
+    z talk "Might've even made my day when it happened."
+    show zaina smile
+
+    z talk "So don't worry about it."
+    show zaina smile
+
+    z talk "Okay?"
+    show zaina smile
+
+    an "Any protests are swiftly met by a look that manages to be both sharp and playful."
+
+    an "It's hard to say anything to that."
+
+    an "We reach the stairs to the roof moments later, but upon trying the door at the top, we find it locked."
+
+    an "Zaina looks more displeased than I thought she would be. Had she actually been looking forward to it?"
+
+    z talk "I think there was a window somewhere..."
+    show zaina smile
+
+    an "Wait. A {i}window{/i}?"
+
+    an "Zaina descends the stairs before I can question her, only to confirm that I had indeed heard her correctly when I see her eyeing an open window."
+
+    an "She inches her head out and looks up, probably gauging how much she'd have to climb to get to the roof."
+
+    a talk "I don't think that's a—"
+    show alex smile
+
+    an "If Zaina hears me, she gives no indication. Instead, she thrusts an arm out, hand settling on the windowsill to help balance her as she attempts to climb out of the window."
+
+    an "But she doesn't get very far."
+
+    an "The hand that's on the windowsill retracts immediately and when she pulls it toward her, I see red coating her palm."
+
+    an "{i}Blood{/i}."
+
+    z talk "Shit, that hurt..." 
+    show zaina smile
+
+    a talk "Zaina!" 
+    show alex smile
+
+    an "I rush toward her, hands reaching for hers. I stop just short of her fingers, though, as I'm careful to avoid the cut."
+
+    an "We glance at the window at the same time. It's then that we both realize that window wasn't open, but {i}broken{/i}. The windowsill still had remnants of the glass left, which is what she probably put her hand on. It shines red with her blood."
+
+    z talk "Damn, and I gave my first-aid kit to Paxton, too..."
+    show zaina smile
+
+    a talk "It's okay! I brought one with me!"
+    show alex smile
+
+    an "The kit is out of my backpack in a flash, as I hurry to get the disinfectant and gauze out."
+
+    an "When I turn to her, she's already holding her hand out. For some reason, I'd expected her to put up more of a fight."
+
+    z talk "I'm usually the one who's doing this."
+    show zaina smile
+
+    z talk "So I know what it's like to have uncooperative patients."
+    show zaina smile
+
+    an "I blink. Am I really {i}that{/i} easy to read?"
+
+    an "... But that's right. She mentioned that she gave her first-aid kit to Paxton."
+
+    a talk "Finn?"
+    show alex smile
+
+    z talk "Finn."
+    show zaina smile
+
+    an "Suddenly she groans, as if Finn's name reminded her of something. She covers her face with her uninjured hand."
+
+    z talk "I can't believe I actually pulled a {i}Finn{/i}."
+    show zaina smile
+
+    an "Zaina lamenting her decisions specifically because it was something Finn would do was not what I expected when I saw her cut herself. I fight a smile as I apply disinfectant to the wound."
+
+    a talk "It happens to the best of us."
+    show alex smile
+
+    z talk "Oh, acting like an idiot happens to the best of us? What does that make Finn? A dumbass?"
+    show zaina smile
+
+    a talk "You're the one that said it, not me."
+    show alex smile
+
+    z talk "I did. And I'll say it to his face, too. Only a dumbass would do something as stupid as get himself hurt every week."
+    show zaina smile
+
+    an "Her words are harsh, but I see the way her eyes grow fond at talk of him. Her harshness clearly comes from a place of worry."
+
+    z talk "Anyway, sorry to make you do this. One Finn is enough." 
+    show zaina smile
+
+    an "I shake my head as I finish wrapping the gauze around her hand."
+
+    a talk "If you've done this before, then you know it's not a big deal." 
+    show alex smile
+
+    a talk "Sorry you couldn't take photos today either."
+    show alex smile
+
+    z talk "Nah. It's for the best. I probably would've fallen to my death if I tried that stunt." 
+    show zaina smile
+
+    z talk "Let's keep this between you and me, though. Finn would never let me live it down if he found out."
+    show zaina smile
+
+    an "She's done her best to hide it, but Zaina's actually {i}embarrassed{/i}. I didn't think that was possible for her."
+
+    ##alex playful grin
+
+    a talk "Or maybe it could bring you two closer. You guys can compare battle scars." 
+    show alex smile
+
+    z talk "I take it back. I'm not sorry at all."
+    show zaina smile
+
+    an "Zaina takes off in a brisk step to meet up with the others, forcing me to chase after her with laughter on my lips."
+
+
     jump Scene13
 
 label Scene13:
@@ -2343,6 +2808,342 @@ label Scene13B:
     an "I try not to laugh, seeing how his hair seems to blend in with the dark of the night and his jewelry glistens like stars of their own."
 
     an "I keep my musings to myself, wondering how any view could be better than this one right now."
+
+    jump Scene14
+
+label Scene13C:
+    ## Scene 13C
+    z talk "Before you get any ideas, I was already planning on heading up to the roof. With or without you."
+    show zaina smile
+
+    ##alex smile
+
+    a talk "I wouldn't think of it."
+    show alex smile
+
+    an "So she wants to go to the roof just as much as I do. Guess we were both left wanting after our last trip."
+
+    an "Zaina waits for me to fall into step with her and then we set off, in no rush just like last time. I think we both want for that to be the only thing that's the same as we're careful not to jinx it by hurrying over there too soon."
+
+    an "I glance at her right hand. It's covered by the sleeve of her jacket."
+
+    a talk "How's your hand?"
+    show alex smile
+
+    z talk "Better."
+    show zaina smile
+
+    an "She lifts her hand up and pulls down her sleeve."
+
+    z talk "It was hard to wrap it with my left hand, but I managed."
+    show zaina smile
+
+    an "Sure enough, the bandaging looks like it was done more than once, like she couldn't quite get it the first time."
+
+    an "But otherwise, it looks pretty good."
+
+    z talk "Watching my hands is a bitch, though."
+    show zaina smile
+
+    ##alex laugh
+
+    a talk "If it wasn't, I'd suspect you'd have super healing powers."
+    show alex smile
+
+    ##zaina playful smile
+
+    z talk "How'd you know I wasn't just trying not to blow my cover?"
+    show zaina smile
+
+    a talk "Is that what you get up to in your spare time?"
+    show alex smile
+
+    z talk "Maybe."
+    show zaina smile
+
+    an "Her smile turns coy as she bumps my shoulders."
+
+    z talk "Well, since you figured it out, I guess I can let you know I'm looking for a sidekick."
+    show zaina smile
+
+    an "I hem and haw, putting on the airs of somebody who's not quite convinced by her offer."
+
+    a talk "I don't know... spandex isn't really my thing."
+    show alex smile
+
+    an "Something in my words gives her pause and I glance at Zaina to find her studying me with a hand stroking her chin."
+
+    an "Her examination of me is clearly exaggerated, but nonetheless, I feel my mouth grow dry at the way she looks me up and down, not once, not twice, but {i}three{/i} times."
+
+    an "I might've felt self-conscious if not for the lazy smile quirking her lips."
+
+    z talk "No, I think you can pull it off."
+    show zaina smile
+
+    an "I try not to think about the way her gaze lingers and clear my throat, jumping at the lifeline offered to me by the door to the roof."
+
+    an "Our hands both hover at the handle, neither of us quite ready to attempt to try the door just yet."
+
+    a talk "What will you do if it's locked this time too?"
+    show alex smile
+
+    z talk "What will {i}we{/i} do."
+    show zaina smile
+
+    an "Somehow, that distinction warms my heart more than I ever thought it could."
+
+    z talk "And I dunno."
+    show zaina smile
+
+    z talk "Definitely won't be climbing out of any windows any time soon."
+    show zaina smile
+
+    a talk "It's too bad you don't have laser vision as your superpower."
+    show alex smile
+
+    ##zaina laugh
+
+    z talk "Right? Healing is so useless."
+    show zaina smile
+
+    an "The two of us share a laugh and content that we'll at least have each other's company, we grasp the handle together and turn it."
+
+    an "I hear the mechanism click."
+
+    an "The door opens."
+
+    an "We grin triumphantly at each other. We're probably way too happy over a door opening, but I can't bring myself to care."
+
+    an "The cold doesn't have it's usual bite when we exit to the roof, though maybe that's the joy talking. Instead, the wind that whips past is comforting, much like a mother's embrace."
+
+    an "It caresses my cheeks, turning them apple red, and when I turn to Zaina, I marvel at the way the wind lightly tousles her hair."
+
+    a talk "Good?"
+    show alex smile
+
+    z talk "{i}Better{/i}."
+    show zaina smile
+
+    z talk "Injuring myself and waiting a couple days might've been worth it for this view."
+    show zaina smile
+
+    an "It's an embellishment of course, but I sort of see what she means. The twinkling lights of the city below are ordinarily no match for the stars when they're visible, but tonight it appears as though they're working in tandem."
+
+    an "The shine of one matches the other, enveloping the city in a blanket of lights."
+
+    an "And it's not just the city either."
+
+    an "I turn to Zaina, where the stars reflect in her eyes and the city lights illuminate her face."
+
+    an "It's a sight that surely sticks with me, even without the use of a camera."
+
+    an "But Zaina can't quite resist the pull, not that I blame her. I'm tempted to sneak a quick candid picture of her myself, but she's already moving before I have the chance to make up my mind, pulling a tripod out of her bag."
+
+    an "She sets it up so fast that I blink and miss it."
+
+    ##zaina smile
+
+    z talk "Yup."
+    show zaina smile
+
+    z talk "Definitely worth it."
+    show zaina smile
+
+    a talk "Yeah."
+    show alex smile
+
+    an "Though I'm talking about a different view altogether..."
+
+    an "For a few minutes, I'm content to just watch, settling down on the ground while Zaina does her thing."
+
+    an "‘Does her thing' doesn't quite do it justice though because the smile that lingers on her lips as she takes pictures lights her face up in a way that no city light or star in the sky can."
+
+    an "It's honestly... {i}breathtaking{/i}."
+
+    an "Eventually though, my legs begin to cramp and I'm suddenly reminded of the fact that we {i}are{/i} outside and I didn't exactly dress in anticipation for it. My jacket is light and does little to prevent the chill that rises now that it's later in the evening."
+
+    an "The adrenaline from discovering that the door to the roof was unlocked also subsides."
+
+    an "None of this seems to deter Zaina, though, who isn't dressed much better than I am."
+
+    an "But I'd be surprised if she feels the cold at all."
+
+    a talk "Zaina?"
+    show alex smile
+
+    z talk "Hm...?"
+    show zaina smile
+
+    an "She clearly hears me, but everything else apart from her camera and the view is secondary."
+
+    a talk "Could you maybe, um, put down the camera?"
+    show alex smile
+
+    an "Now {i}this{/i} gets her attention."
+
+    an "She steps from behind the tripod and fixes me with a look that I'm not quite sure what to make of. Annoyed? Curious? Contemplative, maybe?"
+
+    z talk "I can't exactly ‘put it down.' It's attached to my tripod." 
+    show zaina smile
+
+    an "That settles my nerves a little. If she's making jokes, she must not be mad like I thought she was."
+
+    an "Evidently, she's receptive enough to the idea to consider it."
+
+    a talk "I just meant, um..."
+    show alex smile
+
+    a talk "I don't know..."
+    show alex smile
+
+    an "I'm suddenly finding everywhere and everything absolutely interesting, except, that is, her eyes."
+
+    z talk "Hey."
+    show zaina smile
+
+    z talk "Look at me when you're making a request like that."
+    show zaina smile
+
+    an "I force myself to do so, cringing when our eyes finally meet."
+
+    an "But to my surprise, the smile that's quirking her lips is an amused one." 
+
+    ##zaina smile
+
+    an "Or it would be, if it didn't turn into a smirk immediately after."
+
+    ##zaina smirk
+
+    z talk "You were saying?"
+    show zaina smile
+
+    an "I pout, which only gets me a laugh for my troubles."
+
+    an "She's really making me say it again..."
+
+    a talk "I was just saying that, um, it would be nice if we, you know, were just present in the moment."
+    show alex smile
+
+    a talk "With no cameras or anything."
+    show alex smile
+
+    an "I'm aware of how much that makes me sound like a sixty year old, but I can't take it back now. All I can do now is own it."
+
+    an "It's difficult to, what with Zaina's gaze penetrating through my soul, but I steel myself to not look away from her anyway." 
+
+    an "I'm mostly successful."
+
+    z talk "It's not like I'm on my phone or anything."
+    show zaina smile
+
+    z talk "It's completely different."
+    show zaina smile
+
+    an "My stomach churns and I feel a little silly for bringing it up now. I immediately backtrack."
+
+    a talk "Sorry—"
+    show alex smile
+
+    an "She clicks her tongue."
+
+    z talk "You didn't let me finish."
+    show zaina smile
+
+    an "I open my mouth to apologize again, but I shut it at the look Zaina shoots me."
+
+    z talk "It's completely different, but..."
+    show zaina smile
+
+    an "{i}But{/i}?"
+
+    z talk "But I guess I can be ‘present in the moment.'"
+    show zaina smile
+
+    z talk "Can't be too different from hanging out with my grandma, right?"
+    show zaina smile
+
+    an "She grins while unattaching her camera and folding up her tripod, and I groan, convinced she'll never let me live it down."
+
+    an "But, well..."
+
+    an "With her grinning like that, a life spent getting teased by Zaina couldn't be {i}too{/i} bad."
+
+    an "In fact, as she settles down beside me, arm around my shoulder to keep us both warm, I'd say I'd be lucky to have her in my life for nearly half as long."
+
+    a talk "What were you taking pictures of?"
+    show alex smile
+
+    an "I can't say I wasn't curious as to what could've kept her attention for so long."
+
+    z talk "A little of this, a little of that."
+    show zaina smile
+
+    an "I pout, again, and she must feel sorry for me because she decides to throw me a bone."
+
+    an "Not before laughing first, though."
+
+    z talk "Mostly constellations."
+    show zaina smile
+
+    z talk "They're really clear tonight." 
+    show zaina smile
+
+    an "I look up. I don't know much about constellations except the Big Dipper and I don't see that one now."
+
+    an "I squint to see if it'd help any, but it doesn't."
+
+    an "The stars, while visible and very pretty, are all indistinguishable to me."
+
+    an "I was never one to stargaze anyway. My parents made sure I put my time to better use."
+
+    an "So while I could probably name a lot of them, I was as good as lost trying to find them in the sky."
+
+    z talk "You can't see them, can you?"
+    show zaina smile
+
+    an "I shake my head."
+
+    z talk "Probably ‘cause we don't have a telescope or binoculars."
+    show zaina smile
+
+    z talk "I could see them through my camera, at least."
+    show zaina smile
+
+    z talk "But, see, that one there..."
+    show zaina smile
+
+    an "Zaina traces a pattern in the sky and I follow it with my eyes."
+
+    z talk "Doesn't it look like Finn's ass?"
+    show zaina smile
+
+    ##alex laugh
+
+    a talk "What—what does that even look like?"
+    show alex smile
+
+    z talk "{i}Flat{/i}."
+    show zaina smile
+
+    an "Any hope I have of stifling my laughter goes out the window. My shoulders shake despite my best attempts and when I reach out to point out something in the sky, it's difficult to keep my finger still."
+
+    a talk "That one there looks like Paxton's hat."
+    show alex smile
+
+    an "She tilts her head and traces the pattern I pointed out with a finger."
+
+    z talk "{i}Nice{/i}."
+    show zaina smile
+
+    z talk "Oh, look at that one—"
+    show zaina smile
+
+    an "We continue on like that for a while. It's hard to keep track of all the constellations we make up, but by the end of it, Zaina's in a good enough mood that when I ask her if she'll teach me how to take photos, she says maybe instead of refusing outright."
+
+    an "That possibility means more than I could ever say, especially when it comes from someone like Zaina, who says no like it's a hobby."
+
+    an "I go home that day with promises of maybe's in my heart and go to sleep with dreams of girls with stars in their eyes."
+
 
     jump Scene14
 
