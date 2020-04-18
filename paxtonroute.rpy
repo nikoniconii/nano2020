@@ -63,7 +63,7 @@ label paxtonroute:
             show alex shock unsure sweat 
             extend "... a guinea pig?"
             show alex up smile -sweat 
-            an "Oh, for his latte experiments. Right,that makes sense."
+            an "Oh, for his latte experiments. Right, that makes sense."
             show alex talk 
             a "I should reply to him."
             show alex unsure frown
@@ -200,7 +200,7 @@ label paxtonroute:
     show paxton smile up 
     a "Well, what's up with that cup you have? Is it for me{nw}"
     show alex shock
-    extend"— {w}wait, did you know I was going to arrive just now?"
+    extend"—{w}wait, did you know I was going to arrive just now?"
     show paxton talk 
     show alex smile 
     p "I didn't. I just wanted to try making that latte and see if it tasted okay. If I messed it up, I was going to dump it into trash and be glad that you weren't here to see it."
@@ -311,7 +311,7 @@ label paxtonroute:
     #     linear 0.2 xalign 0.2
     # ## Paxton, worried
     # show alex frown 
-    # p "Wha— um, is it too, I don't know, sweet or—?"
+    # p "Wha—um, is it too, I don't know, sweet or—?"
     # show paxton frown 
     # show alex up smile 
     # an "Aw, he looks really worried."
@@ -325,7 +325,7 @@ label paxtonroute:
         linear 0.25 yalign 1.6 
         linear 0.25 yalign 1.0 
     ## Paxton, smiling
-    p "You're worse than Zaina— you know that, right?"
+    p "You're worse than Zaina—you know that, right?"
     show paxton smile 
     menu:
         "I like her.":
@@ -442,7 +442,7 @@ label paxtonroute:
     ## Alex, worried/frowning
     an "We arrive at the old amusement park. I look around, but all I can see is dusty, old machines. {nw}"
     show alex smile 
-    extend "They're fascinating— once, they were the source of hundreds' happiness.{nw}"
+    extend "They're fascinating—once, they were the source of hundreds' happiness.{nw}"
     show alex frown 
     extend " Now they're just empty, old metal pieces."
     show finn down talk at Transform: 
@@ -456,7 +456,7 @@ label paxtonroute:
     show alex up -sweat
     an "This amusement park looks old, but really interesting. I'd love to explore it more, but I don't want to do it alone."
     show alex down 
-    an "And I have a feeling Finn already has a plan in his mind— it's probably not exploring this place, though."
+    an "And I have a feeling Finn already has a plan in his mind—it's probably not exploring this place, though."
     show alex up sweat 
     an "He looks interested in the old roller coaster tracks. What is he thinking?"
     show zaina up frowntalk at Transform: 
@@ -481,7 +481,7 @@ label paxtonroute:
     p "Hey! I like horror tunnels..."
     show paxton frown 
     show finn down frowntalk 
-    f "God, there are so many things wrong with that sentence. Not even Cerberus would be scared of them— that's a big turn-off, wouldn't you say?"
+    f "God, there are so many things wrong with that sentence. Not even Cerberus would be scared of them—that's a big turn-off, wouldn't you say?"
     show finn frown 
     show alex shock 
     a "Cerberus? Who is that?"
@@ -518,7 +518,7 @@ label paxtonroute:
             show alex up frown sweat 
             show zaina down frowntalk   
             ## Zaina, smirking
-            z "Well, that makes two of you. I can't understand what you enjoy so much about them— they're not even {i}scary.{/i}"
+            z "Well, that makes two of you. I can't understand what you enjoy so much about them—they're not even {i}scary.{/i}"
             show finn down talk 
             show zaina talk 
             show alex up shock sweat 
@@ -538,7 +538,7 @@ label paxtonroute:
             f "Sure, and the water is just a little wet."
             show finn smile 
             show zaina frowntalk 
-            z "Stop making fun of him about this, Finn— Paxton gets nightmares about spiders whenever you start talking about them."
+            z "Stop making fun of him about this, Finn—Paxton gets nightmares about spiders whenever you start talking about them."
             show zaina talk up 
             show alex smile up 
             show paxton unsure frowntalk  
@@ -583,7 +583,7 @@ label paxtonroute:
             f "I'm just saying! They're supposed to be scary, but they're not. They had one job, and they screwed it up."
             show finn frown 
             show zaina frowntalk 
-            z "Okay, seriously. Shut up. I'm not going to listen to you lecturing us about horror tunnels— {nw}"
+            z "Okay, seriously. Shut up. I'm not going to listen to you lecturing us about horror tunnels—{nw}"
             show zaina down 
             extend "{i}again.{/i}"
 
@@ -661,7 +661,7 @@ label paxtonroute:
     show alex neutral smile   
     an "I'm sure he'll tell Finn not to do it. He's way too cautious to let Finn do something like this."
     show finn talk up 
-    f "I know what I'm doing. People besides us have been here recently and they all said the rides are in good shape— it should be safe to climb on the tracks."
+    f "I know what I'm doing. People besides us have been here recently and they all said the rides are in good shape—it should be safe to climb on the tracks."
     show finn smile 
     show zaina up frowntalk 
     show alex frown 
@@ -699,7 +699,7 @@ label paxtonroute:
     show alex neutral frown sweat 
     an "I watch Finn walking away from us towards the roller coaster. His steps are filled with confidence, but I feel worried."
     scene bg amusementpark with fade 
-    an "Finn starts climbing. I can't keep my eyes off of him— what if he slips?"
+    an "Finn starts climbing. I can't keep my eyes off of him—what if he slips?"
     an "He's moving too fast. He should be more careful."
     scene bg amusementpark with fade 
     show alex unsure frown at Transform: 
@@ -790,7 +790,7 @@ label paxtonroute:
         xalign 0.5 yalign 1.0 
         linear 1.25 xalign 0.35 
     with dissolve 
-    an "I try to walk by his side while looking around. In the distance, I can see a big Ferris wheel— it's lights aren’t on, but the view of it is still amazing despite how old and dirty it looks."
+    an "I try to walk by his side while looking around. In the distance, I can see a big Ferris wheel—it's lights aren’t on, but the view of it is still amazing despite how old and dirty it looks."
     show paxton talk  
     p "I used to come here when I was a little kid."
     show paxton smile 
@@ -835,7 +835,7 @@ label paxtonroute:
                 linear 0.4 xalign 0.04 
                 linear 0.2 xalign 0.05 
             ## Paxton, laughing/smiling
-            p "Are you kidding? No, I was scared to death! There were huge machines everywhere, and I saw a girl crying and throwing up at the entrance— I was {i}terrified{/i}."
+            p "Are you kidding? No, I was scared to death! There were huge machines everywhere, and I saw a girl crying and throwing up at the entrance—I was {i}terrified{/i}."
             show paxton smile 
             show alex at closeright: 
                 linear 0.2 yalign -0.65 
@@ -845,7 +845,7 @@ label paxtonroute:
             a "Well, how about now? Are you still scared?"
             show alex smile 
             show paxton talk unsure 
-            p "This place is pretty much abandoned— everything's old, dusty and broken. It's like a horror movie."
+            p "This place is pretty much abandoned—everything's old, dusty and broken. It's like a horror movie."
             show paxton smile 
             show alex talk 
             a "I take that as a yes."
@@ -901,10 +901,10 @@ label paxtonroute:
         linear 0.2 xalign 0.06 
         linear 0.4 xalign 0.04 
         linear 0.2 xalign 0.05 
-    p "You— you do?"
+    p "You—you do?"
     show paxton frown 
     show alex frown 
-    an "He stopped walking. Why is he— {nw}" 
+    an "He stopped walking. Why is he—{nw}" 
     show alex shock 
     extend "oh."
     an "I'm an idiot."
@@ -961,7 +961,7 @@ label paxtonroute:
     hide p_browup 
     hide phat 
     show paxton unsure sweat hat frowntalk at closeleft
-    p "The lid? It was— well, nothing, just cafe rules, y'know."
+    p "The lid? It was—well, nothing, just cafe rules, y'know."
     show paxton frown 
     show alex unsure frown 
     an "{i}Cafe rules?{/i} Really? Couldn't he come up with something else?"
@@ -1258,7 +1258,7 @@ label paxtonroute:
     show alex unsure 
     an "I can't help but wonder why..."
     show paxton down frowntalk 
-    p "Zaina, can you give them here? I'll help patch up Alex— you can carry her backpack for her."
+    p "Zaina, can you give them here? I'll help patch up Alex—you can carry her backpack for her."
     show paxton frown 
     show alex frowntalk sweat -backpack 
     $ kneelflag = False 
@@ -1325,7 +1325,7 @@ label paxtonroute:
     an "How embarrassing..."
     show alex -blush 
     show paxton talk 
-    p "Well, you should be okay once we bandage these up. When we get back, we can clean it up properly— {nw}"
+    p "Well, you should be okay once we bandage these up. When we get back, we can clean it up properly—{nw}"
     show paxton down frowntalk 
     extend "it's too dark in here to see the wound clearly."
     show paxton frown 
@@ -1339,7 +1339,7 @@ label paxtonroute:
     an "They're going together and joking around again... {nw}"
     hide finn with dissolve 
     hide zaina with dissolve 
-    extend "I wonder why Paxton doesn't seem to want to join them with this— {nw}"
+    extend "I wonder why Paxton doesn't seem to want to join them with this—{nw}"
     show alex down shock sweat with hpunch
     extend "{i}ow!{/i}"
     
@@ -1393,7 +1393,7 @@ label paxtonroute:
     show paxton smile behind alex at Transform: 
         linear 2.0 xalign 0.6 
     show alex frown 
-    an "He gets up from where he had been kneeling to lean down on me— and sneaks his arms behind my knees and back!"
+    an "He gets up from where he had been kneeling to lean down on me—and sneaks his arms behind my knees and back!"
     show alex shock unsure blush 
     a "W—wait!"
     show alex frown 
@@ -1458,7 +1458,7 @@ label paxtonroute:
     show alex neutral frown 
     an "I can't even think of a reply..."
     show alex up frown -blush 
-    an "He starts driving back— then I notice it!"
+    an "He starts driving back—then I notice it!"
     show alex frowntalk 
     a "That's not the way to my apartment!"
     ## Paxton, frowning
@@ -1507,12 +1507,12 @@ label paxtonroute:
     menu:
         "Are you sure I won't bother you? This is your flat, after all...":
             show paxton talk 
-            p "Exactly— it's my flat, so it's okay. You won't bother me, don't worry."
+            p "Exactly—it's my flat, so it's okay. You won't bother me, don't worry."
             show paxton smile 
             show alex unsure 
             a "..."
             show paxton talk unsure 
-            p "I'm serious. Stop frowning, it's fine. I'm not the one that should feel uncomfortable— you're in a guy's flat that you've known for not long at all."
+            p "I'm serious. Stop frowning, it's fine. I'm not the one that should feel uncomfortable—you're in a guy's flat that you've known for not long at all."
             show paxton smile 
             show alex up talk 
             a "I trust you."
@@ -1617,7 +1617,7 @@ label paxtonroute:
         linear 0.2 xalign 0.8
     an "I shrug, but Paxton takes it as a yes."
     show paxton talk 
-    p "Good! I can make a decent omelette— I'm no cook by any means; desserts and lattes are more of my expertise."
+    p "Good! I can make a decent omelette—I'm no cook by any means; desserts and lattes are more of my expertise."
     show alex up frown 
     hide paxton with dissolve 
     ## Paxton disappears
@@ -1747,7 +1747,7 @@ label paxtonroute:
     p "Maybe next time."
     show paxton smile behind alex at Transform: 
         linear 5.0 xalign 4.0
-    an "He leans down, closer and closer to me— {nw}" 
+    an "He leans down, closer and closer to me—{nw}" 
     show paxton unsure frown blush at Transform: 
         linear 1.5 yalign -0.5 
     extend "then stops. I can feel his breath, but he doesn't move."
@@ -1964,7 +1964,7 @@ label paxtonroute:
             a "What do you mean?"
             show alex frown 
             show zaina frowntalk 
-            z "You noticed it too, didn't you? Paxton always puts distance between us and him— he never lets us do things when he can do them himself."
+            z "You noticed it too, didn't you? Paxton always puts distance between us and him—he never lets us do things when he can do them himself."
             show zaina frown 
             show alex unsure sweat 
             an "... that's not entirely wrong. He did carry me all the way back when I could walk myself."
@@ -2108,7 +2108,7 @@ label paxtonroute:
     p "..."
     show alex up 
     show paxton down frowntalk 
-    p "It's just— he's so {i}annoying!{/i} He never listens to me, and I can't push him either because then— then he'd hate me and he's so stubborn!"
+    p "It's just—he's so {i}annoying!{/i} He never listens to me, and I can't push him either because then—then he'd hate me and he's so stubborn!"
     show paxton -sweat at Transform: 
         linear 0.35 xalign 0.08 
     p "He's so frustrating and he makes me worry so much! {nw}"
@@ -2131,7 +2131,7 @@ label paxtonroute:
     a "Did you try to talk to Finn about this?"
     show alex frown 
     show paxton frowntalk 
-    p "Of course not, I can't— {nw}" 
+    p "Of course not, I can't—{nw}" 
     show paxton unsure 
     extend "I don't want him to push me away just because I can't handle a little excitement."
     p "And if he decides I'm too much of a scaredy cat to hang out with him, Zaina'll also stop talking with me. They’re close."
@@ -2189,7 +2189,7 @@ label paxtonroute:
             extend "Because I don't feel like that's actually true."
             show paxton frown 
             show alex unsure shock 
-            a "They wouldn't! You guys are friends— {nw}"
+            a "They wouldn't! You guys are friends—{nw}"
             show alex talk 
             extend "really close friends. Don't underestimate that relationship so easily."
             show alex up smile 
@@ -2350,12 +2350,12 @@ label paxtonroute:
         "Is everything okay?":
             show paxton frowntalk 
             show alex frown 
-            p "Yeah, sorry, I'm just— can we talk? On my break, I mean, I just..."
+            p "Yeah, sorry, I'm just—can we talk? On my break, I mean, I just..."
 
         "Did something happen?":
             show paxton frowntalk 
             show alex frown 
-            p "No— well, kind of. Are you free at noon? We can talk about it on my break if you're okay with that."
+            p "No—well, kind of. Are you free at noon? We can talk about it on my break if you're okay with that."
 
     show alex neutral 
     show paxton frown 
@@ -2364,7 +2364,7 @@ label paxtonroute:
     a "Yeah, of course."
     show alex frown 
     show paxton frowntalk 
-    p "I'll be out in an hour— {nw}" 
+    p "I'll be out in an hour—{nw}" 
     show paxton unsure 
     extend "uh, are you sure you're okay with waiting?"
     show paxton frown 
@@ -2377,7 +2377,7 @@ label paxtonroute:
     show alex smile 
     show paxton up frowntalk blush 
     ## Paxton, blushing
-    p "I— um, sure."
+    p "I—um, sure."
     show paxton frown unsure 
     show alex blush 
     an "Ah, he's blushing... I think he feels a little better now. Good job, Alex!"
@@ -2451,7 +2451,7 @@ label paxtonroute:
     extend "You looked pretty angry before."
     show alex smile 
     show paxton unsure frowntalk 
-    p "Sorry about that. Finn texted me about going to an older mansion. That place is literally wrecked, and I know it's too dangerous— {nw}" 
+    p "Sorry about that. Finn texted me about going to an older mansion. That place is literally wrecked, and I know it's too dangerous—{nw}" 
     show paxton down 
     extend "I told him that I didn't want to go there."
     show paxton frown 
@@ -2507,7 +2507,7 @@ label paxtonroute:
     show alex smile 
     show paxton up talk 
     ## Paxton, smiling slightly
-    p "I do. Anyway, these sandwiches are really good— thanks for making lunch for me."
+    p "I do. Anyway, these sandwiches are really good—thanks for making lunch for me."
     show paxton smile 
     show alex up talk 
     a "Glad you liked them. I wasn't really sure what to make."
@@ -2573,7 +2573,7 @@ label paxtonroute:
     show alex backpack at closeright:
         yalign -0.7 
     with dissolve 
-    an "I step inside and walk to the kitchen with Paxton. He serves the dinner right away— instant ramen with an egg on top. {nw}" 
+    an "I step inside and walk to the kitchen with Paxton. He serves the dinner right away—instant ramen with an egg on top. {nw}" 
     show alex unsure talk 
     extend "It's a classic college student dinner."
     show alex up shock 
@@ -2585,7 +2585,7 @@ label paxtonroute:
     an "We eat and talk at the same time; not about all the drama that's going on in the gang, but rather about our day."
     show alex unsure 
     show paxton talk 
-    an "Apparently, one of Paxton's D&D sessions ended up with all players dead since the paladin refused to heal the rogue— he uses all kinds of weird words as he describes the game."
+    an "Apparently, one of Paxton's D&D sessions ended up with all players dead since the paladin refused to heal the rogue—he uses all kinds of weird words as he describes the game."
     show alex smile 
     an "I don't ask him. He looks way too excited talking, so I don't want to cut him off."
     show paxton smile 
@@ -2723,9 +2723,9 @@ label paxtonroute:
     a "What should we do?"
     show alex frown 
     show paxton frowntalk 
-    p "I— I don't know. Maybe we should go there to get him? Or tell Zaina to call 911?"
+    p "I—I don't know. Maybe we should go there to get him? Or tell Zaina to call 911?"
     show paxton frowntalk sweat 
-    p "This is the first time one of us had an injury like this. If we call 911, they'd definitely call the cops— {nw}" 
+    p "This is the first time one of us had an injury like this. If we call 911, they'd definitely call the cops—{nw}" 
     show paxton at closeleft: 
         yalign -0.3 
         linear 0.2 xalign 0.06 
@@ -2740,7 +2740,7 @@ label paxtonroute:
         linear 0.2 xalign 0.06 
         linear 0.4 xalign 0.04 
         linear 0.2 xalign 0.05
-    p "I— I don't know... Alex, what should I do?"
+    p "I—I don't know... Alex, what should I do?"
     show paxton frown 
     ## Maybe a close up to Paxton's worried face?
     an "I can try to tell him to do something, but..."
@@ -2756,7 +2756,7 @@ label paxtonroute:
             a "I'm sorry, but I can't make that choice for you, Paxton. You know better what to do than I do."
             show alex frown 
             
-        "Zaina is asking for your help— that's not something I should decide.":
+        "Zaina is asking for your help—that's not something I should decide.":
             show alex unsure 
             a "Just do what your heart tells you. I'll be here to help you, no matter what."
             show alex smile 
@@ -2769,7 +2769,7 @@ label paxtonroute:
         linear 0.2 xalign 0.06 
         linear 0.4 xalign 0.04 
         linear 0.2 xalign 0.05
-    p "You— no, I can't..."
+    p "You—no, I can't..."
     show alex neutral 
     show paxton -sweat frown at closeleft: 
         yalign -0.3
