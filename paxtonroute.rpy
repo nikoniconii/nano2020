@@ -13,6 +13,9 @@ label paxtonroute:
     ## Scene 1
     scene bg alex_room with fadee
 
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
+
     show alex unsure frown at Transform:
         linear 0.0 xalign 0.75 yalign 1.0
         linear 1.5 xalign 0.8
@@ -123,7 +126,10 @@ label paxtonroute:
     
     ## Scene 2
     scene bg cafe with fadee
-    
+
+    play music "Bm_Cafe04.ogg" fadein 1
+    queue music "Bm_Cafe04.ogg"
+
     show alex backpack at Transform:
         linear 0.0 xalign 0.75 yalign 2.0
         linear 1.5 xalign 0.8 
@@ -422,9 +428,13 @@ label paxtonroute:
         linear 0.2 xalign 0.2 
     p "Awesome. Now, tell me more about what you can taste in this..."
 
+
     ## Scene 3 
     scene bg amusementpark with fadee 
     
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
+
     show alex unsure frown backpack at Transform:
         linear 0.0 xalign 0.95 yalign 2.0
         linear 1.5 xalign 1.0 
@@ -994,6 +1004,9 @@ label paxtonroute:
     ## Scene 4
     scene bg cafe with fadee 
 
+    play music "Bm_Cafe04.ogg" fadein 1
+    queue music "Bm_Cafe04.ogg"
+
     ## clinking sound effect, coming from the bell on the cafe's door when Alex opens it
     show alex unsure shock backpack at Transform: 
         xalign 0.75 yalign 2.0 
@@ -1142,6 +1155,9 @@ label paxtonroute:
     ## Scene 5
     ## Old mansion bg
     scene bg mansion with fadee 
+
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
 
     show alex frown up backpack at Transform: 
         xalign 0.95 yalign 2.0 
@@ -1386,7 +1402,9 @@ label paxtonroute:
     p "Sorry, can't do that! You should've been more careful."
     scene PaxtonCG1
     with fade 
-    #show paxton smile 
+
+    $ persistent.CG5_unlocked = True
+
     an "He picked me up so easily! God, I can feel his muscles moving on my back..."
     ## Alex, blushing/embarrassed
     an "I know he works out a lot, but witnessing it first hand is... {nw}" 
@@ -1470,7 +1488,10 @@ label paxtonroute:
     
     ## Scene 6
     ## Paxton's apartment bg
-    scene black with fadee
+    scene bg outside_campus night with fadee
+
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
     
     show alex frown up at Transform: 
         xalign 0.75 yalign 2.0 
@@ -1796,6 +1817,9 @@ label paxtonroute:
     
     ## Scene 7
     scene bg hospital with fadee 
+
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
 
     show alex backpack at Transform: 
         xalign 0.95 yalign 2.0 
@@ -2283,6 +2307,9 @@ label paxtonroute:
     ## Scene 8
     scene bg cafe with fadee 
 
+    play music "Bm_Cafe04.ogg" fadein 1
+    queue music "Bm_Cafe04.ogg"
+
     ## clinking sound effect, coming from the bell on the cafe's door when Alex opens it
     
     show alex backpack at Transform: 
@@ -2517,6 +2544,9 @@ label paxtonroute:
     scene bg paxton_room night
     with fadee 
     
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
+
     ## Doorbell ringing
     show alex unsure shock backpack at Transform: 
         xalign 0.25 yalign 2.0 
@@ -2651,6 +2681,7 @@ label paxtonroute:
     show paxton frown  
     show alex unsure 
     ## Paxton, worried/frowning
+    stop music fadeout 2
     an "I see Paxton's face bleaching. {nw}" 
     show paxton unsure 
     extend "The warm and playful expression he had the whole night fades into a worried one."
@@ -2757,11 +2788,15 @@ label paxtonroute:
     show paxton frown 
     
     scene black with fade 
+
     an "We rush to the old mansion Zaina sent the address of without talking. I know that Finn's all alone and injured, and that Zaina is also on her way to meet up with us there, but all I can see is how worried Paxton is."
     an "He really is a good friend..."
     an "I'm glad I got to know him."
     
     scene bg mansion with fade 
+    play music "Be_piano12.ogg" fadein 2
+    queue music "Be_piano12.ogg"
+    
     an "Zaina ends up arriving earlier than us. She helps Finn out of the mansion, and by the time our cab arrives, they're both waiting for us at a safe distance."
     an "Paxton helps Finn settle on the backseats. Zaina has to sit right at the edge of the backseat by Finn's hips, but they make it work."
     
@@ -2775,8 +2810,9 @@ label paxtonroute:
     an "We tell the cab to drive to the hospital, but all I can focus on is Paxton's hand on mine."
     show alex blush 
     an "I'm now so gone for him that it's not even funny anymore."
+    stop music fadeout 7
     
-    scene black with fade 
+    scene black with fadee
     ## Black bg except the texts
     an "The hospital visit ends up being the right choice. We find out that Finn really has a broken leg, and Zaina almost gives him a broken arm with how much she punches for 'how stupid can he be?!'"
     an "We decide to spend the night at the hospital with Finn."
@@ -2789,6 +2825,9 @@ label paxtonroute:
     ## Scene 10
     scene bg cafe
     with fadee
+
+    play music "Bm_Cafe04.ogg" fadein 1
+    queue music "Bm_Cafe04.ogg"
 
     an "Despite yesterday's adventures, today feels very calm and peaceful. I take a look around as I step inside the cafe."
     an "The weather is sunny, Paxton is back at the cafe, and Finn is Zaina's prisoner—she swore that he wouldn't get a chance to get out of the bed for at least 2 more days after that stunt he pulled."
@@ -2875,7 +2914,7 @@ label paxtonroute:
     an "We step inside. The door quietly clicks shut by itself behind us."
 
     show alex up smile at closeright:
-        yalign -0.25  
+        yalign -0.45  
     show paxton up smile apron at closeleft
     with dissolve    
 
@@ -2940,7 +2979,7 @@ label paxtonroute:
     show paxton blush
 
     an "He blushes and looks down. I distantly realize that I could be touching him if I took two steps forward."
-    an "The thought of getting closer to p talk is too tempting, but I manage to refrain myself from doing so."
+    an "The thought of getting closer to Paxton is too tempting, but I manage to refrain myself from doing so."
 
     show paxton smile
 
@@ -2948,18 +2987,20 @@ label paxtonroute:
 
     show paxton smile
 
-    an "But instead of me, p talk is the one who steps closer. His face is still flushed, but he hesitantly reaches to me."
+    an "But instead of me, Paxton is the one who steps closer. His face is still flushed, but he hesitantly reaches to me."
 
     show paxton smile
 
     an "It feels like it takes ages for his hand to touch my face. I realize that he's moving slowly to give me the chance to pull away if I want to."
     an "His palm is warm and gentle against my cheek. I lean to it with a small sigh."
 
-    p talk "Thank you, a talk."
+    p talk "Thank you, Alex."
 
     show paxton smile
 
-    ##TODO EVENT IMAGE: SECOND KISS
+    scene PaxtonCG2 with dissolve
+
+    $ persistent.CG6_unlocked = True
 
     an "He tips my head up and presses a gentle kiss to my lips. My eyes slip closed, but it's like the whole world lights up behind my eyelids."
     an "My heart hammers against my chest. I feel Paxton's free hand curling around my forearm, and I cling to his shirt to keep my hands from shaking."
@@ -2969,21 +3010,24 @@ label paxtonroute:
 
     a "Paxton..."
 
-
+    stop music fadeout 2
     ## Scene 11
     scene black with fadee
 
     "..."
 
     scene bg cafe with fadee
-
-    ##TODO clinking sound effect, coming from the bell on the cafe's door when a talk opens it
+    
+    play music "Bm_Cafe04.ogg" fadein 1
+    queue music "Bm_Cafe04.ogg"
+    
+    ## clinking sound effect, coming from the bell on the cafe's door when a talk opens it
 
     an "I step inside the cafe with a smile on my face."
     an "Paxton's behind the counter like always. There's a small scratch on his face, left over from a small accident he had during our trip to an abandoned mansion with the gang last night."
 
     show alex up smile at closeright:
-        yalign -0.25
+        yalign -0.45
     with dissolve
 
     a talk "Hey!"

@@ -93,6 +93,9 @@ define gui.game_menu_background = "gui/game_menu.png"
 define gui.preferences_background = "gui/PrefsBG.png"
 define gui.save_background = "gui/SaveBG.png"
 define gui.load_background = "gui/LoadBG.png"
+define gui.extras_background = "gui/ExtrasBG.png"
+define gui.CGGallery_background = "gui/CGGalleryBG.png"
+define gui.PromoArt_background = "gui/PromoArtBG.png"
 define gui.history_background = "gui/HistoryBG.png"
 define gui.about_background = "gui/AboutBG.png"
 define gui.help_background = "gui/HelpBG.png"
@@ -121,7 +124,7 @@ define gui.name_xalign = 0.5
 
 ## The width, height, and borders of the box containing the character's name, or
 ## None to automatically size it.
-define gui.namebox_width = 200
+define gui.namebox_width = 220
 define gui.namebox_height = 40
 
 ## The borders of the box containing the character's name, in left, top, right,
@@ -210,15 +213,15 @@ define gui.navigation_button_text_size = 25
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 790
-define gui.choice_button_height = None
+define gui.choice_button_width = 927
+define gui.choice_button_height = 78
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(100, 5, 100, 5)
+define gui.choice_button_borders = Borders(100, 25, 100, 25)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#cccccc"
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = "#000000"
+define gui.choice_button_text_hover_color = "ff0078"
 define gui.choice_button_text_insensitive_color = "#444444"
 
 
@@ -440,10 +443,14 @@ init python:
         gui.label_text_size = 34
 
         ## Adjust the location of the textbox.
-        gui.textbox_height = 240
-        gui.name_xpos = 80
-        gui.text_xpos = 90
-        gui.text_width = 1100
+        gui.textbox_height = 220
+        gui.dialogue_ypos = 48
+        gui.dialogue_xpos = 190
+        gui.textbox_yalign = 0.99
+        gui.textbox_xalign = 0.3
+        # gui.name_xpos = 80
+        # gui.text_xpos = 90
+        gui.dialogue_width = 850
 
         ## Change the size and spacing of various things.
         gui.slider_size = 36
@@ -457,6 +464,9 @@ init python:
         gui.history_text_width = 690
 
         gui.quick_button_text_size = 20
+        gui.quick_button_text_idle_color = "#fff"
+        gui.quick_button_text_insensitive_color = "#c59cb5"
+        gui.quick_button_text_outlines = [(2, "#000", 0, 0)]
 
         ## File button layout.
         gui.file_slot_cols = 2

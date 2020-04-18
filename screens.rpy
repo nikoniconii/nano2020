@@ -110,6 +110,11 @@ screen say(who, what):
 
         text what id "what"
 
+    if not renpy.variant("small"):
+        imagebutton idle "gui/x.png" hover "gui/x-Hover.png" action HideInterface() xpos 1020 ypos 520 xysize(33,29)
+    else:
+        imagebutton idle "gui/x.png" hover "gui/x-Hover.png" action HideInterface() xpos 1020 ypos 485 xysize(33,29)
+
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
@@ -117,14 +122,36 @@ screen say(who, what):
         add SideImage() xalign 0.0 yalign 1.0
 
 
+# screen say(who, what):
+#     variant "touch"
+#     style_prefix "say"
+
+#     window:
+#         id "window"
+
+#         if who is not None:
+
+#             window:
+#                 id "namebox"
+#                 style "namebox"
+#                 text who id "who"
+
+#         text what id "what"
+
+#     imagebutton idle "gui/x.png" hover "gui/x-Hover.png" action HideInterface() xpos 1020 ypos 520 xysize(33,29)
+
+
+
 ## Make the namebox available for styling through the Character object.
 init python:
     config.character_id_prefixes.append('namebox')
+
 
 style window is default
 style say_label is default
 style say_dialogue is default
 style say_thought is say_dialogue
+
 
 style namebox is default
 style namebox_label is say_label
@@ -141,17 +168,19 @@ style window:
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign
-    xsize 286
+    xsize gui.namebox_width
     ypos gui.name_ypos
-    ysize 37
+    ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
+
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign 0.5
+    xalign gui.name_xalign
     yalign 0.5
+
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
@@ -224,7 +253,7 @@ style choice_button_text is button_text
 style choice_vbox:
     xalign 0.5
     ypos 270
-    yanchor 0.5
+    yanchor 0.3
 
     spacing gui.choice_spacing
 
@@ -365,7 +394,7 @@ screen main_menu():
     imagebutton idle "gui/Start.png" hover "gui/Start-Hover.png" action Start() xpos 78 ypos 640 xysize(129,28)
     imagebutton idle "gui/Load.png" hover "gui/Load-Hover.png" action ShowMenu("load") xpos 335 ypos 640 xysize(104,28)
     imagebutton idle "gui/Prefs.png" hover "gui/Prefs-Hover.png" action ShowMenu("preferences") xpos 577 ypos 640 xysize(127,28)
-    imagebutton idle "gui/Extra.png" hover "gui/Extra-Hover.png" action NullAction() xpos 849 ypos 641 xysize(135,26)
+    imagebutton idle "gui/Extra.png" hover "gui/Extra-Hover.png" action ShowMenu("extras") xpos 849 ypos 641 xysize(135,26)
     imagebutton idle "gui/Quit.png" hover "gui/Quit-Hover.png" action Quit(confirm=not main_menu) xpos 1107 ypos 640 xysize(98,30)
 
 
@@ -542,25 +571,63 @@ screen about():
 
     add gui.about_background
 
-    use navigation
+    if main_menu:
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 225 text_size 25
+        textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
+
+    #use navigation
 
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_(" "), scroll=""):
+    viewport:
+        xsize 720
+        ysize 510
+        #yinitial 150
+        scrollbars "vertical"
+        xalign 0.65
+        yalign 0.68
 
         style_prefix "about"
 
         vbox:
 
-            label "[config.name!t]"
+            xalign 0.01
+
+            label "Enamored Risks"
             text _("Version [config.version!t]\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Directors on this project were MikomiKisomi, foleso, Tabby, and Violora.")
+
+            text _("\nSprite artwork is by {a=https://yuukipudding.wixsite.com/yuukipudding}YuukiPudding{/a}. Main event CGs by {a=https://instagram.com/akua_kourin}Akua_Kourin{/a}. Art direction by {a=https://twitter.com/x_Violora}Violora{/a}. Background linearts by {a=https://niasobu.itch.io/}NiAsobu{/a} with coloring by Violora, {a=https://www.instagram.com/mustacheskulls}MustacheSkulls{/a}, {a=https://twitter.com/MikomiKisomi}MikomiKisomi{/a}, {a=https://twitter.com/butterflylatte}ButterflyLatte{/a}. Concept art by nef, MustacheSkulls, Violora, and more.")
+
+            text _("\nScenario writing, content editing and common route by {a=https://tabby.moe}Tabby{/a} with additional scenes by {a=https://twitter.com/Destiniislands}Destini Islands{/a}, Zelal Kurkan and Fran. Finn's route by Destini Islands, Paxton's route by {a=http://withyourrhythm.tumblr.com/}Zelal Kurtkan{/a}, and Zaina's route by Fran. Line editing by {a=https://zelan.itch.io/}Zelan{/a} and {a=https://twitter.com/lunaterra_}Lunaterra{/a}.")
+            
+            text _("\nMain menu piece is by {a=https://elemental95.bandcamp.com/album/human-impermanence}Kierious{/a}. Abandoned piece, cafe piece, and solemn piece by {a=http://beemyu.com/index.html}Beemyu{/a}. Everyday piece is by {a=http://879.hanac200x.jp/index.html}Nose Clone{/a}.")
+
+            text _("\nLogo and some graphic design by {a=https://nicolesvare.com/}nicolesvare{/a}. GUI design by {a=https://twitter.com/folesodev}foleso{/a}. Promo art by Violora, MustacheSkulls, ButterflyLatte, {a=https://www.instagram.com/aohisashi/}OHISASHI{/a}, {a=https://twitter.com/InstantDoodles1}InstantRiot{/a}, {a=https://twitter.com/bluepuzzlebox}bluepuzzlebox{/a}, Azuremia, Akira, {a=https://shiroishi888.tumblr.com/}Ши{/a}, and piumchie.")
+
+            text _("\nProgramming by {a=https://twitter.com/PumpkinSpike}checkers{/a}, {a=https://twitter.com/Wolfborgg}Wolfborg{/a}, Angel Seraphim, and {a=https://twitter.com/TheGreatMuma}Muma{/a}. GUI programming by Muma.")
+
+            text _("\nMarketing learning team was softamoeba, nicolesvare, DanseiIdolGirl, Zoncerto, and Lyra with direction from MikomiKisomi and foleso.")
+
+            text _("\nThank you MAHO Cody for running weekly game nights for the team!")
+
+            text _("\n\nThis project was published by Crystal Game Works, an indie visual novel and RPG development studio.")
+
+            text _("\n{size=30}{a=https://twitter.com/CrystalGameWork}Twitter{/a}   -   {a=https://discord.gg/vE2Yng4}Discord{/a}   -   {a=https://mailchi.mp/0732aaa9b9de/u28bqv2837}Newsletter{/a}{/size}")
+
+            text _("\n\nThis game was made in a month and a half for the NaNoRenO 2020 visual novel jam, an annual jam for creating VNs.")
+
+            text _("\n\nMade with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 ## This is redefined in options.rpy to add text to the about screen.
@@ -573,6 +640,14 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+
+style about_text:
+    color "#000"
+    hover_color "#FF0078"
+
+style about_hyperlinks:
+    outlines [ (absolute(1), "#fff", absolute(0), absolute(0)) ]
+    size 26
 
 
 ## Load and Save screens #######################################################
@@ -587,16 +662,14 @@ style about_label_text:
 screen save():
 
     tag menu
-    if main_menu:
-        add gui.main_menu_background
+    # if main_menu:
+    #     add gui.main_menu_background
 
     add gui.save_background
     if main_menu:
-        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
-        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 225 text_size 25
         textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
         textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
-        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
         textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
         textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
         textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
@@ -604,18 +677,18 @@ screen save():
     use file_slots(_(" "))
 
 
+
+
 screen load():
 
     tag menu
-    if main_menu:
-        add gui.main_menu_background
+    # if main_menu:
+    #     add gui.main_menu_background
     add gui.load_background
     if main_menu:
-        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
-        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 225 text_size 25
         textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
         textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
-        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
         textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
         textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
         textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
@@ -624,12 +697,11 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic Saves"), quick=_("Quick Saves"))
 
     use game_menu(title):
 
         fixed:
-
             ## This ensures the input will get the enter event before any of the
             ## buttons do.
             order_reverse True
@@ -650,10 +722,17 @@ screen file_slots(title):
             grid gui.file_slot_cols gui.file_slot_rows:
                 style_prefix "slot"
 
-                xalign -0.4
-                yalign 0.3
+                if renpy.variant("pc"):
+                    xalign -0.4
+                    yalign 0.3
+                    spacing gui.slot_spacing
+                else:
+                    xalign 0.1
+                    yalign 0.35
+                    spacing 20
+                    xspacing 75
 
-                spacing gui.slot_spacing
+                #spacing gui.slot_spacing
 
                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
@@ -666,36 +745,51 @@ screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("Empty")):
                             style "slot_time_text"
+                            ypos 35
+                            size 18
+                            color "#fff"
+
 
                         text FileSaveName(slot):
                             style "slot_name_text"
 
+
                         key "save_delete" action FileDelete(slot)
+
 
             ## Buttons to access other pages.
             hbox:
                 style_prefix "page"
 
+
                 xalign 0.35
-                yalign 0.9
+                yalign 0.94
+
 
                 spacing gui.page_spacing
 
+
                 textbutton _("<") action FilePagePrevious()
+
 
                 if config.has_autosave:
                     textbutton _("{#auto_page}A") action FilePage("auto")
 
+
                 if config.has_quicksave:
                     textbutton _("{#quick_page}Q") action FilePage("quick")
+
 
                 ## range(1, 10) gives the numbers from 1 to 9.
                 for page in range(1, 10):
                     textbutton "[page]" action FilePage(page)
 
+
                 textbutton _(">") action FilePageNext()
+
+
 
 
 style page_label is gui_label
@@ -703,28 +797,35 @@ style page_label_text is gui_label_text
 style page_button is gui_button
 style page_button_text is gui_button_text
 
+
 style slot_button is gui_button
 style slot_button_text is gui_button_text
 style slot_time_text is slot_button_text
 style slot_name_text is slot_button_text
 
+
 style page_label:
     xpadding 50
     ypadding 3
+
 
 style page_label_text:
     text_align 0.5
     layout "subtitle"
     hover_color gui.hover_color
 
+
 style page_button:
     properties gui.button_properties("page_button")
+
 
 style page_button_text:
     properties gui.button_text_properties("page_button")
 
+
 style slot_button:
     properties gui.button_properties("slot_button")
+
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
@@ -755,11 +856,9 @@ screen preferences():
 
     add gui.preferences_background
     if main_menu:
-        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
-        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 225 text_size 25
         textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
         textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
-        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
         textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
         textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
         textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
@@ -782,13 +881,6 @@ screen preferences():
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-                #vbox:
-                    #style_prefix "radio"
-                    #label _("Rollback Side")
-                    #textbutton _("Disable") action Preference("rollback side", "disable")
-                    #textbutton _("Left") action Preference("rollback side", "left")
-                    #textbutton _("Right") action Preference("rollback side", "right")
-
                 vbox:
                     xpos 230
                     ypos 30
@@ -797,10 +889,6 @@ screen preferences():
                     textbutton _("Unseen Text") action Preference("skip", "toggle")
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
-
 
             null height (4 * gui.pref_spacing)
 
@@ -814,60 +902,31 @@ screen preferences():
                     xpos 70
                     ypos 80
 
-
                     label _("Text Speed")
-
-
                     bar value Preference("text speed") left_bar "gui/slider/horizontal_idle_bar.png" right_bar "gui/slider/horizontal_hover_bar.png"
-
-
                     label _("Auto-Forward Time")
-
-
                     bar value Preference("auto-forward time") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
-
 
                 vbox:
                     ypos 80
 
-
                     if config.has_music:
                         label _("Music Volume")
-
 
                         hbox:
                             bar value Preference("music volume") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
 
-
                     if config.has_sound:
-
-
                         label _("Sound Volume")
-
 
                         hbox:
                             bar value Preference("sound volume") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
 
-
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
-
-                    #if config.has_voice:
-                        #label _("Voice Volume")
-
-
-                        #hbox:
-                            #bar value Preference("voice volume")
-
-
-                            #if config.sample_voice:
-                                #textbutton _("Test") action Play("voice", config.sample_voice)
-
-
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
-
 
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
@@ -975,7 +1034,6 @@ style slider_vbox:
 
 screen history():
 
-
     tag menu
     if main_menu:
         add gui.main_menu_background
@@ -983,39 +1041,29 @@ screen history():
 
     add gui.history_background
     if main_menu:
-        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
-        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 225 text_size 25
         textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
         textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
-        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
         textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
         textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
         textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
 
-
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-
     use game_menu(_(" "), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
-
 
         style_prefix "history"
 
-
         for h in _history_list:
 
-
             window:
-
 
                 ## This lays things out properly if history_height is None.
                 has fixed:
                     yfit True
 
-
                 if h.who:
-
 
                     label h.who:
                         style "history_name"
@@ -1038,17 +1086,13 @@ screen history():
 
 
 
-
 ## This determines what tags are allowed to be displayed on the history screen.
 
 
 define gui.history_allow_tags = set()
 
 
-
-
 style history_window is empty
-
 
 style history_name is gui_label
 style history_name_text is gui_label_text
@@ -1065,10 +1109,11 @@ style history_label_text is gui_label_text
 style history_window:
     xfill True
     ysize gui.history_height
+    xsize 760
 
 
 style history_name:
-    xpos 100
+    xpos 80
     xanchor gui.history_name_xalign
     ypos gui.history_name_ypos
     xsize gui.history_name_width
@@ -1078,26 +1123,24 @@ style history_name_text:
     min_width gui.history_name_width
     text_align gui.history_name_xalign
 
-
 style history_text:
     #xpos gui.history_text_xpos
-    ypos gui.history_text_ypos
+    #ypos gui.history_text_ypos
+    #ypos 150
     xanchor gui.history_text_xalign
-    xsize 690
+    xsize 640
+    ysize 450
     min_width gui.history_text_width
     text_align gui.history_text_xalign
     xalign 0.12
     layout ("subtitle" if gui.history_text_xalign else "tex")
     outlines [ (1, "#000", 0, 0) ]
 
-
 style history_label:
     xfill True
 
-
 style history_label_text:
     xalign 0.5
-
 
 
 
@@ -1110,80 +1153,92 @@ style history_label_text:
 
 screen help():
 
-
     tag menu
-    if main_menu:
-        add gui.main_menu_background
-
+    # if main_menu:
+    #     add gui.main_menu_background
 
     add gui.help_background
     if main_menu:
-        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
-        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 225 text_size 25
         textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
         textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
-        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
         textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
         textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
         textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
 
-
     default device = "keyboard"
 
 
-    use game_menu(_(" "), scroll="viewport"):
+    if renpy.variant("pc"):
+        use game_menu(_(" "), scroll="viewport"):
+            style_prefix "help"
+
+            vbox:
+                spacing 15
+
+                hbox:
+
+                    textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+                    textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+
+                    if GamepadExists():
+                        textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
 
 
-        style_prefix "help"
+                if device == "keyboard":
+                    use keyboard_help
+                elif device == "mouse":
+                    use mouse_help
+                elif device == "gamepad":
+                    use gamepad_help
+
+    else:
+        viewport:
+            style_prefix "help"
+            xsize 720
+            ysize 510
+            scrollbars "vertical"
+            xalign 0.65
+            yalign 0.68
+            vbox:
+                spacing 15
+
+                hbox:
+
+                    textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+                    textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+
+                    if GamepadExists():
+                        textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
 
 
-        vbox:
-            spacing 15
-
-
-            hbox:
-
-
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
-
-
-                if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
-
-
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
+                if device == "keyboard":
+                    use keyboard_help
+                elif device == "mouse":
+                    use mouse_help
+                elif device == "gamepad":
+                    use gamepad_help
 
 
 
 
 screen keyboard_help():
 
-
     hbox:
         label _("Enter")
         text _("Advances dialogue and activates the interface.")
-
 
     hbox:
         label _("Space")
         text _("Advances dialogue without selecting choices.")
 
-
     hbox:
         label _("Arrow Keys")
         text _("Navigate the interface.")
 
-
     hbox:
         label _("Escape")
         text _("Accesses the game menu.")
-
 
     hbox:
         label _("Ctrl")
@@ -1318,11 +1373,332 @@ style help_label_text:
     xalign 1.0
     text_align 1.0
 
+default persistent.CG1_unlocked = False
+default persistent.CG2_unlocked = False
+default persistent.CG3_unlocked = False
+default persistent.CG4_unlocked = False
+default persistent.CG5_unlocked = False
+default persistent.CG6_unlocked = False
+
+default persistent.PA1_unlocked = True
+default persistent.PA2_unlocked = True
+default persistent.PA3_unlocked = True
+default persistent.PA4_unlocked = True
+default persistent.PA5_unlocked = True
+default persistent.PA6_unlocked = True
+default persistent.PA7_unlocked = True
+default persistent.PA8_unlocked = True
+default persistent.PA9_unlocked = True
+
+## EXTRAS SCREENS MAIN
+screen extras():
+
+
+    tag menu
+    if main_menu:
+        add gui.main_menu_background
+    add gui.extras_background
+    if main_menu:
+        textbutton _("Return") action Return() xpos 620 ypos 550 text_size 25
+    imagebutton idle "gui/CGGallery-Idle.png" hover "gui/CGGallery-Hover.png" action ShowMenu("CGGallery") xpos 320 ypos 200 xysize(662,109)
+    imagebutton idle "gui/PromoArt-Idle.png" hover "gui/PromoArt-Hover.png" action ShowMenu("PromoArt") xpos 320 ypos 400 xysize(662,109)
+    key "K_ESCAPE" action Return()
+    key "mouseup_3" action Return()
+    key "K_MENU" action Return()
+
+## CG gallery
+screen CGGallery():
+    tag menu
+    # if main_menu:
+    #     add gui.main_menu_background
+    #add gui.CGGallery_background
+    add "gui/CGGalleryBG.png"
+
+    textbutton _("Return") action Return() xpos 120 ypos 500 text_size 25
+    textbutton _("CG Gallery") action ShowMenu("CGGallery") xpos 120 ypos 250 text_size 25
+    textbutton _("Promo Art") action ShowMenu("PromoArt") xpos 120 ypos 300 text_size 25
+
+    if persistent.CG1_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 416 ypos 240 focus_mask True action ShowMenu('CG1')
+        add "images/Finn CG1.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 421 ypos 248
+    else:
+        add "GUI/extras/Locked-Slot.png" xpos 416 ypos 240
+
+    
+    if persistent.CG4_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 416 ypos 390 focus_mask True action ShowMenu('CG4')
+        add "images/Zaina CG2.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 421 ypos 398
+    else:
+        add "GUI/extras/Locked-Slot.png" xpos 416 ypos 390
+    
+    if persistent.CG2_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 646 ypos 240 focus_mask True action ShowMenu('CG2')
+        add "images/Finn CG2.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 651 ypos 248
+    else:
+        add "GUI/extras/Locked-Slot.png" xpos 646 ypos 240
+    
+    if persistent.CG5_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 646 ypos 390 focus_mask True action ShowMenu('CG5')
+        add "images/Paxton CG1.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 651 ypos 398
+    else:
+        add "GUI/extras/Locked-Slot.png" xpos 646 ypos 390
+    
+    if persistent.CG3_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 876 ypos 240 focus_mask True action ShowMenu('CG3')
+        add "images/Zaina CG1.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 881 ypos 248
+    else:
+        add "GUI/extras/Locked-Slot.png" xpos 876 ypos 240
+
+    if persistent.CG6_unlocked:
+        imagebutton auto "GUI/extras/slot_%s.png" xpos 876 ypos 390 focus_mask True action ShowMenu('CG6')
+        add "images/Paxton CG2.png":
+            xzoom 0.09 yzoom 0.09
+            xpos 881 ypos 398
+    else:
+        add "GUI/extras/Locked-Slot.png" xpos 876 ypos 390
+
+
+    key "K_ESCAPE" action Return()
+    key "mouseup_3" action Return()
+    key "K_MENU" action Return()
+
+
+
+## Promo Art gallery
+screen PromoArt():
+    tag menu
+    if main_menu:
+        add gui.main_menu_background
+    add gui.PromoArt_background
+
+    textbutton _("Return") action Return() xpos 120 ypos 500 text_size 25
+    textbutton _("CG Gallery") action ShowMenu("CGGallery") xpos 120 ypos 250 text_size 25
+    textbutton _("Promo Art") action ShowMenu("PromoArt") xpos 120 ypos 300 text_size 25
+
+    viewport:
+        xsize 720
+        ysize 510
+        scrollbars "vertical"
+        xalign 0.65
+        yalign 0.68
+
+        grid 3 4:
+            spacing 15
+
+            imagebutton auto "GUI/extras/vio_%s.png" focus_mask True action ShowMenu('PA6')
+            
+            imagebutton auto "GUI/extras/vio2_%s.png" focus_mask True action ShowMenu('PA7')
+
+            imagebutton auto "GUI/extras/butter_%s.png" focus_mask True action ShowMenu('PA1')
+            
+            imagebutton auto "GUI/extras/butter2_%s.png" focus_mask True action ShowMenu('PA4')
+            
+            imagebutton auto "GUI/extras/instantriot_%s.png" focus_mask True action ShowMenu('PA2')
+
+            imagebutton auto "GUI/extras/mustache_%s.png" focus_mask True action ShowMenu('PA5')
+
+            imagebutton auto "GUI/extras/ohi_%s.png" focus_mask True action ShowMenu('PA3')
+            
+            imagebutton auto "GUI/extras/blue_%s.png" focus_mask True action ShowMenu('PA8')
+
+            imagebutton auto "GUI/extras/akira_%s.png" focus_mask True action ShowMenu('PA9')
+
+            imagebutton auto "GUI/extras/shiro_%s.png" focus_mask True action ShowMenu('PA10')
+
+            imagebutton auto "GUI/extras/azu_%s.png" focus_mask True action ShowMenu('PA11')
+
+            imagebutton auto "GUI/extras/pium_%s.png" focus_mask True action ShowMenu('PA12')
+
+    # key "K_ESCAPE" action Return()
+    # key "mouseup_3" action Return()
+    # key "K_MENU" action Return()
+
+image black = "#000"
+
+screen CG1:
+    tag menu
+    imagemap:
+       ground 'FinnCG1'
+
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen CG2:
+    tag menu
+    imagemap:
+       ground 'FinnCG2'
+
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen CG3:
+    tag menu
+    imagemap:
+       ground 'ZainaCG1'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen CG4:
+    tag menu
+    imagemap:
+       ground 'ZainaCG2'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+screen CG5:
+    tag menu
+    imagemap:
+       ground 'PaxtonCG1'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+
+screen CG6:
+    tag menu
+    imagemap:
+       ground 'PaxtonCG2'
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("CGGallery")
+
+
+screen PA1:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/butterflylatte.png':
+           yalign 0.3
+           xalign 0.5
+           zoom 0.5
+screen PA2:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/instantriot.png':
+           xalign 0.5
+           zoom 0.4
+screen PA3:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/ohisashi.png':
+           xalign 0.5
+           zoom 0.4
+screen PA4:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/paxtonend.png':
+           yalign 0.3
+           xalign 0.5
+           zoom 0.6
+screen PA5:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/finn rooftop.png':
+           zoom 0.34
+           xalign 0.5
+screen PA6:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/Violora_Alex.jpg':
+           zoom 0.3
+           xalign 0.5
+screen PA7:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/violora_zaina.jpg':
+           zoom 0.37
+           xalign 0.5
+
+screen PA8:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/bluepuzzlebox.png':
+           xpos 380
+           ypos 80
+screen PA9:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/akira.png':
+           zoom 0.27
+           xalign 0.5
+
+screen PA10:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/shiroishi_promo.jpg':
+           zoom 0.7
+           xalign 0.5
+
+screen PA11:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/Alex_chibi.png':
+           zoom 0.6
+           xalign 0.5
+
+screen PA12:
+    tag menu
+    imagemap:
+       ground gui.PromoArt_background
+
+       hotspot (0, 0, 1500, 720) action ShowMenu("PromoArt")
+       add "black"
+       add 'images/piumchie.png':
+           zoom 0.53
+           xalign 0.5
 
 
 ################################################################################
 ## Additional screens
 ################################################################################
+
+
 
 
 ## Confirm screen ##############################################################
@@ -1332,37 +1708,50 @@ style help_label_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#confirm
 
+
 screen confirm(message, yes_action, no_action):
+
 
     ## Ensure other screens do not get input while this screen is displayed.
     modal True
 
+
     zorder 200
+
 
     style_prefix "confirm"
 
+
     add "gui/overlay/confirm.png"
 
+
     frame:
+
 
         vbox:
             xalign .5
             yalign .5
             spacing 30
 
+
             label _(message):
                 style "confirm_prompt"
                 xalign 0.5
+
 
             hbox:
                 xalign 0.5
                 spacing 100
 
+
                 textbutton _("Yes") action yes_action
                 textbutton _("No") action no_action
 
+
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
+
+
 
 
 style confirm_frame is gui_frame
@@ -1371,21 +1760,29 @@ style confirm_prompt_text is gui_prompt_text
 style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
+
 style confirm_frame:
     background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
 
+
 style confirm_prompt_text:
     text_align 0.5
     layout "subtitle"
 
+
 style confirm_button:
     properties gui.button_properties("confirm_button")
 
+
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
+    idle_color "#ffffff"
+    hover_color "#ff0078"
+
+
 
 
 ## Skip indicator screen #######################################################
@@ -1395,28 +1792,38 @@ style confirm_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#skip-indicator
 
+
 screen skip_indicator():
+
 
     zorder 100
     style_prefix "skip"
 
+
     frame:
+
 
         hbox:
             spacing 6
 
+
             text _("Skipping")
+
 
             text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
             text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
             text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
 
 
+
+
 ## This transform is used to blink the arrows one after another.
 transform delayed_blink(delay, cycle):
     alpha .5
 
+
     pause delay
+
 
     block:
         linear .2 alpha 1.0
@@ -1426,22 +1833,29 @@ transform delayed_blink(delay, cycle):
         repeat
 
 
+
+
 style skip_frame is empty
 style skip_text is gui_text
 style skip_triangle is skip_text
+
 
 style skip_frame:
     ypos gui.skip_ypos
     background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
     padding gui.skip_frame_borders.padding
 
+
 style skip_text:
     size gui.notify_text_size
+
 
 style skip_triangle:
     ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
     ## glyph in it.
     font "DejaVuSans.ttf"
+
+
 
 
 ## Notify screen ###############################################################
@@ -1451,15 +1865,21 @@ style skip_triangle:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#notify-screen
 
+
 screen notify(message):
+
 
     zorder 100
     style_prefix "notify"
 
+
     frame at notify_appear:
         text "[message!tq]"
 
+
     timer 3.25 action Hide('notify')
+
+
 
 
 transform notify_appear:
@@ -1470,17 +1890,24 @@ transform notify_appear:
         linear .5 alpha 0.0
 
 
+
+
 style notify_frame is empty
 style notify_text is gui_text
+
 
 style notify_frame:
     ypos gui.notify_ypos
 
+
     background Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
     padding gui.notify_frame_borders.padding
 
+
 style notify_text:
     properties gui.text_properties("notify")
+
+
 
 
 ## NVL screen ##################################################################
@@ -1490,80 +1917,109 @@ style notify_text:
 ## https://www.renpy.org/doc/html/screen_special.html#nvl
 
 
+
+
 screen nvl(dialogue, items=None):
+
 
     window:
         style "nvl_window"
 
+
         has vbox:
             spacing gui.nvl_spacing
 
+
         ## Displays dialogue in either a vpgrid or the vbox.
         if gui.nvl_height:
+
 
             vpgrid:
                 cols 1
                 yinitial 1.0
 
+
                 use nvl_dialogue(dialogue)
+
 
         else:
 
+
             use nvl_dialogue(dialogue)
+
 
         ## Displays the menu, if given. The menu may be displayed incorrectly if
         ## config.narrator_menu is set to True, as it is above.
         for i in items:
 
+
             textbutton i.caption:
                 action i.action
                 style "nvl_button"
 
+
     add SideImage() xalign 0.0 yalign 1.0
+
+
 
 
 screen nvl_dialogue(dialogue):
 
+
     for d in dialogue:
+
 
         window:
             id d.window_id
 
+
             fixed:
                 yfit gui.nvl_height is None
 
+
                 if d.who is not None:
+
 
                     text d.who:
                         id d.who_id
 
+
                 text d.what:
                     id d.what_id
+
+
 
 
 ## This controls the maximum number of NVL-mode entries that can be displayed at
 ## once.
 define config.nvl_list_length = gui.nvl_list_length
 
+
 style nvl_window is default
 style nvl_entry is default
+
 
 style nvl_label is say_label
 style nvl_dialogue is say_dialogue
 
+
 style nvl_button is button
 style nvl_button_text is button_text
+
 
 style nvl_window:
     xfill True
     yfill True
 
+
     background "gui/nvl.png"
     padding gui.nvl_borders.padding
+
 
 style nvl_entry:
     xfill True
     ysize gui.nvl_height
+
 
 style nvl_label:
     xpos gui.nvl_name_xpos
@@ -1574,6 +2030,7 @@ style nvl_label:
     min_width gui.nvl_name_width
     text_align gui.nvl_name_xalign
 
+
 style nvl_dialogue:
     xpos gui.nvl_text_xpos
     xanchor gui.nvl_text_xalign
@@ -1582,6 +2039,7 @@ style nvl_dialogue:
     min_width gui.nvl_text_width
     text_align gui.nvl_text_xalign
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
+
 
 style nvl_thought:
     xpos gui.nvl_thought_xpos
@@ -1592,13 +2050,18 @@ style nvl_thought:
     text_align gui.nvl_thought_xalign
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
+
 style nvl_button:
     properties gui.button_properties("nvl_button")
     xpos gui.nvl_button_xpos
     xanchor gui.nvl_button_xalign
 
+
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
+
+
+
 
 
 
@@ -1606,9 +2069,11 @@ style nvl_button_text:
 ## Mobile Variants
 ################################################################################
 
+
 style pref_vbox:
     variant "medium"
     xsize 450
+
 
 ## Since a mouse may not be present, we replace the quick menu with a version
 ## that uses fewer and bigger buttons that are easier to touch.
@@ -1624,48 +2089,126 @@ screen quick_menu():
 
             xalign 0.5
             yalign 1.0
+            spacing 20
 
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menu") action ShowMenu()
+            textbutton _("-Back-") action Rollback()
+            textbutton _("-Skip-") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("-Auto-") action Preference("auto-forward", "toggle")
+            textbutton _("-Menu-") action ShowMenu()
+
+
+screen preferences():
+    variant "touch"
+
+    tag menu
+
+    add gui.preferences_background
+    if main_menu:
+        textbutton _("History") action ShowMenu("history") xpos 120 ypos 185 text_size 25
+        textbutton _("Save") action ShowMenu("save") xpos 120 ypos 225 text_size 25
+        textbutton _("Load") action ShowMenu("load") xpos 120 ypos 270 text_size 25
+        textbutton _("Preferences") action ShowMenu("preferences") xpos 120 ypos 315 text_size 25
+        textbutton _("Main Menu") action MainMenu() xpos 120 ypos 360 text_size 25
+        textbutton _("About") action ShowMenu("about") xpos 120 ypos 405 text_size 25
+        textbutton _("Help") action ShowMenu("help") xpos 120 ypos 450 text_size 25
+        textbutton _("Quit") action Quit(confirm=not main_menu) xpos 120 ypos 495 text_size 25
+
+    use game_menu(_(""), scroll="viewport"):
+
+        hbox:
+
+            vbox:
+                xpos 30
+                ypos 30
+                style_prefix "check"
+                label _("Skip")
+                textbutton _("Unseen Text") action Preference("skip", "toggle")
+                textbutton _("After Choices") action Preference("after choices", "toggle")
+                textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+
+        #null height (4 * gui.pref_spacing)
+
+            style_prefix "slider"
+            box_wrap True
+
+            vbox:
+                xpos 0
+                ypos 30
+                spacing 10
+
+                label _("Text Speed")
+
+                bar value Preference("text speed") left_bar "gui/slider/horizontal_idle_bar.png" right_bar "gui/slider/horizontal_hover_bar.png"
+
+                label _("Auto-Forward Time")
+
+                bar value Preference("auto-forward time") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
+
+                if config.has_music:
+                    label _("Music Volume")
+
+                    hbox:
+                        bar value Preference("music volume") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
+
+                if config.has_sound:
+                    label _("Sound Volume")
+
+                    hbox:
+                        bar value Preference("sound volume") left_bar "gui/slider/horizontal_idle_bar.png"  right_bar "gui/slider/horizontal_hover_bar.png"
+
+
+                if config.has_music or config.has_sound or config.has_voice:
+                    null height gui.pref_spacing
+
+                    textbutton _("Mute All"):
+                        action Preference("all mute", "toggle")
+                        style "mute_all_button"
 
 
 style window:
     variant "small"
     background "gui/phone/textbox.png"
 
+
 style radio_button:
     variant "small"
     foreground "gui/phone/button/radio_[prefix_]foreground.png"
+
 
 style check_button:
     variant "small"
     foreground "gui/phone/button/check_[prefix_]foreground.png"
 
+
 style nvl_window:
     variant "small"
     background "gui/phone/nvl.png"
+
 
 style main_menu_frame:
     variant "small"
     background "gui/phone/overlay/main_menu.png"
 
+
 style game_menu_outer_frame:
     variant "small"
     background "gui/phone/overlay/game_menu.png"
+
 
 style game_menu_navigation_frame:
     variant "small"
     xsize 340
 
+
 style game_menu_content_frame:
     variant "small"
     top_margin 0
 
+
 style pref_vbox:
     variant "small"
     xsize 400
+
 
 style bar:
     variant "small"
@@ -1673,11 +2216,13 @@ style bar:
     left_bar Frame("gui/phone/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
     right_bar Frame("gui/phone/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
 
+
 style vbar:
     variant "small"
     xsize gui.bar_size
     top_bar Frame("gui/phone/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
     bottom_bar Frame("gui/phone/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
+
 
 style scrollbar:
     variant "small"
@@ -1685,11 +2230,13 @@ style scrollbar:
     base_bar Frame("gui/phone/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
     thumb Frame("gui/phone/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
+
 style vscrollbar:
     variant "small"
     xsize gui.scrollbar_size
     base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
     thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+
 
 style slider:
     variant "small"
@@ -1697,15 +2244,18 @@ style slider:
     base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
     thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
 
+
 style vslider:
     variant "small"
     xsize gui.slider_size
     base_bar Frame("gui/phone/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
     thumb "gui/phone/slider/vertical_[prefix_]thumb.png"
 
+
 style slider_pref_vbox:
     variant "small"
     xsize None
+
 
 style slider_pref_slider:
     variant "small"

@@ -10,15 +10,14 @@ label finnroute:
     scene bg classroom
     with fadee
 
-    ##TODO A slow or solemn tune should play here to set a 'down' mood
-
     an "The days pass as they normally do. Some slow, some way too fast..."
 
     an "So when this day comes, I should have expected it."
 
     an "But who can ever truly predict the end of the world?"
 
-    ##TODO More upbeat or normal music starts playing for the joke
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
 
     show alex up frown backpack at closeright:
         yalign -0.4                    ## alex and zaina's sprites need to be set to a lower height than the boys!
@@ -418,7 +417,6 @@ label finnroute:
 
     an unsure frown "He says something so quietly I can't catch it."
 
-    ##Alex genuinely didn't hear, sprite should be confused/shocked/etc.
     a unsure frowntalk "Huh? What was that?"
     show alex frown
 
@@ -551,6 +549,9 @@ label finnroute:
     ##Amusement park bg
     scene bg amusementpark
     with fadee
+
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
 
     ##All 4 sprites are here
     show finn up smile:
@@ -940,6 +941,9 @@ label finnroute:
     scene bg classroom
     with fadee
 
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
+
     show alex unsure frown backpack at closeright:
         yalign -0.35
     with dissolve
@@ -1055,6 +1059,9 @@ label finnroute:
     ##Mansion bg
     scene bg mansion
     with fadee
+
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
 
     ##COMMON EVENT: The fifth site they go to is another old mansion near the university. 
     show zaina unsure frown:
@@ -1384,6 +1391,9 @@ label finnroute:
     scene bg outside_campus
     with fadee
 
+    play music "Be_Longing04.ogg" fadein 1
+    queue music "Be_Longing04.ogg"
+
     an "I'm not sure why Finn asked me to walk with him. He looks so serious, I wish I knew what to say."
 
     an "This crush is getting out of control..."
@@ -1396,7 +1406,7 @@ label finnroute:
     a unsure talk "Finn? Are you alright?"
     show alex smile
 
-    f down frowntalk "... Not really."
+    f down frowntalk "...Not really."
     show finn frown
 
     a down frowntalk "What's wrong?"
@@ -1522,6 +1532,9 @@ label finnroute:
     scene bg finn_room
     with fadee
 
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
+
     show alex up smile at closeright:
         yalign -0.35
     show finn up smile at closeleft
@@ -1562,6 +1575,8 @@ label finnroute:
     ##EVENT IMAGE: FINN HOLDING THE RABBIT
     scene FinnCG1
     with dissolve
+
+    $ persistent.CG1_unlocked = True
 
     an "... and it's the most adorable rabbit I've ever seen."
 
@@ -1738,6 +1753,9 @@ label finnroute:
     ##hospital bg
     scene bg hospital
     with fadee
+
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
 
     ##COMMON EVENT: The sixth site they go to is a sanitorium, ie where people used to go for treatment of tuberculosis
 
@@ -2041,6 +2059,7 @@ label finnroute:
     an "It's not supposed to be a long walk, but each step is more painful than the last."
     an "Scratchy echoes suggest something else's staggering footsteps are behind me, even though I know I'm alone. There's only my shadow, limping behind me like a hunting monster under glowing street lamps and a gray sky."
 
+    stop music fadeout 2
     ##Scene 10
     ##Alex room bg or starting with a black screen if there's no night version
     scene black
@@ -2063,8 +2082,7 @@ label finnroute:
 
     a "How... safe... is... it?"
 
-    ##Phone vibration
-    with vpunch
+    play sound "phonevibrate.mp3"
 
     a "Not too old of a building, huh? Hmm..."
 
@@ -2072,7 +2090,7 @@ label finnroute:
 
     a "Alright... I'll get... ready and... meet you... there."
 
-    ##Phone vibration
+    play sound "phonevibrate.mp3"
 
     a "Hehe... I... miss you... too."
 
@@ -2082,6 +2100,8 @@ label finnroute:
     with fadee
 
     ##Alex happy/excited and Finn serious, keep their sprites separate
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
 
     an "There he is! Finn!"
 
@@ -2377,7 +2397,7 @@ label finnroute:
             a up shock sweat "What...? Ghosts?"
             f unsure talk "Mhmm. Just don't touch the wine and we'll be fine."
             show finn smile
-            a unsure froiwntalk "... We {i}did{/i} touch the wine!"
+            a unsure frowntalk "... We {i}did{/i} touch the wine!"
             show alex smile
             f up talk "Oh, really? Guess we're cursed now."
             show finn smile
@@ -2588,6 +2608,8 @@ label finnroute:
 
     a "Finn. As absolutely exhilarating as that was, I never ever {i}ever{/i} want to do it again!"
 
+    stop music fadeout 10
+
     an "It's the first time I've ever been so angry at Finn but it's also the first time I've ever been so scared."
 
     f "I know."
@@ -2683,6 +2705,9 @@ label finnroute:
     ##Classroom bg
     scene bg classroom
     with fadee
+
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
 
     show alex up smile backpack at closeright:
         yalign -0.35
@@ -3117,6 +3142,9 @@ label finnroute:
         xzoom -1
     with fadee
 
+    play music "Be_Longing04.ogg" fadein 1
+    queue music "Be_Longing04.ogg"
+
     show alex up smile costume at closeright:
         yalign -0.35
         xalign 0.75
@@ -3264,6 +3292,8 @@ label finnroute:
     scene FinnCG2
     with dissolve
 
+    $ persistent.CG2_unlocked = True
+
     f "So keep your end of the bargain."
 
     an "Finn sweeps me forward and I go tumbling into his arms. He laughs at my confusion, wrapping one arm around my waist and the other once again tilting my chin up toward him."
@@ -3324,6 +3354,9 @@ label finnroute:
     ##Finn's room bg
     scene bg finn_room night
     with fadee
+
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
 
     show alex up smile costume at closeright:
         yalign -0.35

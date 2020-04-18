@@ -1,6 +1,6 @@
 ######################################################################################################################
 ########################                                                                  ############################
-########################                         Zaina's Route                            ############################
+########################                         z talk's Route                            ###########################
 ########################                                                                  ############################
 ######################################################################################################################
 init python:
@@ -42,6 +42,9 @@ label zainaroute:
 
     ## Scene One
     scene bg alex_room with fadee
+
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
 
     an "These days I find myself restless during classes. My eyes wander to my watch too often for my liking, and when it's not on my wrist, it's on the door."
     
@@ -99,7 +102,7 @@ label zainaroute:
     
     an "Tomorrow... I have a test tomorrow."
     
-    an "My eyes drift to the textbooks on my desk, but I think of Zaina, her smile, and the way she called me ‘cute’ last time we met."
+    an "My eyes drift to the textbooks on my desk, but I think of Zaina, her smile, and the way she called me ‘cute' last time we met."
 
     a "I'll be fine."
 
@@ -222,7 +225,7 @@ label zainaroute_scene_2:
 
             show zaina smile
             
-            an -talk "Zaina was somehow kind enough to not repeat what I had said."
+            an smile "Zaina was somehow kind enough to not repeat what I had said."
             
             z up talk "I can wait all day, you know."
 
@@ -287,14 +290,19 @@ label zainaroute_scene_2:
     
     a talk "Yes."
     
-    an -talk "Zaina sets off for the restaurant and I'm suddenly very glad for her warning. I hold on even tighter." 
+    an smile "Zaina sets off for the restaurant and I'm suddenly very glad for her warning. I hold on even tighter." 
     
     an "Yet even as the wind whips past, I feel only the warmth of Zaina's back. It soothes me, comforts me, and when I smile at the view through my helmet, it's without any fear."
 
 label zainaroute_scene_3:
 
     ##scene three
-    scene bg cafe with fadee
+    scene bg cafe:
+        xzoom -1
+    with fade
+
+    play music "Bm_Cafe04.ogg" fadein 1
+    queue music "Bm_Cafe04.ogg"
 
     an "The restaurant Zaina chose is a hole in the wall and family-owned, making our date for the evening a very private affair."
     an "It's cozy. I like it." 
@@ -370,7 +378,7 @@ label zainaroute_scene_3:
 
     show zaina smile
 
-    an -talk "We return to our meals, before it gets cold. It would be a shame not to, after all I'm pretty sure Zaina took me here to share one of her favorite spots with me."
+    an smile "We return to our meals, before it gets cold. It would be a shame not to, after all I'm pretty sure Zaina took me here to share one of her favorite spots with me."
 
     an "Tasting the food, I can honestly say that I see why she's a regular."
 
@@ -416,7 +424,7 @@ label zainaroute_scene_3:
 
     a talk up "I don't know... I think you'd make a pretty good housewife."
 
-    an -talk "She cracks a grin and so do I, glad that at least she's not taking this too seriously. This was never meant to be an interrogation."
+    an smile "She cracks a grin and so do I, glad that at least she's not taking this too seriously. This was never meant to be an interrogation."
 
     z talk "I guess cleaning up after you wouldn't be the worst thing in the world."
 
@@ -440,7 +448,7 @@ label zainaroute_scene_3:
 
     ##serious zaina
 
-    z down neutral "Was it really? Or was it ‘the natural step to take’ because your parents pressured you into picking nursing?"
+    z down neutral "Was it really? Or was it ‘the natural step to take' because your parents pressured you into picking nursing?"
 
     an shock "I open my mouth, but no words come out. I've never thought about it that way before."
 
@@ -452,7 +460,7 @@ label zainaroute_scene_3:
             
             a "I know it's stupid, but I honestly don't."
             
-            an -talk neutral frown "My distress must show on my face because Zaina reaches over and places her hand on top of mine, squeezing."
+            an neutral frown "My distress must show on my face because Zaina reaches over and places her hand on top of mine, squeezing."
             
             an up smile "I lose myself in the sensation and focus only on the feeling of her hand over mine. It's warm. Comforting."
             
@@ -469,7 +477,7 @@ label zainaroute_scene_3:
             
             a talk "Maybe they did, maybe they didn't. I still like what I'm doing right now."
             
-            an -talk "Zaina doesn't look the least bit convinced, but it doesn't matter. I know I'm happy where I stand right now."
+            an smile "Zaina doesn't look the least bit convinced, but it doesn't matter. I know I'm happy where I stand right now."
             
             a frowntalk "Should you really be dissuading me from nursing? You're going to get awfully sick one day and then you'll have no one to take care of you."
             
@@ -481,7 +489,7 @@ label zainaroute_scene_3:
 
             show zaina smile
             
-            an -talk "Zaina laughs."
+            an smile "Zaina laughs."
             ##end choice
 
         "I guess they did...":
@@ -492,7 +500,7 @@ label zainaroute_scene_3:
             
             a talk "I might've been a little pressured..." 
             
-            an -talk "That was the understatement of the century."
+            an smile "That was the understatement of the century."
             
             z talk "I thought so. My parents tried to do the same with me."
 
@@ -575,7 +583,7 @@ label zainaroute_scene_3:
 
     a "Great, actually."
 
-    an -talk "Zaina looks like the cat that got the cream. I should feel wary, but it's excitement that bubbles in my stomach, not fear."
+    an smile "Zaina looks like the cat that got the cream. I should feel wary, but it's excitement that bubbles in my stomach, not fear."
 
     z talk "I'll be the one picking the class, though."
 
@@ -591,13 +599,15 @@ label zainaroute_scene_3:
 
     show zaina smile
 
-    an -talk shock "Could the next semester come any faster?"
+    an shock "Could the next semester come any faster?"
 
 label zainaroute_scene_4:
     ##scene four
 
     scene bg amusementpark with fadee
 
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
 
     an "A couple days later, we all agree to meet up. It's supposed to be a nice time at an abandoned amusement park. For me, it's a break from all the assignments I've been drowning in lately."
 
@@ -607,7 +617,7 @@ label zainaroute_scene_4:
         yoffset 100 xoffset 95
     show alex unsure frown at right:
         yoffset 100
-    show paxton down frown behind alex  at rightt:
+    show paxton down frown hat behind alex  at rightt:
         xoffset -95
     with dissolve
 
@@ -708,7 +718,7 @@ label zainaroute_scene_4:
 
     a talk "What do you say to an impromptu photoshoot?"
     
-    an -talk "The proposal has Zaina looking up, from where she'd been glaring at earlier. Her mouth twitches and I let myself hope for a moment."
+    an smile "The proposal has Zaina looking up, from where she'd been glaring at earlier. Her mouth twitches and I let myself hope for a moment."
     
     an "But instead of smiling, she scoffs."
     
@@ -732,7 +742,7 @@ label zainaroute_scene_4:
     
     a talk "I'm the one taking the pictures, not you."
     
-    an -talk "I hold my phone in one hand and gesture for her to move in front of the Ferris wheel with the other."
+    an smile "I hold my phone in one hand and gesture for her to move in front of the Ferris wheel with the other."
     
     a talk "Go on. You can survive being the model just this once."
 
@@ -791,7 +801,7 @@ label zainaroute_scene_4:
             
             a talk "Nope."
             
-            an -talk "I grin."
+            an smile "I grin."
             
             a talk blush "You are. Since you're the one doing the pose."
             
@@ -801,7 +811,7 @@ label zainaroute_scene_4:
             
             a talk "Do your best smize!"
 
-            an -talk "I zoom in, intending to catch Zaina in an unflattering angle, but I'm unprepared for the intensity of her gaze and nearly drop my phone."
+            an smile "I zoom in, intending to catch Zaina in an unflattering angle, but I'm unprepared for the intensity of her gaze and nearly drop my phone."
             
             ##alex blush
             
@@ -839,7 +849,7 @@ label zainaroute_scene_4:
 
     a talk "Zaina..."
 
-    an -talk "I can see her suspicion from a mile away. I carry on, anyway."
+    an smile "I can see her suspicion from a mile away. I carry on, anyway."
 
     z frowntalk "What?"
 
@@ -861,7 +871,7 @@ label zainaroute_scene_4:
 
     a "I know it must be some kind of cardinal sin for photographers, but please? Won't you indulge me?"
 
-    an -talk "I try the puppy dog eyes that weren't so effective on her before. It's my only play."
+    an smile "I try the puppy dog eyes that weren't so effective on her before. It's my only play."
 
     an "A few agonizing seconds pass."
 
@@ -883,7 +893,7 @@ label zainaroute_scene_4:
 
     a talk "Ready."
 
-    an -talk "At Zaina's nod, I move to press the button."
+    an smile "At Zaina's nod, I move to press the button."
 
     an "Just before I finish pressing it, a flash of movement blindsides me and so does the featherlight touch on my cheek. It takes a second to sink in, but just as the phone flashes, I can only stare dumbly at the screen."
 
@@ -891,11 +901,13 @@ label zainaroute_scene_4:
     #Scene 4 - Line 919; Event Image - I assume it's ZAINA + ALEX kissing (?)
     scene ZainaCG1 with dissolve
 
+    $ persistent.CG3_unlocked = True
+
     an blush "Me, my lips parted and my cheeks flushed. Zaina, eyes closed and her lips brushing my cheek."
 
     a "Wha—"
 
-    an -talk "The hand holding my phone hangs limply at my side while the other reaches up to touch my cheek. Though lasting for only a moment, the feeling of her lips on my cheek is one that'll surely stay with me forever."
+    an smile "The hand holding my phone hangs limply at my side while the other reaches up to touch my cheek. Though lasting for only a moment, the feeling of her lips on my cheek is one that'll surely stay with me forever."
 
     an "But, God, did that really just happen?"
 
@@ -912,7 +924,7 @@ label zainaroute_scene_4:
     show zaina at leftt:
         yoffset 80 xoffset 125
     show finn behind zaina at left
-    show paxton behind alex at right
+    show paxton hat behind alex at right
     with dissolve
 
     an "The sight of the boys happens to be just what I needed to snap out of my stupor, as I look over Finn, relieved he's unharmed."
@@ -933,7 +945,7 @@ label zainaroute_scene_4:
 
     a talk "Oh, um, sure."
 
-    an -talk "The boys wave goodbye and we go our separate ways."
+    an smile "The boys wave goodbye and we go our separate ways."
 
     hide finn
     hide paxton
@@ -966,7 +978,7 @@ label zainaroute_scene_4:
 
     ##zaina smirk
 
-    an -talk "Instead of rising to my bait, Zaina just shoots me her trademark smirk and pokes my forehead, before setting off in her motorcycle." 
+    an smile "Instead of rising to my bait, Zaina just shoots me her trademark smirk and pokes my forehead, before setting off in her motorcycle." 
 
     an shock sweat "{i}Oh boy{/i}. What have I gotten myself into?"
 
@@ -976,6 +988,9 @@ label zainaroute_scene_5:
 
     scene bg alex_room with fadee
 
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
+
     show alex with dissolve
 
     an "I had sent Zaina the pictures last night just before I slept and in the morning, I wake up to texts from her."
@@ -984,11 +999,11 @@ label zainaroute_scene_5:
 
     an "It's difficult to keep the smile off my face."
 
-    a talk "‘B+ nice effort.’" 
+    a talk "‘B+ nice effort.'" 
 
-    a "‘Will accept kisses for extra credit.’"
+    a "‘Will accept kisses for extra credit.'"
 
-    an -talk "It brings forth memories of the kiss and my hands subconsciously wander to my cheek. Her touch somehow still lingers."
+    an smile "It brings forth memories of the kiss and my hands subconsciously wander to my cheek. Her touch somehow still lingers."
 
     an "If I could make Zaina flustered for even the slightest bit, I'd give her as many kisses as she wants."
 
@@ -1002,8 +1017,10 @@ label zainaroute_scene_6:
     ##scene six
     ##mansion bg
 
-    #TODO Scene 6 - line 1031; I assume this is suppose to be outside of the mansion? Image needed.
-    scene bg mansion with fadee
+    scene bg outside_campus night with fadee
+
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
 
     show zaina at leftt:
         yoffset 50
@@ -1164,9 +1181,11 @@ label zainaroute_scene_6:
 
     an unsure shock "Did I do something wrong?"
 
-    an frown "My brain is buzzing with possibilities of what had possibly turned things sour, but before I could pick any of the theories apart, Finn appears."
+    hide zaina
+    hide alex
+    with dissolve
 
-    ##TODO Scene 6 - line 1194; Should I add Finn and Paxton's sprites here?
+    an frown "My brain is buzzing with possibilities of what had possibly turned things sour, but before I could pick any of the theories apart, Finn appears."
 
     # show zaina at leftt:
     #     yoffset 100 xoffset 100
@@ -1186,11 +1205,14 @@ label zainaroute_scene_7:
 
     scene bg mansion with fadee
 
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
+
     show zaina at right:
         yoffset 100
     show alex at rightt:
         xoffset -100 yoffset 100
-    show paxton at left
+    show paxton hat at left
     show finn at leftt:
         xoffset 100
     with dissolve
@@ -1397,14 +1419,11 @@ label zainaroute_scene_7:
 
     an "We exit the mansion together, though I insist on taking up the rear in case something happens on the way."
 
-
-    #TODO Scene 7 - line 1428; Outside the mansion? Are we suppose to transition to the outside? - Angel
-
-    scene bg outside with sidefade
+    scene bg outside_campus night with sidefade
 
     show alex at right:
         yoffset 100
-    show paxton at center
+    show paxton hat at center
     show finn at left
     with dissolve
 
@@ -1464,6 +1483,9 @@ label zainaroute_scene_8:
     ##alex apartment
     scene bg alex_room with fadee
 
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
+
     show alex frown with dissolve
 
     an "The next day comes and I'm once again stuck in the whirlwind of assignments and exams."
@@ -1506,14 +1528,15 @@ label zainaroute_scene_8:
     an "My eyes skim the texts and as I thought, she's saying sorry—"
 
     ##confused alex
+    stop music fadeout 5
 
     a frowntalk unsure "Wait... What?"
 
-    an -talk "I reread the texts."
+    an smile "I reread the texts."
 
-    a shock up "‘I'm sorry, but I don't want to see you anymore.’"
+    a shock up "‘I'm sorry, but I don't want to see you anymore.'"
 
-    a "‘It's over.’"
+    a "‘It's over.'"
 
     an frown unsure "What do I even say to that?"
 
@@ -1597,11 +1620,16 @@ label zainaroute_scene_9:
     ##scene nine
     ##cafe bg
 
-    scene bg cafe with fadee
+    scene bg cafe:
+        xzoom -1
+    with fadee
+
+    play music "Bm_Cafe04.ogg" fadein 1
+    queue music "Bm_Cafe04.ogg"
 
     show alex frown at right:
         yoffset 100
-    show paxton
+    show paxton hat
     show finn at left
     with dissolve
 
@@ -1641,7 +1669,7 @@ label zainaroute_scene_9:
 
     a "...You didn't make Finn one?"
 
-    an -talk "Finn snorts and loudly sips his drink. The one he bought himself."
+    an smile "Finn snorts and loudly sips his drink. The one he bought himself."
 
     f talk "I don't trust his creations."
 
@@ -1671,7 +1699,7 @@ label zainaroute_scene_9:
 
     a talk "—pretty good, wow!"
 
-    an -talk "And it is. I can hardly tell he used almond milk instead."
+    an smile "And it is. I can hardly tell he used almond milk instead."
 
     an "I never thought white chocolate and matcha would go so well together, too."
 
@@ -1689,7 +1717,7 @@ label zainaroute_scene_9:
 
     a "But that's not actually why I called you both here."
 
-    an -talk "Paxton and Finn share a look."
+    an smile "Paxton and Finn share a look."
 
     f talk "{i}Really{/i}? Why, I thought you called me here to study."
 
@@ -1745,9 +1773,9 @@ label zainaroute_scene_9:
 
     show finn smile
 
-    a talk "But we were—"
+    a frowntalk "But we were—"
 
-    an -talk "I bite my lip. It wasn't like we were only just friends! Didn't that mean something?"
+    an frown "I bite my lip. It wasn't like we were only just friends! Didn't that mean something?"
 
     p talk "Seeing each other?"
 
@@ -1758,11 +1786,12 @@ label zainaroute_scene_9:
     show finn smile
 
     #finn and paxton smug, alex shocked/maybe blushing??
+    show alex unsure blush
 
     show finn smile
     show paxton smile
 
-    an blush shock "They {i}knew{/i}?"
+    an blush shock "They {i}knew{/i}?!"
 
     f talk "You guys were pretty obvious."
 
@@ -1790,9 +1819,9 @@ label zainaroute_scene_9:
 
     show paxton smile
 
-    a talk -blush "That she likes me or that she'll come back?"
+    a frowntalk -blush "That she likes me or that she'll come back?"
 
-    an -talk "Paxton and Finn share another look over their drinks. Paxton smiles."
+    an frown "Paxton and Finn share another look over their drinks. Paxton smiles."
 
     p talk "Isn't it obvious?"
 
@@ -1800,7 +1829,7 @@ label zainaroute_scene_9:
 
     an unsure frown "I mask my frown under the guise of sipping my latte. No, it really isn't."
 
-    an -unsure "And I wonder if they'd still say the same thing if they saw Zaina's texts. They sounded pretty final to me."
+    an down "And I wonder if they'd still say the same thing if they saw Zaina's texts. They sounded pretty final to me."
 
 label zainaroute_scene_10:
     ##scene ten
@@ -1808,7 +1837,8 @@ label zainaroute_scene_10:
 
     scene bg alex_room with fadee
 
-    show alex with dissolve
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
 
     an "Finn and Paxton suggest an expedition the next day to take my mind off the Zaina situation."
 
@@ -1839,15 +1869,15 @@ label zainaroute_scene_10:
 
     an "He replies rather quickly and I wonder if he'd expected this all along."
 
-    a talk "‘You're whipped’ he says, as he gives me the address anyway."
+    a "‘You're whipped' he says, as he gives me the address anyway."
 
-    an -talk "I send a quick thank you and a bunch of heart emojis. Finn responds with three of the vomiting ones."
+    an "I send a quick thank you and a bunch of heart emojis. Finn responds with three of the vomiting ones."
 
     an "And then two minutes later—"
 
     play sound "phonevibrate.mp3"
 
-    an "A ‘good luck’ from Pax." 
+    an "A ‘good luck' from Pax." 
 
     an "I smile and pocket my phone."
 
@@ -1867,10 +1897,11 @@ label zainaroute_scene_10:
     an "Should I have come? She's going to slam the door in my face, isn't she? I should go, now, before she opens the door. Oh god, feet move—"
 
     ##door opening sfx, shocked alex
-    #TODO Scene 10 - line 1902; Door opening sound effect
 
-    #TODO Scene 10 - line 1904; I assume that this is suppose to be outside of Zaina's room?
     scene bg zaina_room with fade
+
+    play music "Be_Longing04.ogg" fadein 1
+    queue music "Be_Longing04.ogg"
 
     an shock "I'm not sure what I expected, but it's certainly not this."
 
@@ -1895,7 +1926,7 @@ label zainaroute_scene_10:
 
     a talk "... Can I come in? I have your first-aid kit."
 
-    an -talk "Zaina shrinks behind her door and it strikes me that she's the one who wants to escape."
+    an smile "Zaina shrinks behind her door and it strikes me that she's the one who wants to escape."
 
     an sweat "I slowly reach out a hand, careful not to startle her into closing the door. I place it on her wrist, just the slightest of touches, before I respectfully retreat."
 
@@ -1943,10 +1974,9 @@ label zainaroute_scene_10:
 
     a talk "Well, here it is."
 
-    an -talk "I set it down on her coffee table."
+    an smile "I set it down on her coffee table."
 
     ##music change to something more somber maybe?
-    #TODO Scene 10 - Line 1981; Add/change music
 
     an "But the mood then shifts to something awkward and stifling now that neither of us no longer have an excuse to dance around with."
 
@@ -1958,7 +1988,7 @@ label zainaroute_scene_10:
 
     a frowntalk sweat "So, um..."
 
-    an frown "‘What happened?’ doesn't sound quite right. We both know what happened. ‘Why?’ is a loaded question and I'm not sure I can keep my tone neutral if I asked it. If she didn't want to kick me out before, she would then."
+    an frown "‘What happened?' doesn't sound quite right. We both know what happened. ‘Why?' is a loaded question and I'm not sure I can keep my tone neutral if I asked it. If she didn't want to kick me out before, she would then."
 
     an -sweat "That only leaves..."
 
@@ -1986,7 +2016,7 @@ label zainaroute_scene_10:
 
     a talk blush "I promise." 
 
-    an -talk -blush "I mime the motion of zipping my lips and this seems to give her the confidence she needs. She takes another deep breath."
+    an smile -blush "I mime the motion of zipping my lips and this seems to give her the confidence she needs. She takes another deep breath."
 
     z frowntalk blush unsure "I... I was jealous."
 
@@ -2096,7 +2126,7 @@ label zainaroute_scene_10:
             
             a talk up "Up."
             
-            an -talk "I gesture for her to stand up."
+            an smile "I gesture for her to stand up."
             
             an "She gets up, her confusion making her movements slow and uncertain."
             
@@ -2172,7 +2202,7 @@ label zainaroute_scene_10:
 
             show alex frown
             
-            z frowntalk neutral "... But you'd thought about it?"
+            z frowntalk "... But you'd thought about it?"
 
             show zaina neutral
             
@@ -2225,7 +2255,7 @@ label zainaroute_scene_10:
 
     a talk "Honestly, I was going to stay here, even if you didn't ask."
 
-    an -talk shock blush "She removes the hand in my hair and uses the same one to pinch my nose."
+    an shock blush "She removes the hand in my hair and uses the same one to pinch my nose."
 
     z talk "Moocher."
 
@@ -2235,6 +2265,9 @@ label zainaroute_scene_11:
     ##sanitorium bg
 
     scene bg hospital with fadee
+
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
 
     show zaina at leftt:
         xoffset 100 yoffset 100
@@ -2359,7 +2392,7 @@ label zainaroute_scene_11:
 
     a talk "How'd you get into photography?"
 
-    an -talk "If Zaina hears my question, she gives no indication. She resumes her work behind the camera and the shutters fill the silence."
+    an smile "If Zaina hears my question, she gives no indication. She resumes her work behind the camera and the shutters fill the silence."
 
     an "I consider repeating myself when at last, she lowers her camera."
 
@@ -2371,7 +2404,7 @@ label zainaroute_scene_11:
 
     ##zaina smirk
 
-    an -talk "Even with a camera blocking half her face, it's hard to miss her smirk."
+    an smile "Even with a camera blocking half her face, it's hard to miss her smirk."
 
     an "It's clear she takes no offense at all from my sarcasm, like she's proud of having such a reputation."
 
@@ -2391,7 +2424,7 @@ label zainaroute_scene_11:
 
     a talk "And you liked it straight away?"
 
-    an -talk "She barks out a laugh so hard she's forced to put down her camera."
+    an smile "She barks out a laugh so hard she's forced to put down her camera."
 
     z talk "Hell no."
 
@@ -2581,7 +2614,7 @@ label zainaroute_scene_11:
 
     a talk "Oh!"
 
-    an -talk "I turn to the source of the noise. A bird—a sparrow perhaps—perches on the open windowsill."
+    an smile "I turn to the source of the noise. A bird—a sparrow perhaps—perches on the open windowsill."
 
     an "The bird cocks its head at my exclamation, but otherwise stays in place, tittering."
 
@@ -2722,7 +2755,7 @@ label zainaroute_scene_11:
 
     an -sweat "Eventually, I take over for Zaina, wiping at my eyes myself while she presses a kiss to my temple, and by the time that Finn and Paxton arrive, I'm all cried out."
 
-    an up "Still, I appreciate her standing in front of me anyway, blocking the boys’ view of me."
+    an up "Still, I appreciate her standing in front of me anyway, blocking the boys' view of me."
 
     hide zaina
     hide alex
@@ -2805,22 +2838,25 @@ label zainaroute_scene_11:
     hide zaina
     hide finn
     hide paxton
+    hide alex
     with dissolve
 
-    show alex at center with move:
-        xoffset 0
+    stop music fadeout 5
+
+    scene black with fade
 
     an "The boys lead the way out while Zaina stays by my side, lingering behind them a few steps and holding my hand." 
     an "Her hand always feels like coming home after a long day and there's nothing I would like more than to hold her hand forever, now especially."
 
     an "When I go to sleep that night, I dream of soft hands and gentle caresses."
 
-    #scenes 12 to 14
-
     ##scene twelve 
     ##alex apartment
     scene bg alex_room
     with fadee
+
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
 
     an "The guilt, though it subsided after Zaina consoled me, returns with a vengeance when I don't see her for a couple of days."
 
@@ -2852,7 +2888,7 @@ label zainaroute_scene_11:
 
     an "It's when I eagerly await Paxton's response that I get texts from Zaina."
 
-    ##phone buzz
+    play sound "phonevibrate.mp3"
     "Bzz..." with vpunch
 
     an "They're texts telling me not to worry about the camera—"
@@ -2898,7 +2934,7 @@ label zainaroute_scene_11:
 
     an "The images have me in such a vice-grip that I almost don't notice the sound of an incoming call."
 
-    ##phone ringing
+    play sound "phonevibrate.mp3"
     "Rinng..." with vpunch
 
     an "I mark my place in my textbook, shake my head free of my fantasies, and then reach for my phone. I look at the contact information."
@@ -2908,6 +2944,8 @@ label zainaroute_scene_11:
     an "I pick up immediately."
 
     a "Hello?"
+
+    stop music fadeout 2
 
     an "A sharp intake of breath answers me and I straighten in my chair, tempted to take one of my own. That's not a good sign."
 
@@ -2970,13 +3008,16 @@ label zainaroute_scene_11:
     scene bg mansion
     with fadee
 
+    play music "Be_piano12.ogg" fadein 1
+    queue music "Be_piano12.ogg"
+
     an "Normally, I would be parking a couple blocks away from the site for insurance, but considering Finn's situation, I park as close as I can to the mansion."
 
     an "I pull up just in front of it and hurry out my car, splint materials in my arms."
 
     an "It's awkward carrying everything together and I'm a lot slower because of it, but I don't want to risk a second trip when I don't know how long Finn's been waiting."
 
-    ##engine sound effect
+    play sound "motorcycle.mp3"
     "Vrumm..." with vpunch
 
     an "I've just about reached the door when Zaina arrives. I hear her, rather than see her—the motorcycle's engine giving her away."
@@ -2998,7 +3039,7 @@ label zainaroute_scene_11:
     an "My lips part to try again, only louder this time, but a voice, sounding more bashful than weak, reaches us from upstairs."
 
     ##small text, as he's probably wheezing this out
-    f "{size=12}Up here...{/size}"
+    f "{size=16}Up here...{/size}"
 
     an "Zaina wastes no time climbing up the stairs, two at a time, and I follow her, though a little more carefully."
 
@@ -3015,10 +3056,10 @@ label zainaroute_scene_11:
         yalign 1.0
     show zaina unsure frown:
         xalign 0.05
-        yalign -1.5
+        yalign -2.2
     show alex unsure frown:
         xalign 0.33
-        yalign 1.0
+        yalign 2.3
     with dissolve
 
     z down frowntalk "You... you {i}idiot{/i}."
@@ -3074,9 +3115,7 @@ label zainaroute_scene_11:
     an "I take the opposite side of Finn's leg and assist Zaina with the cardboard, which we cut into two smaller, rectangular pieces for splinting."
 
     an "..."
-
     an "..."
-
     an "..."
 
     an "While we're positioning the cardboard into place, I catch Finn's eye."
@@ -3183,7 +3222,7 @@ label zainaroute_scene_11:
     z down frowntalk "Help me get him to your car."
     show zaina frown
 
-    z up frowntalk "And you—"
+    z down frowntalk "And you—"
     show zaina frown
 
     an "Up this close, Finn can't avoid Zaina's glare even if he tried."
@@ -3240,8 +3279,8 @@ label zainaroute_scene_11:
     an "Zaina and I gather our things, and I drive back to the mansion, where Zaina left her motorcycle."
 
     ##not sure if mansion bg still works here if they're outside
-    scene bg amusementpark
-    with fadee
+    scene bg mansion
+    with sidefade
 
     an "But Zaina lingers by my car, even as she's out of it."
 
@@ -3271,8 +3310,11 @@ label zainaroute_scene_11:
     an "We lean on each other the whole way up, not unlike a gaggle of drunk college students heading back home after a night out."
 
     ##zaina's apartment
-    scene bg zaina_room
+    scene bg zaina_room night
     with fadee
+
+    play music "Be_Longing04.ogg" fadein 1
+    queue music "Be_Longing04.ogg"
 
     an "As it is, I all but collapse on the couch when Zaina opens the door to her apartment."
 
@@ -3283,9 +3325,11 @@ label zainaroute_scene_11:
     an "Eventually, Zaina gets up to go get snacks and drinks and when she returns, food in both of our bellies, it's then that I gather enough energy to finally say what's been on my mind since this all started."
 
     show alex up frown at closeright:
-        yalign -0.25
+        yalign -0.5
+        xalign 0.8
     show zaina up frown at closeleft:
         yalign -0.25
+        xalign 0.2
     with dissolve
 
     a down frowntalk "So, Finn..."
@@ -3381,7 +3425,7 @@ label zainaroute_scene_11:
 
     an "I don't know if it's surprise or incredulity, but at least I've said my mind."
 
-    ##phone ring
+    play sound "phonevibrate.mp3"
     "Rinng..." with vpunch
 
     an "A call, most likely from Paxton, saves her from having to respond, though."
@@ -3449,5 +3493,524 @@ label zainaroute_scene_11:
     hide zaina
     hide alex
     with dissolve
+
+############# Scene 15
+    
+    scene bg zaina_room with fadee
+
+    play music "happy.ogg" fadein 1
+    queue music "happy.ogg"
+
+    an "I wake the next morning to empty sheets and the sunlight filtering in through the window."
+    an "My fingers trace the empty space beside me. They're still warm."
+    an "Zaina must've woken up not too long ago."
+    an "Sighing, I savor the feeling of a warm, cozy bed, much needed after the events of last night. I inadvertently inhale Zaina's scent when I do so, the lingering smell of her perfume light and pleasant."
+
+    an "Surprisingly at odds with her personality perhaps, but now I know better."
+
+    an "It suits her and her capacity for gentleness well."
+
+    an "I allow myself a few minutes in bed just letting the smell lull me into a sense of tranquility, thinking of her soft hands and the care behind them."
+
+    an "When I feel at peace, I finally bring myself to get out of bed."
+
+    an "I trudge into the living room, steps still heavy with sleep."
+
+    an "I'm met with the sight of Zaina setting out plates of toast with eggs, along with a bowl of fruit in the middle."
+
+    show alex up frown at closeright:
+        yalign -0.5
+        xalign 0.8
+    show zaina up frown at closeleft:
+        yalign -0.25
+        xalign 0.2
+    with dissolve
+
+    an "She smiles, in a sheepish manner that doesn't quite befit someone of her temperament."
+
+    z talk "I'm better at taking pictures of food than actually cooking, but..."
+
+    z talk "I tried."
+
+    z talk "I thought you'd be hungry."
+
+    show zaina smile
+
+    a talk "I am."
+
+    an smile "I don't say much more than that as my stomach does the rest of the talking for me."
+
+    ##stomach growl sfx
+    ##alex blush, zaina smirk
+
+    z talk "You might want to stick to the fruit. I can't promise that the rest isn't shit."
+
+    show zaina smile
+
+    ##alex laugh
+
+    a talk "How do you mess up toast?"
+
+    show alex smile
+
+    z talk "Very badly."
+
+    show zaina smile
+
+    an "Despite Zaina's best attempts to dissuade me from the toast and eggs, they're not bad at all. The toast isn't burnt and the eggs, though a little runnier than what I usually like, are pretty good."
+
+    ##zaina, alex neutral
+
+    an "I'm spreading jam on my last piece of toast when Zaina gets up from the table."
+
+    z talk "I have something for you."
+
+    show zaina smile
+
+    an frown "That catches my attention."
+
+    a shock "What is it?"
+
+    show alex frown
+
+    z talk "You'll see."
+
+    z talk "Though I can give you a hint..."
+
+    z talk "For something in return."
+
+    show zaina smile
+
+    an smile "It doesn't take a rocket scientist to figure out what Zaina has in mind."
+
+    an "I indulge her, beckoning her closer with a finger. She puts on the airs of someone who's clueless on what's about to happen, but the telltale twitching of her lips gives her away."
+
+    an "Not that it matters much when I brush my lips against hers, swallowing her smile."
+
+    ##EVENT IMAGE HERE
+    scene ZainaCG2 with dissolve
+
+    $ persistent.CG4_unlocked = True
+
+    an "The kiss itself is soft and warm, and tastes of daydreams made underneath the shadow of a tree and strawberries."
+
+    an "My hand slides up to cradle her cheek, tangling my fingers gently into her hair. I use it to bring her closer and I feel as much as hear the way Zaina sighs into the kiss."
+
+    an "When we break apart, Zaina leans her forehead against mine, not wanting to leave just quite yet. We relish each other's company for a moment."
+
+    ##zaina, alex smile
+    scene bg zaina_room with fade
+
+    show alex up frown at closeright:
+        yalign -0.5
+        xalign 0.8
+    show zaina up frown close at closeleft:
+        yalign -0.25
+        xalign 0.2
+    with dissolve
+
+    z talk "I guess that was probably worth a hint or two."
+
+    z talk -close "Well."
+
+    z talk "I was busy getting it together after our time at the sanitorium."
+
+    show zaina smile
+
+    an frown "'It'?"
+
+    z talk "It's why I didn't come see you right away afterwards."
+
+    show zaina smile
+
+    an "Withdrawing, but not without a parting kiss on the cheek first, Zaina leaves for her bedroom and returns with a box shortly after."
+
+    an "She ushers me to the couch before handing over the box."
+
+    z talk "Go ahead."
+
+    show zaina smile
+
+    z talk "It's not a bomb, I promise."
+
+    show zaina smile
+
+    an "Somehow, the image of Zaina holing herself up in her apartment and building a bomb from scratch isn't all that farfetched."
+
+    a talk "Oh? What if what I wanted was a bomb?"
+
+    show alex smile
+
+    z talk "Then I'll keep it in mind for next time."
+
+    show zaina smile
+
+    an "The promises of next times and a future together warms me more than I could possibly say."
+
+    an "With one last look at Zaina, I pry open the box. The lid slides off rather easily."
+
+    an "In it are two sleeves. Of what exactly I can't tell."
+
+    an "I reach for the one on the..."
+
+    ##choice
+    menu:
+        "Left":
+            z talk "Not that—"
+
+            show zaina smile
+            an "I pause and Zaina peers over at my selection."
+            z talk "Nevermind, that's the right one."
+
+            show zaina smile
+            an "I school my expression into a deadpan one."
+            a talk "No, this is the left one."
+            an smile "She reaches over to pinch my nose."
+            z talk "Cute."
+
+            show zaina smile
+            ##end choice
+        "Right":
+            z talk "Not that—"
+
+            show zaina smile
+            an "I pause and Zaina peers over at my selection."
+            z talk "Look at the left one first."
+
+            show zaina smile
+            an "I give her a questioning look, but she shakes her head."
+            z talk "There's a method to my madness."
+
+            show zaina smile
+            an "I school my expression into a deadpan one."
+            a talk "Oh, so you admit you're mad? Finn and Paxton were getting worried."
+            an smile "She reaches over to pinch my nose."
+            z talk "Cute."
+
+            show zaina smile
+            ##end choice
+
+    an "There's no discernible difference between the two, but I pick up the left sleeve. The inside feels pretty... hard? That was the closest word I could think of."
+
+    an "At Zaina's encouragement, I turn the sleeve upside down and empty out the contents."
+
+    an "Inside are... Pictures? The first one, a photo of a wheelchair, looks familiar—"
+
+    ##surprised alex
+
+    a shock unsure "Oh!"
+
+    an "Zaina smiles at me the exact moment it sinks in."
+
+    z talk "I thought you might want to have them."
+
+    show zaina smile
+
+    z talk "Since they're the first pictures you took with my camera."
+
+    show zaina smile
+
+    a talk "But I thought—"
+
+    show alex smile
+
+    z talk "The camera was as good as dead, but the storage card wasn't damaged. I was able to retrieve all my photos."
+
+    show zaina smile
+
+    z talk "Took a {i}hell{/i} of a long time to export, but I didn't lose anything."
+
+    show zaina smile
+
+    an "She regards me with a look that's almost—chiding, maybe?"
+
+    z talk "So don't you dare feel bad, you hear me? I'll say it every hour if I have to to get it through your skull."
+
+    show zaina smile
+
+    a talk "Okay, okay!"
+
+    show alex smile
+
+    an "It was difficult to argue against someone as persistent as Zaina..."
+
+    an "Zaina grins, satisfied. She gestures for me to continue."
+
+    an "There aren't very many photos, despite me following Zaina's advice to take a bunch of them. She must've sorted through all of them and picked the best ones."
+
+    an "That might've been for the best. I don't think I could've been able to tell the difference between take one and take thirteen unless it was really obvious."
+
+    an "Still..."
+
+    z talk "What is it?"
+
+    show zaina smile
+
+    a talk "I don't know... I just—"
+
+    show alex smile
+
+    a talk "They're not very good... you edited these, didn't you?"
+
+    show alex smile
+
+    an "I feel like I've been caught with a pre-school drawing. I'm obviously very touched by Zaina's efforts, but..."
+
+    z talk "Hey!"
+
+    show zaina smile
+
+    an "Zaina pokes me in the forehead and my hands fly out to the spot, rubbing it. She did that pretty hard..."
+
+    z talk "You're a professional now. You should flaunt it!"
+
+    show zaina smile
+
+    an "My eyes flit back to the pictures and I stare at them, unconvinced."
+
+    z talk "I mean it."
+
+    show zaina smile
+
+    an "She takes the pictures from me and spreads them out on the table, probably so I can better look at all of them."
+
+    z talk "And no..."
+
+    show zaina smile
+
+    z talk "I didn't edit them."
+
+    show zaina smile
+
+    ##shocked alex
+
+    a shock "Really?"
+
+    z talk "That's right. I didn't touch a single one."
+
+    show zaina smile
+
+    an "My eyes find the picture of the sparrow and I take it from the pile to closer inspect it."
+
+    an "The photo is clear; a little dark, but the light from the moon shining through the window as it catches on the bird's feathers lends it a mystifying vibe."
+
+    an "Now that I'm looking at it closer, it's... Not a bad picture. It's probably more Zaina's influence than mine, but collaborating on something together is a concept I can get behind."
+
+    an "I decide right then to keep the photos. Not that Zaina would even let me throw them away, but... I wouldn't mind having them up on my wall as a reminder of something we did together."
+
+    an "Something Zaina let me be a part of."
+
+    an "Her confidence in me bolsters my own and when I look at the pictures again, it's in a new light."
+
+    z talk "You can check out the other one now."
+
+    show zaina smile
+
+    an "I toy with the other sleeve."
+
+    an "They're pictures, they must be, but of what, I'm drawing a blank."
+
+    an "It's possible Zaina just printed out highlights from our expeditions, though the reason why she insisted on having me look at them last escapes me."
+
+    an "My mind swims with possible explanations and the number of them only intensify when I finally empty out the contents of this sleeve too."
+
+    an "It couldn't have prepared me for this, though."
+
+    ##alex shocked
+
+    a shock "It's pictures... of me."
+
+    an frown "Sure enough, they're all photos of me, also from our time at the sanitorium."
+
+    ##zaina smile
+
+    an "My eyes seek out Zaina, whose smile is unusually soft."
+
+    a talk "When did you—?"
+
+    show alex smile
+
+    z talk "I pretended to take pictures of stuff behind you."
+
+    show zaina smile
+
+    z talk "It's also why they're mostly close-ups."
+
+    show zaina smile
+
+    z talk "But I think you get the point."
+
+    show zaina smile
+
+    an "I don't. Not entirely at least."
+
+    an "I've snuck pictures of Zaina before, but they're for my eyes only. I certainly don't ever mean to show them to Zaina."
+
+    an "That would be... Embarrassing!"
+
+    an "Zaina must see the confusion plain as day on my face, though, because she throws me a bone."
+
+    z talk "When I met you, you were—"
+
+    show zaina smile
+
+    an "She pauses, mouth moving silently like she's fishing for the right word to say."
+
+    an "When she finds it, she meets my eye and grins."
+
+    ##zaina smirk
+
+    z talk "—a newbie."
+
+    show zaina smile
+
+    z talk "You were kind of like a bumbling fawn."
+
+    show zaina smile
+
+    an "I... Can't disagree with that."
+
+    z talk "But you picked things up quick."
+
+    show zaina smile
+
+    z talk "Faster than the three of us thought you would."
+
+    show zaina smile
+
+    an "Zaina picks up the pile of photos and slowly goes through them in front of me."
+
+    z talk "Can't you tell the difference?"
+
+    show zaina smile
+
+    an "She stops at one of them and places it on the table in front of me."
+
+    z talk "What's different?"
+
+    show zaina smile
+
+    a talk "Um..."
+
+    show alex smile
+
+    a talk "My hair...?"
+
+    show alex smile
+
+    an "My response must not have been what Zaina wanted because she clicks her tongue and lightly hits me with the stack of photos. The twitching of her lips tells me she's fighting a laugh, though."
+
+    z talk "You're joking."
+
+    show zaina smile
+
+    an "I am."
+
+    an "I can see the difference."
+
+    an "I'm smiling in most of them. Probably Zaina's doing, but the boys too."
+
+    an "When I'm with them, it's not about how high or how fast I can go. I can just be me and whatever that entails."
+
+    an "Sometimes it's worrying about Finn. Sometimes it's groaning at Paxton's coffee puns and then turning around and making some myself. Sometimes it's spending the day in Zaina's arms."
+
+    z talk "You look more sure of yourself now."
+
+    show zaina smile
+
+    z talk "You definitely wouldn't have made that same joke when we first met."
+
+    show zaina smile
+
+    an "Zaina's right. I wouldn't have."
+
+    an "Skirting the law does wonders for your confidence, I guess."
+
+    a talk "You didn't have to do this, though."
+
+    show alex smile
+
+    an "The scoff that leaves Zaina's lips is reprimanding, but not unkind."
+
+    z talk "I did."
+
+    show zaina smile
+
+    z talk "You wouldn't have believed the growth you've made if I'd just said it. You need to have tangible proof in front of you."
+
+    show zaina smile
+
+    z talk "You're a science girl, Finn's the same way."
+
+    show zaina smile
+
+    an "Finn's a... ‘science girl'?"
+
+    z talk "And besides—"
+
+    show zaina smile
+
+    ##zaina smile
+
+    an "Uh-oh. That smile doesn't bid well for my heart."
+
+    z talk "How could I pass up such a photographic opportunity?"
+
+    show zaina smile
+
+    z talk "There's nothing more striking than a subject that evolves in front of you."
+
+    show zaina smile
+
+    ##alex blush
+
+    a talk "I—"
+
+    show alex smile
+
+    a talk "That's—"
+
+    show alex smile
+
+    an "I clear my throat."
+
+    a talk "So I'm a Pokemon, now?"
+
+    show alex smile
+
+    an "..."
+
+    an "What. Was. That."
+
+    an "Pokemon? What is wrong with me? That's the least romantic response ever."
+
+    ##zaina smirk or laugh
+
+    an "Zaina seems to find it amusing, though. Not that that makes me feel any better."
+
+    z talk "Sure."
+
+    show zaina smile
+
+    z talk "Have to say, my favorite is probably your unevolved form."
+
+    show zaina smile
+
+    z talk "Look at little Newbie."
+
+    show zaina smile
+
+    hide zaina
+    hide alex
+    with dissolve
+
+    an "I pick up my face from behind my hands and look at the photo she's holding out."
+
+    an "It's the very first photo she ever took of me on our first outing as a group. When a noise spooked me and I screamed—just a little."
+
+    an "I drop my face back into my hands, groaning. I can't believe she immortalized it!"
+
+    an "Zaina's laughter fills the room, fueling my neverending shame, and yet when I take a peek to see her head thrown back with abandon, I find it hard not smile."
+
 
     return

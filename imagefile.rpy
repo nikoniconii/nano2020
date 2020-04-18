@@ -199,57 +199,86 @@ image PaxtonCG1:
     "images/Paxton CG1.png"
     xalign 0.0
 
+image PaxtonCG2:
+    "images/Paxton CG2.png"
+    xalign 0.0
+
 image ZainaCG1:
     "images/Zaina CG1.png"
     xalign 0.0 zoom 0.61
 
+image ZainaCG2:
+    "images/Zaina CG2.png"
+    xalign 0.0 zoom 0.61
 
+#############################################
 
+image violoraalex:
+    "images/Violora_Alex.jpg"
+    zoom 0.4 yalign 0.0
+
+image shiro:
+    "images/shiroishi_promo.jpg"
+    zoom 0.7 xalign 0.55 yalign 0.0
+
+image finnrooftop:
+    "images/finn rooftop.png"
+    zoom 0.4 xalign 0.5 yalign 0.0
+
+image ohi:
+    "images/ohisashi.png"
+    zoom 0.6 xalign 0.5 yalign 0.05
+
+image instantr:
+    "images/instantriot.png"
+    zoom 0.65 xalign 0.0 yalign 0.0
+
+image pax:
+    "images/paxtonend.png"
+    xalign 0.0 yalign 0.45 zoom 1
+
+image blu:
+    "images/bluepuzzlebox.png"
+    xalign 0.5 yalign 0.1 rotate 20
+
+image vzaina:
+    "images/violora_zaina.jpg"
+    zoom 0.37 yalign 0.25 rotate 0
 
 
 
 image mm:
-    "images/Violora_Alex.png"
-    zoom 0.4
+    "violoraalex"
     linear 7.0
-    "images/finn rooftop.png"
-    zoom 0.4
+    "shiro"
     linear 7.0
-    "images/ohisashi.png"
-    zoom 0.6 xalign 0.5 yalign 0.05
+    "finnrooftop"
     linear 7.0
-    "images/instantriot.png"
-    zoom 0.65 xalign 0.0 yalign 0.0
+    "ohi"
     linear 7.0
-    "images/paxtonend.png"
-    xalign 0.0 yalign 0.45 zoom 1
+    "instantr"
     linear 7.0
-    "images/bluepuzzlebox.png"
-    xalign 0.5 yalign 0.1 rotate 20
+    "pax"
     linear 7.0
-    "images/violora_zaina.png"
-    zoom 0.45 yalign 0.25 rotate 0
+    "blu"
     linear 7.0
-    "images/Violora_Alex.png"
-    zoom 0.4 yalign 0.15
+    "vzaina"
     linear 7.0
-    "images/finn rooftop.png"
-    zoom 0.4 yalign 0.1
+    "violoraalex"
     linear 7.0
-    "images/ohisashi.png"
-    zoom 0.6 xalign 0.5 yalign 0.05
+    "shiro"
     linear 7.0
-    "images/instantriot.png"
-    zoom 0.65 xalign 0.0 yalign 0.0
+    "finnrooftop"
     linear 7.0
-    "images/paxtonend.png"
-    xalign 0.0 yalign 0.45 zoom 1
+    "ohi"
     linear 7.0
-    "images/bluepuzzlebox.png"
-    xalign 0.5 yalign 0.1 rotate 20
+    "instantr"
     linear 7.0
-    "images/violora_zaina.png"
-    zoom 0.45 yalign 0.25 rotate 0
+    "pax"
+    linear 7.0
+    "blu"
+    linear 7.0
+    "vzaina"
     linear 7.0
     # "images/akira.png"
     # zoom 0.65 yalign 0.05
