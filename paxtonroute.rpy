@@ -29,9 +29,9 @@ label paxtonroute:
     show alex neutral smile -sweat  
     an "I can't focus. I keep remembering a few days ago, that night on the roof."
     show alex up 
-    an "It was magical. I can't forget the way stars looked. As if the sky was clear just for me and..."
+    an "It was magical. I can't forget the way the stars looked. As if the sky was clear just for me and..."
     show alex down shock sweat 
-    a "Ugh, no! Focus, Alex! You need to finish your assignment, not dream about pretty people!"
+    a "Ugh, no! Focus, Alex! You need to finish your assignment, not daydream about pretty people!"
     show alex down frown -sweat 
     an "My parents would be so angry if they saw me now."
 
@@ -45,10 +45,10 @@ label paxtonroute:
     an "I can't believe she's messaging me about it again."
     show alex frown 
     menu:
-        "I reach to my phone.":
-            an "I grab my phone from where it's laying on the table."
+        "I reach for my phone.":
+            an "I grab it from where it's laying on the table."
             show alex up shock 
-            a "Oh, it's not mom. It's..."
+            a "Oh, it's not Mom. It's..."
             show alex up frown sweat
             show expression "images/sprites/alex extra1.png" as ablush_temp at Transform:
                 linear 0.0 alpha 0.0 xalign 0.8 yalign 1.0 
@@ -57,7 +57,7 @@ label paxtonroute:
             an "Paxton? I wonder why he's messaging me."
             hide ablush_temp 
             show alex -sweat 
-            an "I click on the notification and read the message."
+            an "I tap on the notification and read the message."
             show alex frown  
             an "He's asking if I can drop by the cafe. He wants to use me as{nw}"
             show alex shock unsure sweat 
@@ -154,7 +154,7 @@ label paxtonroute:
     show alex smile 
     an "Well, that's not surprising. He's working right now, unlike me, who's ditching her assignment to go drink coffee."
     show alex unsure sweat 
-    an "I really hope mom doesn't try to call me right now."
+    an "I really hope Mom doesn't try to call me right now."
     show alex smile  -sweat up
     
     menu: 
@@ -166,7 +166,7 @@ label paxtonroute:
                 linear 1.5 xalign 0.2 
             p "Glad you could make it, I was just preparing your latte."
             show paxton smile 
-            an "He seems excited. It seems like he really wants me to enjoy the latte he'll prepare."
+            an "He seems excited. It seems like he really wants me to enjoy the latte he's making."
         "Booo!":
             show paxton up frowntalk at Transform: 
                 linear 0.2 xalign 0.11 
@@ -180,13 +180,13 @@ label paxtonroute:
             show paxton smile at Transform: 
                 linear 1.5 xalign 0.2 
             show alex talk down 
-            a"Sorry, did I scare you?"
+            a "Sorry, did I scare you?"
             show paxton unsure frowntalk 
             show alex smile up 
             p "Alex! Don't do that, I almost dropped the cup!"
             show paxton smile 
             show alex talk neutral 
-            a"Sorry, sorry."
+            a "Sorry, sorry."
             show alex up smile 
             show expression "images/sprites/alex extra1.png" as ablush_temp at Transform:
                 linear 0.0 alpha 0.0 xalign 0.8 yalign 2.0 
@@ -206,7 +206,7 @@ label paxtonroute:
     p "I didn't. I just wanted to try making that latte and see if it tasted okay. If I messed it up, I was going to dump it into trash and be glad that you weren't here to see it."
     show paxton smile 
     show alex talk 
-    a"Sorry, I ruined your plans."
+    a "Sorry, I ruined your plans."
     show alex smile 
     show paxton down talk 
     p "I can never recover from a blow to my pride, so just try it and act like it's decent if you hate it."
@@ -220,7 +220,7 @@ label paxtonroute:
     show paxton smile 
     show alex smile up 
     an "He looks too eager to see me try the latte. Maybe I can ask him about it later."
-    an "I take the cup from his hands. It feels hot in my hands, almost enough to burn."
+    an "I take the cup from his hands. It feels hot in my hands."
     ## Paxton, excited/lifting eyebrows/blushing a little? Any of these
     hide paxton 
     show expression "images/sprites/paxton base.png" as pbase at Transform:
